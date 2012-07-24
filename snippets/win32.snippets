@@ -1,0 +1,1620 @@
+snippet AcquireSRWLockExclusive
+	AcquireSRWLockExclusive(${1:PSRWLOCK ioSRWLock}); ${2:// VOID}
+snippet AcquireSRWLockShared
+	AcquireSRWLockShared(${1:PSRWLOCK ioSRWLock}); ${2:// VOID}
+snippet ActivateActCtx
+	ActivateActCtx(${1:HANDLE iohActCtx}, ${2:ULONG_PTR out*lpCookie}); ${3:// BOOL}
+snippet AddAtomA
+	AddAtomA(${1:LPCSTR inlpString}); ${2:// ATOM}
+snippet AddAtomW
+	AddAtomW(${1:LPCWSTR inlpString}); ${2:// ATOM}
+snippet AddRefActCtx
+	AddRefActCtx(${1:HANDLE iohActCtx}); ${2:// VOID}
+snippet AddSIDToBoundaryDescriptor
+	AddSIDToBoundaryDescriptor(${1:ioHANDLE * BoundaryDescriptor}, ${2:PSID inRequiredSid}); ${3:// BOOL}
+snippet AddSecureMemoryCacheCallback
+	AddSecureMemoryCacheCallback(${1:PSECURE_MEMORY_CACHE_CALLBACK inpfnCallBack}); ${2:// BOOL}
+snippet AddVectoredContinueHandler
+	AddVectoredContinueHandler(${1:ULONG inFirst}, ${2:PVECTORED_EXCEPTION_HANDLER inHandler}); ${3:// PVOID}
+snippet AddVectoredExceptionHandler
+	AddVectoredExceptionHandler(${1:ULONG inFirst}, ${2:PVECTORED_EXCEPTION_HANDLER inHandler}); ${3:// PVOID}
+snippet AllocateUserPhysicalPages
+	AllocateUserPhysicalPages(${1:HANDLE inhProcess}, ${2:PULONG_PTR ioNumberOfPages}, ${3:PULONG_PTR PageArray}); ${4:// BOOL}
+snippet AllocateUserPhysicalPagesNuma
+	AllocateUserPhysicalPagesNuma(${1:HANDLE inhProcess}, ${2:PULONG_PTR ioNumberOfPages}, ${3:PULONG_PTR PageArray}, ${4:DWORD innndPreferred}); ${5:// BOOL}
+snippet ApplicationRecoveryFinished
+	ApplicationRecoveryFinished(${1:BOOL inbSuccess}); ${2:// VOID}
+snippet ApplicationRecoveryInProgress
+	ApplicationRecoveryInProgress(${1:PBOOL outpbCancelled}); ${2:// HRESULT}
+snippet AreFileApisANSI
+	AreFileApisANSI(${1:VOID }); ${2:// BOOL}
+snippet AssignProcessToJobObject
+	AssignProcessToJobObject(${1:HANDLE inhJob}, ${2:HANDLE inhProcess}); ${3:// BOOL}
+snippet BackupRead
+	BackupRead(${1:HANDLE inhFile}, ${2:LPBYTE lpBuffer}, ${3:DWORD innNumberOfBytesToRead}, ${4:LPDWORD outlpNumberOfBytesRead}, ${5:BOOL inbAbort}, ${6:BOOL inbProcessSecurity}, ${7:ioLPVOID *lpContext}); ${8:// BOOL}
+snippet BackupSeek
+	BackupSeek(${1:HANDLE inhFile}, ${2:DWORD indwLowBytesToSeek}, ${3:DWORD indwHighBytesToSeek}, ${4:LPDWORD outlpdwLowByteSeeked}, ${5:LPDWORD outlpdwHighByteSeeked}, ${6:ioLPVOID *lpContext}); ${7:// BOOL}
+snippet BackupWrite
+	BackupWrite(${1:HANDLE inhFile}, ${2:LPBYTE lpBuffer}, ${3:DWORD innNumberOfBytesToWrite}, ${4:LPDWORD outlpNumberOfBytesWritten}, ${5:BOOL inbAbort}, ${6:BOOL inbProcessSecurity}, ${7:ioLPVOID *lpContext}); ${8:// BOOL}
+snippet Beep
+	Beep(${1:DWORD indwFreq}, ${2:DWORD indwDuration}); ${3:// BOOL}
+snippet BeginUpdateResourceA
+	BeginUpdateResourceA(${1:LPCSTR inpFileName}, ${2:BOOL inbDeleteExistingResources}); ${3:// HANDLE}
+snippet BeginUpdateResourceW
+	BeginUpdateResourceW(${1:LPCWSTR inpFileName}, ${2:BOOL inbDeleteExistingResources}); ${3:// HANDLE}
+snippet BindIoCompletionCallback
+	BindIoCompletionCallback(${1:HANDLE inFileHandle}, ${2:LPOVERLAPPED_COMPLETION_ROUTINE inFunction}, ${3:ULONG inFlags}); ${4:// BOOL}
+snippet BuildCommDCBA
+	BuildCommDCBA(${1:LPCSTR inlpDef}, ${2:LPDCB outlpDCB}); ${3:// BOOL}
+snippet BuildCommDCBAndTimeoutsA
+	BuildCommDCBAndTimeoutsA(${1:LPCSTR inlpDef}, ${2:LPDCB outlpDCB}, ${3:LPCOMMTIMEOUTS outlpCommTimeouts}); ${4:// BOOL}
+snippet BuildCommDCBAndTimeoutsW
+	BuildCommDCBAndTimeoutsW(${1:LPCWSTR inlpDef}, ${2:LPDCB outlpDCB}, ${3:LPCOMMTIMEOUTS outlpCommTimeouts}); ${4:// BOOL}
+snippet BuildCommDCBW
+	BuildCommDCBW(${1:LPCWSTR inlpDef}, ${2:LPDCB outlpDCB}); ${3:// BOOL}
+snippet CallNamedPipeA
+	CallNamedPipeA(${1:LPCSTR inlpNamedPipeName}, ${2:LPVOID lpInBuffer}, ${3:DWORD innInBufferSize}, ${4:LPVOID lpOutBuffer}, ${5:DWORD innOutBufferSize}, ${6:LPDWORD outlpBytesRead}, ${7:DWORD innTimeOut}); ${8:// BOOL}
+snippet CallNamedPipeW
+	CallNamedPipeW(${1:LPCWSTR inlpNamedPipeName}, ${2:LPVOID lpInBuffer}, ${3:DWORD innInBufferSize}, ${4:LPVOID lpOutBuffer}, ${5:DWORD innOutBufferSize}, ${6:LPDWORD outlpBytesRead}, ${7:DWORD innTimeOut}); ${8:// BOOL}
+snippet CallbackMayRunLong
+	CallbackMayRunLong(${1:PTP_CALLBACK_INSTANCE iopci}); ${2:// BOOL}
+snippet CancelDeviceWakeupRequest
+	CancelDeviceWakeupRequest(${1:HANDLE inhDevice}); ${2:// BOOL}
+snippet CancelIo
+	CancelIo(${1:HANDLE inhFile}); ${2:// BOOL}
+snippet CancelIoEx
+	CancelIoEx(${1:HANDLE inhFile}, ${2:LPOVERLAPPED inlpOverlapped}); ${3:// BOOL}
+snippet CancelSynchronousIo
+	CancelSynchronousIo(${1:HANDLE inhThread}); ${2:// BOOL}
+snippet CancelThreadpoolIo
+	CancelThreadpoolIo(${1:PTP_IO iopio}); ${2:// VOID}
+snippet CancelTimerQueueTimer
+	CancelTimerQueueTimer(${1:HANDLE inTimerQueue}, ${2:HANDLE inTimer}); ${3:// BOOL}
+snippet CancelWaitableTimer
+	CancelWaitableTimer(${1:HANDLE inhTimer}); ${2:// BOOL}
+snippet ChangeTimerQueueTimer
+	ChangeTimerQueueTimer(${1:HANDLE inTimerQueue}, ${2:HANDLE ioTimer}, ${3:ULONG inDueTime}, ${4:ULONG inPeriod}); ${5:// BOOL}
+snippet CheckNameLegalDOS8Dot3A
+	CheckNameLegalDOS8Dot3A(${1:LPCSTR inlpName}, ${2:LPSTR lpOemName}, ${3:DWORD inOemNameSize}, ${4:PBOOL outpbNameContainsSpaces OPTIONAL}, ${5:PBOOL outpbNameLegal}); ${6:// BOOL}
+snippet CheckNameLegalDOS8Dot3W
+	CheckNameLegalDOS8Dot3W(${1:LPCWSTR inlpName}, ${2:LPSTR lpOemName}, ${3:DWORD inOemNameSize}, ${4:PBOOL outpbNameContainsSpaces OPTIONAL}, ${5:PBOOL outpbNameLegal}); ${6:// BOOL}
+snippet CheckRemoteDebuggerPresent
+	CheckRemoteDebuggerPresent(${1:HANDLE inhProcess}, ${2:PBOOL outpbDebuggerPresent}); ${3:// BOOL}
+snippet ClearCommBreak
+	ClearCommBreak(${1:HANDLE inhFile}); ${2:// BOOL}
+snippet ClearCommError
+	ClearCommError(${1:HANDLE inhFile}, ${2:LPDWORD outlpErrors}, ${3:LPCOMSTAT outlpStat}); ${4:// BOOL}
+snippet CloseHandle
+	CloseHandle(${1:HANDLE inhObject}); ${2:// BOOL}
+snippet ClosePrivateNamespace
+	ClosePrivateNamespace(${1:HANDLE inHandle}, ${2:ULONG inFlags}); ${3:// BOOLEAN}
+snippet CloseThreadpool
+	CloseThreadpool(${1:PTP_POOL ioptpp}); ${2:// VOID}
+snippet CloseThreadpoolCleanupGroup
+	CloseThreadpoolCleanupGroup(${1:PTP_CLEANUP_GROUP ioptpcg}); ${2:// VOID}
+snippet CloseThreadpoolCleanupGroupMembers
+	CloseThreadpoolCleanupGroupMembers(${1:PTP_CLEANUP_GROUP ioptpcg}, ${2:BOOL infCancelPendingCallbacks}, ${3:PVOID iopvCleanupContext}); ${4:// VOID}
+snippet CloseThreadpoolIo
+	CloseThreadpoolIo(${1:PTP_IO iopio}); ${2:// VOID}
+snippet CloseThreadpoolTimer
+	CloseThreadpoolTimer(${1:PTP_TIMER iopti}); ${2:// VOID}
+snippet CloseThreadpoolWait
+	CloseThreadpoolWait(${1:PTP_WAIT iopwa}); ${2:// VOID}
+snippet CloseThreadpoolWork
+	CloseThreadpoolWork(${1:PTP_WORK iopwk}); ${2:// VOID}
+snippet CommConfigDialogA
+	CommConfigDialogA(${1:LPCSTR inlpszName}, ${2:HWND inhWnd}, ${3:LPCOMMCONFIG iolpCC}); ${4:// BOOL}
+snippet CommConfigDialogW
+	CommConfigDialogW(${1:LPCWSTR inlpszName}, ${2:HWND inhWnd}, ${3:LPCOMMCONFIG iolpCC}); ${4:// BOOL}
+snippet CompareFileTime
+	CompareFileTime(${1:CONST inFILETIME *lpFileTime1}, ${2:CONST inFILETIME *lpFileTime2}); ${3:// LONG}
+snippet ConnectNamedPipe
+	ConnectNamedPipe(${1:HANDLE inhNamedPipe}, ${2:LPOVERLAPPED iolpOverlapped}); ${3:// BOOL}
+snippet ContinueDebugEvent
+	ContinueDebugEvent(${1:DWORD indwProcessId}, ${2:DWORD indwThreadId}, ${3:DWORD indwContinueStatus}); ${4:// BOOL}
+snippet ConvertFiberToThread
+	ConvertFiberToThread(${1:VOID}); ${2:// BOOL}
+snippet ConvertThreadToFiber
+	ConvertThreadToFiber(${1:LPVOID inlpParameter}); ${2:// LPVOID}
+snippet ConvertThreadToFiberEx
+	ConvertThreadToFiberEx(${1:LPVOID inlpParameter}, ${2:DWORD indwFlags}); ${3:// LPVOID}
+snippet CopyFileA
+	CopyFileA(${1:LPCSTR inlpExistingFileName}, ${2:LPCSTR inlpNewFileName}, ${3:BOOL inbFailIfExists}); ${4:// BOOL}
+snippet CopyFileExA
+	CopyFileExA(${1:LPCSTR inlpExistingFileName}, ${2:LPCSTR inlpNewFileName}, ${3:LPPROGRESS_ROUTINE inlpProgressRoutine}, ${4:LPVOID inlpData}, ${5:LPBOOL inpbCancel}, ${6:DWORD indwCopyFlags}); ${7:// BOOL}
+snippet CopyFileExW
+	CopyFileExW(${1:LPCWSTR inlpExistingFileName}, ${2:LPCWSTR inlpNewFileName}, ${3:LPPROGRESS_ROUTINE inlpProgressRoutine}, ${4:LPVOID inlpData}, ${5:LPBOOL inpbCancel}, ${6:DWORD indwCopyFlags}); ${7:// BOOL}
+snippet CopyFileTransactedA
+	CopyFileTransactedA(${1:LPCSTR inlpExistingFileName}, ${2:LPCSTR inlpNewFileName}, ${3:LPPROGRESS_ROUTINE inlpProgressRoutine}, ${4:LPVOID inlpData}, ${5:LPBOOL inpbCancel}, ${6:DWORD indwCopyFlags}, ${7:HANDLE inhTransaction}); ${8:// BOOL}
+snippet CopyFileTransactedW
+	CopyFileTransactedW(${1:LPCWSTR inlpExistingFileName}, ${2:LPCWSTR inlpNewFileName}, ${3:LPPROGRESS_ROUTINE inlpProgressRoutine}, ${4:LPVOID inlpData}, ${5:LPBOOL inpbCancel}, ${6:DWORD indwCopyFlags}, ${7:HANDLE inhTransaction}); ${8:// BOOL}
+snippet CopyFileW
+	CopyFileW(${1:LPCWSTR inlpExistingFileName}, ${2:LPCWSTR inlpNewFileName}, ${3:BOOL inbFailIfExists}); ${4:// BOOL}
+snippet CreateActCtxA
+	CreateActCtxA(${1:PCACTCTXA inpActCtx}); ${2:// HANDLE}
+snippet CreateActCtxW
+	CreateActCtxW(${1:PCACTCTXW inpActCtx}); ${2:// HANDLE}
+snippet CreateDirectoryA
+	CreateDirectoryA(${1:LPCSTR inlpPathName}, ${2:LPSECURITY_ATTRIBUTES inlpSecurityAttributes}); ${3:// BOOL}
+snippet CreateDirectoryExA
+	CreateDirectoryExA(${1:LPCSTR inlpTemplateDirectory}, ${2:LPCSTR inlpNewDirectory}, ${3:LPSECURITY_ATTRIBUTES inlpSecurityAttributes}); ${4:// BOOL}
+snippet CreateDirectoryExW
+	CreateDirectoryExW(${1:LPCWSTR inlpTemplateDirectory}, ${2:LPCWSTR inlpNewDirectory}, ${3:LPSECURITY_ATTRIBUTES inlpSecurityAttributes}); ${4:// BOOL}
+snippet CreateDirectoryTransactedA
+	CreateDirectoryTransactedA(${1:LPCSTR inlpTemplateDirectory}, ${2:LPCSTR inlpNewDirectory}, ${3:LPSECURITY_ATTRIBUTES inlpSecurityAttributes}, ${4:HANDLE inhTransaction}); ${5:// BOOL}
+snippet CreateDirectoryTransactedW
+	CreateDirectoryTransactedW(${1:LPCWSTR inlpTemplateDirectory}, ${2:LPCWSTR inlpNewDirectory}, ${3:LPSECURITY_ATTRIBUTES inlpSecurityAttributes}, ${4:HANDLE inhTransaction}); ${5:// BOOL}
+snippet CreateDirectoryW
+	CreateDirectoryW(${1:LPCWSTR inlpPathName}, ${2:LPSECURITY_ATTRIBUTES inlpSecurityAttributes}); ${3:// BOOL}
+snippet CreateEventA
+	CreateEventA(${1:LPSECURITY_ATTRIBUTES inlpEventAttributes}, ${2:BOOL inbManualReset}, ${3:BOOL inbInitialState}, ${4:LPCSTR inlpName}); ${5:// HANDLE}
+snippet CreateEventExA
+	CreateEventExA(${1:LPSECURITY_ATTRIBUTES inlpEventAttributes}, ${2:LPCSTR inlpName}, ${3:DWORD indwFlags}, ${4:DWORD indwDesiredAccess}); ${5:// HANDLE}
+snippet CreateEventExW
+	CreateEventExW(${1:LPSECURITY_ATTRIBUTES inlpEventAttributes}, ${2:LPCWSTR inlpName}, ${3:DWORD indwFlags}, ${4:DWORD indwDesiredAccess}); ${5:// HANDLE}
+snippet CreateEventW
+	CreateEventW(${1:LPSECURITY_ATTRIBUTES inlpEventAttributes}, ${2:BOOL inbManualReset}, ${3:BOOL inbInitialState}, ${4:LPCWSTR inlpName}); ${5:// HANDLE}
+snippet CreateFiber
+	CreateFiber(${1:SIZE_T indwStackSize}, ${2:LPFIBER_START_ROUTINE inlpStartAddress}, ${3:LPVOID inlpParameter}); ${4:// LPVOID}
+snippet CreateFiberEx
+	CreateFiberEx(${1:SIZE_T indwStackCommitSize}, ${2:SIZE_T indwStackReserveSize}, ${3:DWORD indwFlags}, ${4:LPFIBER_START_ROUTINE inlpStartAddress}, ${5:LPVOID inlpParameter}); ${6:// LPVOID}
+snippet CreateFileA
+	CreateFileA(${1:LPCSTR inlpFileName}, ${2:DWORD indwDesiredAccess}, ${3:DWORD indwShareMode}, ${4:LPSECURITY_ATTRIBUTES inlpSecurityAttributes}, ${5:DWORD indwCreationDisposition}, ${6:DWORD indwFlagsAndAttributes}, ${7:HANDLE inhTemplateFile}); ${8:// HANDLE}
+snippet CreateFileMappingA
+	CreateFileMappingA(${1:HANDLE inhFile}, ${2:LPSECURITY_ATTRIBUTES inlpFileMappingAttributes}, ${3:DWORD inflProtect}, ${4:DWORD indwMaximumSizeHigh}, ${5:DWORD indwMaximumSizeLow}, ${6:LPCSTR inlpName}); ${7:// HANDLE}
+snippet CreateFileMappingNumaA
+	CreateFileMappingNumaA(${1:HANDLE inhFile}, ${2:LPSECURITY_ATTRIBUTES inlpFileMappingAttributes}, ${3:DWORD inflProtect}, ${4:DWORD indwMaximumSizeHigh}, ${5:DWORD indwMaximumSizeLow}, ${6:LPCSTR inlpName}, ${7:DWORD innndPreferred}); ${8:// HANDLE}
+snippet CreateFileMappingNumaW
+	CreateFileMappingNumaW(${1:HANDLE inhFile}, ${2:LPSECURITY_ATTRIBUTES inlpFileMappingAttributes}, ${3:DWORD inflProtect}, ${4:DWORD indwMaximumSizeHigh}, ${5:DWORD indwMaximumSizeLow}, ${6:LPCWSTR inlpName}, ${7:DWORD innndPreferred}); ${8:// HANDLE}
+snippet CreateFileMappingW
+	CreateFileMappingW(${1:HANDLE inhFile}, ${2:LPSECURITY_ATTRIBUTES inlpFileMappingAttributes}, ${3:DWORD inflProtect}, ${4:DWORD indwMaximumSizeHigh}, ${5:DWORD indwMaximumSizeLow}, ${6:LPCWSTR inlpName}); ${7:// HANDLE}
+snippet CreateFileTransactedA
+	CreateFileTransactedA(${1:LPCSTR inlpFileName}, ${2:DWORD indwDesiredAccess}, ${3:DWORD indwShareMode}, ${4:LPSECURITY_ATTRIBUTES inlpSecurityAttributes}, ${5:DWORD indwCreationDisposition}, ${6:DWORD indwFlagsAndAttributes}, ${7:HANDLE inhTemplateFile}, ${8:HANDLE inhTransaction}, ${9:PUSHORT inpusMiniVersion}, ${10:PVOID lpExtendedParameter}); ${11:// HANDLE}
+snippet CreateFileTransactedW
+	CreateFileTransactedW(${1:LPCWSTR inlpFileName}, ${2:DWORD indwDesiredAccess}, ${3:DWORD indwShareMode}, ${4:LPSECURITY_ATTRIBUTES inlpSecurityAttributes}, ${5:DWORD indwCreationDisposition}, ${6:DWORD indwFlagsAndAttributes}, ${7:HANDLE inhTemplateFile}, ${8:HANDLE inhTransaction}, ${9:PUSHORT inpusMiniVersion}, ${10:PVOID lpExtendedParameter}); ${11:// HANDLE}
+snippet CreateFileW
+	CreateFileW(${1:LPCWSTR inlpFileName}, ${2:DWORD indwDesiredAccess}, ${3:DWORD indwShareMode}, ${4:LPSECURITY_ATTRIBUTES inlpSecurityAttributes}, ${5:DWORD indwCreationDisposition}, ${6:DWORD indwFlagsAndAttributes}, ${7:HANDLE inhTemplateFile}); ${8:// HANDLE}
+snippet CreateHardLinkA
+	CreateHardLinkA(${1:LPCSTR inlpFileName}, ${2:LPCSTR inlpExistingFileName}, ${3:LPSECURITY_ATTRIBUTES lpSecurityAttributes}); ${4:// BOOL}
+snippet CreateHardLinkTransactedA
+	CreateHardLinkTransactedA(${1:LPCSTR inlpFileName}, ${2:LPCSTR inlpExistingFileName}, ${3:LPSECURITY_ATTRIBUTES lpSecurityAttributes}, ${4:HANDLE inhTransaction}); ${5:// BOOL}
+snippet CreateHardLinkTransactedW
+	CreateHardLinkTransactedW(${1:LPCWSTR inlpFileName}, ${2:LPCWSTR inlpExistingFileName}, ${3:LPSECURITY_ATTRIBUTES lpSecurityAttributes}, ${4:HANDLE inhTransaction}); ${5:// BOOL}
+snippet CreateHardLinkW
+	CreateHardLinkW(${1:LPCWSTR inlpFileName}, ${2:LPCWSTR inlpExistingFileName}, ${3:LPSECURITY_ATTRIBUTES lpSecurityAttributes}); ${4:// BOOL}
+snippet CreateIoCompletionPort
+	CreateIoCompletionPort(${1:HANDLE inFileHandle}, ${2:HANDLE inExistingCompletionPort}, ${3:ULONG_PTR inCompletionKey}, ${4:DWORD inNumberOfConcurrentThreads}); ${5:// HANDLE}
+snippet CreateJobObjectA
+	CreateJobObjectA(${1:LPSECURITY_ATTRIBUTES inlpJobAttributes}, ${2:LPCSTR inlpName}); ${3:// HANDLE}
+snippet CreateJobObjectW
+	CreateJobObjectW(${1:LPSECURITY_ATTRIBUTES inlpJobAttributes}, ${2:LPCWSTR inlpName}); ${3:// HANDLE}
+snippet CreateJobSet
+	CreateJobSet(${1:ULONG inNumJob}, ${2:PJOB_SET_ARRAY UserJobSet}, ${3:ULONG inFlags}); ${4:// BOOL}
+snippet CreateMailslotA
+	CreateMailslotA(${1:LPCSTR inlpName}, ${2:DWORD innMaxMessageSize}, ${3:DWORD inlReadTimeout}, ${4:LPSECURITY_ATTRIBUTES inlpSecurityAttributes}); ${5:// HANDLE}
+snippet CreateMailslotW
+	CreateMailslotW(${1:LPCWSTR inlpName}, ${2:DWORD innMaxMessageSize}, ${3:DWORD inlReadTimeout}, ${4:LPSECURITY_ATTRIBUTES inlpSecurityAttributes}); ${5:// HANDLE}
+snippet CreateMemoryResourceNotification
+	CreateMemoryResourceNotification(${1:MEMORY_RESOURCE_NOTIFICATION_TYPE inNotificationType}); ${2:// HANDLE}
+snippet CreateMutexA
+	CreateMutexA(${1:LPSECURITY_ATTRIBUTES inlpMutexAttributes}, ${2:BOOL inbInitialOwner}, ${3:LPCSTR inlpName}); ${4:// HANDLE}
+snippet CreateMutexExA
+	CreateMutexExA(${1:LPSECURITY_ATTRIBUTES inlpMutexAttributes}, ${2:LPCSTR inlpName}, ${3:DWORD indwFlags}, ${4:DWORD indwDesiredAccess}); ${5:// HANDLE}
+snippet CreateMutexExW
+	CreateMutexExW(${1:LPSECURITY_ATTRIBUTES inlpMutexAttributes}, ${2:LPCWSTR inlpName}, ${3:DWORD indwFlags}, ${4:DWORD indwDesiredAccess}); ${5:// HANDLE}
+snippet CreateMutexW
+	CreateMutexW(${1:LPSECURITY_ATTRIBUTES inlpMutexAttributes}, ${2:BOOL inbInitialOwner}, ${3:LPCWSTR inlpName}); ${4:// HANDLE}
+snippet CreateNamedPipeA
+	CreateNamedPipeA(${1:LPCSTR inlpName}, ${2:DWORD indwOpenMode}, ${3:DWORD indwPipeMode}, ${4:DWORD innMaxInstances}, ${5:DWORD innOutBufferSize}, ${6:DWORD innInBufferSize}, ${7:DWORD innDefaultTimeOut}, ${8:LPSECURITY_ATTRIBUTES inlpSecurityAttributes}); ${9:// HANDLE}
+snippet CreateNamedPipeW
+	CreateNamedPipeW(${1:LPCWSTR inlpName}, ${2:DWORD indwOpenMode}, ${3:DWORD indwPipeMode}, ${4:DWORD innMaxInstances}, ${5:DWORD innOutBufferSize}, ${6:DWORD innInBufferSize}, ${7:DWORD innDefaultTimeOut}, ${8:LPSECURITY_ATTRIBUTES inlpSecurityAttributes}); ${9:// HANDLE}
+snippet CreatePipe
+	CreatePipe(${1:PHANDLE hReadPipe}, ${2:PHANDLE hWritePipe}, ${3:LPSECURITY_ATTRIBUTES inlpPipeAttributes}, ${4:DWORD innSize}); ${5:// BOOL}
+snippet CreatePrivateNamespaceA
+	CreatePrivateNamespaceA(${1:LPSECURITY_ATTRIBUTES inlpPrivateNamespaceAttributes}, ${2:LPVOID inlpBoundaryDescriptor}, ${3:LPCSTR inlpAliasPrefix}); ${4:// HANDLE}
+snippet CreatePrivateNamespaceW
+	CreatePrivateNamespaceW(${1:LPSECURITY_ATTRIBUTES inlpPrivateNamespaceAttributes}, ${2:LPVOID inlpBoundaryDescriptor}, ${3:LPCWSTR inlpAliasPrefix}); ${4:// HANDLE}
+snippet CreateProcessA
+	CreateProcessA(${1:LPCSTR inlpApplicationName}, ${2:LPSTR iolpCommandLine}, ${3:LPSECURITY_ATTRIBUTES inlpProcessAttributes}, ${4:LPSECURITY_ATTRIBUTES inlpThreadAttributes}, ${5:BOOL inbInheritHandles}, ${6:DWORD indwCreationFlags}, ${7:LPVOID inlpEnvironment}, ${8:LPCSTR inlpCurrentDirectory}, ${9:LPSTARTUPINFOA inlpStartupInfo}, ${10:LPPROCESS_INFORMATION outlpProcessInformation}); ${11:// BOOL}
+snippet CreateProcessW
+	CreateProcessW(${1:LPCWSTR inlpApplicationName}, ${2:LPWSTR iolpCommandLine}, ${3:LPSECURITY_ATTRIBUTES inlpProcessAttributes}, ${4:LPSECURITY_ATTRIBUTES inlpThreadAttributes}, ${5:BOOL inbInheritHandles}, ${6:DWORD indwCreationFlags}, ${7:LPVOID inlpEnvironment}, ${8:LPCWSTR inlpCurrentDirectory}, ${9:LPSTARTUPINFOW inlpStartupInfo}, ${10:LPPROCESS_INFORMATION outlpProcessInformation}); ${11:// BOOL}
+snippet CreateRemoteThread
+	CreateRemoteThread(${1:HANDLE inhProcess}, ${2:LPSECURITY_ATTRIBUTES inlpThreadAttributes}, ${3:SIZE_T indwStackSize}, ${4:LPTHREAD_START_ROUTINE inlpStartAddress}, ${5:LPVOID inlpParameter}, ${6:DWORD indwCreationFlags}, ${7:LPDWORD outlpThreadId}); ${8:// HANDLE}
+snippet CreateSemaphoreA
+	CreateSemaphoreA(${1:LPSECURITY_ATTRIBUTES inlpSemaphoreAttributes}, ${2:LONG inlInitialCount}, ${3:LONG inlMaximumCount}, ${4:LPCSTR inlpName}); ${5:// HANDLE}
+snippet CreateSemaphoreExA
+	CreateSemaphoreExA(${1:LPSECURITY_ATTRIBUTES inlpSemaphoreAttributes}, ${2:LONG inlInitialCount}, ${3:LONG inlMaximumCount}, ${4:LPCSTR inlpName}, ${5:DWORD dwFlags}, ${6:DWORD indwDesiredAccess}); ${7:// HANDLE}
+snippet CreateSemaphoreExW
+	CreateSemaphoreExW(${1:LPSECURITY_ATTRIBUTES inlpSemaphoreAttributes}, ${2:LONG inlInitialCount}, ${3:LONG inlMaximumCount}, ${4:LPCWSTR inlpName}, ${5:DWORD dwFlags}, ${6:DWORD indwDesiredAccess}); ${7:// HANDLE}
+snippet CreateSemaphoreW
+	CreateSemaphoreW(${1:LPSECURITY_ATTRIBUTES inlpSemaphoreAttributes}, ${2:LONG inlInitialCount}, ${3:LONG inlMaximumCount}, ${4:LPCWSTR inlpName}); ${5:// HANDLE}
+snippet CreateTapePartition
+	CreateTapePartition(${1:HANDLE inhDevice}, ${2:DWORD indwPartitionMethod}, ${3:DWORD indwCount}, ${4:DWORD indwSize}); ${5:// DWORD}
+snippet CreateThread
+	CreateThread(${1:LPSECURITY_ATTRIBUTES inlpThreadAttributes}, ${2:SIZE_T indwStackSize}, ${3:LPTHREAD_START_ROUTINE inlpStartAddress}, ${4:LPVOID inlpParameter}, ${5:DWORD indwCreationFlags}, ${6:LPDWORD outlpThreadId}); ${7:// PTP_POOL}
+snippet CreateThreadpool
+	CreateThreadpool(${1:PVOID reserved}); ${2:// PTP_POOL}
+snippet CreateThreadpoolCleanupGroup
+	CreateThreadpoolCleanupGroup(${1:VOID}); ${2:// PTP_CLEANUP_GROUP}
+snippet CreateThreadpoolIo
+	CreateThreadpoolIo(${1:HANDLE infl}, ${2:PTP_WIN32_IO_CALLBACK inpfnio}, ${3:PVOID iopv}, ${4:PTP_CALLBACK_ENVIRON inpcbe}); ${5:// PTP_IO}
+snippet CreateThreadpoolTimer
+	CreateThreadpoolTimer(${1:PTP_TIMER_CALLBACK inpfnti}, ${2:PVOID iopv}, ${3:PTP_CALLBACK_ENVIRON inpcbe}); ${4:// PTP_TIMER}
+snippet CreateThreadpoolWait
+	CreateThreadpoolWait(${1:PTP_WAIT_CALLBACK inpfnwa}, ${2:PVOID iopv}, ${3:PTP_CALLBACK_ENVIRON inpcbe}); ${4:// PTP_WAIT}
+snippet CreateThreadpoolWork
+	CreateThreadpoolWork(${1:PTP_WORK_CALLBACK inpfnwk}, ${2:PVOID iopv}, ${3:PTP_CALLBACK_ENVIRON inpcbe}); ${4:// PTP_WORK}
+snippet CreateTimerQueue
+	CreateTimerQueue(${1:VOID}); ${2:// HANDLE}
+snippet CreateTimerQueueTimer
+	CreateTimerQueueTimer(${1:PHANDLE phNewTimer}, ${2:HANDLE inTimerQueue}, ${3:WAITORTIMERCALLBACK inCallback}, ${4:PVOID inParameter}, ${5:DWORD inDueTime}, ${6:DWORD inPeriod}, ${7:ULONG inFlags}); ${8:// BOOL}
+snippet CreateWaitableTimerA
+	CreateWaitableTimerA(${1:LPSECURITY_ATTRIBUTES inlpTimerAttributes}, ${2:BOOL inbManualReset}, ${3:LPCSTR inlpTimerName}); ${4:// HANDLE}
+snippet CreateWaitableTimerExA
+	CreateWaitableTimerExA(${1:LPSECURITY_ATTRIBUTES inlpTimerAttributes}, ${2:LPCSTR inlpTimerName}, ${3:DWORD indwFlags}, ${4:DWORD indwDesiredAccess}); ${5:// HANDLE}
+snippet CreateWaitableTimerExW
+	CreateWaitableTimerExW(${1:LPSECURITY_ATTRIBUTES inlpTimerAttributes}, ${2:LPCWSTR inlpTimerName}, ${3:DWORD indwFlags}, ${4:DWORD indwDesiredAccess}); ${5:// HANDLE}
+snippet CreateWaitableTimerW
+	CreateWaitableTimerW(${1:LPSECURITY_ATTRIBUTES inlpTimerAttributes}, ${2:BOOL inbManualReset}, ${3:LPCWSTR inlpTimerName}); ${4:// HANDLE}
+snippet DeactivateActCtx
+	DeactivateActCtx(${1:DWORD indwFlags}, ${2:ULONG_PTR inulCookie}); ${3:// BOOL}
+snippet DebugActiveProcess
+	DebugActiveProcess(${1:DWORD indwProcessId}); ${2:// BOOL}
+snippet DebugActiveProcessStop
+	DebugActiveProcessStop(${1:DWORD indwProcessId}); ${2:// BOOL}
+snippet DebugBreak
+	DebugBreak(${1:VOID}); ${2:// VOID}
+snippet DebugBreakProcess
+	DebugBreakProcess(${1:HANDLE inProcess}); ${2:// BOOL}
+snippet DebugSetProcessKillOnExit
+	DebugSetProcessKillOnExit(${1:BOOL inKillOnExit}); ${2:// BOOL}
+snippet DecodePointer
+	DecodePointer(${1:PVOID inPtr}); ${2:// PVOID}
+snippet DecodeSystemPointer
+	DecodeSystemPointer(${1:PVOID inPtr}); ${2:// PVOID}
+snippet DefineDosDeviceA
+	DefineDosDeviceA(${1:DWORD indwFlags}, ${2:LPCSTR inlpDeviceName}, ${3:LPCSTR inlpTargetPath}); ${4:// BOOL}
+snippet DefineDosDeviceW
+	DefineDosDeviceW(${1:DWORD indwFlags}, ${2:LPCWSTR inlpDeviceName}, ${3:LPCWSTR inlpTargetPath}); ${4:// BOOL}
+snippet DeleteAtom
+	DeleteAtom(${1:ATOM innAtom}); ${2:// ATOM}
+snippet DeleteBoundaryDescriptor
+	DeleteBoundaryDescriptor(${1:HANDLE inBoundaryDescriptor}); ${2:// VOID}
+snippet DeleteCriticalSection
+	DeleteCriticalSection(${1:LPCRITICAL_SECTION iolpCriticalSection}); ${2:// VOID}
+snippet DeleteFiber
+	DeleteFiber(${1:LPVOID inlpFiber}); ${2:// VOID}
+snippet DeleteFileA
+	DeleteFileA(${1:LPCSTR inlpFileName}); ${2:// BOOL}
+snippet DeleteFileTransactedA
+	DeleteFileTransactedA(${1:LPCSTR inlpFileName}, ${2:HANDLE inhTransaction}); ${3:// BOOL}
+snippet DeleteFileTransactedW
+	DeleteFileTransactedW(${1:LPCWSTR inlpFileName}, ${2:HANDLE inhTransaction}); ${3:// BOOL}
+snippet DeleteFileW
+	DeleteFileW(${1:LPCWSTR inlpFileName}); ${2:// BOOL}
+snippet DeleteProcThreadAttributeList
+	DeleteProcThreadAttributeList(${1:LPPROC_THREAD_ATTRIBUTE_LIST iolpAttributeList}); ${2:// VOID}
+snippet DeleteTimerQueue
+	DeleteTimerQueue(${1:HANDLE inTimerQueue}); ${2:// BOOL}
+snippet DeleteTimerQueueEx
+	DeleteTimerQueueEx(${1:HANDLE inTimerQueue}, ${2:HANDLE inCompletionEvent}); ${3:// BOOL}
+snippet DeleteTimerQueueTimer
+	DeleteTimerQueueTimer(${1:HANDLE inTimerQueue}, ${2:HANDLE inTimer}, ${3:HANDLE inCompletionEvent}); ${4:// BOOL}
+snippet DeleteVolumeMountPointA
+	DeleteVolumeMountPointA(${1:LPCSTR inlpszVolumeMountPoint}); ${2:// BOOL}
+snippet DeleteVolumeMountPointW
+	DeleteVolumeMountPointW(${1:LPCWSTR inlpszVolumeMountPoint}); ${2:// BOOL}
+snippet DeviceIoControl
+	DeviceIoControl(${1:HANDLE inhDevice}, ${2:DWORD indwIoControlCode}, ${3:LPVOID lpInBuffer}, ${4:DWORD innInBufferSize}, ${5:LPVOID lpOutBuffer}, ${6:DWORD innOutBufferSize}, ${7:LPDWORD outlpBytesReturned}, ${8:LPOVERLAPPED iolpOverlapped}); ${9:// BOOL}
+snippet DisableThreadLibraryCalls
+	DisableThreadLibraryCalls(${1:HMODULE inhLibModule}); ${2:// BOOL}
+snippet DisassociateCurrentThreadFromCallback
+	DisassociateCurrentThreadFromCallback(${1:PTP_CALLBACK_INSTANCE iopci}); ${2:// VOID}
+snippet DisconnectNamedPipe
+	DisconnectNamedPipe(${1:HANDLE inhNamedPipe}); ${2:// BOOL}
+snippet DnsHostnameToComputerNameA
+	DnsHostnameToComputerNameA(${1:LPCSTR inHostname}, ${2:LPSTR ComputerName}, ${3:LPDWORD ionSize}); ${4:// BOOL}
+snippet DnsHostnameToComputerNameW
+	DnsHostnameToComputerNameW(${1:LPCWSTR inHostname}, ${2:LPWSTR ComputerName}, ${3:LPDWORD ionSize}); ${4:// BOOL}
+snippet DosDateTimeToFileTime
+	DosDateTimeToFileTime(${1:WORD inwFatDate}, ${2:WORD inwFatTime}, ${3:LPFILETIME outlpFileTime}); ${4:// BOOL}
+snippet DuplicateHandle
+	DuplicateHandle(${1:HANDLE inhSourceProcessHandle}, ${2:HANDLE inhSourceHandle}, ${3:HANDLE inhTargetProcessHandle}, ${4:LPHANDLE lpTargetHandle}, ${5:DWORD indwDesiredAccess}, ${6:BOOL inbInheritHandle}, ${7:DWORD indwOptions}); ${8:// BOOL}
+snippet EncodePointer
+	EncodePointer(${1:PVOID inPtr}); ${2:// PVOID}
+snippet EncodeSystemPointer
+	EncodeSystemPointer(${1:PVOID inPtr}); ${2:// PVOID}
+snippet EndUpdateResourceA
+	EndUpdateResourceA(${1:HANDLE inhUpdate}, ${2:BOOL infDiscard}); ${3:// BOOL}
+snippet EndUpdateResourceW
+	EndUpdateResourceW(${1:HANDLE inhUpdate}, ${2:BOOL infDiscard}); ${3:// BOOL}
+snippet EnterCriticalSection
+	EnterCriticalSection(${1:LPCRITICAL_SECTION iolpCriticalSection}); ${2:// VOID}
+snippet EnumResourceLanguagesA
+	EnumResourceLanguagesA(${1:HMODULE inhModule}, ${2:LPCSTR inlpType}, ${3:LPCSTR inlpName}, ${4:ENUMRESLANGPROCA inlpEnumFunc}, ${5:LONG_PTR inlParam}); ${6:// BOOL}
+snippet EnumResourceLanguagesExA
+	EnumResourceLanguagesExA(${1:HMODULE inhModule}, ${2:LPCSTR inlpType}, ${3:LPCSTR inlpName}, ${4:ENUMRESLANGPROCA inlpEnumFunc}, ${5:LONG_PTR inlParam}, ${6:DWORD dwFlags}, ${7:LANGID LangId}); ${8:// BOOL}
+snippet EnumResourceLanguagesExW
+	EnumResourceLanguagesExW(${1:HMODULE inhModule}, ${2:LPCWSTR inlpType}, ${3:LPCWSTR inlpName}, ${4:ENUMRESLANGPROCW inlpEnumFunc}, ${5:LONG_PTR inlParam}, ${6:DWORD dwFlags}, ${7:LANGID LangId}); ${8:// BOOL}
+snippet EnumResourceLanguagesW
+	EnumResourceLanguagesW(${1:HMODULE inhModule}, ${2:LPCWSTR inlpType}, ${3:LPCWSTR inlpName}, ${4:ENUMRESLANGPROCW inlpEnumFunc}, ${5:LONG_PTR inlParam}); ${6:// BOOL}
+snippet EnumResourceNamesA
+	EnumResourceNamesA(${1:HMODULE inhModule}, ${2:LPCSTR inlpType}, ${3:ENUMRESNAMEPROCA inlpEnumFunc}, ${4:LONG_PTR inlParam}); ${5:// BOOL}
+snippet EnumResourceNamesExA
+	EnumResourceNamesExA(${1:HMODULE inhModule}, ${2:LPCSTR inlpType}, ${3:ENUMRESNAMEPROCA inlpEnumFunc}, ${4:LONG_PTR inlParam}, ${5:DWORD dwFlags}, ${6:LANGID LangId}); ${7:// BOOL}
+snippet EnumResourceNamesExW
+	EnumResourceNamesExW(${1:HMODULE inhModule}, ${2:LPCWSTR inlpType}, ${3:ENUMRESNAMEPROCW inlpEnumFunc}, ${4:LONG_PTR inlParam}, ${5:DWORD dwFlags}, ${6:LANGID LangId}); ${7:// BOOL}
+snippet EnumResourceNamesW
+	EnumResourceNamesW(${1:HMODULE inhModule}, ${2:LPCWSTR inlpType}, ${3:ENUMRESNAMEPROCW inlpEnumFunc}, ${4:LONG_PTR inlParam}); ${5:// BOOL}
+snippet EnumResourceTypesA
+	EnumResourceTypesA(${1:HMODULE inhModule}, ${2:ENUMRESTYPEPROCA inlpEnumFunc}, ${3:LONG_PTR inlParam}); ${4:// BOOL}
+snippet EnumResourceTypesExA
+	EnumResourceTypesExA(${1:HMODULE inhModule}, ${2:ENUMRESTYPEPROCA inlpEnumFunc}, ${3:LONG_PTR inlParam}, ${4:DWORD dwFlags}, ${5:LANGID LangId}); ${6:// BOOL}
+snippet EnumResourceTypesExW
+	EnumResourceTypesExW(${1:HMODULE inhModule}, ${2:ENUMRESTYPEPROCW inlpEnumFunc}, ${3:LONG_PTR inlParam}, ${4:DWORD dwFlags}, ${5:LANGID LangId}); ${6:// BOOL}
+snippet EnumResourceTypesW
+	EnumResourceTypesW(${1:HMODULE inhModule}, ${2:ENUMRESTYPEPROCW inlpEnumFunc}, ${3:LONG_PTR inlParam}); ${4:// BOOL}
+snippet EnumSystemFirmwareTables
+	EnumSystemFirmwareTables(${1:DWORD inFirmwareTableProviderSignature}, ${2:PVOID pFirmwareTableEnumBuffer}, ${3:DWORD inBufferSize}); ${4:// UINT}
+snippet EraseTape
+	EraseTape(${1:HANDLE inhDevice}, ${2:DWORD indwEraseType}, ${3:BOOL inbImmediate}); ${4:// DWORD}
+snippet EscapeCommFunction
+	EscapeCommFunction(${1:HANDLE inhFile}, ${2:DWORD indwFunc}); ${3:// BOOL}
+snippet ExitProcess
+	ExitProcess(${1:UINT inuExitCode}); ${2:// O CreateProcessInfo}
+snippet ExitThread
+	ExitThread(${1:DWORD indwExitCode}); ${2:// O CreateThread}
+snippet ExpandEnvironmentStringsA
+	ExpandEnvironmentStringsA(${1:LPCSTR inlpSrc}, ${2:LPSTR lpDst}, ${3:DWORD innSize}); ${4:// DWORD}
+snippet ExpandEnvironmentStringsW
+	ExpandEnvironmentStringsW(${1:LPCWSTR inlpSrc}, ${2:LPWSTR lpDst}, ${3:DWORD innSize}); ${4:// DWORD}
+snippet FatalAppExitA
+	FatalAppExitA(${1:UINT inuAction}, ${2:LPCSTR inlpMessageText}); ${3:// VOID}
+snippet FatalAppExitW
+	FatalAppExitW(${1:UINT inuAction}, ${2:LPCWSTR inlpMessageText}); ${3:// VOID}
+snippet FatalExit
+	FatalExit(${1:int inExitCode}); ${2:// VOID}
+snippet FileTimeToDosDateTime
+	FileTimeToDosDateTime(${1:CONST inFILETIME *lpFileTime}, ${2:LPWORD outlpFatDate}, ${3:LPWORD outlpFatTime}); ${4:// BOOL}
+snippet FileTimeToLocalFileTime
+	FileTimeToLocalFileTime(${1:CONST inFILETIME *lpFileTime}, ${2:LPFILETIME outlpLocalFileTime}); ${3:// BOOL}
+snippet FileTimeToSystemTime
+	FileTimeToSystemTime(${1:CONST inFILETIME *lpFileTime}, ${2:LPSYSTEMTIME outlpSystemTime}); ${3:// BOOL}
+snippet FindActCtxSectionGuid
+	FindActCtxSectionGuid(${1:DWORD indwFlags}, ${2:const GUID *lpExtensionGuid}, ${3:ULONG inulSectionId}, ${4:const inGUID *lpGuidToFind}, ${5:PACTCTX_SECTION_KEYED_DATA outReturnedData}); ${6:// BOOL}
+snippet FindActCtxSectionStringA
+	FindActCtxSectionStringA(${1:DWORD indwFlags}, ${2:const GUID *lpExtensionGuid}, ${3:ULONG inulSectionId}, ${4:LPCSTR inlpStringToFind}, ${5:PACTCTX_SECTION_KEYED_DATA outReturnedData}); ${6:// BOOL}
+snippet FindActCtxSectionStringW
+	FindActCtxSectionStringW(${1:DWORD indwFlags}, ${2:const GUID *lpExtensionGuid}, ${3:ULONG inulSectionId}, ${4:LPCWSTR inlpStringToFind}, ${5:PACTCTX_SECTION_KEYED_DATA outReturnedData}); ${6:// BOOL}
+snippet FindAtomA
+	FindAtomA(${1:LPCSTR inlpString}); ${2:// ATOM}
+snippet FindAtomW
+	FindAtomW(${1:LPCWSTR inlpString}); ${2:// ATOM}
+snippet FindClose
+	FindClose(${1:HANDLE iohFindFile}); ${2:// BOOL}
+snippet FindCloseChangeNotification
+	FindCloseChangeNotification(${1:HANDLE inhChangeHandle}); ${2:// BOOL}
+snippet FindFirstChangeNotificationA
+	FindFirstChangeNotificationA(${1:LPCSTR inlpPathName}, ${2:BOOL inbWatchSubtree}, ${3:DWORD indwNotifyFilter}); ${4:// HANDLE}
+snippet FindFirstChangeNotificationW
+	FindFirstChangeNotificationW(${1:LPCWSTR inlpPathName}, ${2:BOOL inbWatchSubtree}, ${3:DWORD indwNotifyFilter}); ${4:// HANDLE}
+snippet FindFirstFileA
+	FindFirstFileA(${1:LPCSTR inlpFileName}, ${2:LPWIN32_FIND_DATAA outlpFindFileData}); ${3:// HANDLE}
+snippet FindFirstFileExA
+	FindFirstFileExA(${1:LPCSTR inlpFileName}, ${2:FINDEX_INFO_LEVELS infInfoLevelId}, ${3:LPVOID outlpFindFileData}, ${4:FINDEX_SEARCH_OPS infSearchOp}, ${5:LPVOID lpSearchFilter}, ${6:DWORD indwAdditionalFlags}); ${7:// HANDLE}
+snippet FindFirstFileExW
+	FindFirstFileExW(${1:LPCWSTR inlpFileName}, ${2:FINDEX_INFO_LEVELS infInfoLevelId}, ${3:LPVOID outlpFindFileData}, ${4:FINDEX_SEARCH_OPS infSearchOp}, ${5:LPVOID lpSearchFilter}, ${6:DWORD indwAdditionalFlags}); ${7:// HANDLE}
+snippet FindFirstFileTransactedA
+	FindFirstFileTransactedA(${1:LPCSTR inlpFileName}, ${2:FINDEX_INFO_LEVELS infInfoLevelId}, ${3:LPVOID outlpFindFileData}, ${4:FINDEX_SEARCH_OPS infSearchOp}, ${5:LPVOID lpSearchFilter}, ${6:DWORD indwAdditionalFlags}, ${7:HANDLE inhTransaction}); ${8:// HANDLE}
+snippet FindFirstFileTransactedW
+	FindFirstFileTransactedW(${1:LPCWSTR inlpFileName}, ${2:FINDEX_INFO_LEVELS infInfoLevelId}, ${3:LPVOID outlpFindFileData}, ${4:FINDEX_SEARCH_OPS infSearchOp}, ${5:LPVOID lpSearchFilter}, ${6:DWORD indwAdditionalFlags}, ${7:HANDLE inhTransaction}); ${8:// HANDLE}
+snippet FindFirstFileW
+	FindFirstFileW(${1:LPCWSTR inlpFileName}, ${2:LPWIN32_FIND_DATAW outlpFindFileData}); ${3:// HANDLE}
+snippet FindFirstVolumeA
+	FindFirstVolumeA(${1:LPSTR lpszVolumeName}, ${2:DWORD incchBufferLength}); ${3:// HANDLE}
+snippet FindFirstVolumeMountPointA
+	FindFirstVolumeMountPointA(${1:LPCSTR inlpszRootPathName}, ${2:LPSTR lpszVolumeMountPoint}, ${3:DWORD incchBufferLength}); ${4:// HANDLE}
+snippet FindFirstVolumeMountPointW
+	FindFirstVolumeMountPointW(${1:LPCWSTR inlpszRootPathName}, ${2:LPWSTR lpszVolumeMountPoint}, ${3:DWORD incchBufferLength}); ${4:// HANDLE}
+snippet FindFirstVolumeW
+	FindFirstVolumeW(${1:LPWSTR lpszVolumeName}, ${2:DWORD incchBufferLength}); ${3:// HANDLE}
+snippet FindNextChangeNotification
+	FindNextChangeNotification(${1:HANDLE inhChangeHandle}); ${2:// BOOL}
+snippet FindNextFileA
+	FindNextFileA(${1:HANDLE inhFindFile}, ${2:LPWIN32_FIND_DATAA outlpFindFileData}); ${3:// BOOL}
+snippet FindNextFileW
+	FindNextFileW(${1:HANDLE inhFindFile}, ${2:LPWIN32_FIND_DATAW outlpFindFileData}); ${3:// BOOL}
+snippet FindNextVolumeA
+	FindNextVolumeA(${1:HANDLE iohFindVolume}, ${2:LPSTR lpszVolumeName}, ${3:DWORD incchBufferLength}); ${4:// BOOL}
+snippet FindNextVolumeMountPointA
+	FindNextVolumeMountPointA(${1:HANDLE inhFindVolumeMountPoint}, ${2:LPSTR lpszVolumeMountPoint}, ${3:DWORD incchBufferLength}); ${4:// BOOL}
+snippet FindNextVolumeMountPointW
+	FindNextVolumeMountPointW(${1:HANDLE inhFindVolumeMountPoint}, ${2:LPWSTR lpszVolumeMountPoint}, ${3:DWORD incchBufferLength}); ${4:// BOOL}
+snippet FindNextVolumeW
+	FindNextVolumeW(${1:HANDLE iohFindVolume}, ${2:LPWSTR lpszVolumeName}, ${3:DWORD incchBufferLength}); ${4:// BOOL}
+snippet FindResourceA
+	FindResourceA(${1:HMODULE inhModule}, ${2:LPCSTR inlpName}, ${3:LPCSTR inlpType}); ${4:// HRSRC}
+snippet FindResourceExA
+	FindResourceExA(${1:HMODULE inhModule}, ${2:LPCSTR inlpType}, ${3:LPCSTR inlpName}, ${4:WORD inwLanguage}); ${5:// HRSRC}
+snippet FindResourceExW
+	FindResourceExW(${1:HMODULE inhModule}, ${2:LPCWSTR inlpType}, ${3:LPCWSTR inlpName}, ${4:WORD inwLanguage}); ${5:// HRSRC}
+snippet FindResourceW
+	FindResourceW(${1:HMODULE inhModule}, ${2:LPCWSTR inlpName}, ${3:LPCWSTR inlpType}); ${4:// HRSRC}
+snippet FindVolumeClose
+	FindVolumeClose(${1:HANDLE inhFindVolume}); ${2:// BOOL}
+snippet FindVolumeMountPointClose
+	FindVolumeMountPointClose(${1:HANDLE inhFindVolumeMountPoint}); ${2:// BOOL}
+snippet FlsAlloc
+	FlsAlloc(${1:PFLS_CALLBACK_FUNCTION inlpCallback}); ${2:// DWORD}
+snippet FlsFree
+	FlsFree(${1:DWORD indwFlsIndex}); ${2:// BOOL}
+snippet FlsGetValue
+	FlsGetValue(${1:DWORD indwFlsIndex}); ${2:// PVOID}
+snippet FlsSetValue
+	FlsSetValue(${1:DWORD indwFlsIndex}, ${2:PVOID inlpFlsData}); ${3:// BOOL}
+snippet FlushFileBuffers
+	FlushFileBuffers(${1:HANDLE inhFile}); ${2:// BOOL}
+snippet FlushInstructionCache
+	FlushInstructionCache(${1:HANDLE inhProcess}, ${2:LPCVOID lpBaseAddress}, ${3:SIZE_T indwSize}); ${4:// BOOL}
+snippet FlushProcessWriteBuffers
+	FlushProcessWriteBuffers(${1:VOID}); ${2:// VOID}
+snippet FlushViewOfFile
+	FlushViewOfFile(${1:LPCVOID inlpBaseAddress}, ${2:SIZE_T indwNumberOfBytesToFlush}); ${3:// BOOL}
+snippet FormatMessageA
+	FormatMessageA(${1:DWORD indwFlags}, ${2:LPCVOID inlpSource}, ${3:DWORD indwMessageId}, ${4:DWORD indwLanguageId}, ${5:LPSTR outlpBuffer}, ${6:DWORD innSize}, ${7:inva_list *Arguments}); ${8:// DWORD}
+snippet FormatMessageW
+	FormatMessageW(${1:DWORD indwFlags}, ${2:LPCVOID inlpSource}, ${3:DWORD indwMessageId}, ${4:DWORD indwLanguageId}, ${5:LPWSTR outlpBuffer}, ${6:DWORD innSize}, ${7:inva_list *Arguments}); ${8:// DWORD}
+snippet FreeEnvironmentStringsA
+	FreeEnvironmentStringsA(${1:inLPCH}); ${2:// BOOL}
+snippet FreeEnvironmentStringsW
+	FreeEnvironmentStringsW(${1:inLPWCH}); ${2:// BOOL}
+snippet FreeLibrary
+	FreeLibrary(${1:HMODULE inhLibModule}); ${2:// BOOL}
+snippet FreeLibraryAndExitThread
+	FreeLibraryAndExitThread(${1:HMODULE inhLibModule}, ${2:DWORD indwExitCode}); ${3:// VOID}
+snippet FreeLibraryWhenCallbackReturns
+	FreeLibraryWhenCallbackReturns(${1:PTP_CALLBACK_INSTANCE iopci}, ${2:HMODULE inmod}); ${3:// VOID}
+snippet FreeResource
+	FreeResource(${1:HGLOBAL inhResData}); ${2:// BOOL}
+snippet FreeUserPhysicalPages
+	FreeUserPhysicalPages(${1:HANDLE inhProcess}, ${2:PULONG_PTR ioNumberOfPages}, ${3:PULONG_PTR PageArray}); ${4:// BOOL}
+snippet GetApplicationRecoveryCallback
+	GetApplicationRecoveryCallback(${1:HANDLE inhProcess}, ${2:outAPPLICATION_RECOVERY_CALLBACK* pRecoveryCallback}, ${3:PVOID* ppvParameter}, ${4:PDWORD outpdwPingInterval}, ${5:PDWORD outpdwFlags}); ${6:// HRESULT}
+snippet GetApplicationRestartSettings
+	GetApplicationRestartSettings(${1:HANDLE inhProcess}, ${2:PWSTR pwzCommandline}, ${3:PDWORD iopcchSize}, ${4:PDWORD outpdwFlags}); ${5:// HRESULT}
+snippet GetAtomNameA
+	GetAtomNameA(${1:ATOM innAtom}, ${2:LPSTR lpBuffer}, ${3:int innSize}); ${4:// UINT}
+snippet GetAtomNameW
+	GetAtomNameW(${1:ATOM innAtom}, ${2:LPWSTR lpBuffer}, ${3:int innSize}); ${4:// UINT}
+snippet GetBinaryTypeA
+	GetBinaryTypeA(${1:LPCSTR inlpApplicationName}, ${2:LPDWORD outlpBinaryType}); ${3:// BOOL}
+snippet GetBinaryTypeW
+	GetBinaryTypeW(${1:LPCWSTR inlpApplicationName}, ${2:LPDWORD outlpBinaryType}); ${3:// BOOL}
+snippet GetCommConfig
+	GetCommConfig(${1:HANDLE inhCommDev}, ${2:LPCOMMCONFIG lpCC}, ${3:LPDWORD iolpdwSize}); ${4:// BOOL}
+snippet GetCommMask
+	GetCommMask(${1:HANDLE inhFile}, ${2:LPDWORD outlpEvtMask}); ${3:// BOOL}
+snippet GetCommModemStatus
+	GetCommModemStatus(${1:HANDLE inhFile}, ${2:LPDWORD outlpModemStat}); ${3:// BOOL}
+snippet GetCommProperties
+	GetCommProperties(${1:HANDLE inhFile}, ${2:LPCOMMPROP iolpCommProp}); ${3:// BOOL}
+snippet GetCommState
+	GetCommState(${1:HANDLE inhFile}, ${2:LPDCB outlpDCB}); ${3:// BOOL}
+snippet GetCommTimeouts
+	GetCommTimeouts(${1:HANDLE inhFile}, ${2:LPCOMMTIMEOUTS outlpCommTimeouts}); ${3:// BOOL}
+snippet GetCommandLineA
+	GetCommandLineA(${1:VOID}); ${2:// LPSTR}
+snippet GetCommandLineW
+	GetCommandLineW(${1:VOID}); ${2:// LPWSTR}
+snippet GetCompressedFileSizeA
+	GetCompressedFileSizeA(${1:LPCSTR inlpFileName}, ${2:LPDWORD outlpFileSizeHigh}); ${3:// DWORD}
+snippet GetCompressedFileSizeTransactedA
+	GetCompressedFileSizeTransactedA(${1:LPCSTR inlpFileName}, ${2:LPDWORD outlpFileSizeHigh}, ${3:HANDLE inhTransaction}); ${4:// DWORD}
+snippet GetCompressedFileSizeTransactedW
+	GetCompressedFileSizeTransactedW(${1:LPCWSTR inlpFileName}, ${2:LPDWORD outlpFileSizeHigh}, ${3:HANDLE inhTransaction}); ${4:// DWORD}
+snippet GetCompressedFileSizeW
+	GetCompressedFileSizeW(${1:LPCWSTR inlpFileName}, ${2:LPDWORD outlpFileSizeHigh}); ${3:// DWORD}
+snippet GetComputerNameA
+	GetComputerNameA(${1:LPSTR lpBuffer}, ${2:LPDWORD ionSize}); ${3:// BOOL}
+snippet GetComputerNameExA
+	GetComputerNameExA(${1:COMPUTER_NAME_FORMAT inNameType}, ${2:LPSTR lpBuffer}, ${3:LPDWORD ionSize}); ${4:// BOOL}
+snippet GetComputerNameExW
+	GetComputerNameExW(${1:COMPUTER_NAME_FORMAT inNameType}, ${2:LPWSTR lpBuffer}, ${3:LPDWORD ionSize}); ${4:// BOOL}
+snippet GetComputerNameW
+	GetComputerNameW(${1:LPWSTR lpBuffer}, ${2:LPDWORD ionSize}); ${3:// BOOL}
+snippet GetCurrentActCtx
+	GetCurrentActCtx(${1:HANDLE *lphActCtx}); ${2:// BOOL}
+snippet GetCurrentDirectoryA
+	GetCurrentDirectoryA(${1:DWORD innBufferLength}, ${2:LPSTR lpBuffer}); ${3:// DWORD}
+snippet GetCurrentDirectoryW
+	GetCurrentDirectoryW(${1:DWORD innBufferLength}, ${2:LPWSTR lpBuffer}); ${3:// DWORD}
+snippet GetCurrentProcess
+	GetCurrentProcess(${1:VOID}); ${2:// HANDLE}
+snippet GetCurrentProcessId
+	GetCurrentProcessId(${1:VOID}); ${2:// DWORD}
+snippet GetCurrentProcessorNumber
+	GetCurrentProcessorNumber(${1:VOID}); ${2:// DWORD}
+snippet GetCurrentThread
+	GetCurrentThread(${1:VOID}); ${2:// HANDLE}
+snippet GetCurrentThreadId
+	GetCurrentThreadId(${1:VOID}); ${2:// DWORD}
+snippet GetDefaultCommConfigA
+	GetDefaultCommConfigA(${1:LPCSTR inlpszName}, ${2:LPCOMMCONFIG lpCC}, ${3:LPDWORD iolpdwSize}); ${4:// BOOL}
+snippet GetDefaultCommConfigW
+	GetDefaultCommConfigW(${1:LPCWSTR inlpszName}, ${2:LPCOMMCONFIG lpCC}, ${3:LPDWORD iolpdwSize}); ${4:// BOOL}
+snippet GetDevicePowerState
+	GetDevicePowerState(${1:HANDLE inhDevice}, ${2:outBOOL *pfOn}); ${3:// BOOL}
+snippet GetDiskFreeSpaceA
+	GetDiskFreeSpaceA(${1:LPCSTR inlpRootPathName}, ${2:LPDWORD outlpSectorsPerCluster}, ${3:LPDWORD outlpBytesPerSector}, ${4:LPDWORD outlpNumberOfFreeClusters}, ${5:LPDWORD outlpTotalNumberOfClusters}); ${6:// BOOL}
+snippet GetDiskFreeSpaceExA
+	GetDiskFreeSpaceExA(${1:LPCSTR inlpDirectoryName}, ${2:PULARGE_INTEGER outlpFreeBytesAvailableToCaller}, ${3:PULARGE_INTEGER outlpTotalNumberOfBytes}, ${4:PULARGE_INTEGER outlpTotalNumberOfFreeBytes}); ${5:// BOOL}
+snippet GetDiskFreeSpaceExW
+	GetDiskFreeSpaceExW(${1:LPCWSTR inlpDirectoryName}, ${2:PULARGE_INTEGER outlpFreeBytesAvailableToCaller}, ${3:PULARGE_INTEGER outlpTotalNumberOfBytes}, ${4:PULARGE_INTEGER outlpTotalNumberOfFreeBytes}); ${5:// BOOL}
+snippet GetDiskFreeSpaceW
+	GetDiskFreeSpaceW(${1:LPCWSTR inlpRootPathName}, ${2:LPDWORD outlpSectorsPerCluster}, ${3:LPDWORD outlpBytesPerSector}, ${4:LPDWORD outlpNumberOfFreeClusters}, ${5:LPDWORD outlpTotalNumberOfClusters}); ${6:// BOOL}
+snippet GetDllDirectoryA
+	GetDllDirectoryA(${1:DWORD innBufferLength}, ${2:LPSTR lpBuffer}); ${3:// DWORD}
+snippet GetDllDirectoryW
+	GetDllDirectoryW(${1:DWORD innBufferLength}, ${2:LPWSTR lpBuffer}); ${3:// DWORD}
+snippet GetDriveTypeA
+	GetDriveTypeA(${1:LPCSTR inlpRootPathName}); ${2:// UINT}
+snippet GetDriveTypeW
+	GetDriveTypeW(${1:LPCWSTR inlpRootPathName}); ${2:// UINT}
+snippet GetDynamicTimeZoneInformation
+	GetDynamicTimeZoneInformation(${1:PDYNAMIC_TIME_ZONE_INFORMATION outpTimeZoneInformation}); ${2:// DWORD}
+snippet GetEnvironmentStrings
+	GetEnvironmentStrings(${1:VOID}); ${2:// LPCH}
+snippet GetEnvironmentStringsW
+	GetEnvironmentStringsW(${1:VOID}); ${2:// LPWCH}
+snippet GetEnvironmentVariableA
+	GetEnvironmentVariableA(${1:LPCSTR inlpName}, ${2:LPSTR lpBuffer}, ${3:DWORD innSize}); ${4:// DWORD}
+snippet GetEnvironmentVariableW
+	GetEnvironmentVariableW(${1:LPCWSTR inlpName}, ${2:LPWSTR lpBuffer}, ${3:DWORD innSize}); ${4:// DWORD}
+snippet GetErrorMode
+	GetErrorMode(${1:VOID}); ${2:// UINT}
+snippet GetExitCodeProcess
+	GetExitCodeProcess(${1:HANDLE inhProcess}, ${2:LPDWORD outlpExitCode}); ${3:// BOOL}
+snippet GetExitCodeThread
+	GetExitCodeThread(${1:HANDLE inhThread}, ${2:LPDWORD outlpExitCode}); ${3:// BOOL}
+snippet GetFileAttributesA
+	GetFileAttributesA(${1:LPCSTR inlpFileName}); ${2:// DWORD}
+snippet GetFileAttributesExA
+	GetFileAttributesExA(${1:LPCSTR inlpFileName}, ${2:GET_FILEEX_INFO_LEVELS infInfoLevelId}, ${3:LPVOID outlpFileInformation}); ${4:// BOOL}
+snippet GetFileAttributesExW
+	GetFileAttributesExW(${1:LPCWSTR inlpFileName}, ${2:GET_FILEEX_INFO_LEVELS infInfoLevelId}, ${3:LPVOID outlpFileInformation}); ${4:// BOOL}
+snippet GetFileAttributesTransactedA
+	GetFileAttributesTransactedA(${1:LPCSTR inlpFileName}, ${2:GET_FILEEX_INFO_LEVELS infInfoLevelId}, ${3:LPVOID outlpFileInformation}, ${4:HANDLE inhTransaction}); ${5:// BOOL}
+snippet GetFileAttributesTransactedW
+	GetFileAttributesTransactedW(${1:LPCWSTR inlpFileName}, ${2:GET_FILEEX_INFO_LEVELS infInfoLevelId}, ${3:LPVOID outlpFileInformation}, ${4:HANDLE inhTransaction}); ${5:// BOOL}
+snippet GetFileAttributesW
+	GetFileAttributesW(${1:LPCWSTR inlpFileName}); ${2:// DWORD}
+snippet GetFileBandwidthReservation
+	GetFileBandwidthReservation(${1:HANDLE inhFile}, ${2:LPDWORD outlpPeriodMilliseconds}, ${3:LPDWORD outlpBytesPerPeriod}, ${4:LPBOOL outpDiscardable}, ${5:LPDWORD outlpTransferSize}, ${6:LPDWORD outlpNumOutstandingRequests}); ${7:// BOOL}
+snippet GetFileInformationByHandle
+	GetFileInformationByHandle(${1:HANDLE inhFile}, ${2:LPBY_HANDLE_FILE_INFORMATION outlpFileInformation}); ${3:// BOOL}
+snippet GetFileSize
+	GetFileSize(${1:HANDLE inhFile}, ${2:LPDWORD outlpFileSizeHigh}); ${3:// DWORD}
+snippet GetFileSizeEx
+	GetFileSizeEx(${1:HANDLE inhFile}, ${2:PLARGE_INTEGER outlpFileSize}); ${3:// BOOL}
+snippet GetFileTime
+	GetFileTime(${1:HANDLE inhFile}, ${2:LPFILETIME outlpCreationTime}, ${3:LPFILETIME outlpLastAccessTime}, ${4:LPFILETIME outlpLastWriteTime}); ${5:// BOOL}
+snippet GetFileType
+	GetFileType(${1:HANDLE inhFile}); ${2:// DWORD}
+snippet GetFirmwareEnvironmentVariableA
+	GetFirmwareEnvironmentVariableA(${1:LPCSTR inlpName}, ${2:LPCSTR inlpGuid}, ${3:PVOID pBuffer}, ${4:DWORD innSize}); ${5:// DWORD}
+snippet GetFirmwareEnvironmentVariableW
+	GetFirmwareEnvironmentVariableW(${1:LPCWSTR inlpName}, ${2:LPCWSTR inlpGuid}, ${3:PVOID pBuffer}, ${4:DWORD innSize}); ${5:// DWORD}
+snippet GetFreeSpace
+	GetFreeSpace(${1:inUINT}); ${2:// DWORD}
+snippet GetFullPathNameA
+	GetFullPathNameA(${1:LPCSTR inlpFileName}, ${2:DWORD innBufferLength}, ${3:LPSTR lpBuffer}, ${4:LPSTR *lpFilePart}); ${5:// DWORD}
+snippet GetFullPathNameTransactedA
+	GetFullPathNameTransactedA(${1:LPCSTR inlpFileName}, ${2:DWORD innBufferLength}, ${3:LPSTR lpBuffer}, ${4:LPSTR *lpFilePart}, ${5:HANDLE inhTransaction}); ${6:// DWORD}
+snippet GetFullPathNameTransactedW
+	GetFullPathNameTransactedW(${1:LPCWSTR inlpFileName}, ${2:DWORD innBufferLength}, ${3:LPWSTR lpBuffer}, ${4:LPWSTR *lpFilePart}, ${5:HANDLE inhTransaction}); ${6:// DWORD}
+snippet GetFullPathNameW
+	GetFullPathNameW(${1:LPCWSTR inlpFileName}, ${2:DWORD innBufferLength}, ${3:LPWSTR lpBuffer}, ${4:LPWSTR *lpFilePart}); ${5:// DWORD}
+snippet GetHandleInformation
+	GetHandleInformation(${1:HANDLE inhObject}, ${2:LPDWORD outlpdwFlags}); ${3:// BOOL}
+snippet GetLargePageMinimum
+	GetLargePageMinimum(${1:VOID}); ${2:// SIZE_T}
+snippet GetLastError
+	GetLastError(${1:VOID}); ${2:// DWORD}
+snippet GetLocalTime
+	GetLocalTime(${1:LPSYSTEMTIME outlpSystemTime}); ${2:// VOID}
+snippet GetLogicalDriveStringsA
+	GetLogicalDriveStringsA(${1:DWORD innBufferLength}, ${2:LPSTR lpBuffer}); ${3:// DWORD}
+snippet GetLogicalDriveStringsW
+	GetLogicalDriveStringsW(${1:DWORD innBufferLength}, ${2:LPWSTR lpBuffer}); ${3:// DWORD}
+snippet GetLogicalDrives
+	GetLogicalDrives(${1:VOID}); ${2:// DWORD}
+snippet GetLogicalProcessorInformation
+	GetLogicalProcessorInformation(${1:PSYSTEM_LOGICAL_PROCESSOR_INFORMATION Buffer}, ${2:PDWORD ioReturnedLength}); ${3:// BOOL}
+snippet GetLongPathNameA
+	GetLongPathNameA(${1:LPCSTR inlpszShortPath}, ${2:LPSTR lpszLongPath}, ${3:DWORD incchBuffer}); ${4:// DWORD}
+snippet GetLongPathNameTransactedA
+	GetLongPathNameTransactedA(${1:LPCSTR inlpszShortPath}, ${2:LPSTR lpszLongPath}, ${3:DWORD incchBuffer}, ${4:HANDLE inhTransaction}); ${5:// DWORD}
+snippet GetLongPathNameTransactedW
+	GetLongPathNameTransactedW(${1:LPCWSTR inlpszShortPath}, ${2:LPWSTR lpszLongPath}, ${3:DWORD incchBuffer}, ${4:HANDLE inhTransaction}); ${5:// DWORD}
+snippet GetLongPathNameW
+	GetLongPathNameW(${1:LPCWSTR inlpszShortPath}, ${2:LPWSTR lpszLongPath}, ${3:DWORD incchBuffer}); ${4:// DWORD}
+snippet GetMailslotInfo
+	GetMailslotInfo(${1:HANDLE inhMailslot}, ${2:LPDWORD outlpMaxMessageSize}, ${3:LPDWORD outlpNextSize}, ${4:LPDWORD outlpMessageCount}, ${5:LPDWORD outlpReadTimeout}); ${6:// BOOL}
+snippet GetModuleFileNameA
+	GetModuleFileNameA(${1:HMODULE inhModule}, ${2:LPCH lpFilename}, ${3:DWORD innSize}); ${4:// DWORD}
+snippet GetModuleFileNameW
+	GetModuleFileNameW(${1:HMODULE inhModule}, ${2:LPWCH lpFilename}, ${3:DWORD innSize}); ${4:// DWORD}
+snippet GetModuleHandleA
+	GetModuleHandleA(${1:LPCSTR inlpModuleName}); ${2:// HMODULE}
+snippet GetModuleHandleExA
+	GetModuleHandleExA(${1:DWORD indwFlags}, ${2:LPCSTR inlpModuleName}, ${3:outHMODULE* phModule}); ${4:// BOOL}
+snippet GetModuleHandleExW
+	GetModuleHandleExW(${1:DWORD indwFlags}, ${2:LPCWSTR inlpModuleName}, ${3:outHMODULE* phModule}); ${4:// BOOL}
+snippet GetModuleHandleW
+	GetModuleHandleW(${1:LPCWSTR inlpModuleName}); ${2:// HMODULE}
+snippet GetNamedPipeAttribute
+	GetNamedPipeAttribute(${1:HANDLE inPipe}, ${2:PIPE_ATTRIBUTE_TYPE inAttributeType}, ${3:PSTR inAttributeName}, ${4:PVOID AttributeValue}, ${5:PSIZE_T ioAttributeValueLength}); ${6:// BOOL}
+snippet GetNamedPipeClientComputerNameA
+	GetNamedPipeClientComputerNameA(${1:HANDLE inPipe}, ${2:LPSTR ClientComputerName}, ${3:ULONG inClientComputerNameLength}); ${4:// BOOL}
+snippet GetNamedPipeClientComputerNameW
+	GetNamedPipeClientComputerNameW(${1:HANDLE inPipe}, ${2:LPWSTR ClientComputerName}, ${3:ULONG inClientComputerNameLength}); ${4:// BOOL}
+snippet GetNamedPipeClientProcessId
+	GetNamedPipeClientProcessId(${1:HANDLE inPipe}, ${2:PULONG outClientProcessId}); ${3:// BOOL}
+snippet GetNamedPipeClientSessionId
+	GetNamedPipeClientSessionId(${1:HANDLE inPipe}, ${2:PULONG outClientSessionId}); ${3:// BOOL}
+snippet GetNamedPipeHandleStateA
+	GetNamedPipeHandleStateA(${1:HANDLE inhNamedPipe}, ${2:LPDWORD outlpState}, ${3:LPDWORD outlpCurInstances}, ${4:LPDWORD outlpMaxCollectionCount}, ${5:LPDWORD outlpCollectDataTimeout}, ${6:LPSTR lpUserName}, ${7:DWORD innMaxUserNameSize}); ${8:// BOOL}
+snippet GetNamedPipeHandleStateW
+	GetNamedPipeHandleStateW(${1:HANDLE inhNamedPipe}, ${2:LPDWORD outlpState}, ${3:LPDWORD outlpCurInstances}, ${4:LPDWORD outlpMaxCollectionCount}, ${5:LPDWORD outlpCollectDataTimeout}, ${6:LPWSTR lpUserName}, ${7:DWORD innMaxUserNameSize}); ${8:// BOOL}
+snippet GetNamedPipeInfo
+	GetNamedPipeInfo(${1:HANDLE inhNamedPipe}, ${2:LPDWORD outlpFlags}, ${3:LPDWORD outlpOutBufferSize}, ${4:LPDWORD outlpInBufferSize}, ${5:LPDWORD outlpMaxInstances}); ${6:// BOOL}
+snippet GetNamedPipeServerProcessId
+	GetNamedPipeServerProcessId(${1:HANDLE inPipe}, ${2:PULONG outServerProcessId}); ${3:// BOOL}
+snippet GetNamedPipeServerSessionId
+	GetNamedPipeServerSessionId(${1:HANDLE inPipe}, ${2:PULONG outServerSessionId}); ${3:// BOOL}
+snippet GetNativeSystemInfo
+	GetNativeSystemInfo(${1:LPSYSTEM_INFO outlpSystemInfo}); ${2:// VOID}
+snippet GetNumaAvailableMemoryNode
+	GetNumaAvailableMemoryNode(${1:UCHAR inNode}, ${2:PULONGLONG outAvailableBytes}); ${3:// BOOL}
+snippet GetNumaHighestNodeNumber
+	GetNumaHighestNodeNumber(${1:PULONG outHighestNodeNumber}); ${2:// BOOL}
+snippet GetNumaNodeProcessorMask
+	GetNumaNodeProcessorMask(${1:UCHAR inNode}, ${2:PULONGLONG outProcessorMask}); ${3:// BOOL}
+snippet GetNumaProcessorNode
+	GetNumaProcessorNode(${1:UCHAR inProcessor}, ${2:PUCHAR outNodeNumber}); ${3:// BOOL}
+snippet GetNumaProximityNode
+	GetNumaProximityNode(${1:ULONG inProximityId}, ${2:PUCHAR outNodeNumber}); ${3:// BOOL}
+snippet GetOverlappedResult
+	GetOverlappedResult(${1:HANDLE inhFile}, ${2:LPOVERLAPPED inlpOverlapped}, ${3:LPDWORD outlpNumberOfBytesTransferred}, ${4:BOOL inbWait}); ${5:// BOOL}
+snippet GetPhysicallyInstalledSystemMemory
+	GetPhysicallyInstalledSystemMemory(${1:PULONGLONG outTotalMemoryInKilobytes}); ${2:// BOOL}
+snippet GetPriorityClass
+	GetPriorityClass(${1:HANDLE inhProcess}); ${2:// DWORD}
+snippet GetPrivateProfileIntA
+	GetPrivateProfileIntA(${1:LPCSTR inlpAppName}, ${2:LPCSTR inlpKeyName}, ${3:INT innDefault}, ${4:LPCSTR inlpFileName}); ${5:// UINT}
+snippet GetPrivateProfileIntW
+	GetPrivateProfileIntW(${1:LPCWSTR inlpAppName}, ${2:LPCWSTR inlpKeyName}, ${3:INT innDefault}, ${4:LPCWSTR inlpFileName}); ${5:// UINT}
+snippet GetPrivateProfileSectionA
+	GetPrivateProfileSectionA(${1:LPCSTR inlpAppName}, ${2:LPSTR lpReturnedString}, ${3:DWORD innSize}, ${4:LPCSTR inlpFileName}); ${5:// DWORD}
+snippet GetPrivateProfileSectionNamesA
+	GetPrivateProfileSectionNamesA(${1:LPSTR lpszReturnBuffer}, ${2:DWORD innSize}, ${3:LPCSTR inlpFileName}); ${4:// DWORD}
+snippet GetPrivateProfileSectionNamesW
+	GetPrivateProfileSectionNamesW(${1:LPWSTR lpszReturnBuffer}, ${2:DWORD innSize}, ${3:LPCWSTR inlpFileName}); ${4:// DWORD}
+snippet GetPrivateProfileSectionW
+	GetPrivateProfileSectionW(${1:LPCWSTR inlpAppName}, ${2:LPWSTR lpReturnedString}, ${3:DWORD innSize}, ${4:LPCWSTR inlpFileName}); ${5:// DWORD}
+snippet GetPrivateProfileStringA
+	GetPrivateProfileStringA(${1:LPCSTR inlpAppName}, ${2:LPCSTR inlpKeyName}, ${3:LPCSTR inlpDefault}, ${4:LPSTR lpReturnedString}, ${5:DWORD innSize}, ${6:LPCSTR inlpFileName}); ${7:// DWORD}
+snippet GetPrivateProfileStringW
+	GetPrivateProfileStringW(${1:LPCWSTR inlpAppName}, ${2:LPCWSTR inlpKeyName}, ${3:LPCWSTR inlpDefault}, ${4:LPWSTR lpReturnedString}, ${5:DWORD innSize}, ${6:LPCWSTR inlpFileName}); ${7:// DWORD}
+snippet GetPrivateProfileStructA
+	GetPrivateProfileStructA(${1:LPCSTR inlpszSection}, ${2:LPCSTR inlpszKey}, ${3:LPVOID lpStruct}, ${4:UINT inuSizeStruct}, ${5:LPCSTR inszFile}); ${6:// BOOL}
+snippet GetPrivateProfileStructW
+	GetPrivateProfileStructW(${1:LPCWSTR inlpszSection}, ${2:LPCWSTR inlpszKey}, ${3:LPVOID lpStruct}, ${4:UINT inuSizeStruct}, ${5:LPCWSTR inszFile}); ${6:// BOOL}
+snippet GetProcAddress
+	GetProcAddress(${1:HMODULE inhModule}, ${2:LPCSTR inlpProcName}); ${3:// FARPROC}
+snippet GetProcessAffinityMask
+	GetProcessAffinityMask(${1:HANDLE inhProcess}, ${2:PDWORD_PTR outlpProcessAffinityMask}, ${3:PDWORD_PTR outlpSystemAffinityMask}); ${4:// BOOL}
+snippet GetProcessDEPPolicy
+	GetProcessDEPPolicy(${1:HANDLE inhProcess}, ${2:LPDWORD outlpFlags}, ${3:PBOOL outlpPermanent}); ${4:// BOOL}
+snippet GetProcessHandleCount
+	GetProcessHandleCount(${1:HANDLE inhProcess}, ${2:PDWORD outpdwHandleCount}); ${3:// BOOL}
+snippet GetProcessHeap
+	GetProcessHeap(${1:VOID }); ${2:// HANDLE}
+snippet GetProcessHeaps
+	GetProcessHeaps(${1:DWORD inNumberOfHeaps}, ${2:PHANDLE ProcessHeaps}); ${3:// DWORD}
+snippet GetProcessId
+	GetProcessId(${1:HANDLE inProcess}); ${2:// DWORD}
+snippet GetProcessIdOfThread
+	GetProcessIdOfThread(${1:HANDLE inThread}); ${2:// DWORD}
+snippet GetProcessIoCounters
+	GetProcessIoCounters(${1:HANDLE inhProcess}, ${2:PIO_COUNTERS outlpIoCounters}); ${3:// BOOL}
+snippet GetProcessPriorityBoost
+	GetProcessPriorityBoost(${1:HANDLE inhProcess}, ${2:PBOOL outpDisablePriorityBoost}); ${3:// BOOL}
+snippet GetProcessShutdownParameters
+	GetProcessShutdownParameters(${1:LPDWORD outlpdwLevel}, ${2:LPDWORD outlpdwFlags}); ${3:// BOOL}
+snippet GetProcessTimes
+	GetProcessTimes(${1:HANDLE inhProcess}, ${2:LPFILETIME outlpCreationTime}, ${3:LPFILETIME outlpExitTime}, ${4:LPFILETIME outlpKernelTime}, ${5:LPFILETIME outlpUserTime}); ${6:// BOOL}
+snippet GetProcessVersion
+	GetProcessVersion(${1:DWORD inProcessId}); ${2:// DWORD}
+snippet GetProcessWorkingSetSize
+	GetProcessWorkingSetSize(${1:HANDLE inhProcess}, ${2:PSIZE_T outlpMinimumWorkingSetSize}, ${3:PSIZE_T outlpMaximumWorkingSetSize}); ${4:// BOOL}
+snippet GetProcessWorkingSetSizeEx
+	GetProcessWorkingSetSizeEx(${1:HANDLE inhProcess}, ${2:PSIZE_T outlpMinimumWorkingSetSize}, ${3:PSIZE_T outlpMaximumWorkingSetSize}, ${4:PDWORD outFlags}); ${5:// BOOL}
+snippet GetProductInfo
+	GetProductInfo(${1:DWORD indwOSMajorVersion}, ${2:DWORD indwOSMinorVersion}, ${3:DWORD indwSpMajorVersion}, ${4:DWORD indwSpMinorVersion}, ${5:PDWORD outpdwReturnedProductType}); ${6:// BOOL}
+snippet GetProfileIntA
+	GetProfileIntA(${1:LPCSTR inlpAppName}, ${2:LPCSTR inlpKeyName}, ${3:INT innDefault}); ${4:// UINT}
+snippet GetProfileIntW
+	GetProfileIntW(${1:LPCWSTR inlpAppName}, ${2:LPCWSTR inlpKeyName}, ${3:INT innDefault}); ${4:// UINT}
+snippet GetProfileSectionA
+	GetProfileSectionA(${1:LPCSTR inlpAppName}, ${2:LPSTR lpReturnedString}, ${3:DWORD innSize}); ${4:// DWORD}
+snippet GetProfileSectionW
+	GetProfileSectionW(${1:LPCWSTR inlpAppName}, ${2:LPWSTR lpReturnedString}, ${3:DWORD innSize}); ${4:// DWORD}
+snippet GetProfileStringA
+	GetProfileStringA(${1:LPCSTR inlpAppName}, ${2:LPCSTR inlpKeyName}, ${3:LPCSTR inlpDefault}, ${4:LPSTR lpReturnedString}, ${5:DWORD innSize}); ${6:// DWORD}
+snippet GetProfileStringW
+	GetProfileStringW(${1:LPCWSTR inlpAppName}, ${2:LPCWSTR inlpKeyName}, ${3:LPCWSTR inlpDefault}, ${4:LPWSTR lpReturnedString}, ${5:DWORD innSize}); ${6:// DWORD}
+snippet GetQueuedCompletionStatus
+	GetQueuedCompletionStatus(${1:HANDLE inCompletionPort}, ${2:LPDWORD outlpNumberOfBytesTransferred}, ${3:PULONG_PTR outlpCompletionKey}, ${4:outLPOVERLAPPED *lpOverlapped}, ${5:DWORD indwMilliseconds}); ${6:// BOOL}
+snippet GetQueuedCompletionStatusEx
+	GetQueuedCompletionStatusEx(${1:HANDLE inCompletionPort}, ${2:LPOVERLAPPED_ENTRY lpCompletionPortEntries}, ${3:ULONG inulCount}, ${4:PULONG outulNumEntriesRemoved}, ${5:DWORD indwMilliseconds}, ${6:BOOL infAlertable}); ${7:// BOOL}
+snippet GetShortPathNameA
+	GetShortPathNameA(${1:LPCSTR inlpszLongPath}, ${2:LPSTR lpszShortPath}, ${3:DWORD incchBuffer}); ${4:// DWORD}
+snippet GetShortPathNameW
+	GetShortPathNameW(${1:LPCWSTR inlpszLongPath}, ${2:LPWSTR lpszShortPath}, ${3:DWORD incchBuffer}); ${4:// DWORD}
+snippet GetStartupInfoA
+	GetStartupInfoA(${1:LPSTARTUPINFOA outlpStartupInfo}); ${2:// VOID}
+snippet GetStartupInfoW
+	GetStartupInfoW(${1:LPSTARTUPINFOW outlpStartupInfo}); ${2:// VOID}
+snippet GetStdHandle
+	GetStdHandle(${1:DWORD innStdHandle}); ${2:// HANDLE}
+snippet GetSystemDEPPolicy
+	GetSystemDEPPolicy(${1:VOID}); ${2:// DEP_SYSTEM_POLICY_TYPE}
+snippet GetSystemDirectoryA
+	GetSystemDirectoryA(${1:LPSTR lpBuffer}, ${2:UINT inuSize}); ${3:// UINT}
+snippet GetSystemDirectoryW
+	GetSystemDirectoryW(${1:LPWSTR lpBuffer}, ${2:UINT inuSize}); ${3:// UINT}
+snippet GetSystemFileCacheSize
+	GetSystemFileCacheSize(${1:PSIZE_T outlpMinimumFileCacheSize}, ${2:PSIZE_T outlpMaximumFileCacheSize}, ${3:PDWORD outlpFlags}); ${4:// BOOL}
+snippet GetSystemFirmwareTable
+	GetSystemFirmwareTable(${1:DWORD inFirmwareTableProviderSignature}, ${2:DWORD inFirmwareTableID}, ${3:PVOID pFirmwareTableBuffer}, ${4:DWORD inBufferSize}); ${5:// UINT}
+snippet GetSystemInfo
+	GetSystemInfo(${1:LPSYSTEM_INFO outlpSystemInfo}); ${2:// VOID}
+snippet GetSystemRegistryQuota
+	GetSystemRegistryQuota(${1:PDWORD outpdwQuotaAllowed}, ${2:PDWORD outpdwQuotaUsed}); ${3:// BOOL}
+snippet GetSystemTime
+	GetSystemTime(${1:LPSYSTEMTIME outlpSystemTime}); ${2:// VOID}
+snippet GetSystemTimeAdjustment
+	GetSystemTimeAdjustment(${1:PDWORD outlpTimeAdjustment}, ${2:PDWORD outlpTimeIncrement}, ${3:PBOOL outlpTimeAdjustmentDisabled}); ${4:// BOOL}
+snippet GetSystemTimeAsFileTime
+	GetSystemTimeAsFileTime(${1:LPFILETIME outlpSystemTimeAsFileTime}); ${2:// VOID}
+snippet GetSystemWindowsDirectoryA
+	GetSystemWindowsDirectoryA(${1:LPSTR lpBuffer}, ${2:UINT inuSize}); ${3:// UINT}
+snippet GetSystemWindowsDirectoryW
+	GetSystemWindowsDirectoryW(${1:LPWSTR lpBuffer}, ${2:UINT inuSize}); ${3:// UINT}
+snippet GetSystemWow64DirectoryA
+	GetSystemWow64DirectoryA(${1:LPSTR lpBuffer}, ${2:UINT inuSize}); ${3:// UINT}
+snippet GetSystemWow64DirectoryW
+	GetSystemWow64DirectoryW(${1:LPWSTR lpBuffer}, ${2:UINT inuSize}); ${3:// UINT}
+snippet GetTapeParameters
+	GetTapeParameters(${1:HANDLE inhDevice}, ${2:DWORD indwOperation}, ${3:LPDWORD iolpdwSize}, ${4:LPVOID lpTapeInformation}); ${5:// DWORD}
+snippet GetTapePosition
+	GetTapePosition(${1:HANDLE inhDevice}, ${2:DWORD indwPositionType}, ${3:LPDWORD outlpdwPartition}, ${4:LPDWORD outlpdwOffsetLow}, ${5:LPDWORD outlpdwOffsetHigh}); ${6:// DWORD}
+snippet GetTapeStatus
+	GetTapeStatus(${1:HANDLE inhDevice}); ${2:// DWORD}
+snippet GetTempFileNameA
+	GetTempFileNameA(${1:LPCSTR inlpPathName}, ${2:LPCSTR inlpPrefixString}, ${3:UINT inuUnique}, ${4:LPSTR lpTempFileName}); ${5:// UINT}
+snippet GetTempFileNameW
+	GetTempFileNameW(${1:LPCWSTR inlpPathName}, ${2:LPCWSTR inlpPrefixString}, ${3:UINT inuUnique}, ${4:LPWSTR lpTempFileName}); ${5:// UINT}
+snippet GetTempPathA
+	GetTempPathA(${1:DWORD innBufferLength}, ${2:LPSTR lpBuffer}); ${3:// DWORD}
+snippet GetTempPathW
+	GetTempPathW(${1:DWORD innBufferLength}, ${2:LPWSTR lpBuffer}); ${3:// DWORD}
+snippet GetThreadContext
+	GetThreadContext(${1:HANDLE inhThread}, ${2:LPCONTEXT iolpContext}); ${3:// BOOL}
+snippet GetThreadIOPendingFlag
+	GetThreadIOPendingFlag(${1:HANDLE inhThread}, ${2:PBOOL outlpIOIsPending}); ${3:// BOOL}
+snippet GetThreadId
+	GetThreadId(${1:HANDLE inThread}); ${2:// DWORD}
+snippet GetThreadPriority
+	GetThreadPriority(${1:HANDLE inhThread}); ${2:// int}
+snippet GetThreadPriorityBoost
+	GetThreadPriorityBoost(${1:HANDLE inhThread}, ${2:PBOOL outpDisablePriorityBoost}); ${3:// BOOL}
+snippet GetThreadSelectorEntry
+	GetThreadSelectorEntry(${1:HANDLE inhThread}, ${2:DWORD indwSelector}, ${3:LPLDT_ENTRY outlpSelectorEntry}); ${4:// BOOL}
+snippet GetThreadTimes
+	GetThreadTimes(${1:HANDLE inhThread}, ${2:LPFILETIME outlpCreationTime}, ${3:LPFILETIME outlpExitTime}, ${4:LPFILETIME outlpKernelTime}, ${5:LPFILETIME outlpUserTime}); ${6:// BOOL}
+snippet GetTickCount
+	GetTickCount(${1:VOID}); ${2:// DWORD}
+snippet GetTickCount64
+	GetTickCount64(${1:VOID}); ${2:// ULONGLONG}
+snippet GetTimeZoneInformation
+	GetTimeZoneInformation(${1:LPTIME_ZONE_INFORMATION outlpTimeZoneInformation}); ${2:// DWORD}
+snippet GetVersion
+	GetVersion(${1:VOID}); ${2:// DWORD}
+snippet GetVersionExA
+	GetVersionExA(${1:LPOSVERSIONINFOA iolpVersionInformation}); ${2:// BOOL}
+snippet GetVersionExW
+	GetVersionExW(${1:LPOSVERSIONINFOW iolpVersionInformation}); ${2:// BOOL}
+snippet GetVolumeInformationA
+	GetVolumeInformationA(${1:LPCSTR inlpRootPathName}, ${2:LPSTR lpVolumeNameBuffer}, ${3:DWORD innVolumeNameSize}, ${4:LPDWORD outlpVolumeSerialNumber}, ${5:LPDWORD outlpMaximumComponentLength}, ${6:LPDWORD outlpFileSystemFlags}, ${7:LPSTR lpFileSystemNameBuffer}, ${8:DWORD innFileSystemNameSize}); ${9:// BOOL}
+snippet GetVolumeInformationByHandleW
+	GetVolumeInformationByHandleW(${1:HANDLE inhFile}, ${2:LPWSTR lpVolumeNameBuffer}, ${3:DWORD innVolumeNameSize}, ${4:LPDWORD outlpVolumeSerialNumber}, ${5:LPDWORD outlpMaximumComponentLength}, ${6:LPDWORD outlpFileSystemFlags}, ${7:LPWSTR lpFileSystemNameBuffer}, ${8:DWORD innFileSystemNameSize}); ${9:// BOOL}
+snippet GetVolumeInformationW
+	GetVolumeInformationW(${1:LPCWSTR inlpRootPathName}, ${2:LPWSTR lpVolumeNameBuffer}, ${3:DWORD innVolumeNameSize}, ${4:LPDWORD outlpVolumeSerialNumber}, ${5:LPDWORD outlpMaximumComponentLength}, ${6:LPDWORD outlpFileSystemFlags}, ${7:LPWSTR lpFileSystemNameBuffer}, ${8:DWORD innFileSystemNameSize}); ${9:// BOOL}
+snippet GetVolumeNameForVolumeMountPointA
+	GetVolumeNameForVolumeMountPointA(${1:LPCSTR inlpszVolumeMountPoint}, ${2:LPSTR lpszVolumeName}, ${3:DWORD incchBufferLength}); ${4:// BOOL}
+snippet GetVolumeNameForVolumeMountPointW
+	GetVolumeNameForVolumeMountPointW(${1:LPCWSTR inlpszVolumeMountPoint}, ${2:LPWSTR lpszVolumeName}, ${3:DWORD incchBufferLength}); ${4:// BOOL}
+snippet GetVolumePathNameA
+	GetVolumePathNameA(${1:LPCSTR inlpszFileName}, ${2:LPSTR lpszVolumePathName}, ${3:DWORD incchBufferLength}); ${4:// BOOL}
+snippet GetVolumePathNameW
+	GetVolumePathNameW(${1:LPCWSTR inlpszFileName}, ${2:LPWSTR lpszVolumePathName}, ${3:DWORD incchBufferLength}); ${4:// BOOL}
+snippet GetVolumePathNamesForVolumeNameA
+	GetVolumePathNamesForVolumeNameA(${1:LPCSTR inlpszVolumeName}, ${2:LPCH lpszVolumePathNames}, ${3:DWORD incchBufferLength}, ${4:PDWORD outlpcchReturnLength}); ${5:// BOOL}
+snippet GetVolumePathNamesForVolumeNameW
+	GetVolumePathNamesForVolumeNameW(${1:LPCWSTR inlpszVolumeName}, ${2:LPWCH lpszVolumePathNames}, ${3:DWORD incchBufferLength}, ${4:PDWORD outlpcchReturnLength}); ${5:// BOOL}
+snippet GetWindowsDirectoryA
+	GetWindowsDirectoryA(${1:LPSTR lpBuffer}, ${2:UINT inuSize}); ${3:// UINT}
+snippet GetWindowsDirectoryW
+	GetWindowsDirectoryW(${1:LPWSTR lpBuffer}, ${2:UINT inuSize}); ${3:// UINT}
+snippet GetWriteWatch
+	GetWriteWatch(${1:DWORD indwFlags}, ${2:PVOID inlpBaseAddress}, ${3:SIZE_T indwRegionSize}, ${4:PVOID *lpAddresses}, ${5:ioULONG_PTR *lpdwCount}, ${6:PULONG outlpdwGranularity}); ${7:// UINT}
+snippet GlobalAddAtomA
+	GlobalAddAtomA(${1:LPCSTR inlpString}); ${2:// ATOM}
+snippet GlobalAddAtomW
+	GlobalAddAtomW(${1:LPCWSTR inlpString}); ${2:// ATOM}
+snippet GlobalAlloc
+	GlobalAlloc(${1:UINT inuFlags}, ${2:SIZE_T indwBytes}); ${3:// HGLOBAL}
+snippet GlobalCompact
+	GlobalCompact(${1:DWORD indwMinFree}); ${2:// SIZE_T}
+snippet GlobalDeleteAtom
+	GlobalDeleteAtom(${1:ATOM innAtom}); ${2:// ATOM}
+snippet GlobalFindAtomA
+	GlobalFindAtomA(${1:LPCSTR inlpString}); ${2:// ATOM}
+snippet GlobalFindAtomW
+	GlobalFindAtomW(${1:LPCWSTR inlpString}); ${2:// ATOM}
+snippet GlobalFix
+	GlobalFix(${1:HGLOBAL inhMem}); ${2:// VOID}
+snippet GlobalFlags
+	GlobalFlags(${1:HGLOBAL inhMem}); ${2:// UINT}
+snippet GlobalFree
+	GlobalFree(${1:HGLOBAL hMem}); ${2:// HGLOBAL}
+snippet GlobalGetAtomNameA
+	GlobalGetAtomNameA(${1:ATOM innAtom}, ${2:LPSTR lpBuffer}, ${3:int innSize}); ${4:// UINT}
+snippet GlobalGetAtomNameW
+	GlobalGetAtomNameW(${1:ATOM innAtom}, ${2:LPWSTR lpBuffer}, ${3:int innSize}); ${4:// UINT}
+snippet GlobalHandle
+	GlobalHandle(${1:LPCVOID inpMem}); ${2:// HGLOBAL}
+snippet GlobalLock
+	GlobalLock(${1:HGLOBAL inhMem}); ${2:// LPVOID}
+snippet GlobalMemoryStatus
+	GlobalMemoryStatus(${1:LPMEMORYSTATUS outlpBuffer}); ${2:// VOID}
+snippet GlobalMemoryStatusEx
+	GlobalMemoryStatusEx(${1:LPMEMORYSTATUSEX outlpBuffer}); ${2:// BOOL}
+snippet GlobalReAlloc
+	GlobalReAlloc(${1:HGLOBAL inhMem}, ${2:SIZE_T indwBytes}, ${3:UINT inuFlags}); ${4:// HGLOBAL}
+snippet GlobalSize
+	GlobalSize(${1:HGLOBAL inhMem}); ${2:// SIZE_T}
+snippet GlobalUnWire
+	GlobalUnWire(${1:HGLOBAL inhMem}); ${2:// BOOL}
+snippet GlobalUnfix
+	GlobalUnfix(${1:HGLOBAL inhMem}); ${2:// VOID}
+snippet GlobalUnlock
+	GlobalUnlock(${1:HGLOBAL inhMem}); ${2:// BOOL}
+snippet GlobalWire
+	GlobalWire(${1:HGLOBAL inhMem}); ${2:// LPVOID}
+snippet HLOCAL
+	HLOCAL WINAPI LocalAlloc(${1:UINT inuFlags}, ${2:SIZE_T inuBytes})
+snippet HeapAlloc
+	HeapAlloc(${1:HANDLE inhHeap}, ${2:DWORD indwFlags}, ${3:SIZE_T indwBytes})
+snippet HeapCompact
+	HeapCompact(${1:HANDLE inhHeap}, ${2:DWORD indwFlags})
+snippet HeapCreate
+	HeapCreate(${1:DWORD inflOptions}, ${2:SIZE_T indwInitialSize}, ${3:SIZE_T indwMaximumSize})
+snippet HeapDestroy
+	HeapDestroy(${1:HANDLE inhHeap})
+snippet HeapFree
+	HeapFree(${1:HANDLE iohHeap}, ${2:DWORD indwFlags}, ${3:LPVOID lpMem})
+snippet HeapLock
+	HeapLock(${1:HANDLE inhHeap})
+snippet HeapQueryInformation
+	HeapQueryInformation(${1:HANDLE inHeapHandle}, ${2:HEAP_INFORMATION_CLASS inHeapInformationClass}, ${3:PVOID HeapInformation}, ${4:SIZE_T inHeapInformationLength}, ${5:PSIZE_T outReturnLength})
+snippet HeapReAlloc
+	HeapReAlloc(${1:HANDLE iohHeap}, ${2:DWORD indwFlags}, ${3:LPVOID lpMem}, ${4:SIZE_T indwBytes})
+snippet HeapSetInformation
+	HeapSetInformation(${1:HANDLE inHeapHandle}, ${2:HEAP_INFORMATION_CLASS inHeapInformationClass}, ${3:PVOID HeapInformation}, ${4:SIZE_T inHeapInformationLength})
+snippet HeapSize
+	HeapSize(${1:HANDLE inhHeap}, ${2:DWORD indwFlags}, ${3:LPCVOID inlpMem})
+snippet HeapUnlock
+	HeapUnlock(${1:HANDLE inhHeap})
+snippet HeapValidate
+	HeapValidate(${1:HANDLE inhHeap}, ${2:DWORD indwFlags}, ${3:LPCVOID inlpMem})
+snippet HeapWalk
+	HeapWalk(${1:HANDLE inhHeap}, ${2:LPPROCESS_HEAP_ENTRY iolpEntry})
+snippet InitAtomTable
+	InitAtomTable(${1:DWORD innSize})
+snippet InitOnceBeginInitialize
+	InitOnceBeginInitialize(${1:LPINIT_ONCE iolpInitOnce}, ${2:DWORD indwFlags}, ${3:PBOOL outfPending}, ${4:LPVOID *lpContext})
+snippet InitOnceComplete
+	InitOnceComplete(${1:LPINIT_ONCE iolpInitOnce}, ${2:DWORD indwFlags}, ${3:LPVOID inlpContext})
+snippet InitOnceExecuteOnce
+	InitOnceExecuteOnce(${1:PINIT_ONCE ioInitOnce}, ${2:PINIT_ONCE_FN inInitFn}, ${3:PVOID ioParameter}, ${4:LPVOID *Context})
+snippet InitOnceInitialize
+	InitOnceInitialize(${1:PINIT_ONCE outInitOnce})
+snippet InitializeConditionVariable
+	InitializeConditionVariable(${1:PCONDITION_VARIABLE outConditionVariable})
+snippet InitializeCriticalSection
+	InitializeCriticalSection(${1:LPCRITICAL_SECTION outlpCriticalSection})
+snippet InitializeCriticalSectionAndSpinCount
+	InitializeCriticalSectionAndSpinCount(${1:LPCRITICAL_SECTION outlpCriticalSection}, ${2:DWORD indwSpinCount})
+snippet InitializeCriticalSectionEx
+	InitializeCriticalSectionEx(${1:LPCRITICAL_SECTION outlpCriticalSection}, ${2:DWORD indwSpinCount}, ${3:DWORD inFlags})
+snippet InitializeProcThreadAttributeList
+	InitializeProcThreadAttributeList(${1:LPPROC_THREAD_ATTRIBUTE_LIST lpAttributeList}, ${2:DWORD indwAttributeCount}, ${3:DWORD indwFlags}, ${4:PSIZE_T iolpSize})
+snippet InitializeSListHead
+	InitializeSListHead(${1:PSLIST_HEADER ioListHead})
+snippet InitializeSRWLock
+	InitializeSRWLock(${1:PSRWLOCK outSRWLock})
+snippet InterlockedCompareExchange
+	InterlockedCompareExchange(${1:LONG iovolatile *Destination}, ${2:LONG inExchange}, ${3:LONG inComperand})
+snippet InterlockedCompareExchange64
+	InterlockedCompareExchange64(${1:LONGLONG iovolatile *Destination}, ${2:LONGLONG inExchange}, ${3:LONGLONG inComperand})
+snippet InterlockedDecrement
+	InterlockedDecrement(${1:LONG iovolatile *lpAddend})
+snippet InterlockedExchange
+	InterlockedExchange(${1:LONG iovolatile *Target}, ${2:LONG inValue})
+snippet InterlockedExchangeAdd
+	InterlockedExchangeAdd(${1:LONG iovolatile *Addend}, ${2:LONG inValue})
+snippet InterlockedFlushSList
+	InterlockedFlushSList(${1:PSLIST_HEADER ioListHead})
+snippet InterlockedIncrement
+	InterlockedIncrement(${1:LONG iovolatile *lpAddend})
+snippet InterlockedPopEntrySList
+	InterlockedPopEntrySList(${1:PSLIST_HEADER ioListHead})
+snippet InterlockedPushEntrySList
+	InterlockedPushEntrySList(${1:PSLIST_HEADER ioListHead}, ${2:PSLIST_ENTRY ioListEntry})
+snippet IsBadCodePtr
+	IsBadCodePtr(${1:FARPROC inlpfn})
+snippet IsBadHugeReadPtr
+	IsBadHugeReadPtr(${1:CONST inVOID *lp}, ${2:UINT_PTR inucb})
+snippet IsBadHugeWritePtr
+	IsBadHugeWritePtr(${1:LPVOID inlp}, ${2:UINT_PTR inucb})
+snippet IsBadReadPtr
+	IsBadReadPtr(${1:CONST inVOID *lp}, ${2:UINT_PTR inucb})
+snippet IsBadStringPtrA
+	IsBadStringPtrA(${1:LPCSTR inlpsz}, ${2:UINT_PTR inucchMax})
+snippet IsBadStringPtrW
+	IsBadStringPtrW(${1:LPCWSTR inlpsz}, ${2:UINT_PTR inucchMax})
+snippet IsBadWritePtr
+	IsBadWritePtr(${1:LPVOID inlp}, ${2:UINT_PTR inucb})
+snippet IsDebuggerPresent
+	IsDebuggerPresent(${1:VOID})
+snippet IsProcessInJob
+	IsProcessInJob(${1:HANDLE inProcessHandle}, ${2:HANDLE inJobHandle}, ${3:PBOOL outResult})
+snippet IsProcessorFeaturePresent
+	IsProcessorFeaturePresent(${1:DWORD inProcessorFeature})
+snippet IsSystemResumeAutomatic
+	IsSystemResumeAutomatic(${1:VOID})
+snippet IsThreadAFiber
+	IsThreadAFiber(${1:VOID})
+snippet IsThreadpoolTimerSet
+	IsThreadpoolTimerSet(${1:PTP_TIMER iopti})
+snippet IsWow64Process
+	IsWow64Process(${1:HANDLE inhProcess}, ${2:PBOOL outWow64Process})
+snippet LPVOID
+	LPVOID WINAPI MapViewOfFile(${1:HANDLE inhFileMappingObject}, ${2:DWORD indwDesiredAccess}, ${3:DWORD indwFileOffsetHigh}, ${4:DWORD indwFileOffsetLow}, ${5:SIZE_T indwNumberOfBytesToMap})
+snippet LPVOID
+	LPVOID WINAPI MapViewOfFileEx(${1:HANDLE inhFileMappingObject}, ${2:DWORD indwDesiredAccess}, ${3:DWORD indwFileOffsetHigh}, ${4:DWORD indwFileOffsetLow}, ${5:SIZE_T indwNumberOfBytesToMap}, ${6:LPVOID inlpBaseAddress})
+snippet LPVOID
+	LPVOID WINAPI MapViewOfFileExNuma(${1:HANDLE inhFileMappingObject}, ${2:DWORD indwDesiredAccess}, ${3:DWORD indwFileOffsetHigh}, ${4:DWORD indwFileOffsetLow}, ${5:SIZE_T indwNumberOfBytesToMap}, ${6:LPVOID inlpBaseAddress}, ${7:DWORD innndPreferred})
+snippet LeaveCriticalSection
+	LeaveCriticalSection(${1:LPCRITICAL_SECTION iolpCriticalSection})
+snippet LeaveCriticalSectionWhenCallbackReturns
+	LeaveCriticalSectionWhenCallbackReturns(${1:PTP_CALLBACK_INSTANCE iopci}, ${2:PCRITICAL_SECTION iopcs})
+snippet LoadLibraryA
+	LoadLibraryA(${1:LPCSTR inlpLibFileName})
+snippet LoadLibraryExA
+	LoadLibraryExA(${1:LPCSTR inlpLibFileName}, ${2:HANDLE hFile}, ${3:DWORD indwFlags})
+snippet LoadLibraryExW
+	LoadLibraryExW(${1:LPCWSTR inlpLibFileName}, ${2:HANDLE hFile}, ${3:DWORD indwFlags})
+snippet LoadLibraryW
+	LoadLibraryW(${1:LPCWSTR inlpLibFileName})
+snippet LoadModule
+	LoadModule(${1:LPCSTR inlpModuleName}, ${2:LPVOID inlpParameterBlock})
+snippet LoadResource
+	LoadResource(${1:HMODULE inhModule}, ${2:HRSRC inhResInfo})
+snippet LocalCompact
+	LocalCompact(${1:UINT inuMinFree})
+snippet LocalFileTimeToFileTime
+	LocalFileTimeToFileTime(${1:CONST inFILETIME *lpLocalFileTime}, ${2:LPFILETIME outlpFileTime})
+snippet LocalFlags
+	LocalFlags(${1:HLOCAL inhMem}); ${2:// WINBASEAPI}
+snippet LocalFree
+	LocalFree(${1:HLOCAL hMem}); ${2:// HLOCAL}
+snippet LocalHandle
+	LocalHandle(${1:LPCVOID inpMem}); ${2:// HLOCAL}
+snippet LocalLock
+	LocalLock(${1:HLOCAL inhMem}); ${2:// LPVOID}
+snippet LocalReAlloc
+	LocalReAlloc(${1:HLOCAL inhMem}, ${2:SIZE_T inuBytes}, ${3:UINT inuFlags}); ${4:// HLOCAL}
+snippet LocalShrink
+	LocalShrink(${1:HLOCAL inhMem}, ${2:UINT incbNewSize}); ${3:// SIZE_T}
+snippet LocalSize
+	LocalSize(${1:HLOCAL inhMem}); ${2:// SIZE_T}
+snippet LocalUnlock
+	LocalUnlock(${1:HLOCAL inhMem}); ${2:// BOOL}
+snippet LockFile
+	LockFile(${1:HANDLE inhFile}, ${2:DWORD indwFileOffsetLow}, ${3:DWORD indwFileOffsetHigh}, ${4:DWORD innNumberOfBytesToLockLow}, ${5:DWORD innNumberOfBytesToLockHigh}); ${6:// BOOL}
+snippet LockFileEx
+	LockFileEx(${1:HANDLE inhFile}, ${2:DWORD indwFlags}, ${3:DWORD dwReserved}, ${4:DWORD innNumberOfBytesToLockLow}, ${5:DWORD innNumberOfBytesToLockHigh}, ${6:LPOVERLAPPED iolpOverlapped}); ${7:// BOOL}
+snippet LockResource
+	LockResource(${1:HGLOBAL inhResData}); ${2:// LPVOID}
+snippet MapUserPhysicalPages
+	MapUserPhysicalPages(${1:PVOID inVirtualAddress}, ${2:ULONG_PTR inNumberOfPages}, ${3:PULONG_PTR PageArray}); ${4:// BOOL}
+snippet MapUserPhysicalPagesScatter
+	MapUserPhysicalPagesScatter(${1:PVOID *VirtualAddresses}, ${2:ULONG_PTR inNumberOfPages}, ${3:PULONG_PTR PageArray}); ${4:// BOOL}
+snippet MoveFileA
+	MoveFileA(${1:LPCSTR inlpExistingFileName}, ${2:LPCSTR inlpNewFileName}); ${3:// BOOL}
+snippet MoveFileExA
+	MoveFileExA(${1:LPCSTR inlpExistingFileName}, ${2:LPCSTR inlpNewFileName}, ${3:DWORD indwFlags}); ${4:// BOOL}
+snippet MoveFileExW
+	MoveFileExW(${1:LPCWSTR inlpExistingFileName}, ${2:LPCWSTR inlpNewFileName}, ${3:DWORD indwFlags}); ${4:// BOOL}
+snippet MoveFileTransactedA
+	MoveFileTransactedA(${1:LPCSTR inlpExistingFileName}, ${2:LPCSTR inlpNewFileName}, ${3:LPPROGRESS_ROUTINE inlpProgressRoutine}, ${4:LPVOID inlpData}, ${5:DWORD indwFlags}, ${6:HANDLE inhTransaction}); ${7:// BOOL}
+snippet MoveFileTransactedW
+	MoveFileTransactedW(${1:LPCWSTR inlpExistingFileName}, ${2:LPCWSTR inlpNewFileName}, ${3:LPPROGRESS_ROUTINE inlpProgressRoutine}, ${4:LPVOID inlpData}, ${5:DWORD indwFlags}, ${6:HANDLE inhTransaction}); ${7:// BOOL}
+snippet MoveFileW
+	MoveFileW(${1:LPCWSTR inlpExistingFileName}, ${2:LPCWSTR inlpNewFileName}); ${3:// BOOL}
+snippet MoveFileWithProgressA
+	MoveFileWithProgressA(${1:LPCSTR inlpExistingFileName}, ${2:LPCSTR inlpNewFileName}, ${3:LPPROGRESS_ROUTINE inlpProgressRoutine}, ${4:LPVOID inlpData}, ${5:DWORD indwFlags}); ${6:// BOOL}
+snippet MoveFileWithProgressW
+	MoveFileWithProgressW(${1:LPCWSTR inlpExistingFileName}, ${2:LPCWSTR inlpNewFileName}, ${3:LPPROGRESS_ROUTINE inlpProgressRoutine}, ${4:LPVOID inlpData}, ${5:DWORD indwFlags}); ${6:// BOOL}
+snippet MulDiv
+	MulDiv(${1:int innNumber}, ${2:int innNumerator}, ${3:int innDenominator}); ${4:// int}
+snippet NeedCurrentDirectoryForExePathA
+	NeedCurrentDirectoryForExePathA(${1:LPCSTR inExeName}); ${2:// BOOL}
+snippet NeedCurrentDirectoryForExePathW
+	NeedCurrentDirectoryForExePathW(${1:LPCWSTR inExeName}); ${2:// BOOL}
+snippet OpenEventA
+	OpenEventA(${1:DWORD indwDesiredAccess}, ${2:BOOL inbInheritHandle}, ${3:LPCSTR inlpName}); ${4:// HANDLE}
+snippet OpenEventW
+	OpenEventW(${1:DWORD indwDesiredAccess}, ${2:BOOL inbInheritHandle}, ${3:LPCWSTR inlpName}); ${4:// HANDLE}
+snippet OpenFile
+	OpenFile(${1:LPCSTR inlpFileName}, ${2:LPOFSTRUCT iolpReOpenBuff}, ${3:UINT inuStyle}); ${4:// HFILE}
+snippet OpenFileMappingA
+	OpenFileMappingA(${1:DWORD indwDesiredAccess}, ${2:BOOL inbInheritHandle}, ${3:LPCSTR inlpName}); ${4:// HANDLE}
+snippet OpenFileMappingW
+	OpenFileMappingW(${1:DWORD indwDesiredAccess}, ${2:BOOL inbInheritHandle}, ${3:LPCWSTR inlpName}); ${4:// HANDLE}
+snippet OpenJobObjectA
+	OpenJobObjectA(${1:DWORD indwDesiredAccess}, ${2:BOOL inbInheritHandle}, ${3:LPCSTR inlpName}); ${4:// HANDLE}
+snippet OpenJobObjectW
+	OpenJobObjectW(${1:DWORD indwDesiredAccess}, ${2:BOOL inbInheritHandle}, ${3:LPCWSTR inlpName}); ${4:// HANDLE}
+snippet OpenMutexA
+	OpenMutexA(${1:DWORD indwDesiredAccess}, ${2:BOOL inbInheritHandle}, ${3:LPCSTR inlpName}); ${4:// HANDLE}
+snippet OpenMutexW
+	OpenMutexW(${1:DWORD indwDesiredAccess}, ${2:BOOL inbInheritHandle}, ${3:LPCWSTR inlpName}); ${4:// HANDLE}
+snippet OpenPrivateNamespaceA
+	OpenPrivateNamespaceA(${1:LPVOID inlpBoundaryDescriptor}, ${2:LPCSTR inlpAliasPrefix}); ${3:// HANDLE}
+snippet OpenPrivateNamespaceW
+	OpenPrivateNamespaceW(${1:LPVOID inlpBoundaryDescriptor}, ${2:LPCWSTR inlpAliasPrefix}); ${3:// HANDLE}
+snippet OpenProcess
+	OpenProcess(${1:DWORD indwDesiredAccess}, ${2:BOOL inbInheritHandle}, ${3:DWORD indwProcessId}); ${4:// HANDLE}
+snippet OpenSemaphoreA
+	OpenSemaphoreA(${1:DWORD indwDesiredAccess}, ${2:BOOL inbInheritHandle}, ${3:LPCSTR inlpName}); ${4:// HANDLE}
+snippet OpenSemaphoreW
+	OpenSemaphoreW(${1:DWORD indwDesiredAccess}, ${2:BOOL inbInheritHandle}, ${3:LPCWSTR inlpName}); ${4:// HANDLE}
+snippet OpenThread
+	OpenThread(${1:DWORD indwDesiredAccess}, ${2:BOOL inbInheritHandle}, ${3:DWORD indwThreadId}); ${4:// HANDLE}
+snippet OpenWaitableTimerA
+	OpenWaitableTimerA(${1:DWORD indwDesiredAccess}, ${2:BOOL inbInheritHandle}, ${3:LPCSTR inlpTimerName}); ${4:// HANDLE}
+snippet OpenWaitableTimerW
+	OpenWaitableTimerW(${1:DWORD indwDesiredAccess}, ${2:BOOL inbInheritHandle}, ${3:LPCWSTR inlpTimerName}); ${4:// HANDLE}
+snippet OutputDebugStringA
+	OutputDebugStringA(${1:LPCSTR inlpOutputString}); ${2:// VOID}
+snippet OutputDebugStringW
+	OutputDebugStringW(${1:LPCWSTR inlpOutputString}); ${2:// VOID}
+snippet PeekNamedPipe
+	PeekNamedPipe(${1:HANDLE inhNamedPipe}, ${2:LPVOID lpBuffer}, ${3:DWORD innBufferSize}, ${4:LPDWORD outlpBytesRead}, ${5:LPDWORD outlpTotalBytesAvail}, ${6:LPDWORD outlpBytesLeftThisMessage}); ${7:// BOOL}
+snippet PostQueuedCompletionStatus
+	PostQueuedCompletionStatus(${1:HANDLE inCompletionPort}, ${2:DWORD indwNumberOfBytesTransferred}, ${3:ULONG_PTR indwCompletionKey}, ${4:LPOVERLAPPED inlpOverlapped}); ${5:// BOOL}
+snippet PrepareTape
+	PrepareTape(${1:HANDLE inhDevice}, ${2:DWORD indwOperation}, ${3:BOOL inbImmediate}); ${4:// DWORD}
+snippet ProcessIdToSessionId
+	ProcessIdToSessionId(${1:DWORD indwProcessId}, ${2:outDWORD *pSessionId}); ${3:// BOOL}
+snippet PulseEvent
+	PulseEvent(${1:HANDLE inhEvent}); ${2:// BOOL}
+snippet PurgeComm
+	PurgeComm(${1:HANDLE inhFile}, ${2:DWORD indwFlags}); ${3:// BOOL}
+snippet QueryActCtxSettingsW
+	QueryActCtxSettingsW(${1:DWORD indwFlags}, ${2:HANDLE inhActCtx}, ${3:PCWSTR insettingsNameSpace}, ${4:PCWSTR insettingName}, ${5:PWSTR pvBuffer}, ${6:SIZE_T indwBuffer}, ${7:outSIZE_T *pdwWrittenOrRequired}); ${8:// BOOL}
+snippet QueryActCtxW
+	QueryActCtxW(${1:DWORD indwFlags}, ${2:HANDLE inhActCtx}, ${3:PVOID inpvSubInstance}, ${4:ULONG inulInfoClass}, ${5:PVOID pvBuffer}, ${6:SIZE_T incbBuffer}, ${7:outSIZE_T *pcbWrittenOrRequired}); ${8:// BOOL}
+snippet QueryDepthSList
+	QueryDepthSList(${1:PSLIST_HEADER inListHead}); ${2:// USHORT}
+snippet QueryDosDeviceA
+	QueryDosDeviceA(${1:LPCSTR inlpDeviceName}, ${2:LPSTR lpTargetPath}, ${3:DWORD inucchMax}); ${4:// DWORD}
+snippet QueryDosDeviceW
+	QueryDosDeviceW(${1:LPCWSTR inlpDeviceName}, ${2:LPWSTR lpTargetPath}, ${3:DWORD inucchMax}); ${4:// DWORD}
+snippet QueryFullProcessImageNameA
+	QueryFullProcessImageNameA(${1:HANDLE inhProcess}, ${2:DWORD indwFlags}, ${3:LPSTR lpExeName}, ${4:PDWORD iolpdwSize}); ${5:// BOOL}
+snippet QueryFullProcessImageNameW
+	QueryFullProcessImageNameW(${1:HANDLE inhProcess}, ${2:DWORD indwFlags}, ${3:LPWSTR lpExeName}, ${4:PDWORD iolpdwSize}); ${5:// BOOL}
+snippet QueryIdleProcessorCycleTime
+	QueryIdleProcessorCycleTime(${1:PULONG ioBufferLength}, ${2:PULONG64 ProcessorIdleCycleTime}); ${3:// BOOL}
+snippet QueryInformationJobObject
+	QueryInformationJobObject(${1:HANDLE inhJob}, ${2:JOBOBJECTINFOCLASS inJobObjectInformationClass}, ${3:LPVOID lpJobObjectInformation}, ${4:DWORD incbJobObjectInformationLength}, ${5:LPDWORD outlpReturnLength}); ${6:// BOOL}
+snippet QueryMemoryResourceNotification
+	QueryMemoryResourceNotification(${1:HANDLE inResourceNotificationHandle}, ${2:PBOOL outResourceState}); ${3:// BOOL}
+snippet QueryPerformanceCounter
+	QueryPerformanceCounter(${1:outLARGE_INTEGER *lpPerformanceCount}); ${2:// BOOL}
+snippet QueryPerformanceFrequency
+	QueryPerformanceFrequency(${1:outLARGE_INTEGER *lpFrequency}); ${2:// BOOL}
+snippet QueryProcessAffinityUpdateMode
+	QueryProcessAffinityUpdateMode(${1:HANDLE inhProcess}, ${2:LPDWORD outlpdwFlags}); ${3:// BOOL}
+snippet QueryProcessCycleTime
+	QueryProcessCycleTime(${1:HANDLE inProcessHandle}, ${2:PULONG64 outCycleTime}); ${3:// BOOL}
+snippet QueryThreadCycleTime
+	QueryThreadCycleTime(${1:HANDLE inThreadHandle}, ${2:PULONG64 outCycleTime}); ${3:// BOOL}
+snippet QueueUserAPC
+	QueueUserAPC(${1:PAPCFUNC inpfnAPC}, ${2:HANDLE inhThread}, ${3:ULONG_PTR indwData}); ${4:// DWORD}
+snippet QueueUserWorkItem
+	QueueUserWorkItem(${1:LPTHREAD_START_ROUTINE inFunction}, ${2:PVOID inContext}, ${3:ULONG inFlags}); ${4:// BOOL}
+snippet RaiseException
+	RaiseException(${1:DWORD indwExceptionCode}, ${2:DWORD indwExceptionFlags}, ${3:DWORD innNumberOfArguments}, ${4:CONST ULONG_PTR *lpArguments}); ${5:// VOID}
+snippet ReOpenFile
+	ReOpenFile(${1:HANDLE inhOriginalFile}, ${2:DWORD indwDesiredAccess}, ${3:DWORD indwShareMode}, ${4:DWORD indwFlagsAndAttributes}); ${5:// HANDLE}
+snippet ReadDirectoryChangesW
+	ReadDirectoryChangesW(${1:HANDLE inhDirectory}, ${2:LPVOID lpBuffer}, ${3:DWORD innBufferLength}, ${4:BOOL inbWatchSubtree}, ${5:DWORD indwNotifyFilter}, ${6:LPDWORD outlpBytesReturned}, ${7:LPOVERLAPPED iolpOverlapped}, ${8:LPOVERLAPPED_COMPLETION_ROUTINE inlpCompletionRoutine}); ${9:// BOOL}
+snippet ReadFile
+	ReadFile(${1:HANDLE inhFile}, ${2:LPVOID lpBuffer}, ${3:DWORD innNumberOfBytesToRead}, ${4:LPDWORD outlpNumberOfBytesRead}, ${5:LPOVERLAPPED iolpOverlapped}); ${6:// BOOL}
+snippet ReadFileEx
+	ReadFileEx(${1:HANDLE inhFile}, ${2:LPVOID lpBuffer}, ${3:DWORD innNumberOfBytesToRead}, ${4:LPOVERLAPPED iolpOverlapped}, ${5:LPOVERLAPPED_COMPLETION_ROUTINE inlpCompletionRoutine}); ${6:// BOOL}
+snippet ReadFileScatter
+	ReadFileScatter(${1:HANDLE inhFile}, ${2:FILE_SEGMENT_ELEMENT inaSegmentArray[]}, ${3:DWORD innNumberOfBytesToRead}, ${4:LPDWORD lpReserved}, ${5:LPOVERLAPPED iolpOverlapped}); ${6:// BOOL}
+snippet ReadProcessMemory
+	ReadProcessMemory(${1:HANDLE inhProcess}, ${2:LPCVOID inlpBaseAddress}, ${3:LPVOID lpBuffer}, ${4:SIZE_T innSize}, ${5:outSIZE_T * lpNumberOfBytesRead}); ${6:// BOOL}
+snippet RegisterApplicationRecoveryCallback
+	RegisterApplicationRecoveryCallback(${1:APPLICATION_RECOVERY_CALLBACK inpRecoveyCallback}, ${2:PVOID inpvParameter}, ${3:DWORD indwPingInterval}, ${4:DWORD indwFlags}); ${5:// HRESULT}
+snippet RegisterApplicationRestart
+	RegisterApplicationRestart(${1:PCWSTR inpwzCommandline}, ${2:DWORD indwFlags}); ${3:// HRESULT}
+snippet RegisterWaitForSingleObject
+	RegisterWaitForSingleObject(${1:PHANDLE phNewWaitObject}, ${2:HANDLE inhObject}, ${3:WAITORTIMERCALLBACK inCallback}, ${4:PVOID inContext}, ${5:ULONG indwMilliseconds}, ${6:ULONG indwFlags}); ${7:// BOOL}
+snippet RegisterWaitForSingleObjectEx
+	RegisterWaitForSingleObjectEx(${1:HANDLE inhObject}, ${2:WAITORTIMERCALLBACK inCallback}, ${3:PVOID inContext}, ${4:ULONG indwMilliseconds}, ${5:ULONG indwFlags}); ${6:// HANDLE}
+snippet ReleaseActCtx
+	ReleaseActCtx(${1:HANDLE iohActCtx}); ${2:// VOID}
+snippet ReleaseMutex
+	ReleaseMutex(${1:HANDLE inhMutex}); ${2:// BOOL}
+snippet ReleaseMutexWhenCallbackReturns
+	ReleaseMutexWhenCallbackReturns(${1:PTP_CALLBACK_INSTANCE iopci}, ${2:HANDLE inmut}); ${3:// VOID}
+snippet ReleaseSRWLockExclusive
+	ReleaseSRWLockExclusive(${1:PSRWLOCK ioSRWLock}); ${2:// VOID}
+snippet ReleaseSRWLockShared
+	ReleaseSRWLockShared(${1:PSRWLOCK ioSRWLock}); ${2:// VOID}
+snippet ReleaseSemaphore
+	ReleaseSemaphore(${1:HANDLE inhSemaphore}, ${2:LONG inlReleaseCount}, ${3:LPLONG outlpPreviousCount}); ${4:// BOOL}
+snippet ReleaseSemaphoreWhenCallbackReturns
+	ReleaseSemaphoreWhenCallbackReturns(${1:PTP_CALLBACK_INSTANCE iopci}, ${2:HANDLE insem}, ${3:DWORD increl}); ${4:// VOID}
+snippet RemoveDirectoryA
+	RemoveDirectoryA(${1:LPCSTR inlpPathName}); ${2:// BOOL}
+snippet RemoveDirectoryTransactedA
+	RemoveDirectoryTransactedA(${1:LPCSTR inlpPathName}, ${2:HANDLE inhTransaction}); ${3:// BOOL}
+snippet RemoveDirectoryTransactedW
+	RemoveDirectoryTransactedW(${1:LPCWSTR inlpPathName}, ${2:HANDLE inhTransaction}); ${3:// BOOL}
+snippet RemoveDirectoryW
+	RemoveDirectoryW(${1:LPCWSTR inlpPathName}); ${2:// BOOL}
+snippet RemoveSecureMemoryCacheCallback
+	RemoveSecureMemoryCacheCallback(${1:PSECURE_MEMORY_CACHE_CALLBACK inpfnCallBack}); ${2:// BOOL}
+snippet RemoveVectoredContinueHandler
+	RemoveVectoredContinueHandler(${1:PVOID inHandle}); ${2:// ULONG}
+snippet RemoveVectoredExceptionHandler
+	RemoveVectoredExceptionHandler(${1:PVOID inHandle}); ${2:// ULONG}
+snippet ReplaceFileA
+	ReplaceFileA(${1:LPCSTR inlpReplacedFileName}, ${2:LPCSTR inlpReplacementFileName}, ${3:LPCSTR inlpBackupFileName}, ${4:DWORD indwReplaceFlags}, ${5:LPVOID lpExclude}, ${6:LPVOID lpReserved}); ${7:// BOOL}
+snippet ReplaceFileW
+	ReplaceFileW(${1:LPCWSTR inlpReplacedFileName}, ${2:LPCWSTR inlpReplacementFileName}, ${3:LPCWSTR inlpBackupFileName}, ${4:DWORD indwReplaceFlags}, ${5:LPVOID lpExclude}, ${6:LPVOID lpReserved}); ${7:// BOOL}
+snippet ReplacePartitionUnit
+	ReplacePartitionUnit(${1:PWSTR inTargetPartition}, ${2:PWSTR inSparePartition}, ${3:ULONG inFlags}); ${4:// BOOL}
+snippet RequestDeviceWakeup
+	RequestDeviceWakeup(${1:HANDLE inhDevice}); ${2:// BOOL}
+snippet RequestWakeupLatency
+	RequestWakeupLatency(${1:LATENCY_TIME inlatency}); ${2:// BOOL}
+snippet ResetEvent
+	ResetEvent(${1:HANDLE inhEvent}); ${2:// BOOL}
+snippet ResetWriteWatch
+	ResetWriteWatch(${1:LPVOID inlpBaseAddress}, ${2:SIZE_T indwRegionSize}); ${3:// UINT}
+snippet RestoreLastError
+	RestoreLastError(${1:DWORD indwErrCode}); ${2:// VOID}
+snippet ResumeThread
+	ResumeThread(${1:HANDLE inhThread}); ${2:// DWORD}
+snippet SearchPathA
+	SearchPathA(${1:LPCSTR inlpPath}, ${2:LPCSTR inlpFileName}, ${3:LPCSTR inlpExtension}, ${4:DWORD innBufferLength}, ${5:LPSTR lpBuffer}, ${6:outLPSTR *lpFilePart}); ${7:// DWORD}
+snippet SearchPathW
+	SearchPathW(${1:LPCWSTR inlpPath}, ${2:LPCWSTR inlpFileName}, ${3:LPCWSTR inlpExtension}, ${4:DWORD innBufferLength}, ${5:LPWSTR lpBuffer}, ${6:outLPWSTR *lpFilePart}); ${7:// DWORD}
+snippet SetCommBreak
+	SetCommBreak(${1:HANDLE inhFile}); ${2:// BOOL}
+snippet SetCommConfig
+	SetCommConfig(${1:HANDLE inhCommDev}, ${2:LPCOMMCONFIG lpCC}, ${3:DWORD indwSize}); ${4:// BOOL}
+snippet SetCommMask
+	SetCommMask(${1:HANDLE inhFile}, ${2:DWORD indwEvtMask}); ${3:// BOOL}
+snippet SetCommState
+	SetCommState(${1:HANDLE inhFile}, ${2:LPDCB inlpDCB}); ${3:// BOOL}
+snippet SetCommTimeouts
+	SetCommTimeouts(${1:HANDLE inhFile}, ${2:LPCOMMTIMEOUTS inlpCommTimeouts}); ${3:// BOOL}
+snippet SetComputerNameA
+	SetComputerNameA(${1:LPCSTR inlpComputerName}); ${2:// BOOL}
+snippet SetComputerNameExA
+	SetComputerNameExA(${1:COMPUTER_NAME_FORMAT inNameType}, ${2:LPCSTR inlpBuffer}); ${3:// BOOL}
+snippet SetComputerNameExW
+	SetComputerNameExW(${1:COMPUTER_NAME_FORMAT inNameType}, ${2:LPCWSTR inlpBuffer}); ${3:// BOOL}
+snippet SetComputerNameW
+	SetComputerNameW(${1:LPCWSTR inlpComputerName}); ${2:// BOOL}
+snippet SetCriticalSectionSpinCount
+	SetCriticalSectionSpinCount(${1:LPCRITICAL_SECTION iolpCriticalSection}, ${2:DWORD indwSpinCount}); ${3:// DWORD}
+snippet SetCurrentDirectoryA
+	SetCurrentDirectoryA(${1:LPCSTR inlpPathName}); ${2:// BOOL}
+snippet SetCurrentDirectoryW
+	SetCurrentDirectoryW(${1:LPCWSTR inlpPathName}); ${2:// BOOL}
+snippet SetDefaultCommConfigA
+	SetDefaultCommConfigA(${1:LPCSTR inlpszName}, ${2:LPCOMMCONFIG lpCC}, ${3:DWORD indwSize}); ${4:// BOOL}
+snippet SetDefaultCommConfigW
+	SetDefaultCommConfigW(${1:LPCWSTR inlpszName}, ${2:LPCOMMCONFIG lpCC}, ${3:DWORD indwSize}); ${4:// BOOL}
+snippet SetDllDirectoryA
+	SetDllDirectoryA(${1:LPCSTR inlpPathName}); ${2:// BOOL}
+snippet SetDllDirectoryW
+	SetDllDirectoryW(${1:LPCWSTR inlpPathName}); ${2:// BOOL}
+snippet SetDynamicTimeZoneInformation
+	SetDynamicTimeZoneInformation(${1:CONST inDYNAMIC_TIME_ZONE_INFORMATION *lpTimeZoneInformation}); ${2:// BOOL}
+snippet SetEndOfFile
+	SetEndOfFile(${1:HANDLE inhFile}); ${2:// BOOL}
+snippet SetEnvironmentStringsA
+	SetEnvironmentStringsA(${1:LPCH inNewEnvironment}); ${2:// BOOL}
+snippet SetEnvironmentStringsW
+	SetEnvironmentStringsW(${1:LPWCH inNewEnvironment}); ${2:// BOOL}
+snippet SetEnvironmentVariableA
+	SetEnvironmentVariableA(${1:LPCSTR inlpName}, ${2:LPCSTR inlpValue}); ${3:// BOOL}
+snippet SetEnvironmentVariableW
+	SetEnvironmentVariableW(${1:LPCWSTR inlpName}, ${2:LPCWSTR inlpValue}); ${3:// BOOL}
+snippet SetErrorMode
+	SetErrorMode(${1:UINT inuMode}); ${2:// UINT}
+snippet SetEvent
+	SetEvent(${1:HANDLE inhEvent}); ${2:// BOOL}
+snippet SetEventWhenCallbackReturns
+	SetEventWhenCallbackReturns(${1:PTP_CALLBACK_INSTANCE iopci}, ${2:HANDLE inevt}); ${3:// VOID}
+snippet SetFileApisToANSI
+	SetFileApisToANSI(${1:VOID }); ${2:// VOID}
+snippet SetFileApisToOEM
+	SetFileApisToOEM(${1:VOID }); ${2:// VOID}
+snippet SetFileAttributesA
+	SetFileAttributesA(${1:LPCSTR inlpFileName}, ${2:DWORD indwFileAttributes}); ${3:// BOOL}
+snippet SetFileAttributesTransactedA
+	SetFileAttributesTransactedA(${1:LPCSTR inlpFileName}, ${2:DWORD indwFileAttributes}, ${3:HANDLE inhTransaction}); ${4:// BOOL}
+snippet SetFileAttributesTransactedW
+	SetFileAttributesTransactedW(${1:LPCWSTR inlpFileName}, ${2:DWORD indwFileAttributes}, ${3:HANDLE inhTransaction}); ${4:// BOOL}
+snippet SetFileAttributesW
+	SetFileAttributesW(${1:LPCWSTR inlpFileName}, ${2:DWORD indwFileAttributes}); ${3:// BOOL}
+snippet SetFileBandwidthReservation
+	SetFileBandwidthReservation(${1:HANDLE inhFile}, ${2:DWORD innPeriodMilliseconds}, ${3:DWORD innBytesPerPeriod}, ${4:BOOL inbDiscardable}, ${5:LPDWORD outlpTransferSize}, ${6:LPDWORD outlpNumOutstandingRequests}); ${7:// BOOL}
+snippet SetFileCompletionNotificationModes
+	SetFileCompletionNotificationModes(${1:HANDLE inFileHandle}, ${2:UCHAR inFlags}); ${3:// BOOL}
+snippet SetFileIoOverlappedRange
+	SetFileIoOverlappedRange(${1:HANDLE inFileHandle}, ${2:PUCHAR inOverlappedRangeStart}, ${3:ULONG inLength}); ${4:// BOOL}
+snippet SetFilePointer
+	SetFilePointer(${1:HANDLE inhFile}, ${2:LONG inlDistanceToMove}, ${3:PLONG iolpDistanceToMoveHigh}, ${4:DWORD indwMoveMethod}); ${5:// DWORD}
+snippet SetFilePointerEx
+	SetFilePointerEx(${1:HANDLE inhFile}, ${2:LARGE_INTEGER inliDistanceToMove}, ${3:PLARGE_INTEGER outlpNewFilePointer}, ${4:DWORD indwMoveMethod}); ${5:// BOOL}
+snippet SetFileShortNameA
+	SetFileShortNameA(${1:HANDLE inhFile}, ${2:LPCSTR inlpShortName}); ${3:// BOOL}
+snippet SetFileShortNameW
+	SetFileShortNameW(${1:HANDLE inhFile}, ${2:LPCWSTR inlpShortName}); ${3:// BOOL}
+snippet SetFileTime
+	SetFileTime(${1:HANDLE inhFile}, ${2:CONST inFILETIME *lpCreationTime}, ${3:CONST inFILETIME *lpLastAccessTime}, ${4:CONST inFILETIME *lpLastWriteTime}); ${5:// BOOL}
+snippet SetFileValidData
+	SetFileValidData(${1:HANDLE inhFile}, ${2:LONGLONG inValidDataLength}); ${3:// BOOL}
+snippet SetFirmwareEnvironmentVariableA
+	SetFirmwareEnvironmentVariableA(${1:LPCSTR inlpName}, ${2:LPCSTR inlpGuid}, ${3:PVOID pValue}, ${4:DWORD innSize}); ${5:// BOOL}
+snippet SetFirmwareEnvironmentVariableW
+	SetFirmwareEnvironmentVariableW(${1:LPCWSTR inlpName}, ${2:LPCWSTR inlpGuid}, ${3:PVOID pValue}, ${4:DWORD innSize}); ${5:// BOOL}
+snippet SetHandleCount
+	SetHandleCount(${1:UINT inuNumber}); ${2:// UINT}
+snippet SetHandleInformation
+	SetHandleInformation(${1:HANDLE inhObject}, ${2:DWORD indwMask}, ${3:DWORD indwFlags}); ${4:// BOOL}
+snippet SetInformationJobObject
+	SetInformationJobObject(${1:HANDLE inhJob}, ${2:JOBOBJECTINFOCLASS inJobObjectInformationClass}, ${3:LPVOID lpJobObjectInformation}, ${4:DWORD incbJobObjectInformationLength}); ${5:// BOOL}
+snippet SetLastError
+	SetLastError(${1:DWORD indwErrCode}); ${2:// VOID}
+snippet SetLocalTime
+	SetLocalTime(${1:CONST inSYSTEMTIME *lpSystemTime}); ${2:// BOOL}
+snippet SetMailslotInfo
+	SetMailslotInfo(${1:HANDLE inhMailslot}, ${2:DWORD inlReadTimeout}); ${3:// BOOL}
+snippet SetMessageWaitingIndicator
+	SetMessageWaitingIndicator(${1:HANDLE inhMsgIndicator}, ${2:ULONG inulMsgCount}); ${3:// BOOL}
+snippet SetNamedPipeAttribute
+	SetNamedPipeAttribute(${1:HANDLE inPipe}, ${2:PIPE_ATTRIBUTE_TYPE inAttributeType}, ${3:PSTR inAttributeName}, ${4:PVOID inAttributeValue}, ${5:SIZE_T inAttributeValueLength}); ${6:// BOOL}
+snippet SetNamedPipeHandleState
+	SetNamedPipeHandleState(${1:HANDLE inhNamedPipe}, ${2:LPDWORD inlpMode}, ${3:LPDWORD inlpMaxCollectionCount}, ${4:LPDWORD inlpCollectDataTimeout}); ${5:// BOOL}
+snippet SetPriorityClass
+	SetPriorityClass(${1:HANDLE inhProcess}, ${2:DWORD indwPriorityClass}); ${3:// BOOL}
+snippet SetProcessAffinityMask
+	SetProcessAffinityMask(${1:HANDLE inhProcess}, ${2:DWORD_PTR indwProcessAffinityMask}); ${3:// BOOL}
+snippet SetProcessAffinityUpdateMode
+	SetProcessAffinityUpdateMode(${1:HANDLE inhProcess}, ${2:DWORD indwFlags}); ${3:// BOOL}
+snippet SetProcessDEPPolicy
+	SetProcessDEPPolicy(${1:DWORD indwFlags}); ${2:// BOOL}
+snippet SetProcessPriorityBoost
+	SetProcessPriorityBoost(${1:HANDLE inhProcess}, ${2:BOOL inbDisablePriorityBoost}); ${3:// BOOL}
+snippet SetProcessShutdownParameters
+	SetProcessShutdownParameters(${1:DWORD indwLevel}, ${2:DWORD indwFlags}); ${3:// BOOL}
+snippet SetProcessWorkingSetSize
+	SetProcessWorkingSetSize(${1:HANDLE inhProcess}, ${2:SIZE_T indwMinimumWorkingSetSize}, ${3:SIZE_T indwMaximumWorkingSetSize}); ${4:// BOOL}
+snippet SetProcessWorkingSetSizeEx
+	SetProcessWorkingSetSizeEx(${1:HANDLE inhProcess}, ${2:SIZE_T indwMinimumWorkingSetSize}, ${3:SIZE_T indwMaximumWorkingSetSize}, ${4:DWORD inFlags}); ${5:// BOOL}
+snippet SetStdHandle
+	SetStdHandle(${1:DWORD innStdHandle}, ${2:HANDLE inhHandle}); ${3:// BOOL}
+snippet SetStdHandleEx
+	SetStdHandleEx(${1:DWORD innStdHandle}, ${2:HANDLE inhHandle}, ${3:PHANDLE outphPrevValue}); ${4:// BOOL}
+snippet SetSystemFileCacheSize
+	SetSystemFileCacheSize(${1:SIZE_T inMinimumFileCacheSize}, ${2:SIZE_T inMaximumFileCacheSize}, ${3:DWORD inFlags}); ${4:// BOOL}
+snippet SetSystemTime
+	SetSystemTime(${1:CONST inSYSTEMTIME *lpSystemTime}); ${2:// BOOL}
+snippet SetSystemTimeAdjustment
+	SetSystemTimeAdjustment(${1:DWORD indwTimeAdjustment}, ${2:BOOL inbTimeAdjustmentDisabled}); ${3:// BOOL}
+snippet SetTapeParameters
+	SetTapeParameters(${1:HANDLE inhDevice}, ${2:DWORD indwOperation}, ${3:LPVOID inlpTapeInformation}); ${4:// DWORD}
+snippet SetTapePosition
+	SetTapePosition(${1:HANDLE inhDevice}, ${2:DWORD indwPositionMethod}, ${3:DWORD indwPartition}, ${4:DWORD indwOffsetLow}, ${5:DWORD indwOffsetHigh}, ${6:BOOL inbImmediate}); ${7:// DWORD}
+snippet SetThreadAffinityMask
+	SetThreadAffinityMask(${1:HANDLE inhThread}, ${2:DWORD_PTR indwThreadAffinityMask}); ${3:// DWORD_PTR}
+snippet SetThreadContext
+	SetThreadContext(${1:HANDLE inhThread}, ${2:CONST inCONTEXT *lpContext}); ${3:// BOOL}
+snippet SetThreadExecutionState
+	SetThreadExecutionState(${1:EXECUTION_STATE inesFlags}); ${2:// EXECUTION_STATE}
+snippet SetThreadIdealProcessor
+	SetThreadIdealProcessor(${1:HANDLE inhThread}, ${2:DWORD indwIdealProcessor}); ${3:// BOOL}
+snippet SetThreadPriority
+	SetThreadPriority(${1:HANDLE inhThread}, ${2:int innPriority}); ${3:// BOOL}
+snippet SetThreadPriorityBoost
+	SetThreadPriorityBoost(${1:HANDLE inhThread}, ${2:BOOL inbDisablePriorityBoost}); ${3:// BOOL}
+snippet SetThreadStackGuarantee
+	SetThreadStackGuarantee(${1:PULONG ioStackSizeInBytes}); ${2:// BOOL}
+snippet SetThreadpoolThreadMaximum
+	SetThreadpoolThreadMaximum(${1:PTP_POOL ioptpp}, ${2:DWORD incthrdMost}); ${3:// VOID}
+snippet SetThreadpoolThreadMinimum
+	SetThreadpoolThreadMinimum(${1:PTP_POOL ioptpp}, ${2:DWORD incthrdMic}); ${3:// BOOL}
+snippet SetThreadpoolTimer
+	SetThreadpoolTimer(${1:PTP_TIMER iopti}, ${2:PFILETIME inpftDueTime}, ${3:DWORD inmsPeriod}, ${4:DWORD inmsWindowLength}); ${5:// VOID}
+snippet SetThreadpoolWait
+	SetThreadpoolWait(${1:PTP_WAIT iopwa}, ${2:inHANDLE h}, ${3:PFILETIME inpftTimeout}); ${4:// VOID}
+snippet SetTimeZoneInformation
+	SetTimeZoneInformation(${1:CONST inTIME_ZONE_INFORMATION *lpTimeZoneInformation}); ${2:// BOOL}
+snippet SetTimerQueueTimer
+	SetTimerQueueTimer(${1:HANDLE inTimerQueue}, ${2:WAITORTIMERCALLBACK inCallback}, ${3:PVOID inParameter}, ${4:DWORD inDueTime}, ${5:DWORD inPeriod}, ${6:BOOL inPreferIo}); ${7:// HANDLE}
+snippet SetUnhandledExceptionFilter
+	SetUnhandledExceptionFilter(${1:LPTOP_LEVEL_EXCEPTION_FILTER inlpTopLevelExceptionFilter}); ${2:// LPTOP_LEVEL_EXCEPTION_FILTER}
+snippet SetVolumeLabelA
+	SetVolumeLabelA(${1:LPCSTR inlpRootPathName}, ${2:LPCSTR inlpVolumeName}); ${3:// BOOL}
+snippet SetVolumeLabelW
+	SetVolumeLabelW(${1:LPCWSTR inlpRootPathName}, ${2:LPCWSTR inlpVolumeName}); ${3:// BOOL}
+snippet SetVolumeMountPointA
+	SetVolumeMountPointA(${1:LPCSTR inlpszVolumeMountPoint}, ${2:LPCSTR inlpszVolumeName}); ${3:// BOOL}
+snippet SetVolumeMountPointW
+	SetVolumeMountPointW(${1:LPCWSTR inlpszVolumeMountPoint}, ${2:LPCWSTR inlpszVolumeName}); ${3:// BOOL}
+snippet SetWaitableTimer
+	SetWaitableTimer(${1:HANDLE inhTimer}, ${2:const inLARGE_INTEGER *lpDueTime}, ${3:LONG inlPeriod}, ${4:PTIMERAPCROUTINE inpfnCompletionRoutine}, ${5:LPVOID inlpArgToCompletionRoutine}, ${6:BOOL infResume}); ${7:// BOOL}
+snippet SetupComm
+	SetupComm(${1:HANDLE inhFile}, ${2:DWORD indwInQueue}, ${3:DWORD indwOutQueue}); ${4:// BOOL}
+snippet SignalObjectAndWait
+	SignalObjectAndWait(${1:HANDLE inhObjectToSignal}, ${2:HANDLE inhObjectToWaitOn}, ${3:DWORD indwMilliseconds}, ${4:BOOL inbAlertable}); ${5:// DWORD}
+snippet SizeofResource
+	SizeofResource(${1:HMODULE inhModule}, ${2:HRSRC inhResInfo}); ${3:// DWORD}
+snippet Sleep
+	Sleep(${1:DWORD indwMilliseconds}); ${2:// DWORD}
+snippet SleepConditionVariableCS
+	SleepConditionVariableCS(${1:PCONDITION_VARIABLE ioConditionVariable}, ${2:PCRITICAL_SECTION ioCriticalSection}, ${3:DWORD indwMilliseconds}); ${4:// BOOL}
+snippet SleepConditionVariableSRW
+	SleepConditionVariableSRW(${1:PCONDITION_VARIABLE ioConditionVariable}, ${2:PSRWLOCK ioSRWLock}, ${3:DWORD indwMilliseconds}, ${4:ULONG inFlags}); ${5:// BOOL}
+snippet SleepEx
+	SleepEx(${1:DWORD indwMilliseconds}, ${2:BOOL inbAlertable}); ${3:// DWORD}
+snippet StartThreadpoolIo
+	StartThreadpoolIo(${1:PTP_IO iopio}); ${2:// VOID}
+snippet SubmitThreadpoolWork
+	SubmitThreadpoolWork(${1:PTP_WORK iopwk}); ${2:// VOID}
+snippet SuspendThread
+	SuspendThread(${1:HANDLE inhThread}); ${2:// DWORD}
+snippet SwitchToFiber
+	SwitchToFiber(${1:LPVOID inlpFiber}); ${2:// VOID}
+snippet SwitchToThread
+	SwitchToThread(${1:VOID}); ${2:// BOOL}
+snippet SystemTimeToFileTime
+	SystemTimeToFileTime(${1:CONST inSYSTEMTIME *lpSystemTime}, ${2:LPFILETIME outlpFileTime}); ${3:// BOOL}
+snippet SystemTimeToTzSpecificLocalTime
+	SystemTimeToTzSpecificLocalTime(${1:CONST inTIME_ZONE_INFORMATION *lpTimeZoneInformation}, ${2:CONST inSYSTEMTIME *lpUniversalTime}, ${3:LPSYSTEMTIME outlpLocalTime}); ${4:// BOOL}
+snippet TerminateJobObject
+	TerminateJobObject(${1:HANDLE inhJob}, ${2:UINT inuExitCode}); ${3:// BOOL}
+snippet TerminateProcess
+	TerminateProcess(${1:HANDLE inhProcess}, ${2:UINT inuExitCode}); ${3:// BOOL}
+snippet TerminateThread
+	TerminateThread(${1:HANDLE inhThread}, ${2:DWORD indwExitCode}); ${3:// BOOL}
+snippet TlsAlloc
+	TlsAlloc(${1:VOID}); ${2:// DWORD}
+snippet TlsFree
+	TlsFree(${1:DWORD indwTlsIndex}); ${2:// BOOL}
+snippet TlsGetValue
+	TlsGetValue(${1:DWORD indwTlsIndex}); ${2:// LPVOID}
+snippet TlsSetValue
+	TlsSetValue(${1:DWORD indwTlsIndex}, ${2:LPVOID inlpTlsValue}); ${3:// BOOL}
+snippet TransactNamedPipe
+	TransactNamedPipe(${1:HANDLE inhNamedPipe}, ${2:LPVOID lpInBuffer}, ${3:DWORD innInBufferSize}, ${4:LPVOID lpOutBuffer}, ${5:DWORD innOutBufferSize}, ${6:LPDWORD outlpBytesRead}, ${7:LPOVERLAPPED iolpOverlapped}); ${8:// BOOL}
+snippet TransmitCommChar
+	TransmitCommChar(${1:HANDLE inhFile}, ${2:char incChar}); ${3:// BOOL}
+snippet TryEnterCriticalSection
+	TryEnterCriticalSection(${1:LPCRITICAL_SECTION iolpCriticalSection}); ${2:// BOOL}
+snippet TrySubmitThreadpoolCallback
+	TrySubmitThreadpoolCallback(${1:PTP_SIMPLE_CALLBACK inpfns}, ${2:PVOID iopv}, ${3:PTP_CALLBACK_ENVIRON inpcbe}); ${4:// BOOL}
+snippet TzSpecificLocalTimeToSystemTime
+	TzSpecificLocalTimeToSystemTime(${1:CONST inTIME_ZONE_INFORMATION *lpTimeZoneInformation}, ${2:CONST inSYSTEMTIME *lpLocalTime}, ${3:LPSYSTEMTIME outlpUniversalTime}); ${4:// BOOL}
+snippet UnhandledExceptionFilter
+	UnhandledExceptionFilter(${1:struct in_EXCEPTION_POINTERS *ExceptionInfo}); ${2:// LONG}
+snippet UnlockFile
+	UnlockFile(${1:HANDLE inhFile}, ${2:DWORD indwFileOffsetLow}, ${3:DWORD indwFileOffsetHigh}, ${4:DWORD innNumberOfBytesToUnlockLow}, ${5:DWORD innNumberOfBytesToUnlockHigh}); ${6:// BOOL}
+snippet UnlockFileEx
+	UnlockFileEx(${1:HANDLE inhFile}, ${2:DWORD dwReserved}, ${3:DWORD innNumberOfBytesToUnlockLow}, ${4:DWORD innNumberOfBytesToUnlockHigh}, ${5:LPOVERLAPPED iolpOverlapped}); ${6:// BOOL}
+snippet UnmapViewOfFile
+	UnmapViewOfFile(${1:LPCVOID inlpBaseAddress}); ${2:// BOOL}
+snippet UnregisterApplicationRecoveryCallback
+	UnregisterApplicationRecoveryCallback(${1:void}); ${2:// HRESULT}
+snippet UnregisterApplicationRestart
+	UnregisterApplicationRestart(${1:void}); ${2:// HRESULT}
+snippet UnregisterWait
+	UnregisterWait(${1:HANDLE inWaitHandle}); ${2:// BOOL}
+snippet UnregisterWaitEx
+	UnregisterWaitEx(${1:HANDLE inWaitHandle}, ${2:HANDLE inCompletionEvent}); ${3:// BOOL}
+snippet UpdateProcThreadAttribute
+	UpdateProcThreadAttribute(${1:LPPROC_THREAD_ATTRIBUTE_LIST iolpAttributeList}, ${2:DWORD indwFlags}, ${3:DWORD_PTR inAttribute}, ${4:PVOID lpValue}, ${5:SIZE_T incbSize}, ${6:PVOID lpPreviousValue}, ${7:PSIZE_T inlpReturnSize}); ${8:// BOOL}
+snippet UpdateResourceA
+	UpdateResourceA(${1:HANDLE inhUpdate}, ${2:LPCSTR inlpType}, ${3:LPCSTR inlpName}, ${4:WORD inwLanguage}, ${5:LPVOID lpData}, ${6:DWORD incb}); ${7:// BOOL}
+snippet UpdateResourceW
+	UpdateResourceW(${1:HANDLE inhUpdate}, ${2:LPCWSTR inlpType}, ${3:LPCWSTR inlpName}, ${4:WORD inwLanguage}, ${5:LPVOID lpData}, ${6:DWORD incb}); ${7:// BOOL}
+snippet VerifyVersionInfoA
+	VerifyVersionInfoA(${1:LPOSVERSIONINFOEXA iolpVersionInformation}, ${2:DWORD indwTypeMask}, ${3:DWORDLONG indwlConditionMask}); ${4:// BOOL}
+snippet VerifyVersionInfoW
+	VerifyVersionInfoW(${1:LPOSVERSIONINFOEXW iolpVersionInformation}, ${2:DWORD indwTypeMask}, ${3:DWORDLONG indwlConditionMask}); ${4:// BOOL}
+snippet VirtualAlloc
+	VirtualAlloc(${1:LPVOID inlpAddress}, ${2:SIZE_T indwSize}, ${3:DWORD inflAllocationType}, ${4:DWORD inflProtect}); ${5:// LPVOID}
+snippet VirtualAllocEx
+	VirtualAllocEx(${1:HANDLE inhProcess}, ${2:LPVOID inlpAddress}, ${3:SIZE_T indwSize}, ${4:DWORD inflAllocationType}, ${5:DWORD inflProtect}); ${6:// LPVOID}
+snippet VirtualAllocExNuma
+	VirtualAllocExNuma(${1:HANDLE inhProcess}, ${2:LPVOID inlpAddress}, ${3:SIZE_T indwSize}, ${4:DWORD inflAllocationType}, ${5:DWORD inflProtect}, ${6:DWORD innndPreferred}); ${7:// LPVOID}
+snippet VirtualFree
+	VirtualFree(${1:LPVOID inlpAddress}, ${2:SIZE_T indwSize}, ${3:DWORD indwFreeType}); ${4:// BOOL}
+snippet VirtualFreeEx
+	VirtualFreeEx(${1:HANDLE inhProcess}, ${2:LPVOID inlpAddress}, ${3:SIZE_T indwSize}, ${4:DWORD indwFreeType}); ${5:// BOOL}
+snippet VirtualLock
+	VirtualLock(${1:LPVOID inlpAddress}, ${2:SIZE_T indwSize}); ${3:// BOOL}
+snippet VirtualProtect
+	VirtualProtect(${1:LPVOID inlpAddress}, ${2:SIZE_T indwSize}, ${3:DWORD inflNewProtect}, ${4:PDWORD outlpflOldProtect}); ${5:// BOOL}
+snippet VirtualProtectEx
+	VirtualProtectEx(${1:HANDLE inhProcess}, ${2:LPVOID inlpAddress}, ${3:SIZE_T indwSize}, ${4:DWORD inflNewProtect}, ${5:PDWORD outlpflOldProtect}); ${6:// BOOL}
+snippet VirtualQuery
+	VirtualQuery(${1:LPCVOID inlpAddress}, ${2:PMEMORY_BASIC_INFORMATION lpBuffer}, ${3:SIZE_T indwLength}); ${4:// SIZE_T}
+snippet VirtualQueryEx
+	VirtualQueryEx(${1:HANDLE inhProcess}, ${2:LPCVOID inlpAddress}, ${3:PMEMORY_BASIC_INFORMATION lpBuffer}, ${4:SIZE_T indwLength}); ${5:// SIZE_T}
+snippet VirtualUnlock
+	VirtualUnlock(${1:LPVOID inlpAddress}, ${2:SIZE_T indwSize}); ${3:// BOOL}
+snippet WTSGetActiveConsoleSessionId
+	WTSGetActiveConsoleSessionId(${1:VOID}); ${2:// DWORD}
+snippet WaitCommEvent
+	WaitCommEvent(${1:HANDLE inhFile}, ${2:LPDWORD iolpEvtMask}, ${3:LPOVERLAPPED iolpOverlapped}); ${4:// BOOL}
+snippet WaitForDebugEvent
+	WaitForDebugEvent(${1:LPDEBUG_EVENT inlpDebugEvent}, ${2:DWORD indwMilliseconds}); ${3:// BOOL}
+snippet WaitForMultipleObjects
+	WaitForMultipleObjects(${1:DWORD innCount}, ${2:CONST HANDLE *lpHandles}, ${3:BOOL inbWaitAll}, ${4:DWORD indwMilliseconds}); ${5:// DWORD}
+snippet WaitForMultipleObjectsEx
+	WaitForMultipleObjectsEx(${1:DWORD innCount}, ${2:CONST HANDLE *lpHandles}, ${3:BOOL inbWaitAll}, ${4:DWORD indwMilliseconds}, ${5:BOOL inbAlertable}); ${6:// DWORD}
+snippet WaitForSingleObject
+	WaitForSingleObject(${1:HANDLE inhHandle}, ${2:DWORD indwMilliseconds}); ${3:// DWORD}
+snippet WaitForSingleObjectEx
+	WaitForSingleObjectEx(${1:HANDLE inhHandle}, ${2:DWORD indwMilliseconds}, ${3:BOOL inbAlertable}); ${4:// DWORD}
+snippet WaitForThreadpoolIoCallbacks
+	WaitForThreadpoolIoCallbacks(${1:PTP_IO iopio}, ${2:BOOL infCancelPendingCallbacks}); ${3:// VOID}
+snippet WaitForThreadpoolTimerCallbacks
+	WaitForThreadpoolTimerCallbacks(${1:PTP_TIMER iopti}, ${2:BOOL infCancelPendingCallbacks}); ${3:// VOID}
+snippet WaitForThreadpoolWaitCallbacks
+	WaitForThreadpoolWaitCallbacks(${1:PTP_WAIT iopwa}, ${2:BOOL infCancelPendingCallbacks}); ${3:// VOID}
+snippet WaitForThreadpoolWorkCallbacks
+	WaitForThreadpoolWorkCallbacks(${1:PTP_WORK iopwk}, ${2:BOOL infCancelPendingCallbacks}); ${3:// VOID}
+snippet WaitNamedPipeA
+	WaitNamedPipeA(${1:LPCSTR inlpNamedPipeName}, ${2:DWORD innTimeOut}); ${3:// BOOL}
+snippet WaitNamedPipeW
+	WaitNamedPipeW(${1:LPCWSTR inlpNamedPipeName}, ${2:DWORD innTimeOut}); ${3:// BOOL}
+snippet WakeAllConditionVariable
+	WakeAllConditionVariable(${1:PCONDITION_VARIABLE ioConditionVariable}); ${2:// VOID}
+snippet WakeConditionVariable
+	WakeConditionVariable(${1:PCONDITION_VARIABLE ioConditionVariable}); ${2:// VOID}
+snippet WinExec
+	WinExec(${1:LPCSTR inlpCmdLine}, ${2:UINT inuCmdShow}); ${3:// UINT}
+snippet Wow64DisableWow64FsRedirection
+	Wow64DisableWow64FsRedirection(${1:outPVOID *OldValue}); ${2:// BOOL}
+snippet Wow64EnableWow64FsRedirection
+	Wow64EnableWow64FsRedirection(${1:BOOLEAN inWow64FsEnableRedirection}); ${2:// BOOLEAN}
+snippet Wow64GetThreadContext
+	Wow64GetThreadContext(${1:HANDLE inhThread}, ${2:PWOW64_CONTEXT iolpContext}); ${3:// BOOL}
+snippet Wow64RevertWow64FsRedirection
+	Wow64RevertWow64FsRedirection(${1:PVOID inOlValue}); ${2:// BOOL}
+snippet Wow64SetThreadContext
+	Wow64SetThreadContext(${1:HANDLE inhThread}, ${2:CONST inWOW64_CONTEXT *lpContext}); ${3:// BOOL}
+snippet Wow64SuspendThread
+	Wow64SuspendThread(${1:HANDLE inhThread}); ${2:// DWORD}
+snippet WriteFile
+	WriteFile(${1:HANDLE inhFile}, ${2:LPCVOID lpBuffer}, ${3:DWORD innNumberOfBytesToWrite}, ${4:LPDWORD outlpNumberOfBytesWritten}, ${5:LPOVERLAPPED iolpOverlapped}); ${6:// BOOL}
+snippet WriteFileEx
+	WriteFileEx(${1:HANDLE inhFile}, ${2:LPCVOID lpBuffer}, ${3:DWORD innNumberOfBytesToWrite}, ${4:LPOVERLAPPED iolpOverlapped}, ${5:LPOVERLAPPED_COMPLETION_ROUTINE inlpCompletionRoutine}); ${6:// BOOL}
+snippet WriteFileGather
+	WriteFileGather(${1:HANDLE inhFile}, ${2:FILE_SEGMENT_ELEMENT inaSegmentArray[]}, ${3:DWORD innNumberOfBytesToWrite}, ${4:LPDWORD lpReserved}, ${5:LPOVERLAPPED iolpOverlapped}); ${6:// BOOL}
+snippet WritePrivateProfileSectionA
+	WritePrivateProfileSectionA(${1:LPCSTR inlpAppName}, ${2:LPCSTR inlpString}, ${3:LPCSTR inlpFileName}); ${4:// BOOL}
+snippet WritePrivateProfileSectionW
+	WritePrivateProfileSectionW(${1:LPCWSTR inlpAppName}, ${2:LPCWSTR inlpString}, ${3:LPCWSTR inlpFileName}); ${4:// BOOL}
+snippet WritePrivateProfileStringA
+	WritePrivateProfileStringA(${1:LPCSTR inlpAppName}, ${2:LPCSTR inlpKeyName}, ${3:LPCSTR inlpString}, ${4:LPCSTR inlpFileName}); ${5:// BOOL}
+snippet WritePrivateProfileStringW
+	WritePrivateProfileStringW(${1:LPCWSTR inlpAppName}, ${2:LPCWSTR inlpKeyName}, ${3:LPCWSTR inlpString}, ${4:LPCWSTR inlpFileName}); ${5:// BOOL}
+snippet WritePrivateProfileStructA
+	WritePrivateProfileStructA(${1:LPCSTR inlpszSection}, ${2:LPCSTR inlpszKey}, ${3:LPVOID lpStruct}, ${4:UINT inuSizeStruct}, ${5:LPCSTR inszFile}); ${6:// BOOL}
+snippet WritePrivateProfileStructW
+	WritePrivateProfileStructW(${1:LPCWSTR inlpszSection}, ${2:LPCWSTR inlpszKey}, ${3:LPVOID lpStruct}, ${4:UINT inuSizeStruct}, ${5:LPCWSTR inszFile}); ${6:// BOOL}
+snippet WriteProcessMemory
+	WriteProcessMemory(${1:HANDLE inhProcess}, ${2:LPVOID inlpBaseAddress}, ${3:LPCVOID lpBuffer}, ${4:SIZE_T innSize}, ${5:outSIZE_T * lpNumberOfBytesWritten}); ${6:// BOOL}
+snippet WriteProfileSectionA
+	WriteProfileSectionA(${1:LPCSTR inlpAppName}, ${2:LPCSTR inlpString}); ${3:// BOOL}
+snippet WriteProfileSectionW
+	WriteProfileSectionW(${1:LPCWSTR inlpAppName}, ${2:LPCWSTR inlpString}); ${3:// BOOL}
+snippet WriteProfileStringA
+	WriteProfileStringA(${1:LPCSTR inlpAppName}, ${2:LPCSTR inlpKeyName}, ${3:LPCSTR inlpString}); ${4:// BOOL}
+snippet WriteProfileStringW
+	WriteProfileStringW(${1:LPCWSTR inlpAppName}, ${2:LPCWSTR inlpKeyName}, ${3:LPCWSTR inlpString}); ${4:// BOOL}
+snippet WriteTapemark
+	WriteTapemark(${1:HANDLE inhDevice}, ${2:DWORD indwTapemarkType}, ${3:DWORD indwTapemarkCount}, ${4:BOOL inbImmediate}); ${5:// DWORD}
+snippet ZombifyActCtx
+	ZombifyActCtx(${1:HANDLE iohActCtx}); ${2:// BOOL}
+snippet _hread
+	_hread(${1:HFILE inhFile}, ${2:LPVOID lpBuffer}, ${3:long inlBytes}); ${4:// long}
+snippet _hwrite
+	_hwrite(${1:HFILE inhFile}, ${2:LPCCH lpBuffer}, ${3:long inlBytes}); ${4:// long}
+snippet _lclose
+	_lclose(${1:HFILE inhFile}); ${2:// HFILE}
+snippet _lcreat
+	_lcreat(${1:LPCSTR inlpPathName}, ${2:int iniAttribute}); ${3:// HFILE}
+snippet _llseek
+	_llseek(${1:HFILE inhFile}, ${2:LONG inlOffset}, ${3:int iniOrigin}); ${4:// LONG}
+snippet _lopen
+	_lopen(${1:LPCSTR inlpPathName}, ${2:int iniReadWrite}); ${3:// HFILE}
+snippet _lread
+	_lread(${1:HFILE inhFile}, ${2:LPVOID lpBuffer}, ${3:UINT inuBytes}); ${4:// UINT}
+snippet _lwrite
+	_lwrite(${1:HFILE inhFile}, ${2:LPCCH lpBuffer}, ${3:UINT inuBytes}); ${4:// UINT}
+snippet lstrcatA
+	lstrcatA(${1:LPSTR iolpString1}, ${2:LPCSTR inlpString2}); ${3:// LPSTR}
+snippet lstrcatW
+	lstrcatW(${1:LPWSTR iolpString1}, ${2:LPCWSTR inlpString2}); ${3:// LPWSTR}
+snippet lstrcmpA
+	lstrcmpA(${1:LPCSTR inlpString1}, ${2:LPCSTR inlpString2}); ${3:// int}
+snippet lstrcmpW
+	lstrcmpW(${1:LPCWSTR inlpString1}, ${2:LPCWSTR inlpString2}); ${3:// int}
+snippet lstrcmpiA
+	lstrcmpiA(${1:LPCSTR inlpString1}, ${2:LPCSTR inlpString2}); ${3:// int}
+snippet lstrcmpiW
+	lstrcmpiW(${1:LPCWSTR inlpString1}, ${2:LPCWSTR inlpString2}); ${3:// int}
+snippet lstrcpyA
+	lstrcpyA(${1:LPSTR outlpString1}, ${2:LPCSTR inlpString2}); ${3:// LPSTR}
+snippet lstrcpyW
+	lstrcpyW(${1:LPWSTR outlpString1}, ${2:LPCWSTR inlpString2}); ${3:// LPWSTR}
+snippet lstrcpynA
+	lstrcpynA(${1:LPSTR lpString1}, ${2:LPCSTR inlpString2}, ${3:int iniMaxLength}); ${4:// LPSTR}
+snippet lstrcpynW
+	lstrcpynW(${1:LPWSTR lpString1}, ${2:LPCWSTR inlpString2}, int iniMaxLength); ${3:// LPWSTR}
+snippet lstrlenA
+	lstrlenA(${1:LPCSTR inlpString}); ${2:// int}
+snippet lstrlenW
+	lstrlenW(${1:LPCWSTR inlpString}); ${2:// int}

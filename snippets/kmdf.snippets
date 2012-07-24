@@ -1,0 +1,930 @@
+snippet EVT_WDFDEVICE_WDM_IRP_PREPROCESS
+	EVT_WDFDEVICE_WDM_IRP_PREPROCESS( ${1:WDFDEVICE inDevice}, ${2:PIRP ioIrp}); ${3:// NTSTATUS  #DISPATCH_LEVEL}
+snippet EVT_WDF_CHILD_LIST_ADDRESS_DESCRIPTION_CLEANUP
+	EVT_WDF_CHILD_LIST_ADDRESS_DESCRIPTION_CLEANUP( ${1:WDFCHILDLIST inChildList}, ${2:PWDF_CHILD_ADDRESS_DESCRIPTION_HEADER ioAddressDescription}); ${3:// VOID  #DISPATCH_LEVEL}
+snippet EVT_WDF_CHILD_LIST_ADDRESS_DESCRIPTION_COPY
+	EVT_WDF_CHILD_LIST_ADDRESS_DESCRIPTION_COPY( ${1:WDFCHILDLIST inChildList}, ${2:PWDF_CHILD_ADDRESS_DESCRIPTION_HEADER inSourceAddressDescription}, ${3:PWDF_CHILD_ADDRESS_DESCRIPTION_HEADER outDestinationAddressDescription}); ${4:// VOID  #DISPATCH_LEVEL}
+snippet EVT_WDF_CHILD_LIST_ADDRESS_DESCRIPTION_DUPLICATE
+	EVT_WDF_CHILD_LIST_ADDRESS_DESCRIPTION_DUPLICATE( ${1:WDFCHILDLIST inChildList}, ${2:PWDF_CHILD_ADDRESS_DESCRIPTION_HEADER inSourceAddressDescription}, ${3:PWDF_CHILD_ADDRESS_DESCRIPTION_HEADER outDestinationAddressDescription}); ${4:// NTSTATUS  #DISPATCH_LEVEL}
+snippet EVT_WDF_CHILD_LIST_CREATE_DEVICE
+	EVT_WDF_CHILD_LIST_CREATE_DEVICE( ${1:WDFCHILDLIST inChildList}, ${2:PWDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER inIdentificationDescription}, ${3:PWDFDEVICE_INIT inChildInit}); ${4:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_CHILD_LIST_DEVICE_REENUMERATED
+	EVT_WDF_CHILD_LIST_DEVICE_REENUMERATED( ${1:WDFCHILDLIST inChildList}, ${2:WDFDEVICE inOldDevice}, ${3:PWDF_CHILD_ADDRESS_DESCRIPTION_HEADER inOldAddressDescription}, ${4:PWDF_CHILD_ADDRESS_DESCRIPTION_HEADER outNewAddressDescription}); ${5:// BOOLEAN  #DISPATCH_LEVEL}
+snippet EVT_WDF_CHILD_LIST_IDENTIFICATION_DESCRIPTION_CLEANUP
+	EVT_WDF_CHILD_LIST_IDENTIFICATION_DESCRIPTION_CLEANUP( ${1:WDFCHILDLIST inChildList}, ${2:PWDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER outIdentificationDescription}); ${3:// VOID  #DISPATCH_LEVEL}
+snippet EVT_WDF_CHILD_LIST_IDENTIFICATION_DESCRIPTION_COMPARE
+	EVT_WDF_CHILD_LIST_IDENTIFICATION_DESCRIPTION_COMPARE( ${1:WDFCHILDLIST inChildList}, ${2:PWDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER inFirstIdentificationDescription}, ${3:PWDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER inSecondIdentificationDescription}); ${4:// BOOLEAN  #DISPATCH_LEVEL}
+snippet EVT_WDF_CHILD_LIST_IDENTIFICATION_DESCRIPTION_COPY
+	EVT_WDF_CHILD_LIST_IDENTIFICATION_DESCRIPTION_COPY( ${1:WDFCHILDLIST inChildList}, ${2:PWDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER inSourceIdentificationDescription}, ${3:PWDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER outDestinationIdentificationDescription}); ${4:// VOID  #DISPATCH_LEVEL}
+snippet EVT_WDF_CHILD_LIST_IDENTIFICATION_DESCRIPTION_DUPLICATE
+	EVT_WDF_CHILD_LIST_IDENTIFICATION_DESCRIPTION_DUPLICATE( ${1:WDFCHILDLIST inChildList}, ${2:PWDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER inSourceIdentificationDescription}, ${3:PWDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER outDestinationIdentificationDescription}); ${4:// NTSTATUS  #DISPATCH_LEVEL}
+snippet EVT_WDF_CHILD_LIST_SCAN_FOR_CHILDREN
+	EVT_WDF_CHILD_LIST_SCAN_FOR_CHILDREN( ${1:WDFCHILDLIST inChildList}); ${2:// VOID  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_ARM_WAKE_FROM_S0
+	EVT_WDF_DEVICE_ARM_WAKE_FROM_S0( ${1:WDFDEVICE inDevice}); ${2:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_ARM_WAKE_FROM_SX
+	EVT_WDF_DEVICE_ARM_WAKE_FROM_SX( ${1:WDFDEVICE inDevice}); ${2:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_ARM_WAKE_FROM_SX_WITH_REASON
+	EVT_WDF_DEVICE_ARM_WAKE_FROM_SX_WITH_REASON( ${1:WDFDEVICE inDevice}, ${2:BOOLEAN inDeviceWakeEnabled}, ${3:BOOLEAN inChildrenArmedForWake}); ${4:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_D0_ENTRY
+	EVT_WDF_DEVICE_D0_ENTRY( ${1:WDFDEVICE inDevice}, ${2:WDF_POWER_DEVICE_STATE inPreviousState}); ${3:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_D0_ENTRY_POST_INTERRUPTS_ENABLED
+	EVT_WDF_DEVICE_D0_ENTRY_POST_INTERRUPTS_ENABLED( ${1:WDFDEVICE inDevice}, ${2:WDF_POWER_DEVICE_STATE inPreviousState}); ${3:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_D0_EXIT
+	EVT_WDF_DEVICE_D0_EXIT( ${1:WDFDEVICE inDevice}, ${2:WDF_POWER_DEVICE_STATE inTargetState}); ${3:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_D0_EXIT_PRE_INTERRUPTS_DISABLED
+	EVT_WDF_DEVICE_D0_EXIT_PRE_INTERRUPTS_DISABLED( ${1:WDFDEVICE inDevice}, ${2:WDF_POWER_DEVICE_STATE inTargetState}); ${3:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_DISABLE_WAKE_AT_BUS
+	EVT_WDF_DEVICE_DISABLE_WAKE_AT_BUS( ${1:WDFDEVICE inDevice}); ${2:// VOID  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_DISARM_WAKE_FROM_S0
+	EVT_WDF_DEVICE_DISARM_WAKE_FROM_S0( ${1:WDFDEVICE inDevice}); ${2:// VOID  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_DISARM_WAKE_FROM_SX
+	EVT_WDF_DEVICE_DISARM_WAKE_FROM_SX( ${1:WDFDEVICE inDevice}); ${2:// VOID  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_EJECT
+	EVT_WDF_DEVICE_EJECT( ${1:WDFDEVICE inDevice}); ${2:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_ENABLE_WAKE_AT_BUS
+	EVT_WDF_DEVICE_ENABLE_WAKE_AT_BUS( ${1:WDFDEVICE inDevice}, ${2:SYSTEM_POWER_STATE inPowerState}); ${3:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_FILE_CREATE
+	EVT_WDF_DEVICE_FILE_CREATE( ${1:WDFDEVICE inDevice}, ${2:WDFREQUEST inRequest}, ${3:WDFFILEOBJECT inFileObject}); ${4:// VOID  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_FILTER_RESOURCE_REQUIREMENTS
+	EVT_WDF_DEVICE_FILTER_RESOURCE_REQUIREMENTS( ${1:WDFDEVICE inDevice}, ${2:WDFIORESREQLIST inIoResourceRequirementsList}); ${3:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_PNP_STATE_CHANGE_NOTIFICATION
+	EVT_WDF_DEVICE_PNP_STATE_CHANGE_NOTIFICATION( ${1:WDFDEVICE inDevice}, ${2:PCWDF_DEVICE_PNP_NOTIFICATION_DATA inNotificationData}); ${3:// VOID  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_POWER_POLICY_STATE_CHANGE_NOTIFICATION
+	EVT_WDF_DEVICE_POWER_POLICY_STATE_CHANGE_NOTIFICATION( ${1:WDFDEVICE inDevice}, ${2:PCWDF_DEVICE_POWER_POLICY_NOTIFICATION_DATA inNotificationData}); ${3:// VOID  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_POWER_STATE_CHANGE_NOTIFICATION
+	EVT_WDF_DEVICE_POWER_STATE_CHANGE_NOTIFICATION( ${1:WDFDEVICE inDevice}, ${2:PCWDF_DEVICE_POWER_NOTIFICATION_DATA inNotificationData}); ${3:// VOID  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_PREPARE_HARDWARE
+	EVT_WDF_DEVICE_PREPARE_HARDWARE( ${1:WDFDEVICE inDevice}, ${2:WDFCMRESLIST inResourcesRaw}, ${3:WDFCMRESLIST inResourcesTranslated}); ${4:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_PROCESS_QUERY_INTERFACE_REQUEST
+	EVT_WDF_DEVICE_PROCESS_QUERY_INTERFACE_REQUEST( ${1:WDFDEVICE inDevice}, ${2:LPGUID inInterfaceType}, ${3:PINTERFACE ioExposedInterface}, ${4:PVOID ioExposedInterfaceSpecificData}); ${5:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_QUERY_REMOVE
+	EVT_WDF_DEVICE_QUERY_REMOVE( ${1:WDFDEVICE inDevice}); ${2:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_QUERY_STOP
+	EVT_WDF_DEVICE_QUERY_STOP( ${1:WDFDEVICE inDevice}); ${2:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_RELATIONS_QUERY
+	EVT_WDF_DEVICE_RELATIONS_QUERY( ${1:WDFDEVICE inDevice}, ${2:DEVICE_RELATION_TYPE inRelationType}); ${3:// VOID  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_RELEASE_HARDWARE
+	EVT_WDF_DEVICE_RELEASE_HARDWARE( ${1:WDFDEVICE inDevice}, ${2:WDFCMRESLIST inResourcesTranslated}); ${3:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_REMOVE_ADDED_RESOURCES
+	EVT_WDF_DEVICE_REMOVE_ADDED_RESOURCES( ${1:WDFDEVICE inDevice}, ${2:WDFCMRESLIST inResourcesRaw}, ${3:WDFCMRESLIST inResourcesTranslated}); ${4:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_RESOURCES_QUERY
+	EVT_WDF_DEVICE_RESOURCES_QUERY( ${1:WDFDEVICE inDevice}, ${2:WDFCMRESLIST inResources}); ${3:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_RESOURCE_REQUIREMENTS_QUERY
+	EVT_WDF_DEVICE_RESOURCE_REQUIREMENTS_QUERY( ${1:WDFDEVICE inDevice}, ${2:WDFIORESREQLIST inIoResourceRequirementsList}); ${3:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_SELF_MANAGED_IO_CLEANUP
+	EVT_WDF_DEVICE_SELF_MANAGED_IO_CLEANUP( ${1:WDFDEVICE inDevice}); ${2:// VOID  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_SELF_MANAGED_IO_FLUSH
+	EVT_WDF_DEVICE_SELF_MANAGED_IO_FLUSH( ${1:WDFDEVICE inDevice}); ${2:// VOID  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_SELF_MANAGED_IO_INIT
+	EVT_WDF_DEVICE_SELF_MANAGED_IO_INIT( ${1:WDFDEVICE inDevice}); ${2:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_SELF_MANAGED_IO_RESTART
+	EVT_WDF_DEVICE_SELF_MANAGED_IO_RESTART( ${1:WDFDEVICE inDevice}); ${2:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_SELF_MANAGED_IO_SUSPEND
+	EVT_WDF_DEVICE_SELF_MANAGED_IO_SUSPEND( ${1:WDFDEVICE inDevice}); ${2:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_SET_LOCK
+	EVT_WDF_DEVICE_SET_LOCK( ${1:WDFDEVICE inDevice}, ${2:BOOLEAN inIsLocked}); ${3:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_SHUTDOWN_NOTIFICATION
+	EVT_WDF_DEVICE_SHUTDOWN_NOTIFICATION( ${1:WDFDEVICE inDevice}); ${2:// VOID  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_SURPRISE_REMOVAL
+	EVT_WDF_DEVICE_SURPRISE_REMOVAL( ${1:WDFDEVICE inDevice}); ${2:// VOID  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_USAGE_NOTIFICATION
+	EVT_WDF_DEVICE_USAGE_NOTIFICATION( ${1:WDFDEVICE inDevice}, ${2:WDF_SPECIAL_FILE_TYPE inNotificationType}, ${3:BOOLEAN inIsInNotificationPath}); ${4:// VOID  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_WAKE_FROM_S0_TRIGGERED
+	EVT_WDF_DEVICE_WAKE_FROM_S0_TRIGGERED( ${1:WDFDEVICE inDevice}); ${2:// VOID  #PASSIVE_LEVEL}
+snippet EVT_WDF_DEVICE_WAKE_FROM_SX_TRIGGERED
+	EVT_WDF_DEVICE_WAKE_FROM_SX_TRIGGERED( ${1:WDFDEVICE inDevice}); ${2:// VOID  #PASSIVE_LEVEL}
+snippet EVT_WDF_DMA_ENABLER_DISABLE
+	EVT_WDF_DMA_ENABLER_DISABLE( ${1:WDFDMAENABLER inDmaEnabler}); ${2:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DMA_ENABLER_ENABLE
+	EVT_WDF_DMA_ENABLER_ENABLE( ${1:WDFDMAENABLER inDmaEnabler}); ${2:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DMA_ENABLER_FLUSH
+	EVT_WDF_DMA_ENABLER_FLUSH( ${1:WDFDMAENABLER inDmaEnabler}); ${2:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DMA_ENABLER_SELFMANAGED_IO_START
+	EVT_WDF_DMA_ENABLER_SELFMANAGED_IO_START( ${1:WDFDMAENABLER inDmaEnabler}); ${2:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DMA_ENABLER_SELFMANAGED_IO_STOP
+	EVT_WDF_DMA_ENABLER_SELFMANAGED_IO_STOP( ${1:WDFDMAENABLER inDmaEnabler}); ${2:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DRIVER_DEVICE_ADD
+	EVT_WDF_DRIVER_DEVICE_ADD( ${1:WDFDRIVER inDriver}, ${2:PWDFDEVICE_INIT ioDeviceInit}); ${3:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_DRIVER_UNLOAD
+	EVT_WDF_DRIVER_UNLOAD( ${1:WDFDRIVER inDriver}); ${2:// VOID  #PASSIVE_LEVEL}
+snippet EVT_WDF_FILE_CLEANUP
+	EVT_WDF_FILE_CLEANUP( ${1:WDFFILEOBJECT inFileObject}); ${2:// VOID  #PASSIVE_LEVEL}
+snippet EVT_WDF_FILE_CLOSE
+	EVT_WDF_FILE_CLOSE( ${1:WDFFILEOBJECT inFileObject}); ${2:// VOID  #PASSIVE_LEVEL}
+snippet EVT_WDF_IO_ALLOCATE_REQUEST_RESOURCES
+	EVT_WDF_IO_ALLOCATE_REQUEST_RESOURCES( ${1:WDFQUEUE inQueue}, ${2:WDFREQUEST inRequest}); ${3:// NTSTATUS  #DISPATCH_LEVEL}
+snippet EVT_WDF_IO_ALLOCATE_RESOURCES_FOR_RESERVED_REQUEST
+	EVT_WDF_IO_ALLOCATE_RESOURCES_FOR_RESERVED_REQUEST( ${1:WDFQUEUE inQueue}, ${2:WDFREQUEST inRequest}); ${3:// NTSTATUS  #DISPATCH_LEVEL}
+snippet EVT_WDF_IO_QUEUE_IO_CANCELED_ON_QUEUE
+	EVT_WDF_IO_QUEUE_IO_CANCELED_ON_QUEUE( ${1:WDFQUEUE inQueue}, ${2:WDFREQUEST inRequest}); ${3:// VOID  #DISPATCH_LEVEL}
+snippet EVT_WDF_IO_QUEUE_IO_DEFAULT
+	EVT_WDF_IO_QUEUE_IO_DEFAULT( ${1:WDFQUEUE inQueue}, ${2:WDFREQUEST inRequest}); ${3:// VOID  #DISPATCH_LEVEL}
+snippet EVT_WDF_IO_QUEUE_IO_DEVICE_CONTROL
+	EVT_WDF_IO_QUEUE_IO_DEVICE_CONTROL( ${1:WDFQUEUE inQueue}, ${2:WDFREQUEST inRequest}, ${3:size_t inOutputBufferLength}, ${4:size_t inInputBufferLength}, ${5:ULONG inIoControlCode}); ${6:// VOID  #DISPATCH_LEVEL}
+snippet EVT_WDF_IO_QUEUE_IO_INTERNAL_DEVICE_CONTROL
+	EVT_WDF_IO_QUEUE_IO_INTERNAL_DEVICE_CONTROL( ${1:WDFQUEUE inQueue}, ${2:WDFREQUEST inRequest}, ${3:size_t inOutputBufferLength}, ${4:size_t inInputBufferLength}, ${5:ULONG inIoControlCode}); ${6:// VOID  #DISPATCH_LEVEL}
+snippet EVT_WDF_IO_QUEUE_IO_READ
+	EVT_WDF_IO_QUEUE_IO_READ( ${1:WDFQUEUE inQueue}, ${2:WDFREQUEST inRequest}, ${3:size_t inLength}); ${4:// VOID  #DISPATCH_LEVEL}
+snippet EVT_WDF_IO_QUEUE_IO_RESUME
+	EVT_WDF_IO_QUEUE_IO_RESUME( ${1:WDFQUEUE inQueue}, ${2:WDFREQUEST inRequest}); ${3:// VOID  #DISPATCH_LEVEL}
+snippet EVT_WDF_IO_QUEUE_IO_STOP
+	EVT_WDF_IO_QUEUE_IO_STOP( ${1:WDFQUEUE inQueue}, ${2:WDFREQUEST inRequest}, ${3:ULONG inActionFlags}); ${4:// VOID  #DISPATCH_LEVEL}
+snippet EVT_WDF_IO_QUEUE_IO_WRITE
+	EVT_WDF_IO_QUEUE_IO_WRITE( ${1:WDFQUEUE inQueue}, ${2:WDFREQUEST inRequest}, ${3:size_t inLength}); ${4:// VOID  #DISPATCH_LEVEL}
+snippet EVT_WDF_IO_QUEUE_STATE
+	EVT_WDF_IO_QUEUE_STATE( ${1:WDFQUEUE inQueue}, ${2:WDFCONTEXT inContext}); ${3:// VOID  #DISPATCH_LEVEL}
+snippet EVT_WDF_IO_TARGET_QUERY_REMOVE
+	EVT_WDF_IO_TARGET_QUERY_REMOVE( ${1:WDFIOTARGET inIoTarget}); ${2:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_IO_TARGET_REMOVE_CANCELED
+	EVT_WDF_IO_TARGET_REMOVE_CANCELED( ${1:WDFIOTARGET inIoTarget}); ${2:// VOID  #PASSIVE_LEVEL}
+snippet EVT_WDF_IO_TARGET_REMOVE_COMPLETE
+	EVT_WDF_IO_TARGET_REMOVE_COMPLETE( ${1:WDFIOTARGET inIoTarget}); ${2:// VOID  #PASSIVE_LEVEL}
+snippet EVT_WDF_IO_WDM_IRP_FOR_FORWARD_PROGRESS
+	EVT_WDF_IO_WDM_IRP_FOR_FORWARD_PROGRESS( ${1:WDFQUEUE inQueue}, ${2:PIRP inIrp}); ${3:// WDF_IO_FORWARD_PROGRESS_ACTION  #DISPATCH_LEVEL}
+snippet EVT_WDF_OBJECT_CONTEXT_CLEANUP
+	EVT_WDF_OBJECT_CONTEXT_CLEANUP( ${1:WDFOBJECT inObject}); ${2:// VOID  #DISPATCH_LEVEL}
+snippet EVT_WDF_OBJECT_CONTEXT_DESTROY
+	EVT_WDF_OBJECT_CONTEXT_DESTROY( ${1:WDFOBJECT inObject}); ${2:// VOID  #DISPATCH_LEVEL}
+snippet EVT_WDF_USB_READERS_FAILED
+	EVT_WDF_USB_READERS_FAILED( ${1:WDFUSBPIPE inPipe}, ${2:NTSTATUS inStatus}, ${3:USBD_STATUS inUsbdStatus}); ${4:// BOOLEAN  #PASSIVE_LEVEL}
+snippet EVT_WDF_USB_READER_COMPLETION_ROUTINE
+	EVT_WDF_USB_READER_COMPLETION_ROUTINE( ${1:WDFUSBPIPE inPipe}, ${2:WDFMEMORY inBuffer}, ${3:size_t inNumBytesTransferred}, ${4:WDFCONTEXT inContext}); ${5:// VOID  #DISPATCH_LEVEL}
+snippet EVT_WDF_WMI_INSTANCE_EXECUTE_METHOD
+	EVT_WDF_WMI_INSTANCE_EXECUTE_METHOD( ${1:WDFWMIINSTANCE inWmiInstance}, ${2:ULONG inMethodId}, ${3:ULONG inInBufferSize}, ${4:ULONG inOutBufferSize}, ${5:PVOID Buffer}, ${6:PULONG outBufferUsed}); ${7:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_WMI_INSTANCE_QUERY_INSTANCE
+	EVT_WDF_WMI_INSTANCE_QUERY_INSTANCE( ${1:WDFWMIINSTANCE inWmiInstance}, ${2:ULONG inOutBufferSize}, ${3:PVOID OutBuffer}, ${4:PULONG outBufferUsed}); ${5:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_WMI_INSTANCE_SET_INSTANCE
+	EVT_WDF_WMI_INSTANCE_SET_INSTANCE( ${1:WDFWMIINSTANCE inWmiInstance}, ${2:ULONG inInBufferSize}, ${3:PVOID InBuffer}); ${4:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_WMI_INSTANCE_SET_ITEM
+	EVT_WDF_WMI_INSTANCE_SET_ITEM( ${1:WDFWMIINSTANCE inWmiInstance}, ${2:ULONG inDataItemId}, ${3:ULONG inInBufferSize}, ${4:PVOID InBuffer}); ${5:// NTSTATUS  #PASSIVE_LEVEL}
+snippet EVT_WDF_WMI_PROVIDER_FUNCTION_CONTROL
+	EVT_WDF_WMI_PROVIDER_FUNCTION_CONTROL( ${1:WDFWMIPROVIDER inWmiProvider}, ${2:WDF_WMI_PROVIDER_CONTROL inControl}, ${3:BOOLEAN inEnable}); ${4:// NTSTATUS  #PASSIVE_LEVEL}
+snippet WdfChildListAddOrUpdateChildDescriptionAsPresent
+	WdfChildListAddOrUpdateChildDescriptionAsPresent( ${1:WDFCHILDLIST inChildList}, ${2:PWDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER inIdentificationDescription}, ${3:PWDF_CHILD_ADDRESS_DESCRIPTION_HEADER inAddressDescription}); ${4:// NTSTATUS}
+snippet WdfChildListBeginIteration
+	WdfChildListBeginIteration( ${1:WDFCHILDLIST inChildList}, ${2:PWDF_CHILD_LIST_ITERATOR inIterator}); ${3:// VOID}
+snippet WdfChildListBeginScan
+	WdfChildListBeginScan( ${1:WDFCHILDLIST inChildList}); ${2:// VOID}
+snippet WdfChildListCreate
+	WdfChildListCreate( ${1:WDFDEVICE inDevice}, ${2:PWDF_CHILD_LIST_CONFIG inConfig}, ${3:PWDF_OBJECT_ATTRIBUTES inChildListAttributes}, ${4:outWDFCHILDLIST* ChildList}); ${5:// NTSTATUS}
+snippet WdfChildListEndIteration
+	WdfChildListEndIteration( ${1:WDFCHILDLIST inChildList}, ${2:PWDF_CHILD_LIST_ITERATOR inIterator}); ${3:// VOID}
+snippet WdfChildListEndScan
+	WdfChildListEndScan( ${1:WDFCHILDLIST inChildList}); ${2:// VOID}
+snippet WdfChildListGetDevice
+	WdfChildListGetDevice( ${1:WDFCHILDLIST inChildList}); ${2:// WDFDEVICE}
+snippet WdfChildListRequestChildEject
+	WdfChildListRequestChildEject( ${1:WDFCHILDLIST inChildList}, ${2:PWDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER inIdentificationDescription}); ${3:// BOOLEAN}
+snippet WdfChildListRetrieveAddressDescription
+	WdfChildListRetrieveAddressDescription( ${1:WDFCHILDLIST inChildList}, ${2:PWDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER inIdentificationDescription}, ${3:PWDF_CHILD_ADDRESS_DESCRIPTION_HEADER ioAddressDescription}); ${4:// NTSTATUS}
+snippet WdfChildListRetrieveNextDevice
+	WdfChildListRetrieveNextDevice( ${1:WDFCHILDLIST inChildList}, ${2:PWDF_CHILD_LIST_ITERATOR inIterator}, ${3:outWDFDEVICE* Device}, ${4:PWDF_CHILD_RETRIEVE_INFO ioInfo}); ${5:// NTSTATUS}
+snippet WdfChildListRetrievePdo
+	WdfChildListRetrievePdo( ${1:WDFCHILDLIST inChildList}, ${2:PWDF_CHILD_RETRIEVE_INFO ioRetrieveInfo}); ${3:// WDFDEVICE}
+snippet WdfChildListUpdateAllChildDescriptionsAsPresent
+	WdfChildListUpdateAllChildDescriptionsAsPresent( ${1:WDFCHILDLIST inChildList}); ${2:// VOID}
+snippet WdfChildListUpdateChildDescriptionAsMissing
+	WdfChildListUpdateChildDescriptionAsMissing( ${1:WDFCHILDLIST inChildList}, ${2:PWDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER inIdentificationDescription}); ${3:// NTSTATUS}
+snippet WdfCmResourceListAppendDescriptor
+	WdfCmResourceListAppendDescriptor( ${1:WDFCMRESLIST inList}, ${2:PCM_PARTIAL_RESOURCE_DESCRIPTOR inDescriptor}); ${3:// NTSTATUS}
+snippet WdfCmResourceListGetCount
+	WdfCmResourceListGetCount( ${1:WDFCMRESLIST inList}); ${2:// ULONG}
+snippet WdfCmResourceListGetDescriptor
+	WdfCmResourceListGetDescriptor( ${1:WDFCMRESLIST inList}, ${2:ULONG inIndex}); ${3:// PCM_PARTIAL_RESOURCE_DESCRIPTOR}
+snippet WdfCmResourceListInsertDescriptor
+	WdfCmResourceListInsertDescriptor( ${1:WDFCMRESLIST inList}, ${2:PCM_PARTIAL_RESOURCE_DESCRIPTOR inDescriptor}, ${3:ULONG inIndex}); ${4:// NTSTATUS}
+snippet WdfCmResourceListRemove
+	WdfCmResourceListRemove( ${1:WDFCMRESLIST inList}, ${2:ULONG inIndex}); ${3:// VOID}
+snippet WdfCmResourceListRemoveByDescriptor
+	WdfCmResourceListRemoveByDescriptor( ${1:WDFCMRESLIST inList}, ${2:PCM_PARTIAL_RESOURCE_DESCRIPTOR inDescriptor}); ${3:// VOID}
+snippet WdfCollectionAdd
+	WdfCollectionAdd( ${1:WDFCOLLECTION inCollection}, ${2:WDFOBJECT inObject}); ${3:// NTSTATUS}
+snippet WdfCollectionCreate
+	WdfCollectionCreate( ${1:PWDF_OBJECT_ATTRIBUTES inCollectionAttributes}, ${2:outWDFCOLLECTION* Collection}); ${3:// NTSTATUS}
+snippet WdfCollectionGetCount
+	WdfCollectionGetCount( ${1:WDFCOLLECTION inCollection}); ${2:// ULONG}
+snippet WdfCollectionGetFirstItem
+	WdfCollectionGetFirstItem( ${1:WDFCOLLECTION inCollection}); ${2:// WDFOBJECT}
+snippet WdfCollectionGetItem
+	WdfCollectionGetItem( ${1:WDFCOLLECTION inCollection}, ${2:ULONG inIndex}); ${3:// WDFOBJECT}
+snippet WdfCollectionGetLastItem
+	WdfCollectionGetLastItem( ${1:WDFCOLLECTION inCollection}); ${2:// WDFOBJECT}
+snippet WdfCollectionRemove
+	WdfCollectionRemove( ${1:WDFCOLLECTION inCollection}, ${2:WDFOBJECT inItem}); ${3:// VOID}
+snippet WdfCollectionRemoveItem
+	WdfCollectionRemoveItem( ${1:WDFCOLLECTION inCollection}, ${2:ULONG inIndex}); ${3:// VOID}
+snippet WdfCommonBufferCreate
+	WdfCommonBufferCreate( ${1:WDFDMAENABLER inDmaEnabler}, ${2:size_t inLength}, ${3:PWDF_OBJECT_ATTRIBUTES inAttributes}, ${4:outWDFCOMMONBUFFER* CommonBuffer}); ${5:// NTSTATUS}
+snippet WdfCommonBufferCreateWithConfig
+	WdfCommonBufferCreateWithConfig( ${1:WDFDMAENABLER inDmaEnabler}, ${2:size_t inLength}, ${3:PWDF_COMMON_BUFFER_CONFIG inConfig}, ${4:PWDF_OBJECT_ATTRIBUTES inAttributes}, ${5:outWDFCOMMONBUFFER* CommonBuffer}); ${6:// NTSTATUS}
+snippet WdfCommonBufferGetAlignedLogicalAddress
+	WdfCommonBufferGetAlignedLogicalAddress( ${1:WDFCOMMONBUFFER inCommonBuffer}); ${2:// PHYSICAL_ADDRESS}
+snippet WdfCommonBufferGetAlignedVirtualAddress
+	WdfCommonBufferGetAlignedVirtualAddress( ${1:WDFCOMMONBUFFER inCommonBuffer}); ${2:// PVOID}
+snippet WdfCommonBufferGetLength
+	WdfCommonBufferGetLength( ${1:WDFCOMMONBUFFER inCommonBuffer}); ${2:// size_t}
+snippet WdfControlDeviceInitAllocate
+	WdfControlDeviceInitAllocate( ${1:WDFDRIVER inDriver}, ${2:CONST inUNICODE_STRING* SDDLString}); ${3:// PWDFDEVICE_INIT}
+snippet WdfControlDeviceInitSetShutdownNotification
+	WdfControlDeviceInitSetShutdownNotification( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:PFN_WDF_DEVICE_SHUTDOWN_NOTIFICATION inNotification}, ${3:UCHAR inFlags}); ${4:// VOID}
+snippet WdfControlFinishInitializing
+	WdfControlFinishInitializing( ${1:WDFDEVICE inDevice}); ${2:// VOID}
+snippet WdfDeviceAddDependentUsageDeviceObject
+	WdfDeviceAddDependentUsageDeviceObject( ${1:WDFDEVICE inDevice}, ${2:PDEVICE_OBJECT inDependentDevice}); ${3:// NTSTATUS}
+snippet WdfDeviceAddQueryInterface
+	WdfDeviceAddQueryInterface( ${1:WDFDEVICE inDevice}, ${2:PWDF_QUERY_INTERFACE_CONFIG inInterfaceConfig}); ${3:// NTSTATUS}
+snippet WdfDeviceAddRemovalRelationsPhysicalDevice
+	WdfDeviceAddRemovalRelationsPhysicalDevice( ${1:WDFDEVICE inDevice}, ${2:PDEVICE_OBJECT inPhysicalDevice}); ${3:// NTSTATUS}
+snippet WdfDeviceAllocAndQueryProperty
+	WdfDeviceAllocAndQueryProperty( ${1:WDFDEVICE inDevice}, ${2:DEVICE_REGISTRY_PROPERTY inDeviceProperty}, ${3:POOL_TYPE inPoolType}, ${4:PWDF_OBJECT_ATTRIBUTES inPropertyMemoryAttributes}, ${5:outWDFMEMORY* PropertyMemory}); ${6:// NTSTATUS}
+snippet WdfDeviceAssignMofResourceName
+	WdfDeviceAssignMofResourceName( ${1:WDFDEVICE inDevice}, ${2:PCUNICODE_STRING inMofResourceName}); ${3:// NTSTATUS}
+snippet WdfDeviceAssignS0IdleSettings
+	WdfDeviceAssignS0IdleSettings( ${1:WDFDEVICE inDevice}, ${2:PWDF_DEVICE_POWER_POLICY_IDLE_SETTINGS inSettings}); ${3:// NTSTATUS}
+snippet WdfDeviceAssignSxWakeSettings
+	WdfDeviceAssignSxWakeSettings( ${1:WDFDEVICE inDevice}, ${2:PWDF_DEVICE_POWER_POLICY_WAKE_SETTINGS inSettings}); ${3:// NTSTATUS}
+snippet WdfDeviceClearRemovalRelationsDevices
+	WdfDeviceClearRemovalRelationsDevices( ${1:WDFDEVICE inDevice}); ${2:// VOID}
+snippet WdfDeviceConfigureRequestDispatching
+	WdfDeviceConfigureRequestDispatching( ${1:WDFDEVICE inDevice}, ${2:WDFQUEUE inQueue}, ${3:WDF_REQUEST_TYPE inRequestType}); ${4:// NTSTATUS}
+snippet WdfDeviceCreate
+	WdfDeviceCreate( ${1:ioPWDFDEVICE_INIT* DeviceInit}, ${2:PWDF_OBJECT_ATTRIBUTES inDeviceAttributes}, ${3:outWDFDEVICE* Device}); ${4:// NTSTATUS}
+snippet WdfDeviceCreateDeviceInterface
+	WdfDeviceCreateDeviceInterface( ${1:WDFDEVICE inDevice}, ${2:CONST inGUID* InterfaceClassGUID}, ${3:PCUNICODE_STRING inReferenceString}); ${4:// NTSTATUS}
+snippet WdfDeviceCreateSymbolicLink
+	WdfDeviceCreateSymbolicLink( ${1:WDFDEVICE inDevice}, ${2:PCUNICODE_STRING inSymbolicLinkName}); ${3:// NTSTATUS}
+snippet WdfDeviceEnqueueRequest
+	WdfDeviceEnqueueRequest( ${1:WDFDEVICE inDevice}, ${2:WDFREQUEST inRequest}); ${3:// NTSTATUS}
+snippet WdfDeviceGetAlignmentRequirement
+	WdfDeviceGetAlignmentRequirement( ${1:WDFDEVICE inDevice}); ${2:// ULONG}
+snippet WdfDeviceGetCharacteristics
+	WdfDeviceGetCharacteristics( ${1:WDFDEVICE inDevice}); ${2:// ULONG}
+snippet WdfDeviceGetDefaultQueue
+	WdfDeviceGetDefaultQueue( ${1:WDFDEVICE inDevice}); ${2:// WDFQUEUE}
+snippet WdfDeviceGetDevicePnpState
+	WdfDeviceGetDevicePnpState( ${1:WDFDEVICE inDevice}); ${2:// WDF_DEVICE_PNP_STATE}
+snippet WdfDeviceGetDevicePowerPolicyState
+	WdfDeviceGetDevicePowerPolicyState( ${1:WDFDEVICE inDevice}); ${2:// WDF_DEVICE_POWER_POLICY_STATE}
+snippet WdfDeviceGetDevicePowerState
+	WdfDeviceGetDevicePowerState( ${1:WDFDEVICE inDevice}); ${2:// WDF_DEVICE_POWER_STATE}
+snippet WdfDeviceGetDeviceState
+	WdfDeviceGetDeviceState( ${1:WDFDEVICE inDevice}, ${2:PWDF_DEVICE_STATE outDeviceState}); ${3:// VOID}
+snippet WdfDeviceGetDriver
+	WdfDeviceGetDriver( ${1:WDFDEVICE inDevice}); ${2:// WDFDRIVER}
+snippet WdfDeviceGetFileObject
+	WdfDeviceGetFileObject( ${1:WDFDEVICE inDevice}, ${2:PFILE_OBJECT inFileObject}); ${3:// WDFFILEOBJECT}
+snippet WdfDeviceGetIoTarget
+	WdfDeviceGetIoTarget( ${1:WDFDEVICE inDevice}); ${2:// WDFIOTARGET}
+snippet WdfDeviceGetSystemPowerAction
+	WdfDeviceGetSystemPowerAction( ${1:WDFDEVICE inDevice}); ${2:// POWER_ACTION}
+snippet WdfDeviceIndicateWakeStatus
+	WdfDeviceIndicateWakeStatus( ${1:WDFDEVICE inDevice}, ${2:NTSTATUS inWaitWakeStatus}); ${3:// NTSTATUS}
+snippet WdfDeviceInitAssignName
+	WdfDeviceInitAssignName( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:PCUNICODE_STRING inDeviceName}); ${3:// NTSTATUS}
+snippet WdfDeviceInitAssignSDDLString
+	WdfDeviceInitAssignSDDLString( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:PCUNICODE_STRING inSDDLString}); ${3:// NTSTATUS}
+snippet WdfDeviceInitAssignWdmIrpPreprocessCallback
+	WdfDeviceInitAssignWdmIrpPreprocessCallback( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:PFN_WDFDEVICE_WDM_IRP_PREPROCESS inEvtDeviceWdmIrpPreprocess}, ${3:UCHAR inMajorFunction}, ${4:PUCHAR MinorFunctions}, ${5:ULONG inNumMinorFunctions}); ${6:// NTSTATUS}
+snippet WdfDeviceInitFree
+	WdfDeviceInitFree( ${1:PWDFDEVICE_INIT inDeviceInit}); ${2:// VOID}
+snippet WdfDeviceInitRegisterPnpStateChangeCallback
+	WdfDeviceInitRegisterPnpStateChangeCallback( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:WDF_DEVICE_PNP_STATE inPnpState}, ${3:PFN_WDF_DEVICE_PNP_STATE_CHANGE_NOTIFICATION inEvtDevicePnpStateChange}, ${4:ULONG inCallbackTypes}); ${5:// NTSTATUS}
+snippet WdfDeviceInitRegisterPowerPolicyStateChangeCallback
+	WdfDeviceInitRegisterPowerPolicyStateChangeCallback( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:WDF_DEVICE_POWER_POLICY_STATE inPowerPolicyState}, ${3:PFN_WDF_DEVICE_POWER_POLICY_STATE_CHANGE_NOTIFICATION inEvtDevicePowerPolicyStateChange}, ${4:ULONG inCallbackTypes}); ${5:// NTSTATUS}
+snippet WdfDeviceInitRegisterPowerStateChangeCallback
+	WdfDeviceInitRegisterPowerStateChangeCallback( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:WDF_DEVICE_POWER_STATE inPowerState}, ${3:PFN_WDF_DEVICE_POWER_STATE_CHANGE_NOTIFICATION inEvtDevicePowerStateChange}, ${4:ULONG inCallbackTypes}); ${5:// NTSTATUS}
+snippet WdfDeviceInitSetCharacteristics
+	WdfDeviceInitSetCharacteristics( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:ULONG inDeviceCharacteristics}, ${3:BOOLEAN inOrInValues}); ${4:// VOID}
+snippet WdfDeviceInitSetDeviceClass
+	WdfDeviceInitSetDeviceClass( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:CONST inGUID* DeviceClassGuid}); ${3:// VOID}
+snippet WdfDeviceInitSetDeviceType
+	WdfDeviceInitSetDeviceType( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:DEVICE_TYPE inDeviceType}); ${3:// VOID}
+snippet WdfDeviceInitSetExclusive
+	WdfDeviceInitSetExclusive( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:BOOLEAN inIsExclusive}); ${3:// VOID}
+snippet WdfDeviceInitSetFileObjectConfig
+	WdfDeviceInitSetFileObjectConfig( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:PWDF_FILEOBJECT_CONFIG inFileObjectConfig}, ${3:PWDF_OBJECT_ATTRIBUTES inFileObjectAttributes}); ${4:// VOID}
+snippet WdfDeviceInitSetIoInCallerContextCallback
+	WdfDeviceInitSetIoInCallerContextCallback( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:PFN_WDF_IO_IN_CALLER_CONTEXT inEvtIoInCallerContext}); ${3:// VOID}
+snippet WdfDeviceInitSetIoType
+	WdfDeviceInitSetIoType( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:WDF_DEVICE_IO_TYPE inIoType}); ${3:// VOID}
+snippet WdfDeviceInitSetPnpPowerEventCallbacks
+	WdfDeviceInitSetPnpPowerEventCallbacks( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:PWDF_PNPPOWER_EVENT_CALLBACKS inPnpPowerEventCallbacks}); ${3:// VOID}
+snippet WdfDeviceInitSetPowerInrush
+	WdfDeviceInitSetPowerInrush( ${1:PWDFDEVICE_INIT inDeviceInit}); ${2:// VOID}
+snippet WdfDeviceInitSetPowerNotPageable
+	WdfDeviceInitSetPowerNotPageable( ${1:PWDFDEVICE_INIT inDeviceInit}); ${2:// VOID}
+snippet WdfDeviceInitSetPowerPageable
+	WdfDeviceInitSetPowerPageable( ${1:PWDFDEVICE_INIT inDeviceInit}); ${2:// VOID}
+snippet WdfDeviceInitSetPowerPolicyEventCallbacks
+	WdfDeviceInitSetPowerPolicyEventCallbacks( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:PWDF_POWER_POLICY_EVENT_CALLBACKS inPowerPolicyEventCallbacks}); ${3:// VOID}
+snippet WdfDeviceInitSetPowerPolicyOwnership
+	WdfDeviceInitSetPowerPolicyOwnership( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:BOOLEAN inIsPowerPolicyOwner}); ${3:// VOID}
+snippet WdfDeviceInitSetRequestAttributes
+	WdfDeviceInitSetRequestAttributes( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:PWDF_OBJECT_ATTRIBUTES inRequestAttributes}); ${3:// VOID}
+snippet WdfDeviceMiniportCreate
+	WdfDeviceMiniportCreate( ${1:WDFDRIVER inDriver}, ${2:PWDF_OBJECT_ATTRIBUTES inAttributes}, ${3:PDEVICE_OBJECT inDeviceObject}, ${4:PDEVICE_OBJECT inAttachedDeviceObject}, ${5:PDEVICE_OBJECT inPdo}, ${6:outWDFDEVICE* Device}); ${7:// NTSTATUS}
+snippet WdfDeviceOpenRegistryKey
+	WdfDeviceOpenRegistryKey( ${1:WDFDEVICE inDevice}, ${2:ULONG inDeviceInstanceKeyType}, ${3:ACCESS_MASK inDesiredAccess}, ${4:PWDF_OBJECT_ATTRIBUTES inKeyAttributes}, ${5:outWDFKEY* Key}); ${6:// NTSTATUS}
+snippet WdfDeviceQueryProperty
+	WdfDeviceQueryProperty( ${1:WDFDEVICE inDevice}, ${2:DEVICE_REGISTRY_PROPERTY inDeviceProperty}, ${3:ULONG inBufferLength}, ${4:PVOID PropertyBuffer}, ${5:PULONG outResultLength}); ${6:// NTSTATUS}
+snippet WdfDeviceRemoveDependentUsageDeviceObject
+	WdfDeviceRemoveDependentUsageDeviceObject( ${1:WDFDEVICE inDevice}, ${2:PDEVICE_OBJECT inDependentDevice}); ${3:// VOID}
+snippet WdfDeviceRemoveRemovalRelationsPhysicalDevice
+	WdfDeviceRemoveRemovalRelationsPhysicalDevice( ${1:WDFDEVICE inDevice}, ${2:PDEVICE_OBJECT inPhysicalDevice}); ${3:// VOID}
+snippet WdfDeviceResumeIdle
+	WdfDeviceResumeIdle( ${1:WDFDEVICE inDevice}); ${2:// VOID}
+snippet WdfDeviceRetrieveDeviceInterfaceString
+	WdfDeviceRetrieveDeviceInterfaceString( ${1:WDFDEVICE inDevice}, ${2:CONST inGUID* InterfaceClassGUID}, ${3:PCUNICODE_STRING inReferenceString}, ${4:WDFSTRING inString}); ${5:// NTSTATUS}
+snippet WdfDeviceRetrieveDeviceName
+	WdfDeviceRetrieveDeviceName( ${1:WDFDEVICE inDevice}, ${2:WDFSTRING inString}); ${3:// NTSTATUS}
+snippet WdfDeviceSetAlignmentRequirement
+	WdfDeviceSetAlignmentRequirement( ${1:WDFDEVICE inDevice}, ${2:ULONG inAlignmentRequirement}); ${3:// VOID}
+snippet WdfDeviceSetBusInformationForChildren
+	WdfDeviceSetBusInformationForChildren( ${1:WDFDEVICE inDevice}, ${2:PPNP_BUS_INFORMATION inBusInformation}); ${3:// VOID}
+snippet WdfDeviceSetCharacteristics
+	WdfDeviceSetCharacteristics( ${1:WDFDEVICE inDevice}, ${2:ULONG inDeviceCharacteristics}); ${3:// VOID}
+snippet WdfDeviceSetDeviceInterfaceState
+	WdfDeviceSetDeviceInterfaceState( ${1:WDFDEVICE inDevice}, ${2:CONST inGUID* InterfaceClassGUID}, ${3:PCUNICODE_STRING inReferenceString}, ${4:BOOLEAN inIsInterfaceEnabled}); ${5:// VOID}
+snippet WdfDeviceSetDeviceState
+	WdfDeviceSetDeviceState( ${1:WDFDEVICE inDevice}, ${2:PWDF_DEVICE_STATE inDeviceState}); ${3:// VOID}
+snippet WdfDeviceSetFailed
+	WdfDeviceSetFailed( ${1:WDFDEVICE inDevice}, ${2:WDF_DEVICE_FAILED_ACTION inFailedAction}); ${3:// VOID}
+snippet WdfDeviceSetPnpCapabilities
+	WdfDeviceSetPnpCapabilities( ${1:WDFDEVICE inDevice}, ${2:PWDF_DEVICE_PNP_CAPABILITIES inPnpCapabilities}); ${3:// VOID}
+snippet WdfDeviceSetPowerCapabilities
+	WdfDeviceSetPowerCapabilities( ${1:WDFDEVICE inDevice}, ${2:PWDF_DEVICE_POWER_CAPABILITIES inPowerCapabilities}); ${3:// VOID}
+snippet WdfDeviceSetSpecialFileSupport
+	WdfDeviceSetSpecialFileSupport( ${1:WDFDEVICE inDevice}, ${2:WDF_SPECIAL_FILE_TYPE inFileType}, ${3:BOOLEAN inFileTypeIsSupported}); ${4:// VOID}
+snippet WdfDeviceSetStaticStopRemove
+	WdfDeviceSetStaticStopRemove( ${1:WDFDEVICE inDevice}, ${2:BOOLEAN inStoppable}); ${3:// VOID}
+snippet WdfDeviceWdmDispatchPreprocessedIrp
+	WdfDeviceWdmDispatchPreprocessedIrp( ${1:WDFDEVICE inDevice}, ${2:PIRP inIrp}); ${3:// NTSTATUS}
+snippet WdfDeviceWdmGetAttachedDevice
+	WdfDeviceWdmGetAttachedDevice( ${1:WDFDEVICE inDevice}); ${2:// PDEVICE_OBJECT}
+snippet WdfDeviceWdmGetDeviceObject
+	WdfDeviceWdmGetDeviceObject( ${1:WDFDEVICE inDevice}); ${2:// PDEVICE_OBJECT}
+snippet WdfDeviceWdmGetPhysicalDevice
+	WdfDeviceWdmGetPhysicalDevice( ${1:WDFDEVICE inDevice}); ${2:// PDEVICE_OBJECT}
+snippet WdfDmaEnablerCreate
+	WdfDmaEnablerCreate( ${1:WDFDEVICE inDevice}, ${2:PWDF_DMA_ENABLER_CONFIG inConfig}, ${3:PWDF_OBJECT_ATTRIBUTES inAttributes}, ${4:outWDFDMAENABLER* DmaEnablerHandle}); ${5:// NTSTATUS}
+snippet WdfDmaEnablerGetFragmentLength
+	WdfDmaEnablerGetFragmentLength( ${1:WDFDMAENABLER inDmaEnabler}, ${2:WDF_DMA_DIRECTION inDmaDirection}); ${3:// size_t}
+snippet WdfDmaEnablerGetMaximumLength
+	WdfDmaEnablerGetMaximumLength( ${1:WDFDMAENABLER inDmaEnabler}); ${2:// size_t}
+snippet WdfDmaEnablerGetMaximumScatterGatherElements
+	WdfDmaEnablerGetMaximumScatterGatherElements( ${1:WDFDMAENABLER inDmaEnabler}); ${2:// size_t}
+snippet WdfDmaEnablerSetMaximumScatterGatherElements
+	WdfDmaEnablerSetMaximumScatterGatherElements( ${1:WDFDMAENABLER inDmaEnabler}, ${2:size_t inMaximumFragments}); ${3:// VOID}
+snippet WdfDmaEnablerWdmGetDmaAdapter
+	WdfDmaEnablerWdmGetDmaAdapter( ${1:WDFDMAENABLER inDmaEnabler}, ${2:WDF_DMA_DIRECTION inDmaDirection}); ${3:// PDMA_ADAPTER}
+snippet WdfDmaTransactionCreate
+	WdfDmaTransactionCreate( ${1:WDFDMAENABLER inDmaEnabler}, ${2:PWDF_OBJECT_ATTRIBUTES inAttributes}, ${3:outWDFDMATRANSACTION* DmaTransaction}); ${4:// NTSTATUS}
+snippet WdfDmaTransactionDmaCompleted
+	WdfDmaTransactionDmaCompleted( ${1:WDFDMATRANSACTION inDmaTransaction}, ${2:outNTSTATUS* Status}); ${3:// BOOLEAN}
+snippet WdfDmaTransactionDmaCompletedFinal
+	WdfDmaTransactionDmaCompletedFinal( ${1:WDFDMATRANSACTION inDmaTransaction}, ${2:size_t inFinalTransferredLength}, ${3:outNTSTATUS* Status}); ${4:// BOOLEAN}
+snippet WdfDmaTransactionDmaCompletedWithLength
+	WdfDmaTransactionDmaCompletedWithLength( ${1:WDFDMATRANSACTION inDmaTransaction}, ${2:size_t inTransferredLength}, ${3:outNTSTATUS* Status}); ${4:// BOOLEAN}
+snippet WdfDmaTransactionExecute
+	WdfDmaTransactionExecute( ${1:WDFDMATRANSACTION inDmaTransaction}, ${2:WDFCONTEXT inContext}); ${3:// NTSTATUS}
+snippet WdfDmaTransactionGetBytesTransferred
+	WdfDmaTransactionGetBytesTransferred( ${1:WDFDMATRANSACTION inDmaTransaction}); ${2:// size_t}
+snippet WdfDmaTransactionGetCurrentDmaTransferLength
+	WdfDmaTransactionGetCurrentDmaTransferLength( ${1:WDFDMATRANSACTION inDmaTransaction}); ${2:// size_t}
+snippet WdfDmaTransactionGetDevice
+	WdfDmaTransactionGetDevice( ${1:WDFDMATRANSACTION inDmaTransaction}); ${2:// WDFDEVICE}
+snippet WdfDmaTransactionGetRequest
+	WdfDmaTransactionGetRequest( ${1:WDFDMATRANSACTION inDmaTransaction}); ${2:// WDFREQUEST}
+snippet WdfDmaTransactionInitialize
+	WdfDmaTransactionInitialize( ${1:WDFDMATRANSACTION inDmaTransaction}, ${2:PFN_WDF_PROGRAM_DMA inEvtProgramDmaFunction}, ${3:WDF_DMA_DIRECTION inDmaDirection}, ${4:PMDL inMdl}, ${5:PVOID inVirtualAddress}, ${6:size_t inLength}); ${7:// NTSTATUS}
+snippet WdfDmaTransactionInitializeUsingRequest
+	WdfDmaTransactionInitializeUsingRequest( ${1:WDFDMATRANSACTION inDmaTransaction}, ${2:WDFREQUEST inRequest}, ${3:PFN_WDF_PROGRAM_DMA inEvtProgramDmaFunction}, ${4:WDF_DMA_DIRECTION inDmaDirection}); ${5:// NTSTATUS}
+snippet WdfDmaTransactionRelease
+	WdfDmaTransactionRelease( ${1:WDFDMATRANSACTION inDmaTransaction}); ${2:// NTSTATUS}
+snippet WdfDmaTransactionSetMaximumLength
+	WdfDmaTransactionSetMaximumLength( ${1:WDFDMATRANSACTION inDmaTransaction}, ${2:size_t inMaximumLength}); ${3:// VOID}
+snippet WdfDpcCancel
+	WdfDpcCancel( ${1:WDFDPC inDpc}, ${2:BOOLEAN inWait}); ${3:// BOOLEAN}
+snippet WdfDpcCreate
+	WdfDpcCreate( ${1:PWDF_DPC_CONFIG inConfig}, ${2:PWDF_OBJECT_ATTRIBUTES inAttributes}, ${3:outWDFDPC* Dpc}); ${4:// NTSTATUS}
+snippet WdfDpcEnqueue
+	WdfDpcEnqueue( ${1:WDFDPC inDpc}); ${2:// BOOLEAN}
+snippet WdfDpcGetParentObject
+	WdfDpcGetParentObject( ${1:WDFDPC inDpc}); ${2:// WDFOBJECT}
+snippet WdfDpcWdmGetDpc
+	WdfDpcWdmGetDpc( ${1:WDFDPC inDpc}); ${2:// PKDPC}
+snippet WdfDriverCreate
+	WdfDriverCreate( ${1:PDRIVER_OBJECT inDriverObject}, ${2:PCUNICODE_STRING inRegistryPath}, ${3:PWDF_OBJECT_ATTRIBUTES inDriverAttributes}, ${4:PWDF_DRIVER_CONFIG inDriverConfig}, ${5:outWDFDRIVER* Driver}); ${6:// NTSTATUS}
+snippet WdfDriverGetRegistryPath
+	WdfDriverGetRegistryPath( ${1:WDFDRIVER inDriver}); ${2:// PWSTR}
+snippet WdfDriverIsVersionAvailable
+	WdfDriverIsVersionAvailable( ${1:WDFDRIVER inDriver}, ${2:PWDF_DRIVER_VERSION_AVAILABLE_PARAMS inVersionAvailableParams}); ${3:// BOOLEAN}
+snippet WdfDriverOpenParametersRegistryKey
+	WdfDriverOpenParametersRegistryKey( ${1:WDFDRIVER inDriver}, ${2:ACCESS_MASK inDesiredAccess}, ${3:PWDF_OBJECT_ATTRIBUTES inKeyAttributes}, ${4:outWDFKEY* Key}); ${5:// NTSTATUS}
+snippet WdfDriverRegisterTraceInfo
+	WdfDriverRegisterTraceInfo( ${1:PDRIVER_OBJECT inDriverObject}, ${2:PFN_WDF_TRACE_CALLBACK inEvtTraceCallback}, ${3:PVOID inControlBlock}); ${4:// NTSTATUS}
+snippet WdfDriverRetrieveVersionString
+	WdfDriverRetrieveVersionString( ${1:WDFDRIVER inDriver}, ${2:WDFSTRING inString}); ${3:// NTSTATUS}
+snippet WdfDriverWdmGetDriverObject
+	WdfDriverWdmGetDriverObject( ${1:WDFDRIVER inDriver}); ${2:// PDRIVER_OBJECT}
+snippet WdfFdoAddStaticChild
+	WdfFdoAddStaticChild( ${1:WDFDEVICE inFdo}, ${2:WDFDEVICE inChild}); ${3:// NTSTATUS}
+snippet WdfFdoGetDefaultChildList
+	WdfFdoGetDefaultChildList( ${1:WDFDEVICE inFdo}); ${2:// WDFCHILDLIST}
+snippet WdfFdoInitAllocAndQueryProperty
+	WdfFdoInitAllocAndQueryProperty( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:DEVICE_REGISTRY_PROPERTY inDeviceProperty}, ${3:POOL_TYPE inPoolType}, ${4:PWDF_OBJECT_ATTRIBUTES inPropertyMemoryAttributes}, ${5:outWDFMEMORY* PropertyMemory}); ${6:// NTSTATUS}
+snippet WdfFdoInitOpenRegistryKey
+	WdfFdoInitOpenRegistryKey( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:ULONG inDeviceInstanceKeyType}, ${3:ACCESS_MASK inDesiredAccess}, ${4:PWDF_OBJECT_ATTRIBUTES inKeyAttributes}, ${5:outWDFKEY* Key}); ${6:// NTSTATUS}
+snippet WdfFdoInitQueryProperty
+	WdfFdoInitQueryProperty( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:DEVICE_REGISTRY_PROPERTY inDeviceProperty}, ${3:ULONG inBufferLength}, ${4:PVOID PropertyBuffer}, ${5:PULONG outResultLength}); ${6:// NTSTATUS}
+snippet WdfFdoInitSetDefaultChildListConfig
+	WdfFdoInitSetDefaultChildListConfig( ${1:PWDFDEVICE_INIT ioDeviceInit}, ${2:PWDF_CHILD_LIST_CONFIG inConfig}, ${3:PWDF_OBJECT_ATTRIBUTES inDefaultChildListAttributes}); ${4:// VOID}
+snippet WdfFdoInitSetEventCallbacks
+	WdfFdoInitSetEventCallbacks( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:PWDF_FDO_EVENT_CALLBACKS inFdoEventCallbacks}); ${3:// VOID}
+snippet WdfFdoInitSetFilter
+	WdfFdoInitSetFilter( ${1:PWDFDEVICE_INIT inDeviceInit}); ${2:// VOID}
+snippet WdfFdoInitWdmGetPhysicalDevice
+	WdfFdoInitWdmGetPhysicalDevice( ${1:PWDFDEVICE_INIT inDeviceInit}); ${2:// PDEVICE_OBJECT}
+snippet WdfFdoLockStaticChildListForIteration
+	WdfFdoLockStaticChildListForIteration( ${1:WDFDEVICE inFdo}); ${2:// VOID}
+snippet WdfFdoQueryForInterface
+	WdfFdoQueryForInterface( ${1:WDFDEVICE inFdo}, ${2:LPCGUID inInterfaceType}, ${3:PINTERFACE outInterface}, ${4:USHORT inSize}, ${5:USHORT inVersion}, ${6:PVOID inInterfaceSpecificData}); ${7:// NTSTATUS}
+snippet WdfFdoRetrieveNextStaticChild
+	WdfFdoRetrieveNextStaticChild( ${1:WDFDEVICE inFdo}, ${2:WDFDEVICE inPreviousChild}, ${3:ULONG inFlags}); ${4:// WDFDEVICE}
+snippet WdfFdoUnlockStaticChildListFromIteration
+	WdfFdoUnlockStaticChildListFromIteration( ${1:WDFDEVICE inFdo}); ${2:// VOID}
+snippet WdfFileObjectGetDevice
+	WdfFileObjectGetDevice( ${1:WDFFILEOBJECT inFileObject}); ${2:// WDFDEVICE}
+snippet WdfFileObjectGetFileName
+	WdfFileObjectGetFileName( ${1:WDFFILEOBJECT inFileObject}); ${2:// PUNICODE_STRING}
+snippet WdfFileObjectGetFlags
+	WdfFileObjectGetFlags( ${1:WDFFILEOBJECT inFileObject}); ${2:// ULONG}
+snippet WdfFileObjectWdmGetFileObject
+	WdfFileObjectWdmGetFileObject( ${1:WDFFILEOBJECT inFileObject}); ${2:// PFILE_OBJECT}
+snippet WdfInterruptAcquireLock
+	WdfInterruptAcquireLock( ${1:WDFINTERRUPT inInterrupt}); ${2:// VOID}
+snippet WdfInterruptCreate
+	WdfInterruptCreate( ${1:WDFDEVICE inDevice}, ${2:PWDF_INTERRUPT_CONFIG inConfiguration}, ${3:PWDF_OBJECT_ATTRIBUTES inAttributes}, ${4:outWDFINTERRUPT* Interrupt}); ${5:// NTSTATUS}
+snippet WdfInterruptDisable
+	WdfInterruptDisable( ${1:WDFINTERRUPT inInterrupt}); ${2:// VOID}
+snippet WdfInterruptEnable
+	WdfInterruptEnable( ${1:WDFINTERRUPT inInterrupt}); ${2:// VOID}
+snippet WdfInterruptGetInfo
+	WdfInterruptGetInfo( ${1:WDFINTERRUPT inInterrupt}, ${2:PWDF_INTERRUPT_INFO outInfo}); ${3:// VOID}
+snippet WdfInterruptReleaseLock
+	WdfInterruptReleaseLock( ${1:WDFINTERRUPT inInterrupt}); ${2:// VOID}
+snippet WdfInterruptSetExtendedPolicy
+	WdfInterruptSetExtendedPolicy( ${1:WDFINTERRUPT inInterrupt}, ${2:PWDF_INTERRUPT_EXTENDED_POLICY inPolicyAndGroup}); ${3:// VOID}
+snippet WdfInterruptSetPolicy
+	WdfInterruptSetPolicy( ${1:WDFINTERRUPT inInterrupt}, ${2:WDF_INTERRUPT_POLICY inPolicy}, ${3:WDF_INTERRUPT_PRIORITY inPriority}, ${4:KAFFINITY inTargetProcessorSet}); ${5:// VOID}
+snippet WdfInterruptSynchronize
+	WdfInterruptSynchronize( ${1:WDFINTERRUPT inInterrupt}, ${2:PFN_WDF_INTERRUPT_SYNCHRONIZE inCallback}, ${3:WDFCONTEXT inContext}); ${4:// BOOLEAN}
+snippet WdfIoQueueAssignForwardProgressPolicy
+	WdfIoQueueAssignForwardProgressPolicy( ${1:WDFQUEUE inQueue}, ${2:PWDF_IO_QUEUE_FORWARD_PROGRESS_POLICY inForwardProgressPolicy}); ${3:// NTSTATUS}
+snippet WdfIoQueueCreate
+	WdfIoQueueCreate( ${1:WDFDEVICE inDevice}, ${2:PWDF_IO_QUEUE_CONFIG inConfig}, ${3:PWDF_OBJECT_ATTRIBUTES inQueueAttributes}, ${4:outWDFQUEUE* Queue}); ${5:// NTSTATUS}
+snippet WdfIoQueueDrain
+	WdfIoQueueDrain( ${1:WDFQUEUE inQueue}, ${2:PFN_WDF_IO_QUEUE_STATE DrainComplete}, ${3:WDFCONTEXT Context}); ${4:// VOID}
+snippet WdfIoQueueDrainSynchronously
+	WdfIoQueueDrainSynchronously( ${1:WDFQUEUE inQueue}); ${2:// VOID}
+snippet WdfIoQueueFindRequest
+	WdfIoQueueFindRequest( ${1:WDFQUEUE inQueue}, ${2:WDFREQUEST inFoundRequest}, ${3:WDFFILEOBJECT inFileObject}, ${4:PWDF_REQUEST_PARAMETERS ioParameters}, ${5:outWDFREQUEST* OutRequest}); ${6:// NTSTATUS}
+snippet WdfIoQueueGetDevice
+	WdfIoQueueGetDevice( ${1:WDFQUEUE inQueue}); ${2:// WDFDEVICE}
+snippet WdfIoQueueGetState
+	WdfIoQueueGetState( ${1:WDFQUEUE inQueue}, ${2:PULONG outQueueRequests}, ${3:PULONG outDriverRequests}); ${4:// WDF_IO_QUEUE_STATE}
+snippet WdfIoQueuePurge
+	WdfIoQueuePurge( ${1:WDFQUEUE inQueue}, ${2:PFN_WDF_IO_QUEUE_STATE PurgeComplete}, ${3:WDFCONTEXT Context}); ${4:// VOID}
+snippet WdfIoQueuePurgeSynchronously
+	WdfIoQueuePurgeSynchronously( ${1:WDFQUEUE inQueue}); ${2:// VOID}
+snippet WdfIoQueueReadyNotify
+	WdfIoQueueReadyNotify( ${1:WDFQUEUE inQueue}, ${2:PFN_WDF_IO_QUEUE_STATE inQueueReady}, ${3:WDFCONTEXT inContext}); ${4:// NTSTATUS}
+snippet WdfIoQueueRetrieveFoundRequest
+	WdfIoQueueRetrieveFoundRequest( ${1:WDFQUEUE inQueue}, ${2:WDFREQUEST inFoundRequest}, ${3:outWDFREQUEST* OutRequest}); ${4:// NTSTATUS}
+snippet WdfIoQueueRetrieveNextRequest
+	WdfIoQueueRetrieveNextRequest( ${1:WDFQUEUE inQueue}, ${2:outWDFREQUEST* OutRequest}); ${3:// NTSTATUS}
+snippet WdfIoQueueRetrieveRequestByFileObject
+	WdfIoQueueRetrieveRequestByFileObject( ${1:WDFQUEUE inQueue}, ${2:WDFFILEOBJECT inFileObject}, ${3:outWDFREQUEST* OutRequest}); ${4:// NTSTATUS}
+snippet WdfIoQueueStart
+	WdfIoQueueStart( ${1:WDFQUEUE inQueue}); ${2:// VOID}
+snippet WdfIoQueueStop
+	WdfIoQueueStop( ${1:WDFQUEUE inQueue}, ${2:PFN_WDF_IO_QUEUE_STATE StopComplete}, ${3:WDFCONTEXT Context}); ${4:// VOID}
+snippet WdfIoQueueStopSynchronously
+	WdfIoQueueStopSynchronously( ${1:WDFQUEUE inQueue}); ${2:// VOID}
+snippet WdfIoResourceListAppendDescriptor
+	WdfIoResourceListAppendDescriptor( ${1:WDFIORESLIST inResourceList}, ${2:PIO_RESOURCE_DESCRIPTOR inDescriptor}); ${3:// NTSTATUS}
+snippet WdfIoResourceListCreate
+	WdfIoResourceListCreate( ${1:WDFIORESREQLIST inRequirementsList}, ${2:PWDF_OBJECT_ATTRIBUTES inAttributes}, ${3:outWDFIORESLIST* ResourceList}); ${4:// NTSTATUS}
+snippet WdfIoResourceListGetCount
+	WdfIoResourceListGetCount( ${1:WDFIORESLIST inResourceList}); ${2:// ULONG}
+snippet WdfIoResourceListGetDescriptor
+	WdfIoResourceListGetDescriptor( ${1:WDFIORESLIST inResourceList}, ${2:ULONG inIndex}); ${3:// PIO_RESOURCE_DESCRIPTOR}
+snippet WdfIoResourceListInsertDescriptor
+	WdfIoResourceListInsertDescriptor( ${1:WDFIORESLIST inResourceList}, ${2:PIO_RESOURCE_DESCRIPTOR inDescriptor}, ${3:ULONG inIndex}); ${4:// NTSTATUS}
+snippet WdfIoResourceListRemove
+	WdfIoResourceListRemove( ${1:WDFIORESLIST inResourceList}, ${2:ULONG inIndex}); ${3:// VOID}
+snippet WdfIoResourceListRemoveByDescriptor
+	WdfIoResourceListRemoveByDescriptor( ${1:WDFIORESLIST inResourceList}, ${2:PIO_RESOURCE_DESCRIPTOR inDescriptor}); ${3:// VOID}
+snippet WdfIoResourceListUpdateDescriptor
+	WdfIoResourceListUpdateDescriptor( ${1:WDFIORESLIST inResourceList}, ${2:PIO_RESOURCE_DESCRIPTOR inDescriptor}, ${3:ULONG inIndex}); ${4:// VOID}
+snippet WdfIoResourceRequirementsListAppendIoResList
+	WdfIoResourceRequirementsListAppendIoResList( ${1:WDFIORESREQLIST inRequirementsList}, ${2:WDFIORESLIST inIoResList}); ${3:// NTSTATUS}
+snippet WdfIoResourceRequirementsListGetCount
+	WdfIoResourceRequirementsListGetCount( ${1:WDFIORESREQLIST inRequirementsList}); ${2:// ULONG}
+snippet WdfIoResourceRequirementsListGetIoResList
+	WdfIoResourceRequirementsListGetIoResList( ${1:WDFIORESREQLIST inRequirementsList}, ${2:ULONG inIndex}); ${3:// WDFIORESLIST}
+snippet WdfIoResourceRequirementsListInsertIoResList
+	WdfIoResourceRequirementsListInsertIoResList( ${1:WDFIORESREQLIST inRequirementsList}, ${2:WDFIORESLIST inIoResList}, ${3:ULONG inIndex}); ${4:// NTSTATUS}
+snippet WdfIoResourceRequirementsListRemove
+	WdfIoResourceRequirementsListRemove( ${1:WDFIORESREQLIST inRequirementsList}, ${2:ULONG inIndex}); ${3:// VOID}
+snippet WdfIoResourceRequirementsListRemoveByIoResList
+	WdfIoResourceRequirementsListRemoveByIoResList( ${1:WDFIORESREQLIST inRequirementsList}, ${2:WDFIORESLIST inIoResList}); ${3:// VOID}
+snippet WdfIoResourceRequirementsListSetInterfaceType
+	WdfIoResourceRequirementsListSetInterfaceType( ${1:WDFIORESREQLIST inRequirementsList}, ${2:INTERFACE_TYPE inInterfaceType}); ${3:// VOID}
+snippet WdfIoResourceRequirementsListSetSlotNumber
+	WdfIoResourceRequirementsListSetSlotNumber( ${1:WDFIORESREQLIST inRequirementsList}, ${2:ULONG inSlotNumber}); ${3:// VOID}
+snippet WdfIoTargetAllocAndQueryTargetProperty
+	WdfIoTargetAllocAndQueryTargetProperty( ${1:WDFIOTARGET inIoTarget}, ${2:DEVICE_REGISTRY_PROPERTY inDeviceProperty}, ${3:POOL_TYPE inPoolType}, ${4:PWDF_OBJECT_ATTRIBUTES inPropertyMemoryAttributes}, ${5:outWDFMEMORY* PropertyMemory}); ${6:// NTSTATUS}
+snippet WdfIoTargetClose
+	WdfIoTargetClose( ${1:WDFIOTARGET inIoTarget}); ${2:// VOID}
+snippet WdfIoTargetCloseForQueryRemove
+	WdfIoTargetCloseForQueryRemove( ${1:WDFIOTARGET inIoTarget}); ${2:// VOID}
+snippet WdfIoTargetCreate
+	WdfIoTargetCreate( ${1:WDFDEVICE inDevice}, ${2:PWDF_OBJECT_ATTRIBUTES inIoTargetAttributes}, ${3:outWDFIOTARGET* IoTarget}); ${4:// NTSTATUS}
+snippet WdfIoTargetFormatRequestForInternalIoctl
+	WdfIoTargetFormatRequestForInternalIoctl( ${1:WDFIOTARGET inIoTarget}, ${2:WDFREQUEST inRequest}, ${3:ULONG IoctlCode}, ${4:WDFMEMORY inInputBuffer}, ${5:PWDFMEMORY_OFFSET inInputBufferOffset}, ${6:WDFMEMORY inOutputBuffer}, ${7:PWDFMEMORY_OFFSET inOutputBufferOffset}); ${8:// NTSTATUS}
+snippet WdfIoTargetFormatRequestForInternalIoctlOthers
+	WdfIoTargetFormatRequestForInternalIoctlOthers( ${1:WDFIOTARGET inIoTarget}, ${2:WDFREQUEST inRequest}, ${3:ULONG IoctlCode}, ${4:WDFMEMORY inOtherArg1}, ${5:PWDFMEMORY_OFFSET inOtherArg1Offset}, ${6:WDFMEMORY inOtherArg2}, ${7:PWDFMEMORY_OFFSET inOtherArg2Offset}, ${8:WDFMEMORY inOtherArg4}, ${9:PWDFMEMORY_OFFSET inOtherArg4Offset}) ${10:-> NTSTATUS
+snippet WdfIoTargetFormatRequestForIoctl
+	WdfIoTargetFormatRequestForIoctl( ${1:WDFIOTARGET inIoTarget}, ${2:WDFREQUEST inRequest}, ${3:ULONG IoctlCode}, ${4:WDFMEMORY inInputBuffer}, ${5:PWDFMEMORY_OFFSET inInputBufferOffset}, ${6:WDFMEMORY inOutputBuffer}, ${7:PWDFMEMORY_OFFSET inOutputBufferOffset}); ${8:// NTSTATUS}
+snippet WdfIoTargetFormatRequestForRead
+	WdfIoTargetFormatRequestForRead( ${1:WDFIOTARGET inIoTarget}, ${2:WDFREQUEST inRequest}, ${3:WDFMEMORY inOutputBuffer}, ${4:PWDFMEMORY_OFFSET inOutputBufferOffset}, ${5:PLONGLONG inDeviceOffset}); ${6:// NTSTATUS}
+snippet WdfIoTargetFormatRequestForWrite
+	WdfIoTargetFormatRequestForWrite( ${1:WDFIOTARGET inIoTarget}, ${2:WDFREQUEST inRequest}, ${3:WDFMEMORY inInputBuffer}, ${4:PWDFMEMORY_OFFSET inInputBufferOffset}, ${5:PLONGLONG inDeviceOffset}); ${6:// NTSTATUS}
+snippet WdfIoTargetGetDevice
+	WdfIoTargetGetDevice( ${1:WDFIOTARGET inIoTarget}); ${2:// WDFDEVICE}
+snippet WdfIoTargetGetState
+	WdfIoTargetGetState( ${1:WDFIOTARGET inIoTarget}); ${2:// WDF_IO_TARGET_STATE}
+snippet WdfIoTargetOpen
+	WdfIoTargetOpen( ${1:WDFIOTARGET inIoTarget}, ${2:PWDF_IO_TARGET_OPEN_PARAMS inOpenParams}); ${3:// NTSTATUS}
+snippet WdfIoTargetQueryForInterface
+	WdfIoTargetQueryForInterface( ${1:WDFIOTARGET inIoTarget}, ${2:LPCGUID inInterfaceType}, ${3:PINTERFACE outInterface}, ${4:USHORT inSize}, ${5:USHORT inVersion}, ${6:PVOID inInterfaceSpecificData}); ${7:// NTSTATUS}
+snippet WdfIoTargetQueryTargetProperty
+	WdfIoTargetQueryTargetProperty( ${1:WDFIOTARGET inIoTarget}, ${2:DEVICE_REGISTRY_PROPERTY inDeviceProperty}, ${3:ULONG inBufferLength}, ${4:PVOID PropertyBuffer}, ${5:PULONG ResultLength}); ${6:// NTSTATUS}
+snippet WdfIoTargetSendInternalIoctlOthersSynchronously
+	WdfIoTargetSendInternalIoctlOthersSynchronously( ${1:WDFIOTARGET inIoTarget}, ${2:WDFREQUEST inRequest}, ${3:ULONG IoctlCode}, ${4:PWDF_MEMORY_DESCRIPTOR inOtherArg1}, ${5:PWDF_MEMORY_DESCRIPTOR inOtherArg2}, ${6:PWDF_MEMORY_DESCRIPTOR inOtherArg4}, ${7:PWDF_REQUEST_SENDIONS inRequestOptions}, ${8:PULONG_PTR outBytesReturned}); ${9:// NTSTATUS}
+snippet WdfIoTargetSendInternalIoctlSynchronously
+	WdfIoTargetSendInternalIoctlSynchronously( ${1:WDFIOTARGET inIoTarget}, ${2:WDFREQUEST inRequest}, ${3:ULONG inIoctlCode}, ${4:PWDF_MEMORY_DESCRIPTOR inInputBuffer}, ${5:PWDF_MEMORY_DESCRIPTOR inOutputBuffer}, ${6:PWDF_REQUEST_SENDIONS inRequestOptions}, ${7:PULONG_PTR outBytesReturned}); ${8:// NTSTATUS}
+snippet WdfIoTargetSendIoctlSynchronously
+	WdfIoTargetSendIoctlSynchronously( ${1:WDFIOTARGET inIoTarget}, ${2:WDFREQUEST inRequest}, ${3:ULONG inIoctlCode}, ${4:PWDF_MEMORY_DESCRIPTOR inInputBuffer}, ${5:PWDF_MEMORY_DESCRIPTOR inOutputBuffer}, ${6:PWDF_REQUEST_SENDIONS inRequestOptions}, ${7:PULONG_PTR outBytesReturned}); ${8:// NTSTATUS}
+snippet WdfIoTargetSendReadSynchronously
+	WdfIoTargetSendReadSynchronously( ${1:WDFIOTARGET inIoTarget}, ${2:WDFREQUEST inRequest}, ${3:PWDF_MEMORY_DESCRIPTOR inOutputBuffer}, ${4:PLONGLONG inDeviceOffset}, ${5:PWDF_REQUEST_SENDIONS inRequestOptions}, ${6:PULONG_PTR outBytesRead}); ${7:// NTSTATUS}
+snippet WdfIoTargetSendWriteSynchronously
+	WdfIoTargetSendWriteSynchronously( ${1:WDFIOTARGET inIoTarget}, ${2:WDFREQUEST inRequest}, ${3:PWDF_MEMORY_DESCRIPTOR inInputBuffer}, ${4:PLONGLONG inDeviceOffset}, ${5:PWDF_REQUEST_SENDIONS inRequestOptions}, ${6:PULONG_PTR outBytesWritten}); ${7:// NTSTATUS}
+snippet WdfIoTargetStart
+	WdfIoTargetStart( ${1:WDFIOTARGET inIoTarget}); ${2:// NTSTATUS}
+snippet WdfIoTargetStop
+	WdfIoTargetStop( ${1:WDFIOTARGET inIoTarget}, ${2:WDF_IO_TARGET_SENT_IO_ACTION inAction}); ${3:// VOID}
+snippet WdfIoTargetWdmGetTargetDeviceObject
+	WdfIoTargetWdmGetTargetDeviceObject( ${1:WDFIOTARGET inIoTarget}); ${2:// PDEVICE_OBJECT}
+snippet WdfIoTargetWdmGetTargetFileHandle
+	WdfIoTargetWdmGetTargetFileHandle( ${1:WDFIOTARGET inIoTarget}); ${2:// HANDLE}
+snippet WdfIoTargetWdmGetTargetFileObject
+	WdfIoTargetWdmGetTargetFileObject( ${1:WDFIOTARGET inIoTarget}); ${2:// PFILE_OBJECT}
+snippet WdfIoTargetWdmGetTargetPhysicalDevice
+	WdfIoTargetWdmGetTargetPhysicalDevice( ${1:WDFIOTARGET inIoTarget}); ${2:// PDEVICE_OBJECT}
+snippet WdfLookasideListCreate
+	WdfLookasideListCreate( ${1:PWDF_OBJECT_ATTRIBUTES inLookasideAttributes}, ${2:size_t inBufferSize}, ${3:POOL_TYPE inPoolType}, ${4:PWDF_OBJECT_ATTRIBUTES inMemoryAttributes}, ${5:ULONG inPoolTag}, ${6:outWDFLOOKASIDE* Lookaside}); ${7:// NTSTATUS}
+snippet WdfMemoryAssignBuffer
+	WdfMemoryAssignBuffer( ${1:WDFMEMORY inMemory}, ${2:PVOID inBuffer}, ${3:size_t inBufferSize}); ${4:// NTSTATUS}
+snippet WdfMemoryCopyFromBuffer
+	WdfMemoryCopyFromBuffer( ${1:WDFMEMORY inDestinationMemory}, ${2:size_t inDestinationOffset}, ${3:PVOID inBuffer}, ${4:size_t inNumBytesToCopyFrom}); ${5:// NTSTATUS}
+snippet WdfMemoryCopyToBuffer
+	WdfMemoryCopyToBuffer( ${1:WDFMEMORY inSourceMemory}, ${2:size_t inSourceOffset}, ${3:PVOID Buffer}, ${4:size_t inNumBytesToCopyTo}); ${5:// NTSTATUS}
+snippet WdfMemoryCreate
+	WdfMemoryCreate( ${1:PWDF_OBJECT_ATTRIBUTES inAttributes}, ${2:POOL_TYPE inPoolType}, ${3:ULONG inPoolTag}, ${4:size_t inBufferSize}, ${5:outWDFMEMORY* Memory}, ${6:outPVOID* Buffer}); ${7:// NTSTATUS}
+snippet WdfMemoryCreateFromLookaside
+	WdfMemoryCreateFromLookaside( ${1:WDFLOOKASIDE inLookaside}, ${2:outWDFMEMORY* Memory}); ${3:// NTSTATUS}
+snippet WdfMemoryCreatePreallocated
+	WdfMemoryCreatePreallocated( ${1:PWDF_OBJECT_ATTRIBUTES inAttributes}, ${2:size_t inBufferSize}, ${3:outWDFMEMORY* Memory}); ${4:// NTSTATUS}
+snippet WdfMemoryGetBuffer
+	WdfMemoryGetBuffer( ${1:WDFMEMORY inMemory}, ${2:outsize_t* BufferSize}); ${3:// PVOID}
+snippet WdfObjectAcquireLock
+	WdfObjectAcquireLock( ${1:WDFOBJECT inObject}); ${2:// VOID}
+snippet WdfObjectCreate
+	WdfObjectCreate( ${1:PWDF_OBJECT_ATTRIBUTES inAttributes}, ${2:outWDFOBJECT* Object}); ${3:// NTSTATUS}
+snippet WdfObjectDelete
+	WdfObjectDelete( ${1:WDFOBJECT inObject}); ${2:// VOID}
+snippet WdfObjectQuery
+	WdfObjectQuery( ${1:WDFOBJECT inObject}, ${2:CONST inGUID* Guid}, ${3:ULONG inQueryBufferLength}, ${4:PVOID QueryBuffer}); ${5:// NTSTATUS}
+snippet WdfObjectReleaseLock
+	WdfObjectReleaseLock( ${1:WDFOBJECT inObject}); ${2:// VOID}
+snippet WdfPdoAddEjectionRelationsPhysicalDevice
+	WdfPdoAddEjectionRelationsPhysicalDevice( ${1:WDFDEVICE inDevice}, ${2:PDEVICE_OBJECT inPhysicalDevice}); ${3:// NTSTATUS}
+snippet WdfPdoClearEjectionRelationsDevices
+	WdfPdoClearEjectionRelationsDevices( ${1:WDFDEVICE inDevice}); ${2:// VOID}
+snippet WdfPdoGetParent
+	WdfPdoGetParent( ${1:WDFDEVICE inDevice}); ${2:// WDFDEVICE}
+snippet WdfPdoInitAddCompatibleID
+	WdfPdoInitAddCompatibleID( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:PCUNICODE_STRING inCompatibleID}); ${3:// NTSTATUS}
+snippet WdfPdoInitAddDeviceText
+	WdfPdoInitAddDeviceText( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:PCUNICODE_STRING inDeviceDescription}, ${3:PCUNICODE_STRING inDeviceLocation}, ${4:LCID inLocaleId}); ${5:// NTSTATUS}
+snippet WdfPdoInitAddHardwareID
+	WdfPdoInitAddHardwareID( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:PCUNICODE_STRING inHardwareID}); ${3:// NTSTATUS}
+snippet WdfPdoInitAllocate
+	WdfPdoInitAllocate( ${1:WDFDEVICE inParentDevice}); ${2:// PWDFDEVICE_INIT}
+snippet WdfPdoInitAllowForwardingRequestToParent
+	WdfPdoInitAllowForwardingRequestToParent( ${1:PWDFDEVICE_INIT inDeviceInit}); ${2:// VOID}
+snippet WdfPdoInitAssignContainerID
+	WdfPdoInitAssignContainerID( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:PCUNICODE_STRING inContainerID}); ${3:// NTSTATUS}
+snippet WdfPdoInitAssignDeviceID
+	WdfPdoInitAssignDeviceID( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:PCUNICODE_STRING inDeviceID}); ${3:// NTSTATUS}
+snippet WdfPdoInitAssignInstanceID
+	WdfPdoInitAssignInstanceID( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:PCUNICODE_STRING inInstanceID}); ${3:// NTSTATUS}
+snippet WdfPdoInitAssignRawDevice
+	WdfPdoInitAssignRawDevice( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:CONST inGUID* DeviceClassGuid}); ${3:// NTSTATUS}
+snippet WdfPdoInitSetDefaultLocale
+	WdfPdoInitSetDefaultLocale( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:LCID inLocaleId}); ${3:// VOID}
+snippet WdfPdoInitSetEventCallbacks
+	WdfPdoInitSetEventCallbacks( ${1:PWDFDEVICE_INIT inDeviceInit}, ${2:PWDF_PDO_EVENT_CALLBACKS inDispatchTable}); ${3:// VOID}
+snippet WdfPdoMarkMissing
+	WdfPdoMarkMissing( ${1:WDFDEVICE inDevice}); ${2:// NTSTATUS}
+snippet WdfPdoRemoveEjectionRelationsPhysicalDevice
+	WdfPdoRemoveEjectionRelationsPhysicalDevice( ${1:WDFDEVICE inDevice}, ${2:PDEVICE_OBJECT inPhysicalDevice}); ${3:// VOID}
+snippet WdfPdoRequestEject
+	WdfPdoRequestEject( ${1:WDFDEVICE inDevice}); ${2:// VOID}
+snippet WdfPdoRetrieveAddressDescription
+	WdfPdoRetrieveAddressDescription( ${1:WDFDEVICE inDevice}, ${2:PWDF_CHILD_ADDRESS_DESCRIPTION_HEADER ioAddressDescription}); ${3:// NTSTATUS}
+snippet WdfPdoRetrieveIdentificationDescription
+	WdfPdoRetrieveIdentificationDescription( ${1:WDFDEVICE inDevice}, ${2:PWDF_CHILD_IDENTIFICATION_DESCRIPTION_HEADER ioIdentificationDescription}); ${3:// NTSTATUS}
+snippet WdfPdoUpdateAddressDescription
+	WdfPdoUpdateAddressDescription( ${1:WDFDEVICE inDevice}, ${2:PWDF_CHILD_ADDRESS_DESCRIPTION_HEADER ioAddressDescription}); ${3:// NTSTATUS}
+snippet WdfRegistryAssignMemory
+	WdfRegistryAssignMemory( ${1:WDFKEY inKey}, ${2:PCUNICODE_STRING inValueName}, ${3:ULONG inValueType}, ${4:WDFMEMORY inMemory}, ${5:PWDFMEMORY_OFFSET inMemoryOffsets}); ${6:// NTSTATUS}
+snippet WdfRegistryAssignMultiString
+	WdfRegistryAssignMultiString( ${1:WDFKEY inKey}, ${2:PCUNICODE_STRING inValueName}, ${3:WDFCOLLECTION inStringsCollection}); ${4:// NTSTATUS}
+snippet WdfRegistryAssignString
+	WdfRegistryAssignString( ${1:WDFKEY inKey}, ${2:PCUNICODE_STRING inValueName}, ${3:WDFSTRING inString}); ${4:// NTSTATUS}
+snippet WdfRegistryAssignULong
+	WdfRegistryAssignULong( ${1:WDFKEY inKey}, ${2:PCUNICODE_STRING inValueName}, ${3:ULONG inValue}); ${4:// NTSTATUS}
+snippet WdfRegistryAssignUnicodeString
+	WdfRegistryAssignUnicodeString( ${1:WDFKEY inKey}, ${2:PCUNICODE_STRING inValueName}, ${3:PCUNICODE_STRING inValue}); ${4:// NTSTATUS}
+snippet WdfRegistryAssignValue
+	WdfRegistryAssignValue( ${1:WDFKEY inKey}, ${2:PCUNICODE_STRING inValueName}, ${3:ULONG inValueType}, ${4:ULONG inValueLength}, ${5:PVOID Value}); ${6:// NTSTATUS}
+snippet WdfRegistryClose
+	WdfRegistryClose( ${1:WDFKEY inKey}); ${2:// VOID}
+snippet WdfRegistryCreateKey
+	WdfRegistryCreateKey( ${1:WDFKEY inParentKey}, ${2:PCUNICODE_STRING inKeyName}, ${3:ACCESS_MASK inDesiredAccess}, ${4:ULONG inCreateOptions}, ${5:PULONG outCreateDisposition}, ${6:PWDF_OBJECT_ATTRIBUTES inKeyAttributes}, ${7:outWDFKEY* Key}); ${8:// NTSTATUS}
+snippet WdfRegistryOpenKey
+	WdfRegistryOpenKey( ${1:WDFKEY inParentKey}, ${2:PCUNICODE_STRING inKeyName}, ${3:ACCESS_MASK inDesiredAccess}, ${4:PWDF_OBJECT_ATTRIBUTES inKeyAttributes}, ${5:outWDFKEY* Key}); ${6:// NTSTATUS}
+snippet WdfRegistryQueryMemory
+	WdfRegistryQueryMemory( ${1:WDFKEY inKey}, ${2:PCUNICODE_STRING inValueName}, ${3:POOL_TYPE inPoolType}, ${4:PWDF_OBJECT_ATTRIBUTES inMemoryAttributes}, ${5:outWDFMEMORY* Memory}, ${6:PULONG outValueType}); ${7:// NTSTATUS}
+snippet WdfRegistryQueryMultiString
+	WdfRegistryQueryMultiString( ${1:WDFKEY inKey}, ${2:PCUNICODE_STRING inValueName}, ${3:PWDF_OBJECT_ATTRIBUTES inStringsAttributes}, ${4:WDFCOLLECTION inCollection}); ${5:// NTSTATUS}
+snippet WdfRegistryQueryString
+	WdfRegistryQueryString( ${1:WDFKEY inKey}, ${2:PCUNICODE_STRING inValueName}, ${3:WDFSTRING inString}); ${4:// NTSTATUS}
+snippet WdfRegistryQueryULong
+	WdfRegistryQueryULong( ${1:WDFKEY inKey}, ${2:PCUNICODE_STRING inValueName}, ${3:PULONG outValue}); ${4:// NTSTATUS}
+snippet WdfRegistryQueryUnicodeString
+	WdfRegistryQueryUnicodeString( ${1:WDFKEY inKey}, ${2:PCUNICODE_STRING inValueName}, ${3:PUSHORT outValueByteLength}, ${4:PUNICODE_STRING ioValue}); ${5:// NTSTATUS}
+snippet WdfRegistryQueryValue
+	WdfRegistryQueryValue( ${1:WDFKEY inKey}, ${2:PCUNICODE_STRING inValueName}, ${3:ULONG inValueLength}, ${4:PVOID Value}, ${5:PULONG outValueLengthQueried}, ${6:PULONG outValueType}); ${7:// NTSTATUS}
+snippet WdfRegistryRemoveKey
+	WdfRegistryRemoveKey( ${1:WDFKEY inKey}); ${2:// NTSTATUS}
+snippet WdfRegistryRemoveValue
+	WdfRegistryRemoveValue( ${1:WDFKEY inKey}, ${2:PCUNICODE_STRING inValueName}); ${3:// NTSTATUS}
+snippet WdfRegistryWdmGetHandle
+	WdfRegistryWdmGetHandle( ${1:WDFKEY inKey}); ${2:// HANDLE}
+snippet WdfRequestAllocateTimer
+	WdfRequestAllocateTimer( ${1:WDFREQUEST inRequest}); ${2:// NTSTATUS}
+snippet WdfRequestCancelSentRequest
+	WdfRequestCancelSentRequest( ${1:WDFREQUEST inRequest}); ${2:// BOOLEAN}
+snippet WdfRequestChangeTarget
+	WdfRequestChangeTarget( ${1:WDFREQUEST inRequest}, ${2:WDFIOTARGET inIoTarget}); ${3:// NTSTATUS}
+snippet WdfRequestComplete
+	WdfRequestComplete( ${1:WDFREQUEST inRequest}, ${2:NTSTATUS inStatus}); ${3:// VOID}
+snippet WdfRequestCompleteWithInformation
+	WdfRequestCompleteWithInformation( ${1:WDFREQUEST inRequest}, ${2:NTSTATUS inStatus}, ${3:ULONG_PTR inInformation}); ${4:// VOID}
+snippet WdfRequestCompleteWithPriorityBoost
+	WdfRequestCompleteWithPriorityBoost( ${1:WDFREQUEST inRequest}, ${2:NTSTATUS inStatus}, ${3:CCHAR inPriorityBoost}); ${4:// VOID}
+snippet WdfRequestCreate
+	WdfRequestCreate( ${1:PWDF_OBJECT_ATTRIBUTES inRequestAttributes}, ${2:WDFIOTARGET inIoTarget}, ${3:outWDFREQUEST* Request}); ${4:// NTSTATUS}
+snippet WdfRequestCreateFromIrp
+	WdfRequestCreateFromIrp( ${1:PWDF_OBJECT_ATTRIBUTES inRequestAttributes}, ${2:PIRP inIrp}, ${3:BOOLEAN inRequestFreesIrp}, ${4:outWDFREQUEST* Request}); ${5:// NTSTATUS}
+snippet WdfRequestFormatRequestUsingCurrentType
+	WdfRequestFormatRequestUsingCurrentType( ${1:WDFREQUEST inRequest}); ${2:// VOID}
+snippet WdfRequestForwardToIoQueue
+	WdfRequestForwardToIoQueue( ${1:WDFREQUEST inRequest}, ${2:WDFQUEUE inDestinationQueue}); ${3:// NTSTATUS}
+snippet WdfRequestForwardToParentDeviceIoQueue
+	WdfRequestForwardToParentDeviceIoQueue( ${1:WDFREQUEST inRequest}, ${2:WDFQUEUE inParentDeviceQueue}, ${3:PWDF_REQUEST_FORWARDIONS inForwardOptions}); ${4:// NTSTATUS}
+snippet WdfRequestGetCompletionParams
+	WdfRequestGetCompletionParams( ${1:WDFREQUEST inRequest}, ${2:PWDF_REQUEST_COMPLETION_PARAMS outParams}); ${3:// VOID}
+snippet WdfRequestGetFileObject
+	WdfRequestGetFileObject( ${1:WDFREQUEST inRequest}); ${2:// WDFFILEOBJECT}
+snippet WdfRequestGetInformation
+	WdfRequestGetInformation( ${1:WDFREQUEST inRequest}); ${2:// ULONG_PTR}
+snippet WdfRequestGetIoQueue
+	WdfRequestGetIoQueue( ${1:WDFREQUEST inRequest}); ${2:// WDFQUEUE}
+snippet WdfRequestGetParameters
+	WdfRequestGetParameters( ${1:WDFREQUEST inRequest}, ${2:PWDF_REQUEST_PARAMETERS outParameters}); ${3:// VOID}
+snippet WdfRequestGetRequestorMode
+	WdfRequestGetRequestorMode( ${1:WDFREQUEST inRequest}); ${2:// KPROCESSOR_MODE}
+snippet WdfRequestGetStatus
+	WdfRequestGetStatus( ${1:WDFREQUEST inRequest}); ${2:// NTSTATUS}
+snippet WdfRequestIsCanceled
+	WdfRequestIsCanceled( ${1:WDFREQUEST inRequest}); ${2:// BOOLEAN}
+snippet WdfRequestIsFrom32BitProcess
+	WdfRequestIsFrom32BitProcess( ${1:WDFREQUEST inRequest}); ${2:// BOOLEAN}
+snippet WdfRequestIsReserved
+	WdfRequestIsReserved( ${1:WDFREQUEST inRequest}); ${2:// BOOLEAN}
+snippet WdfRequestMarkCancelable
+	WdfRequestMarkCancelable( ${1:WDFREQUEST inRequest}, ${2:PFN_WDF_REQUEST_CANCEL inEvtRequestCancel}); ${3:// VOID}
+snippet WdfRequestMarkCancelableEx
+	WdfRequestMarkCancelableEx( ${1:WDFREQUEST inRequest}, ${2:PFN_WDF_REQUEST_CANCEL inEvtRequestCancel}); ${3:// NTSTATUS}
+snippet WdfRequestProbeAndLockUserBufferForRead
+	WdfRequestProbeAndLockUserBufferForRead( ${1:WDFREQUEST inRequest}, ${2:PVOID Buffer}, ${3:size_t inLength}, ${4:outWDFMEMORY* MemoryObject}); ${5:// NTSTATUS}
+snippet WdfRequestProbeAndLockUserBufferForWrite
+	WdfRequestProbeAndLockUserBufferForWrite( ${1:WDFREQUEST inRequest}, ${2:PVOID Buffer}, ${3:size_t inLength}, ${4:outWDFMEMORY* MemoryObject}); ${5:// NTSTATUS}
+snippet WdfRequestRequeue
+	WdfRequestRequeue( ${1:WDFREQUEST inRequest}); ${2:// NTSTATUS}
+snippet WdfRequestRetrieveInputBuffer
+	WdfRequestRetrieveInputBuffer( ${1:WDFREQUEST inRequest}, ${2:size_t inMinimumRequiredLength}, ${3:PVOID* Buffer}, ${4:outsize_t* Length}); ${5:// NTSTATUS}
+snippet WdfRequestRetrieveInputMemory
+	WdfRequestRetrieveInputMemory( ${1:WDFREQUEST inRequest}, ${2:outWDFMEMORY* Memory}); ${3:// NTSTATUS}
+snippet WdfRequestRetrieveInputWdmMdl
+	WdfRequestRetrieveInputWdmMdl( ${1:WDFREQUEST inRequest}, ${2:PMDL* Mdl}); ${3:// NTSTATUS}
+snippet WdfRequestRetrieveOutputBuffer
+	WdfRequestRetrieveOutputBuffer( ${1:WDFREQUEST inRequest}, ${2:size_t inMinimumRequiredSize}, ${3:PVOID* Buffer}, ${4:outsize_t* Length}); ${5:// NTSTATUS}
+snippet WdfRequestRetrieveOutputMemory
+	WdfRequestRetrieveOutputMemory( ${1:WDFREQUEST inRequest}, ${2:outWDFMEMORY* Memory}); ${3:// NTSTATUS}
+snippet WdfRequestRetrieveOutputWdmMdl
+	WdfRequestRetrieveOutputWdmMdl( ${1:WDFREQUEST inRequest}, ${2:PMDL* Mdl}); ${3:// NTSTATUS}
+snippet WdfRequestRetrieveUnsafeUserInputBuffer
+	WdfRequestRetrieveUnsafeUserInputBuffer( ${1:WDFREQUEST inRequest}, ${2:size_t inMinimumRequiredLength}, ${3:PVOID* InputBuffer}, ${4:outsize_t* Length}); ${5:// NTSTATUS}
+snippet WdfRequestRetrieveUnsafeUserOutputBuffer
+	WdfRequestRetrieveUnsafeUserOutputBuffer( ${1:WDFREQUEST inRequest}, ${2:size_t inMinimumRequiredLength}, ${3:PVOID* OutputBuffer}, ${4:outsize_t* Length}); ${5:// NTSTATUS}
+snippet WdfRequestReuse
+	WdfRequestReuse( ${1:WDFREQUEST inRequest}, ${2:PWDF_REQUEST_REUSE_PARAMS inReuseParams}); ${3:// NTSTATUS}
+snippet WdfRequestSend
+	WdfRequestSend( ${1:WDFREQUEST inRequest}, ${2:WDFIOTARGET inTarget}, ${3:PWDF_REQUEST_SENDIONS inOptions}); ${4:// BOOLEAN}
+snippet WdfRequestSetCompletionRoutine
+	WdfRequestSetCompletionRoutine( ${1:WDFREQUEST inRequest}, ${2:PFN_WDF_REQUEST_COMPLETION_ROUTINE inCompletionRoutine}, ${3:WDFCONTEXT inCompletionContext}); ${4:// VOID}
+snippet WdfRequestSetInformation
+	WdfRequestSetInformation( ${1:WDFREQUEST inRequest}, ${2:ULONG_PTR inInformation}); ${3:// VOID}
+snippet WdfRequestStopAcknowledge
+	WdfRequestStopAcknowledge( ${1:WDFREQUEST inRequest}, ${2:BOOLEAN inRequeue}); ${3:// VOID}
+snippet WdfRequestUnmarkCancelable
+	WdfRequestUnmarkCancelable( ${1:WDFREQUEST inRequest}); ${2:// NTSTATUS}
+snippet WdfRequestWdmFormatUsingStackLocation
+	WdfRequestWdmFormatUsingStackLocation( ${1:WDFREQUEST inRequest}, ${2:PIO_STACK_LOCATION inStack}); ${3:// VOID}
+snippet WdfRequestWdmGetIrp
+	WdfRequestWdmGetIrp( ${1:WDFREQUEST inRequest}); ${2:// PIRP}
+snippet WdfSpinLockAcquire
+	WdfSpinLockAcquire( ${1:WDFSPINLOCK inSpinLock}); ${2:// VOID}
+snippet WdfSpinLockCreate
+	WdfSpinLockCreate( ${1:PWDF_OBJECT_ATTRIBUTES inSpinLockAttributes}, ${2:outWDFSPINLOCK* SpinLock}); ${3:// NTSTATUS}
+snippet WdfSpinLockRelease
+	WdfSpinLockRelease( ${1:WDFSPINLOCK inSpinLock}); ${2:// VOID}
+snippet WdfStringCreate
+	WdfStringCreate( ${1:PCUNICODE_STRING inUnicodeString}, ${2:PWDF_OBJECT_ATTRIBUTES inStringAttributes}, ${3:outWDFSTRING* String}); ${4:// NTSTATUS}
+snippet WdfStringGetUnicodeString
+	WdfStringGetUnicodeString( ${1:WDFSTRING inString}, ${2:PUNICODE_STRING outUnicodeString}); ${3:// VOID}
+snippet WdfTimerCreate
+	WdfTimerCreate( ${1:PWDF_TIMER_CONFIG inConfig}, ${2:PWDF_OBJECT_ATTRIBUTES inAttributes}, ${3:outWDFTIMER* Timer}); ${4:// NTSTATUS}
+snippet WdfTimerGetParentObject
+	WdfTimerGetParentObject( ${1:WDFTIMER inTimer}); ${2:// WDFOBJECT}
+snippet WdfTimerStart
+	WdfTimerStart( ${1:WDFTIMER inTimer}, ${2:LONGLONG inDueTime}); ${3:// BOOLEAN}
+snippet WdfTimerStop
+	WdfTimerStop( ${1:WDFTIMER inTimer}, ${2:BOOLEAN inWait}); ${3:// BOOLEAN}
+snippet WdfUsbInterfaceGetConfiguredPipe
+	WdfUsbInterfaceGetConfiguredPipe( ${1:WDFUSBINTERFACE inUsbInterface}, ${2:UCHAR inPipeIndex}, ${3:PWDF_USB_PIPE_INFORMATION outPipeInfo}); ${4:// WDFUSBPIPE}
+snippet WdfUsbInterfaceGetConfiguredSettingIndex
+	WdfUsbInterfaceGetConfiguredSettingIndex( ${1:WDFUSBINTERFACE inInterface}); ${2:// BYTE}
+snippet WdfUsbInterfaceGetDescriptor
+	WdfUsbInterfaceGetDescriptor( ${1:WDFUSBINTERFACE inUsbInterface}, ${2:UCHAR inSettingIndex}, ${3:PUSB_INTERFACE_DESCRIPTOR outInterfaceDescriptor}); ${4:// VOID}
+snippet WdfUsbInterfaceGetEndpointInformation
+	WdfUsbInterfaceGetEndpointInformation( ${1:WDFUSBINTERFACE inUsbInterface}, ${2:UCHAR inSettingIndex}, ${3:UCHAR inEndpointIndex}, ${4:PWDF_USB_PIPE_INFORMATION outEndpointInfo}); ${5:// VOID}
+snippet WdfUsbInterfaceGetInterfaceNumber
+	WdfUsbInterfaceGetInterfaceNumber( ${1:WDFUSBINTERFACE inUsbInterface}); ${2:// BYTE}
+snippet WdfUsbInterfaceGetNumConfiguredPipes
+	WdfUsbInterfaceGetNumConfiguredPipes( ${1:WDFUSBINTERFACE inUsbInterface}); ${2:// BYTE}
+snippet WdfUsbInterfaceGetNumEndpoints
+	WdfUsbInterfaceGetNumEndpoints( ${1:WDFUSBINTERFACE inUsbInterface}, ${2:UCHAR inSettingIndex}); ${3:// BYTE}
+snippet WdfUsbInterfaceGetNumSettings
+	WdfUsbInterfaceGetNumSettings( ${1:WDFUSBINTERFACE inUsbInterface}); ${2:// BYTE}
+snippet WdfUsbInterfaceSelectSetting
+	WdfUsbInterfaceSelectSetting( ${1:WDFUSBINTERFACE inUsbInterface}, ${2:PWDF_OBJECT_ATTRIBUTES inPipesAttributes}, ${3:PWDF_USB_INTERFACE_SELECT_SETTING_PARAMS inParams}); ${4:// NTSTATUS}
+snippet WdfUsbTargetDeviceAllocAndQueryString
+	WdfUsbTargetDeviceAllocAndQueryString( ${1:WDFUSBDEVICE inUsbDevice}, ${2:PWDF_OBJECT_ATTRIBUTES inStringMemoryAttributes}, ${3:outWDFMEMORY* StringMemory}, ${4:PUSHORT outNumCharacters}, ${5:UCHAR inStringIndex}, ${6:USHORT inLangID}); ${7:// NTSTATUS}
+snippet WdfUsbTargetDeviceCreate
+	WdfUsbTargetDeviceCreate( ${1:WDFDEVICE inDevice}, ${2:PWDF_OBJECT_ATTRIBUTES inAttributes}, ${3:outWDFUSBDEVICE* UsbDevice}); ${4:// NTSTATUS}
+snippet WdfUsbTargetDeviceCyclePortSynchronously
+	WdfUsbTargetDeviceCyclePortSynchronously( ${1:WDFUSBDEVICE inUsbDevice}); ${2:// NTSTATUS}
+snippet WdfUsbTargetDeviceFormatRequestForControlTransfer
+	WdfUsbTargetDeviceFormatRequestForControlTransfer( ${1:WDFUSBDEVICE inUsbDevice}, ${2:WDFREQUEST inRequest}, ${3:PWDF_USB_CONTROL_SETUP_PACKET inSetupPacket}, ${4:WDFMEMORY inTransferMemory}, ${5:PWDFMEMORY_OFFSET inTransferOffset}); ${6:// NTSTATUS}
+snippet WdfUsbTargetDeviceFormatRequestForCyclePort
+	WdfUsbTargetDeviceFormatRequestForCyclePort( ${1:WDFUSBDEVICE inUsbDevice}, ${2:WDFREQUEST inRequest}); ${3:// NTSTATUS}
+snippet WdfUsbTargetDeviceFormatRequestForString
+	WdfUsbTargetDeviceFormatRequestForString( ${1:WDFUSBDEVICE inUsbDevice}, ${2:WDFREQUEST inRequest}, ${3:WDFMEMORY inMemory}, ${4:PWDFMEMORY_OFFSET inOffset}, ${5:UCHAR inStringIndex}, ${6:USHORT inLangID}); ${7:// NTSTATUS}
+snippet WdfUsbTargetDeviceFormatRequestForUrb
+	WdfUsbTargetDeviceFormatRequestForUrb( ${1:WDFUSBDEVICE inUsbDevice}, ${2:WDFREQUEST inRequest}, ${3:WDFMEMORY inUrbMemory}, ${4:PWDFMEMORY_OFFSET inUrbMemoryOffset}); ${5:// NTSTATUS}
+snippet WdfUsbTargetDeviceGetDeviceDescriptor
+	WdfUsbTargetDeviceGetDeviceDescriptor( ${1:WDFUSBDEVICE inUsbDevice}, ${2:PUSB_DEVICE_DESCRIPTOR outUsbDeviceDescriptor}); ${3:// VOID}
+snippet WdfUsbTargetDeviceGetInterface
+	WdfUsbTargetDeviceGetInterface( ${1:WDFUSBDEVICE inUsbDevice}, ${2:UCHAR inInterfaceIndex}); ${3:// WDFUSBINTERFACE}
+snippet WdfUsbTargetDeviceGetNumInterfaces
+	WdfUsbTargetDeviceGetNumInterfaces( ${1:WDFUSBDEVICE inUsbDevice}); ${2:// UCHAR}
+snippet WdfUsbTargetDeviceIsConnectedSynchronous
+	WdfUsbTargetDeviceIsConnectedSynchronous( ${1:WDFUSBDEVICE inUsbDevice}); ${2:// NTSTATUS}
+snippet WdfUsbTargetDeviceQueryString
+	WdfUsbTargetDeviceQueryString( ${1:WDFUSBDEVICE inUsbDevice}, ${2:WDFREQUEST inRequest}, ${3:PWDF_REQUEST_SENDIONS inRequestOptions}, ${4:PUSHORT String}, ${5:PUSHORT ioNumCharacters}, ${6:UCHAR inStringIndex}, ${7:USHORT inLangID}); ${8:// NTSTATUS}
+snippet WdfUsbTargetDeviceResetPortSynchronously
+	WdfUsbTargetDeviceResetPortSynchronously( ${1:WDFUSBDEVICE inUsbDevice}); ${2:// NTSTATUS}
+snippet WdfUsbTargetDeviceRetrieveConfigDescriptor
+	WdfUsbTargetDeviceRetrieveConfigDescriptor( ${1:WDFUSBDEVICE inUsbDevice}, ${2:PVOID ConfigDescriptor}, ${3:PUSHORT ioConfigDescriptorLength}); ${4:// NTSTATUS}
+snippet WdfUsbTargetDeviceRetrieveCurrentFrameNumber
+	WdfUsbTargetDeviceRetrieveCurrentFrameNumber( ${1:WDFUSBDEVICE inUsbDevice}, ${2:PULONG outCurrentFrameNumber}); ${3:// NTSTATUS}
+snippet WdfUsbTargetDeviceRetrieveInformation
+	WdfUsbTargetDeviceRetrieveInformation( ${1:WDFUSBDEVICE inUsbDevice}, ${2:PWDF_USB_DEVICE_INFORMATION outInformation}); ${3:// NTSTATUS}
+snippet WdfUsbTargetDeviceSelectConfig
+	WdfUsbTargetDeviceSelectConfig( ${1:WDFUSBDEVICE inUsbDevice}, ${2:PWDF_OBJECT_ATTRIBUTES inPipeAttributes}, ${3:PWDF_USB_DEVICE_SELECT_CONFIG_PARAMS ioParams}); ${4:// NTSTATUS}
+snippet WdfUsbTargetDeviceSendControlTransferSynchronously
+	WdfUsbTargetDeviceSendControlTransferSynchronously( ${1:WDFUSBDEVICE inUsbDevice}, ${2:WDFREQUEST inRequest}, ${3:PWDF_REQUEST_SENDIONS inRequestOptions}, ${4:PWDF_USB_CONTROL_SETUP_PACKET inSetupPacket}, ${5:PWDF_MEMORY_DESCRIPTOR inMemoryDescriptor}, ${6:PULONG outBytesTransferred}); ${7:// NTSTATUS}
+snippet WdfUsbTargetDeviceSendUrbSynchronously
+	WdfUsbTargetDeviceSendUrbSynchronously( ${1:WDFUSBDEVICE inUsbDevice}, ${2:WDFREQUEST inRequest}, ${3:PWDF_REQUEST_SENDIONS inRequestOptions}, ${4:PURB Urb}); ${5:// NTSTATUS}
+snippet WdfUsbTargetDeviceWdmGetConfigurationHandle
+	WdfUsbTargetDeviceWdmGetConfigurationHandle( ${1:WDFUSBDEVICE inUsbDevice}); ${2:// USBD_CONFIGURATION_HANDLE}
+snippet WdfUsbTargetPipeAbortSynchronously
+	WdfUsbTargetPipeAbortSynchronously( ${1:WDFUSBPIPE inPipe}, ${2:WDFREQUEST inRequest}, ${3:PWDF_REQUEST_SENDIONS inRequestOptions}); ${4:// NTSTATUS}
+snippet WdfUsbTargetPipeConfigContinuousReader
+	WdfUsbTargetPipeConfigContinuousReader( ${1:WDFUSBPIPE inPipe}, ${2:PWDF_USB_CONTINUOUS_READER_CONFIG inConfig}); ${3:// NTSTATUS}
+snippet WdfUsbTargetPipeFormatRequestForAbort
+	WdfUsbTargetPipeFormatRequestForAbort( ${1:WDFUSBPIPE inPipe}, ${2:WDFREQUEST inRequest}); ${3:// NTSTATUS}
+snippet WdfUsbTargetPipeFormatRequestForRead
+	WdfUsbTargetPipeFormatRequestForRead( ${1:WDFUSBPIPE inPipe}, ${2:WDFREQUEST inRequest}, ${3:WDFMEMORY inReadMemory}, ${4:PWDFMEMORY_OFFSET inReadOffset}); ${5:// NTSTATUS}
+snippet WdfUsbTargetPipeFormatRequestForReset
+	WdfUsbTargetPipeFormatRequestForReset( ${1:WDFUSBPIPE inPipe}, ${2:WDFREQUEST inRequest}); ${3:// NTSTATUS}
+snippet WdfUsbTargetPipeFormatRequestForUrb
+	WdfUsbTargetPipeFormatRequestForUrb( ${1:WDFUSBPIPE inPIPE}, ${2:WDFREQUEST inRequest}, ${3:WDFMEMORY inUrbMemory}, ${4:PWDFMEMORY_OFFSET inUrbMemoryOffset}); ${5:// NTSTATUS}
+snippet WdfUsbTargetPipeFormatRequestForWrite
+	WdfUsbTargetPipeFormatRequestForWrite( ${1:WDFUSBPIPE inPipe}, ${2:WDFREQUEST inRequest}, ${3:WDFMEMORY inWriteMemory}, ${4:PWDFMEMORY_OFFSET inWriteOffset}); ${5:// NTSTATUS}
+snippet WdfUsbTargetPipeGetInformation
+	WdfUsbTargetPipeGetInformation( ${1:WDFUSBPIPE inPipe}, ${2:PWDF_USB_PIPE_INFORMATION outPipeInformation}); ${3:// VOID}
+snippet WdfUsbTargetPipeGetType
+	WdfUsbTargetPipeGetType( ${1:WDFUSBPIPE inPipe}); ${2:// WDF_USB_PIPE_TYPE}
+snippet WdfUsbTargetPipeIsInEndpoint
+	WdfUsbTargetPipeIsInEndpoint( ${1:WDFUSBPIPE inPipe}); ${2:// BOOLEAN}
+snippet WdfUsbTargetPipeIsOutEndpoint
+	WdfUsbTargetPipeIsOutEndpoint( ${1:WDFUSBPIPE inPipe}); ${2:// BOOLEAN}
+snippet WdfUsbTargetPipeReadSynchronously
+	WdfUsbTargetPipeReadSynchronously( ${1:WDFUSBPIPE inPipe}, ${2:WDFREQUEST inRequest}, ${3:PWDF_REQUEST_SENDIONS inRequestOptions}, ${4:PWDF_MEMORY_DESCRIPTOR inMemoryDescriptor}, ${5:PULONG outBytesRead}); ${6:// NTSTATUS}
+snippet WdfUsbTargetPipeResetSynchronously
+	WdfUsbTargetPipeResetSynchronously( ${1:WDFUSBPIPE inPipe}, ${2:WDFREQUEST inRequest}, ${3:PWDF_REQUEST_SENDIONS inRequestOptions}); ${4:// NTSTATUS}
+snippet WdfUsbTargetPipeSendUrbSynchronously
+	WdfUsbTargetPipeSendUrbSynchronously( ${1:WDFUSBPIPE inPipe}, ${2:WDFREQUEST inRequest}, ${3:PWDF_REQUEST_SENDIONS inRequestOptions}, ${4:PURB Urb}); ${5:// NTSTATUS}
+snippet WdfUsbTargetPipeSetNoMaximumPacketSizeCheck
+	WdfUsbTargetPipeSetNoMaximumPacketSizeCheck( ${1:WDFUSBPIPE inPipe}); ${2:// VOID}
+snippet WdfUsbTargetPipeWdmGetPipeHandle
+	WdfUsbTargetPipeWdmGetPipeHandle( ${1:WDFUSBPIPE inUsbPipe}); ${2:// USBD_PIPE_HANDLE}
+snippet WdfUsbTargetPipeWriteSynchronously
+	WdfUsbTargetPipeWriteSynchronously( ${1:WDFUSBPIPE inPipe}, ${2:WDFREQUEST inRequest}, ${3:PWDF_REQUEST_SENDIONS inRequestOptions}, ${4:PWDF_MEMORY_DESCRIPTOR inMemoryDescriptor}, ${5:PULONG outBytesWritten}); ${6:// NTSTATUS}
+snippet WdfWaitLockAcquire
+	WdfWaitLockAcquire( ${1:WDFWAITLOCK inLock}, ${2:PLONGLONG inTimeout}); ${3:// NTSTATUS}
+snippet WdfWaitLockCreate
+	WdfWaitLockCreate( ${1:PWDF_OBJECT_ATTRIBUTES inLockAttributes}, ${2:outWDFWAITLOCK* Lock}); ${3:// NTSTATUS}
+snippet WdfWaitLockRelease
+	WdfWaitLockRelease( ${1:WDFWAITLOCK inLock}); ${2:// VOID}
+snippet WdfWdmDeviceGetWdfDeviceHandle
+	WdfWdmDeviceGetWdfDeviceHandle( ${1:PDEVICE_OBJECT inDeviceObject}); ${2:// WDFDEVICE}
+snippet WdfWdmDriverGetWdfDriverHandle
+	WdfWdmDriverGetWdfDriverHandle( ${1:PDRIVER_OBJECT inDriverObject}); ${2:// WDFDRIVER}
+snippet WdfWmiInstanceCreate
+	WdfWmiInstanceCreate( ${1:WDFDEVICE inDevice}, ${2:PWDF_WMI_INSTANCE_CONFIG inInstanceConfig}, ${3:PWDF_OBJECT_ATTRIBUTES inInstanceAttributes}, ${4:outWDFWMIINSTANCE* Instance}); ${5:// NTSTATUS}
+snippet WdfWmiInstanceDeregister
+	WdfWmiInstanceDeregister( ${1:WDFWMIINSTANCE inWmiInstance}); ${2:// VOID}
+snippet WdfWmiInstanceFireEvent
+	WdfWmiInstanceFireEvent( ${1:WDFWMIINSTANCE inWmiInstance}, ${2:ULONG inEventDataSize}, ${3:PVOID EventData}); ${4:// NTSTATUS}
+snippet WdfWmiInstanceGetDevice
+	WdfWmiInstanceGetDevice( ${1:WDFWMIINSTANCE inWmiInstance}); ${2:// WDFDEVICE}
+snippet WdfWmiInstanceGetProvider
+	WdfWmiInstanceGetProvider( ${1:WDFWMIINSTANCE inWmiInstance}); ${2:// WDFWMIPROVIDER}
+snippet WdfWmiInstanceRegister
+	WdfWmiInstanceRegister( ${1:WDFWMIINSTANCE inWmiInstance}); ${2:// NTSTATUS}
+snippet WdfWmiProviderCreate
+	WdfWmiProviderCreate( ${1:WDFDEVICE inDevice}, ${2:PWDF_WMI_PROVIDER_CONFIG inWmiProviderConfig}, ${3:PWDF_OBJECT_ATTRIBUTES inProviderAttributes}, ${4:outWDFWMIPROVIDER* WmiProvider}); ${5:// NTSTATUS}
+snippet WdfWmiProviderGetDevice
+	WdfWmiProviderGetDevice( ${1:WDFWMIPROVIDER inWmiProvider}); ${2:// WDFDEVICE}
+snippet WdfWmiProviderGetTracingHandle
+	WdfWmiProviderGetTracingHandle( ${1:WDFWMIPROVIDER inWmiProvider}); ${2:// ULONGLONG}
+snippet WdfWmiProviderIsEnabled
+	WdfWmiProviderIsEnabled( ${1:WDFWMIPROVIDER inWmiProvider}, ${2:WDF_WMI_PROVIDER_CONTROL inProviderControl}); ${3:// BOOLEAN}
+snippet WdfWorkItemCreate
+	WdfWorkItemCreate( ${1:PWDF_WORKITEM_CONFIG inConfig}, ${2:PWDF_OBJECT_ATTRIBUTES inAttributes}, ${3:outWDFWORKITEM* WorkItem}); ${4:// NTSTATUS}
+snippet WdfWorkItemEnqueue
+	WdfWorkItemEnqueue( ${1:WDFWORKITEM inWorkItem}); ${2:// VOID}
+snippet WdfWorkItemFlush
+	WdfWorkItemFlush( ${1:WDFWORKITEM inWorkItem}); ${2:// VOID}
+snippet WdfWorkItemGetParentObject
+	WdfWorkItemGetParentObject( ${1:WDFWORKITEM inWorkItem}); ${2:// WDFOBJECT}

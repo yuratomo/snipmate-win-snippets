@@ -1,0 +1,2430 @@
+snippet _access
+	_access(${1:const char * inFilename},${2:int inAccessMode});
+snippet _access_s
+	_access_s(${1:const char * inFilename}, ${2:int inAccessMode}); //${3:errno_t #io.h}
+snippet _atodbl
+	_atodbl(${1:_CRT_DOUBLE * outResult}, ${2:char * inStr}); //${3:int #stdlib.h}
+snippet _atodbl_l
+	_atodbl_l(${1:_CRT_DOUBLE * outResult}, ${2:char * inStr}, ${3:${3:_locale_t inLocale}}); //${4:int #stdlib.h}
+snippet _atof_l
+	_atof_l(${1:const char *inString}, ${2:_locale_t inLocale}); //${3:double #math.h}
+snippet _atoflt
+	_atoflt(${1:_CRT_FLOAT * outResult}, ${2:char * inStr}); //${3:int #stdlib.h}
+snippet _atoflt_l
+	_atoflt_l(${1:_CRT_FLOAT * outResult}, ${2:char * inStr}, ${3:${3:_locale_t inLocale}}); //${4:int #stdlib.h}
+snippet _atoi64
+	_atoi64(${1:const char * inString}); //${2:__int64 #stdlib.h}
+snippet _atoi64_l
+	_atoi64_l(${1:const char * inString}, ${2:_locale_t inLocale}); //${3:__int64 #stdlib.h}
+snippet _atoi_l
+	_atoi_l(${1:const char *inStr}, ${2:_locale_t inLocale}); //${3:int #stdlib.h}
+snippet _atol_l
+	_atol_l(${1:const char *inStr}, ${2:_locale_t inLocale}); //${3:long #stdlib.h}
+snippet _atoldbl
+	_atoldbl(${1:_LDOUBLE * outResult}, ${2:char * inStr}); //${3:int #stdlib.h}
+snippet _atoldbl_l
+	_atoldbl_l(${1:_LDOUBLE * outResult}, ${2:char * inStr}, ${3:${3:_locale_t inLocale}}); //${4:int #stdlib.h}
+snippet _beep
+	_beep(${1:unsigned inFrequency}, ${2:unsigned inDuration}); //${3:void #stdlib.h}
+snippet _c_exit
+	_c_exit(${1:void}); //${2:void #process.h}
+snippet _cabs
+	_cabs(${1:struct _complex inComplex_value}); //${2:double #math.h}
+snippet _cexit
+	_cexit(void); //${void #process.h
+snippet _cgets_s
+	_cgets_s(${1:char * _Buffer}, ${2:size_t _Size}, ${3:${3:size_t * outSizeRead}}); //${4:errno_t #conio.h}
+snippet _cgetws_s
+	_cgetws_s(${1:wchar_t * _Buffer}, ${2:size_t _SizeInWords}, ${3:size_t * outSizeRead}); //${4:errno_t #conio.h}
+snippet _chdir
+	_chdir(${1:const char * inPath}); //${2:int #direct.h}
+snippet _chdrive
+	_chdrive(${1:int inDrive}); //${2:int #direct.h}
+snippet _chgsign
+	_chgsign (${1:double inX}); //${2:double #float.h}
+snippet _chgsignf
+	_chgsignf (${1:float inX}); //${2:float #math.h}
+snippet _chmod
+	_chmod(${1:const char * inFilename}, ${2:int inMode}); //${3:int #io.h}
+snippet _chsize
+	_chsize(${1:int inFileHandle}, ${2:long inSize}); //${3:int #io.h}
+snippet _chsize_s
+	_chsize_s(${1:int inFileHandle},${2:__int64 inSize}); //${3:errno_t #io.h}
+snippet _chvalidator
+	_chvalidator(${1:int inCh}, ${2:int inMask}); //${3:int #ctype.h}
+snippet _chvalidator_l
+	_chvalidator_l(${1:inlocale_t}, ${2:int inCh}, ${3:int inMask}); //${4:int #ctype.h}
+snippet _clearfp
+	_clearfp(${1:void}); //${2:int #float.h}
+snippet _close
+	_close(${1:int inFileHandle}); //${2:int #io.h}
+snippet _commit
+	_commit(${1:int inFileHandle})
+snippet _configthreadlocale
+	_configthreadlocale(${1:int inFlag})
+snippet _control87
+	_control87(${1:unsigned int inNewValue},${2:unsigned int inMask})
+snippet _controlfp
+	_controlfp(${1:unsigned int inNewValue},${2:unsigned int inMask})
+snippet _controlfp_s
+	_controlfp_s(${1:unsigned int *outCurrentState}, ${2:unsigned int inNewValue}, ${3:unsigned int inMask})
+snippet _copysign
+	_copysign (${1:double inNumber}, ${2:double inSign})
+snippet _copysignf
+	_copysignf (${1:float inNumber}, ${2:float inSign})
+snippet _cprintf
+	_cprintf(${1:const char * inFormat}, ${2:...})
+snippet _cprintf_l
+	_cprintf_l(${1:const char * inFormat}, ${2:_locale_t inLocale}, ${3:...})
+snippet _cprintf_p
+	_cprintf_p(${1:const char * inFormat}, ${2:...})
+snippet _cprintf_p_l
+	_cprintf_p_l(${1:const char * inFormat}, ${2:_locale_t inLocale}, ${3:...})
+snippet _cprintf_s
+	_cprintf_s(${1:const char * inFormat}, ${2:...})
+snippet _cprintf_s_l
+	_cprintf_s_l(${1:const char * inFormat}, ${2:_locale_t inLocale}, ${3:...})
+snippet _cputs
+	_cputs(${1:const char * inStr})
+snippet _cputws
+	_cputws(${1:const wchar_t * inString})
+snippet _creat
+	_creat(${1:const char * inFilename}, ${2:int inPermissionMode})
+snippet _create_locale
+	_create_locale(${1:int inCategory}, ${2:const char * inLocale})
+snippet _cscanf
+	_cscanf(${1:const char * inFormat}, ${2:...})
+snippet _cscanf_l
+	_cscanf_l(${1:const char * inFormat}, ${2:_locale_t inLocale}, ${3:...})
+snippet _cscanf_s
+	_cscanf_s(${1:const char * inFormat}, ${2:...})
+snippet _cscanf_s_l
+	_cscanf_s_l(${1:const char * inFormat}, ${2:_locale_t inLocale}, ${3:...})
+snippet _ctime32
+	_ctime32(${1:const __time32_t * inTime})
+snippet _ctime32_s
+	_ctime32_s(${1:char *outBuf}, ${2:size_t inSizeInBytes}, ${3:const __time32_t *inTime})
+snippet _ctime64
+	_ctime64(${1:const __time64_t * inTime})
+snippet _ctime64_s
+	_ctime64_s(${1:char *_Buf}, ${2:size_t inSizeInBytes}, ${3:const __time64_t * inTime})
+snippet _cwait
+	_cwait(${1:int * outTermStat}, ${2:intptr_t inProcHandle}, ${3:int inAction})
+snippet _cwprintf
+	_cwprintf(${1:const wchar_t * inFormat}, ${2:...})
+snippet _cwprintf_l
+	_cwprintf_l(${1:const wchar_t * inFormat}, ${2:_locale_t inLocale}, ${3:...})
+snippet _cwprintf_p
+	_cwprintf_p(${1:const wchar_t * inFormat}, ${2:...})
+snippet _cwprintf_p_l
+	_cwprintf_p_l(${1:const wchar_t * inFormat}, ${2:_locale_t inLocale}, ${3:...})
+snippet _cwprintf_s
+	_cwprintf_s(${1:const wchar_t * inFormat}, ${2:...})
+snippet _cwprintf_s_l
+	_cwprintf_s_l(${1:const wchar_t * inFormat}, ${2:_locale_t inLocale}, ${3:...})
+snippet _cwscanf
+	_cwscanf(${1:const wchar_t * inFormat}, ${2:...})
+snippet _cwscanf_l
+	_cwscanf_l(${1:const wchar_t * inFormat}, ${2:_locale_t inLocale}, ${3:...})
+snippet _cwscanf_s
+	_cwscanf_s(${1:const wchar_t * inFormat}, ${2:...})
+snippet _cwscanf_s_l
+	_cwscanf_s_l(${1:const wchar_t * inFormat}, ${2:_locale_t inLocale}, ${3:...})
+snippet _difftime32
+	_difftime32(${1:__time32_t inTime1}, ${2:__time32_t inTime2})
+snippet _difftime64
+	_difftime64(${1:__time64_t inTime1}, ${2:__time64_t inTime2})
+snippet _dup
+	_dup(${1:int inFileHandle})
+snippet _dup2
+	_dup2(${1:int inFileHandleSrc}, ${2:int inFileHandleDst})
+snippet _dupenv_s
+	_dupenv_s(${1:char **outPBuffer}, ${2:size_t * outPBufferSizeInBytes}, ${3:const char * inVarName})
+snippet _ecvt
+	_ecvt(${1:double inVal}, ${2:int inNumOfDigits}, ${3:int * outPtDec}, ${4:int * outPtSign})
+snippet _ecvt_s
+	_ecvt_s(${1:char * _DstBuf}, ${2:size_t inSize}, ${3:double inVal}, ${4:int inNumOfDights}, ${5:int * outPtDec}, int * outPtSign)
+snippet _endthread
+	_endthread(${1:void})
+snippet _endthreadex
+	_endthreadex(${1:unsigned inRetval})
+snippet _eof
+	_eof(${1:int inFileHandle})
+snippet _execl
+	_execl(${1:const char * inFilename}, ${2:const char * inArgList}, ${3:...})
+snippet _execle
+	_execle(${1:const char * inFilename}, ${2:const char * inArgList}, ${3:...})
+snippet _execlp
+	_execlp(${1:const char * inFilename}, ${2:const char * inArgList}, ${3:...})
+snippet _execlpe
+	_execlpe(${1:const char * inFilename}, ${2:const char * inArgList}, ${3:...})
+snippet _execv
+	_execv(${1:const char * inFilename}, ${2:const char * const * inArgList})
+snippet _execve
+	_execve(${1:const char * inFilename}, ${2:const char * const * inArgList}, ${3:const char * const * inEnv})
+snippet _execvp
+	_execvp(${1:const char * inFilename}, ${2:const char * const * inArgList})
+snippet _execvpe
+	_execvpe(${1:const char * inFilename}, ${2:const char * const * inArgList}, ${3:const char * const * inEnv})
+snippet _exit
+	_exit(${1:int inCode})
+snippet _expand
+	_expand(${1:void * inMemory}, ${2:size_t inNewSize})
+snippet _fclose_nolock
+	_fclose_nolock(${1:FILE * ioFile})
+snippet _fcloseall
+	_fcloseall(${1:void})
+snippet _fcvt
+	_fcvt(${1:double inVal}, ${2:int inNumOfDec}, ${3:int * outPtDec}, ${4:${4:int * outPtSign}})
+snippet _fcvt_s
+	_fcvt_s(${1:char * _DstBuf}, ${2:size_t inSize}, ${3:double inVal}, ${4:${4:int inNumOfDec}}, ${5:${5:int * outPtDec}}, int * outPtSign)
+snippet _fdopen
+	_fdopen(${1:int inFileHandle}, ${2:const char * inMode})
+snippet _fflush_nolock
+	_fflush_nolock(${1:FILE * ioFile})
+snippet _fgetchar
+	_fgetchar(${1:void})
+snippet _fgetwc_nolock
+	_fgetwc_nolock(${1:FILE * ioFile})
+snippet _fgetwchar
+	_fgetwchar(${1:void})
+snippet _filbuf
+	_filbuf(${1:FILE * ioFile })
+snippet _filelength
+	_filelength(${1:int inFileHandle})
+snippet _filelengthi64
+	_filelengthi64(${1:int inFileHandle})
+snippet _fileno
+	_fileno(${1:FILE * inFile})
+snippet _findclose
+	_findclose(${1:intptr_t inFindHandle})
+snippet _findfirst32
+	_findfirst32(${1:const char * inFilename}, ${2:struct _finddata32_t * outFindData})
+snippet _findfirst32i64
+	_findfirst32i64(${1:const char * inFilename}, ${2:struct _finddata32i64_t * outFindData})
+snippet _findfirst64
+	_findfirst64(${1:const char * inFilename}, ${2:struct __finddata64_t * outFindData})
+snippet _findfirst64i32
+	_findfirst64i32(${1:const char * inFilename}, ${2:struct _finddata64i32_t * outFindData})
+snippet _findnext32
+	_findnext32(${1:intptr_t inFindHandle}, ${2:struct _finddata32_t * outFindData})
+snippet _findnext32i64
+	_findnext32i64(${1:intptr_t inFindHandle}, ${2:struct _finddata32i64_t * outFindData})
+snippet _findnext64
+	_findnext64(${1:intptr_t inFindHandle}, ${2:struct __finddata64_t * outFindData})
+snippet _findnext64i32
+	_findnext64i32(${1:intptr_t inFindHandle}, ${2:struct _finddata64i32_t * outFindData})
+snippet _finite
+	_finite(${1:double inX})
+snippet _finitef
+	_finitef(${1:float inX})
+snippet _flsbuf
+	_flsbuf(${1:int inCh}, ${2:FILE * ioFile})
+snippet _flushall
+	_flushall(${1:void})
+snippet _fpclass
+	_fpclass(${1:double inX})
+snippet _fpclassf
+	_fpclassf(${1:float inX})
+snippet _fpreset
+	_fpreset(${1:void})
+snippet _fprintf_l
+	_fprintf_l(${1:FILE * ioFile}, ${2:const char * inFormat}, ${3:_locale_t inLocale}, ${4:${4:...}})
+snippet _fprintf_p
+	_fprintf_p(${1:FILE * ioFile}, ${2:const char * inFormat}, ${3:...})
+snippet _fprintf_p_l
+	_fprintf_p_l(${1:FILE * ioFile}, ${2:const char * inFormat}, ${3:_locale_t inLocale}, ${4:${4:...}})
+snippet _fprintf_s_l
+	_fprintf_s_l(${1:FILE * ioFile}, ${2:const char * inFormat}, ${3:_locale_t inLocale}, ${4:${4:...}})
+snippet _fputchar
+	_fputchar(${1:int inCh})
+snippet _fputwc_nolock
+	_fputwc_nolock(${1:wchar_t inCh}, ${2:FILE * ioFile})
+snippet _fputwchar
+	_fputwchar(${1:wchar_t inCh})
+snippet _fread_nolock
+	_fread_nolock(${1:void * _DstBuf}, ${2:size_t inElementSize}, ${3:size_t inCount}, ${4:${4:FILE * ioFile}})
+snippet _fread_nolock_s
+	_fread_nolock_s(${1:void * _DstBuf}, ${2:size_t inDstSize}, ${3:size_t inElementSize}, ${4:${4:size_t inCount}}, ${5:${5:FILE * ioFile}})
+snippet _free_locale
+	_free_locale(${1:_locale_t inLocale})
+snippet _fscanf_l
+	_fscanf_l(${1:FILE * ioFile}, ${2:const char * inFormat}, ${3:_locale_t inLocale}, ${4:${4:...}})
+snippet _fscanf_s_l
+	_fscanf_s_l(${1:FILE * ioFile}, ${2:const char * inFormat}, ${3:_locale_t inLocale}, ${4:${4:...}})
+snippet _fseek_nolock
+	_fseek_nolock(${1:FILE * ioFile}, ${2:long inOffset}, ${3:int inOrigin})
+snippet _fseeki64
+	_fseeki64(${1:FILE * ioFile}, ${2:__int64 inOffset}, ${3:int inOrigin})
+snippet _fseeki64_nolock
+	_fseeki64_nolock(${1:FILE * ioFile}, ${2:__int64 inOffset}, ${3:int inOrigin})
+snippet _fsopen
+	_fsopen(${1:const char * inFilename}, ${2:const char * inMode})
+snippet _fsopen
+	_fsopen(${1:const char * inFilename}, ${2:const char * inMode}, ${3:int inShFlag})
+snippet _ftell_nolock
+	_ftell_nolock(${1:FILE * ioFile})
+snippet _ftelli64
+	_ftelli64(${1:FILE * ioFile})
+snippet _ftelli64_nolock
+	_ftelli64_nolock(${1:FILE * ioFile})
+snippet _fullpath
+	_fullpath(${1:char * _FullPath}, ${2:const char * inPath}, ${3:size_t inSizeInBytes})
+snippet _fwprintf_l
+	_fwprintf_l(${1:FILE * ioFile}, ${2:const wchar_t * inFormat}, ${3:_locale_t inLocale}, ${4:...})
+snippet _fwprintf_p
+	_fwprintf_p(${1:FILE * ioFile}, ${2:const wchar_t * inFormat}, ${3:...})
+snippet _fwprintf_p_l
+	_fwprintf_p_l(${1:FILE * ioFile}, ${2:const wchar_t * inFormat}, ${3:_locale_t inLocale}, ${4:...})
+snippet _fwprintf_s_l
+	_fwprintf_s_l(${1:FILE * ioFile}, ${2:const wchar_t * inFormat}, ${3:_locale_t inLocale}, ${4:...})
+snippet _fwrite_nolock
+	_fwrite_nolock(${1:const void * _DstBuf}, ${2:size_t inSize}, ${3:size_t inCount}, ${4:FILE * ioFile})
+snippet _fwscanf_l
+	_fwscanf_l(${1:FILE * ioFile}, ${2:const wchar_t * inFormat}, ${3:_locale_t inLocale}, ${4:...})
+snippet _fwscanf_s_l
+	_fwscanf_s_l(${1:FILE * ioFile}, ${2:const wchar_t * inFormat}, ${3:_locale_t inLocale}, ${4:...})
+snippet _gcvt
+	_gcvt(${1:double inVal}, ${2:int inNumOfDigits}, ${3:char * _DstBuf})
+snippet _gcvt_s
+	_gcvt_s(${1:char * _DstBuf}, ${2:size_t inSize}, ${3:double inVal}, ${4:int inNumOfDigits})
+snippet _get_amblksiz
+	_get_amblksiz(${1:size_t * outValue})
+snippet _get_current_locale
+	_get_current_locale(${1:void})
+snippet _get_daylight
+	_get_daylight(${1:int * outDaylight})
+snippet _get_dstbias
+	_get_dstbias(${1:long * outDaylight_savings_bias})
+snippet _get_fmode
+	_get_fmode(${1:int * outPMode})
+snippet _get_heap_handle
+	_get_heap_handle(${1:void})
+snippet _get_invalid_parameter_handler
+	_get_invalid_parameter_handler(${1:void})
+snippet _get_osfhandle
+	_get_osfhandle(${1:int inFileHandle})
+snippet _get_output_format
+	_get_output_format(${1:void})
+snippet _get_printf_count_output
+	_get_printf_count_output(${1:})
+snippet _get_purecall_handler
+	_get_purecall_handler(${1:})
+snippet _get_sbh_threshold
+	_get_sbh_threshold(${1:void})
+snippet _get_timezone
+	_get_timezone(${1:long * outTimezone})
+snippet _get_tzname
+	_get_tzname(${1:size_t *outReturnValue}, ${2:char *_Buffer}, ${3:size_t inSizeInBytes}, ${4:int inIndex})
+snippet _getch
+	_getch(${1:void})
+snippet _getch_nolock
+	_getch_nolock(${1:void})
+snippet _getche
+	_getche(${1:void})
+snippet _getche_nolock
+	_getche_nolock(${1:void})
+snippet _getcwd
+	_getcwd(${1:char * _DstBuf}, ${2:int inSizeInBytes})
+snippet _getdcwd
+	_getdcwd(${1:int inDrive}, ${2:char * _DstBuf}, ${3:int inSizeInBytes})
+snippet _getdiskfree
+	_getdiskfree(${1:unsigned inDrive}, ${2:struct _diskfree_t * outDiskFree})
+snippet _getdrive
+	_getdrive(${1:void})
+snippet _getdrives
+	_getdrives(${1:void})
+snippet _getmaxstdio
+	_getmaxstdio(${1:void})
+snippet _getmbcp
+	_getmbcp(${1:void})
+snippet _getpid
+	_getpid(${1:void})
+snippet _getwch
+	_getwch(${1:void})
+snippet _getwch_nolock
+	_getwch_nolock(${1:void})
+snippet _getwche
+	_getwche(${1:void})
+snippet _getwche_nolock
+	_getwche_nolock(${1:void})
+snippet _getws_s
+	_getws_s(${1:wchar_t * _Str}, ${2:size_t inSizeInWords})
+snippet _gmtime32
+	_gmtime32(${1:const __time32_t * inTime})
+snippet _gmtime32_s
+	_gmtime32_s(${1:struct tm *inTm}, ${2:const __time32_t * inTime})
+snippet _gmtime64
+	_gmtime64(${1:const __time64_t * inTime})
+snippet _gmtime64_s
+	_gmtime64_s(${1:struct tm *outTm}, ${2:const __time64_t *inTime})
+snippet _heapadd
+	_heapadd(${1:void * inMemory}, ${2:size_t inSize})
+snippet _heapchk
+	_heapchk(${1:void})
+snippet _heapmin
+	_heapmin(${1:void})
+snippet _heapset
+	_heapset(${1:unsigned int inFill})
+snippet _heapused
+	_heapused(${1:size_t * _Used}, ${2:size_t * _Commit}); //${3:int #io.h}
+snippet _heapwalk
+	_heapwalk(${1:_HEAPINFO * ioEntryInfo}); //${2:int #malloc.h}
+snippet _hypot
+	_hypot(${1:double inX}, ${2:double inY}); //${3:double #math.h}
+snippet _hypotf
+	_hypotf(${1:float inX}, ${2:float inY}); //${3:float #math.h}
+snippet _i64toa
+	_i64toa(${1:__int64 inVal}, ${2:char * _DstBuf}, ${3:int inRadix}); //${4:char #stdlib.h}
+snippet _i64toa_s
+	_i64toa_s(${1:__int64 inVal}, ${2:char * _DstBuf}, ${3:size_t inSize}, ${4:int inRadix}); //${5:_CRTIMP #stdlib.h}
+snippet _i64tow
+	_i64tow(${1:__int64 inVal}, ${2:wchar_t * _DstBuf}, ${3:int inRadix}); //${4:wchar_t #stdlib.h}
+snippet _i64tow_s
+	_i64tow_s(${1:__int64 inVal}, ${2:wchar_t * _DstBuf}, ${3:size_t inSizeInWords}, ${4:int inRadix}); //${5:errno_t #wchar.h}
+snippet _is_exception_typeof
+	_is_exception_typeof(${1:const type_info &inType}, ${2:struct _EXCEPTION_POINTERS * inExceptionPtr}); //${3:int #eh.h}
+snippet _isalnum_l
+	_isalnum_l(${1:int inC}, ${2:_locale_t inLocale}); //${3:int #ctype.h}
+snippet _isalpha_l
+	_isalpha_l(${1:int inC}, ${2:_locale_t inLocale}); //${3:int #ctype.h}
+snippet _isatty
+	_isatty(${1:int inFileHandle}); //${2:int #io.h}
+snippet _iscntrl_l
+	_iscntrl_l(${1:int inC}, ${2:_locale_t inLocale}); //${3:int #ctype.h}
+snippet _isctype
+	_isctype(${1:int inC}, ${2:int inType}); //${3:int #ctype.h}
+snippet _isctype_l
+	_isctype_l(${1:int inC}, ${2:int inType}, ${3:_locale_t inLocale}); //${4:int #ctype.h}
+snippet _isdigit_l
+	_isdigit_l(${1:int inC}, ${2:_locale_t inLocale}); //${3:int #ctype.h}
+snippet _isgraph_l
+	_isgraph_l(${1:int inC}, ${2:_locale_t inLocale}); //${3:int #ctype.h}
+snippet _isleadbyte_l
+	_isleadbyte_l(${1:int inC}, ${2:_locale_t inLocale}); //${3:int #ctype.h}
+snippet _islower_l
+	_islower_l(${1:int inC}, ${2:_locale_t inLocale}); //${3:int #ctype.h}
+snippet _ismbbalnum
+	_ismbbalnum(${1:unsigned int inC }); //${2:int #mbctype.h}
+snippet _ismbbalnum_l
+	_ismbbalnum_l(${1:unsigned int inC}, ${2:_locale_t inLocale}); //${3:int #mbctype.h}
+snippet _ismbbalpha
+	_ismbbalpha(${1:unsigned int inC }); //${2:int #mbctype.h}
+snippet _ismbbalpha_l
+	_ismbbalpha_l(${1:unsigned int inC}, ${2:_locale_t inLocale}); //${3:int #mbctype.h}
+snippet _ismbbgraph
+	_ismbbgraph(${1:unsigned int inC }); //${2:int #mbctype.h}
+snippet _ismbbgraph_l
+	_ismbbgraph_l(${1:unsigned int inC}, ${2:_locale_t inLocale}); //${3:int #mbctype.h}
+snippet _ismbbkalnum
+	_ismbbkalnum(${1:unsigned int inC }); //${2:int #mbctype.h}
+snippet _ismbbkalnum_l
+	_ismbbkalnum_l(${1:unsigned int inC}, ${2:_locale_t inLocale}); //${3:int #mbctype.h}
+snippet _ismbbkana
+	_ismbbkana(${1:unsigned int inC }); //${2:int #mbctype.h}
+snippet _ismbbkana_l
+	_ismbbkana_l(${1:unsigned int inC}, ${2:_locale_t inLocale}); //${3:int #mbctype.h}
+snippet _ismbbkprint
+	_ismbbkprint(${1:unsigned int inC }); //${2:int #mbctype.h}
+snippet _ismbbkprint_l
+	_ismbbkprint_l(${1:unsigned int inC}, ${2:_locale_t inLocale}); //${3:int #mbctype.h}
+snippet _ismbbkpunct
+	_ismbbkpunct(${1:unsigned int inC }); //${2:int #mbctype.h}
+snippet _ismbbkpunct_l
+	_ismbbkpunct_l(${1:unsigned int inC}, ${2:_locale_t inLocale}); //${3:int #mbctype.h}
+snippet _ismbblead
+	_ismbblead(${1:unsigned int inC})
+snippet _ismbblead
+	_ismbblead(${1:unsigned int inCh}); //${2:int #mbctype.h}
+snippet _ismbblead_l
+	_ismbblead_l(${1:unsigned int inC}, ${2:_locale_t inLocale })
+snippet _ismbblead_l
+	_ismbblead_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbctype.h}
+snippet _ismbbprint
+	_ismbbprint(${1:unsigned int inC }); //${2:int #mbctype.h}
+snippet _ismbbprint_l
+	_ismbbprint_l(${1:unsigned int inC}, ${2:_locale_t inLocale}); //${3:int #mbctype.h}
+snippet _ismbbpunct
+	_ismbbpunct(${1:unsigned int inC }); //${2:int #mbctype.h}
+snippet _ismbbpunct_l
+	_ismbbpunct_l(${1:unsigned int inC}, ${2:_locale_t inLocale}); //${3:int #mbctype.h}
+snippet _ismbbtrail
+	_ismbbtrail(${1:unsigned int inC})
+snippet _ismbbtrail
+	_ismbbtrail(${1:unsigned int inCh}); //${2:int #mbctype.h}
+snippet _ismbbtrail_l
+	_ismbbtrail_l(${1:unsigned int inC}, ${2:_locale_t inLocale })
+snippet _ismbbtrail_l
+	_ismbbtrail_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbctype.h}
+snippet _ismbcalnum
+	_ismbcalnum(${1:unsigned int inCh}); //${2:int #mbstring.h}
+snippet _ismbcalnum_l
+	_ismbcalnum_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _ismbcalpha
+	_ismbcalpha(${1:unsigned int inCh}); //${2:int #mbstring.h}
+snippet _ismbcalpha_l
+	_ismbcalpha_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _ismbcdigit
+	_ismbcdigit(${1:unsigned int inCh}); //${2:int #mbstring.h}
+snippet _ismbcdigit_l
+	_ismbcdigit_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _ismbcgraph
+	_ismbcgraph(${1:unsigned int inCh}); //${2:int #mbstring.h}
+snippet _ismbcgraph_l
+	_ismbcgraph_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _ismbchira
+	_ismbchira(${1:unsigned int inCh}); //${2:int #mbstring.h}
+snippet _ismbchira_l
+	_ismbchira_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _ismbckata
+	_ismbckata(${1:unsigned int inCh}); //${2:int #mbstring.h}
+snippet _ismbckata_l
+	_ismbckata_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _ismbcl0
+	_ismbcl0(${1:unsigned int inCh}); //${2:int #mbstring.h}
+snippet _ismbcl0_l
+	_ismbcl0_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _ismbcl1
+	_ismbcl1(${1:unsigned int inCh}); //${2:int #mbstring.h}
+snippet _ismbcl1_l
+	_ismbcl1_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _ismbcl2
+	_ismbcl2(${1:unsigned int inCh}); //${2:int #mbstring.h}
+snippet _ismbcl2_l
+	_ismbcl2_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _ismbclegal
+	_ismbclegal(${1:unsigned int inCh}); //${2:int #mbstring.h}
+snippet _ismbclegal_l
+	_ismbclegal_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _ismbclower
+	_ismbclower(${1:unsigned int inCh}); //${2:int #mbstring.h}
+snippet _ismbclower_l
+	_ismbclower_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _ismbcprint
+	_ismbcprint(${1:unsigned int inCh}); //${2:int #mbstring.h}
+snippet _ismbcprint_l
+	_ismbcprint_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _ismbcpunct
+	_ismbcpunct(${1:unsigned int inCh}); //${2:int #mbstring.h}
+snippet _ismbcpunct_l
+	_ismbcpunct_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _ismbcspace
+	_ismbcspace(${1:unsigned int inCh}); //${2:int #mbstring.h}
+snippet _ismbcspace_l
+	_ismbcspace_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _ismbcsymbol
+	_ismbcsymbol(${1:unsigned int inCh}); //${2:int #mbstring.h}
+snippet _ismbcsymbol_l
+	_ismbcsymbol_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _ismbcupper
+	_ismbcupper(${1:unsigned int inCh}); //${2:int #mbstring.h}
+snippet _ismbcupper_l
+	_ismbcupper_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _ismbslead
+	_ismbslead(${1:const unsigned char * _Str}, ${2:const unsigned char * inPos}); //${3:int #mbstring.h}
+snippet _ismbslead_l
+	_ismbslead_l(${1:const unsigned char * _Str}, ${2:const unsigned char * inPos}, ${3:_locale_t inLocale}); //${4:int #mbstring.h}
+snippet _ismbstrail
+	_ismbstrail(${1:const unsigned char * _Str}, ${2:const unsigned char * inPos}); //${3:int #mbstring.h}
+snippet _ismbstrail_l
+	_ismbstrail_l(${1:const unsigned char * _Str}, ${2:const unsigned char * inPos}, ${3:_locale_t inLocale}); //${4:int #mbstring.h}
+snippet _isnan
+	_isnan(${1:double inX}); //${2:int #float.h}
+snippet _isnanf
+	_isnanf(${1:float inX}); //${2:int #math.h}
+snippet _isprint_l
+	_isprint_l(${1:int inC}, ${2:_locale_t inLocale}); //${3:int #ctype.h}
+snippet _ispunct_l
+	_ispunct_l(${1:int inC}, ${2:_locale_t inLocale}); //${3:int #ctype.h}
+snippet _isspace_l
+	_isspace_l(${1:int inC}, ${2:_locale_t inLocale}); //${3:int #ctype.h}
+snippet _isupper_l
+	_isupper_l(${1:int inC}, ${2:_locale_t inLocale}); //${3:int #ctype.h}
+snippet _iswalnum_l
+	_iswalnum_l(${1:wint_t inC}, ${2:_locale_t inLocale}); //${3:int #ctype.h}
+snippet _iswalpha_l
+	_iswalpha_l(${1:wint_t inC}, ${2:_locale_t inLocale}); //${3:int #wchar.h}
+snippet _iswcntrl_l
+	_iswcntrl_l(${1:wint_t inC}, ${2:_locale_t inLocale}); //${3:int #wchar.h}
+snippet _iswcsym_l
+	_iswcsym_l(${1:wint_t inC}, ${2:_locale_t inLocale}); //${3:int #wchar.h}
+snippet _iswcsymf_l
+	_iswcsymf_l(${1:wint_t inC}, ${2:_locale_t inLocale}); //${3:int #ctype.h}
+snippet _iswctype_l
+	_iswctype_l(${1:wint_t inC}, ${2:wctype_t inType}, ${3:_locale_t inLocale}); //${4:int #wchar.h}
+snippet _iswdigit_l
+	_iswdigit_l(${1:wint_t inC}, ${2:_locale_t inLocale}); //${3:int #ctype.h}
+snippet _iswgraph_l
+	_iswgraph_l(${1:wint_t inC}, ${2:_locale_t inLocale}); //${3:int #ctype.h}
+snippet _iswlower_l
+	_iswlower_l(${1:wint_t inC}, ${2:_locale_t inLocale}); //${3:int #wchar.h}
+snippet _iswprint_l
+	_iswprint_l(${1:wint_t inC}, ${2:_locale_t inLocale}); //${3:int #wchar.h}
+snippet _iswpunct_l
+	_iswpunct_l(${1:wint_t inC}, ${2:_locale_t inLocale}); //${3:int #ctype.h}
+snippet _iswspace_l
+	_iswspace_l(${1:wint_t inC}, ${2:_locale_t inLocale}); //${3:int #wchar.h}
+snippet _iswupper_l
+	_iswupper_l(${1:wint_t inC}, ${2:_locale_t inLocale}); //${3:int #ctype.h}
+snippet _iswxdigit_l
+	_iswxdigit_l(${1:wint_t inC}, ${2:_locale_t inLocale}); //${3:int #ctype.h}
+snippet _isxdigit_l
+	_isxdigit_l(${1:int inC}, ${2:_locale_t inLocale}); //${3:int #ctype.h}
+snippet _itoa_s
+	_itoa_s(${1:int inValue}, ${2:char * _DstBuf}, ${3:size_t inSize}, ${4:int inRadix}); //${5:errno_t #stdlib.h}
+snippet _itow_s
+	_itow_s (${1:int inVal}, ${2:wchar_t * _DstBuf}, ${3:size_t inSizeInWords}, ${4:int inRadix}); //${5:errno_t #stdlib.h}
+snippet _j0
+	_j0(${1:double inX }); //${2:double #math.h}
+snippet _j1
+	_j1(${1:double inX }); //${2:double #math.h}
+snippet _jn
+	_jn(${1:int _X}, ${2:double inY}); //${3:double #math.h}
+snippet _kbhit
+	_kbhit(${1:void}); //${2:int #conio.h}
+snippet _localtime32
+	_localtime32(${1:const __time32_t * inTime}); //${2:tm #time.h}
+snippet _localtime32_s
+	_localtime32_s(${1:struct tm *outTm}, ${2:const __time32_t * inTime}); //${3:41| #time.h}
+snippet _localtime64
+	_localtime64(${1:const __time64_t * inTime}); //${2:tm #time.h}
+snippet _localtime64_s
+	_localtime64_s(${1:struct tm *outTm}, ${2:const __time64_t *inTime}); //${3:41| #time.h}
+snippet _lock_file
+	_lock_file(${1:FILE * ioFile}); //${2:void #stdio.h}
+snippet _locking
+	_locking(${1:int inFileHandle}, ${2:int inLockMode}, ${3:long inNumOfBytes}); //${4:int #io.h}
+snippet _logb
+	_logb(${1:double inX}); //${2:double #float.h}
+snippet _logbf
+	_logbf(${1:float inX}); //${2:float #math.h}
+snippet _lseek
+	_lseek(${1:int inFileHandle}, ${2:long inOffset}, ${3:int inOrigin}); //${4:long #io.h}
+snippet _lseeki64
+	_lseeki64(${1:int inFileHandle}, ${2:__int64 inOffset}, ${3:int inOrigin}); //${4:__int64 #io.h}
+snippet _ltoa_s
+	_ltoa_s(${1:long inVal}, ${2:char * _DstBuf}, ${3:size_t inSize}, ${4:int inRadix}); //${5:errno_t #stdlib.h}
+snippet _ltow_s
+	_ltow_s (${1:long inVal}, ${2:wchar_t * _DstBuf}, ${3:size_t inSizeInWords}, ${4:int inRadix}); //${5:errno_t #stdlib.h}
+snippet _mbbtombc
+	_mbbtombc(${1:unsigned int inCh}); //${2:int #mbstring.h}
+snippet _mbbtombc_l
+	_mbbtombc_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _mbbtype
+	_mbbtype(${1:unsigned char inCh}, ${2:int inCType}); //${3:int #mbstring.h}
+snippet _mbbtype_l
+	_mbbtype_l(${1:unsigned char inCh}, ${2:int inCType}, ${3:_locale_t inLocale}); //${4:int #mbstring.h}
+snippet _mbccpy
+	_mbccpy(${1:unsigned char * _Dst}, ${2:const unsigned char * inSrc}); //${3:void #mbstring.h}
+snippet _mbccpy_l
+	_mbccpy_l(${1:unsigned char *_Dst}, ${2:const unsigned char *inSrc}, ${3:_locale_t inLocale}); //${4:void #mbstring.h}
+snippet _mbccpy_s
+	_mbccpy_s(${1:unsigned char * _Dst}, ${2:size_t inSizeInBytes}, ${3:int * outPCopied}, ${4:const unsigned char * inSrc}); //${5:errno_t #mbstring.h}
+snippet _mbccpy_s_l
+	_mbccpy_s_l(${1:unsigned char * _Dst}, ${2:size_t inDstSizeInBytes}, ${3:int * outPCopied}, ${4:const unsigned char * inSrc}, ${5:${5:_locale_t inLocale}}); //${6:errno_t #mbstring.h}
+snippet _mbcjistojms
+	_mbcjistojms(${1:unsigned int inCh}); //${2:int #mbstring.h}
+snippet _mbcjistojms_l
+	_mbcjistojms_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _mbcjmstojis
+	_mbcjmstojis(${1:unsigned int inCh}); //${2:int #mbstring.h}
+snippet _mbcjmstojis_l
+	_mbcjmstojis_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _mbclen
+	_mbclen(${1:const unsigned char *inStr}); //${2:size_t #mbstring.h}
+snippet _mbclen_l
+	_mbclen_l(${1:const unsigned char * inStr}, ${2:_locale_t inLocale}); //${3:size_t #mbstring.h}
+snippet _mbctohira
+	_mbctohira(${1:unsigned int inCh}); //${2:int #mbstring.h}
+snippet _mbctohira_l
+	_mbctohira_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _mbctokata
+	_mbctokata(${1:unsigned int inCh}); //${2:int #mbstring.h}
+snippet _mbctokata_l
+	_mbctokata_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _mbctolower
+	_mbctolower(${1:unsigned int inCh}); //${2:int #mbstring.h}
+snippet _mbctolower_l
+	_mbctolower_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _mbctombb
+	_mbctombb(${1:unsigned int inCh}); //${2:int #mbstring.h}
+snippet _mbctombb_l
+	_mbctombb_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _mbctoupper
+	_mbctoupper(${1:unsigned int inCh}); //${2:int #mbstring.h}
+snippet _mbctoupper_l
+	_mbctoupper_l(${1:unsigned int inCh}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _mblen_l
+	_mblen_l(${1:const char * inCh}, ${2:size_t inMaxCount}, ${3:_locale_t inLocale}); //${4:int #stdlib.h}
+snippet _mbsbtype
+	_mbsbtype(${1:const unsigned char * _Str}, ${2:size_t inPos}); //${3:int #mbstring.h}
+snippet _mbsbtype_l
+	_mbsbtype_l(${1:const unsigned char * _Str}, ${2:size_t inPos}, ${3:_locale_t inLocale}); //${4:int #mbstring.h}
+snippet _mbscat_s
+	_mbscat_s(${1:unsigned char * _Dst}, ${2:size_t inSizeInBytes}, ${3:const unsigned char * inSrc}); //${4:_CRTIMP #mbstring.h}
+snippet _mbscat_s_l
+	_mbscat_s_l(${1:unsigned char * _Dst}, ${2:size_t inDstSizeInBytes}, ${3:const unsigned char * inSrc}, ${4:_locale_t inLocale}); //${5:errno_t #mbstring.h}
+snippet _mbschr
+	_mbschr(${1:const unsigned char * inStr}, ${2:unsigned int inCh}); //${3:char #mbstring.h}
+snippet _mbschr_l
+	_mbschr_l(${1:const unsigned char * inStr}, ${2:unsigned int inCh}, ${3:_locale_t inLocale}); //${4:char #mbstring.h}
+snippet _mbscmp
+	_mbscmp(${1:const unsigned char * inStr1}, ${2:const unsigned char * inStr2}); //${3:int #mbstring.h}
+snippet _mbscmp_l
+	_mbscmp_l(${1:const unsigned char * inStr1}, ${2:const unsigned char * inStr2}, ${3:_locale_t inLocale}); //${4:int #mbstring.h}
+snippet _mbscoll
+	_mbscoll(${1:const unsigned char * inStr1}, ${2:const unsigned char * inStr2}); //${3:int #mbstring.h}
+snippet _mbscoll_l
+	_mbscoll_l(${1:const unsigned char * inStr1}, ${2:const unsigned char * inStr2}, ${3:_locale_t inLocale}); //${4:int #mbstring.h}
+snippet _mbscpy_s
+	_mbscpy_s(${1:unsigned char * _Dst}, ${2:size_t inSizeInBytes}, ${3:const unsigned char * inSrc}); //${4:_CRTIMP #mbstring.h}
+snippet _mbscpy_s_l
+	_mbscpy_s_l(${1:unsigned char * _Dst}, ${2:size_t inDstSizeInBytes}, ${3:const unsigned char * inSrc}, ${4:_locale_t inLocale}); //${5:errno_t #mbstring.h}
+snippet _mbscspn
+	_mbscspn(${1:const unsigned char * inStr}, ${2:const unsigned char * inControl}); //${3:size_t #mbstring.h}
+snippet _mbscspn_l
+	_mbscspn_l(${1:const unsigned char * inStr}, ${2:const unsigned char * inControl}, ${3:_locale_t inLocale}); //${4:size_t #mbstring.h}
+snippet _mbsdec
+	_mbsdec(${1:const unsigned char * _Start}, ${2:const unsigned char * inPos}); //${3:char #mbstring.h}
+snippet _mbsdec_l
+	_mbsdec_l(${1:const unsigned char * _Start}, ${2:const unsigned char * inPos}, ${3:_locale_t inLocale}); //${4:char #mbstring.h}
+snippet _mbsdup
+	_mbsdup(${1:const unsigned char * inStr}); //${2:char #mbstring.h}
+snippet _mbsicmp
+	_mbsicmp(${1:const unsigned char * inStr1}, ${2:const unsigned char * inStr2}); //${3:int #mbstring.h}
+snippet _mbsicmp_l
+	_mbsicmp_l(${1:const unsigned char * inStr1}, ${2:const unsigned char * inStr2}, ${3:_locale_t inLocale}); //${4:int #mbstring.h}
+snippet _mbsicoll
+	_mbsicoll(${1:const unsigned char * inStr1}, ${2:const unsigned char * inStr2}); //${3:int #mbstring.h}
+snippet _mbsicoll_l
+	_mbsicoll_l(${1:const unsigned char * inStr1}, ${2:const unsigned char * inStr2}, ${3:_locale_t inLocale}); //${4:int #mbstring.h}
+snippet _mbsinc
+	_mbsinc(${1:const unsigned char * inPtr}); //${2:char #mbstring.h}
+snippet _mbsinc_l
+	_mbsinc_l(${1:const unsigned char * inPtr}, ${2:_locale_t inLocale}); //${3:char #mbstring.h}
+snippet _mbslen
+	_mbslen(${1:const unsigned char * inStr}); //${2:size_t #mbstring.h}
+snippet _mbslen_l
+	_mbslen_l(${1:const unsigned char * inStr}, ${2:_locale_t inLocale}); //${3:size_t #mbstring.h}
+snippet _mbslwr_s
+	_mbslwr_s(${1:unsigned char *_Str}, ${2:size_t inSizeInBytes}); //${3:errno_t #mbstring.h}
+snippet _mbslwr_s_l
+	_mbslwr_s_l(${1:unsigned char *_Str}, ${2:size_t inSizeInBytes}, ${3:_locale_t inLocale}); //${4:errno_t #mbstring.h}
+snippet _mbsnbcat_s
+	_mbsnbcat_s(${1:unsigned char * _Dst}, ${2:size_t inSizeInBytes}, ${3:const unsigned char * inSrc}, ${4:size_t inMaxCount}); //${5:_CRTIMP #mbstring.h}
+snippet _mbsnbcat_s_l
+	_mbsnbcat_s_l(${1:unsigned char * _Dst}, ${2:size_t inDstSizeInBytes}, ${3:const unsigned char * inSrc}, ${4:size_t inMaxCount}, ${5:${5:_locale_t inLocale}}); //${6:errno_t #mbstring.h}
+snippet _mbsnbcmp
+	_mbsnbcmp(${1:const unsigned char * inStr1}, ${2:const unsigned char * inStr2}, ${3:size_t inMaxCount}); //${4:int #mbstring.h}
+snippet _mbsnbcmp_l
+	_mbsnbcmp_l(${1:const unsigned char * inStr1}, ${2:const unsigned char * inStr2}, ${3:size_t inMaxCount}, ${4:_locale_t inLocale}); //${5:int #mbstring.h}
+snippet _mbsnbcnt
+	_mbsnbcnt(${1:const unsigned char * _Str}, ${2:size_t inMaxCount}); //${3:size_t #mbstring.h}
+snippet _mbsnbcnt_l
+	_mbsnbcnt_l(${1:const unsigned char * _Str}, ${2:size_t inMaxCount}, ${3:_locale_t inLocale}); //${4:size_t #mbstring.h}
+snippet _mbsnbcoll
+	_mbsnbcoll(${1:const unsigned char * inStr1}, ${2:const unsigned char * inStr2}, ${3:size_t inMaxCount}); //${4:int #mbstring.h}
+snippet _mbsnbcoll_l
+	_mbsnbcoll_l(${1:const unsigned char * inStr1}, ${2:const unsigned char * inStr2}, ${3:size_t inMaxCount}, ${4:_locale_t inLocale}); //${5:int #mbstring.h}
+snippet _mbsnbcpy_s
+	_mbsnbcpy_s(${1:unsigned char * _Dst}, ${2:size_t inSizeInBytes}, ${3:const unsigned char * inSrc}, ${4:size_t inMaxCount}); //${5:_CRTIMP #mbstring.h}
+snippet _mbsnbcpy_s_l
+	_mbsnbcpy_s_l(${1:unsigned char * _Dst}, ${2:size_t inDstSizeInBytes}, ${3:const unsigned char * inSrc}, ${4:size_t inMaxCount}, ${5:${5:_locale_t inLocale}}); //${6:errno_t #mbstring.h}
+snippet _mbsnbicmp
+	_mbsnbicmp(${1:const unsigned char * inStr1}, ${2:const unsigned char * inStr2}, ${3:size_t inMaxCount}); //${4:int #mbstring.h}
+snippet _mbsnbicmp_l
+	_mbsnbicmp_l(${1:const unsigned char * inStr1}, ${2:const unsigned char * inStr2}, ${3:size_t inMaxCount}, ${4:_locale_t inLocale}); //${5:int #mbstring.h}
+snippet _mbsnbicoll
+	_mbsnbicoll(${1:const unsigned char * inStr1}, ${2:const unsigned char * inStr2}, ${3:size_t inMaxCount}); //${4:int #mbstring.h}
+snippet _mbsnbicoll_l
+	_mbsnbicoll_l(${1:const unsigned char * inStr1}, ${2:const unsigned char * inStr2}, size_t inMaxCount, ${4:_locale_t inLocale}); //${5:int #mbstring.h}
+snippet _mbsnbset_s
+	_mbsnbset_s(${1:unsigned char * _Dst}, ${2:size_t inSizeInBytes}, unsigned int inCh, ${4:size_t inMaxCount}); //${5:_CRTIMP #mbstring.h}
+snippet _mbsnbset_s_l
+	_mbsnbset_s_l(${1:unsigned char * _Dst}, ${2:size_t inDstSizeInBytes}, unsigned int inCh, ${4:size_t inMaxCount}, ${5:${5:_locale_t inLocale}}); //${6:_CRTIMP #mbstring.h}
+snippet _mbsncat_s
+	_mbsncat_s(${1:unsigned char * _Dst}, ${2:size_t inSizeInBytes}, const unsigned char * inSrc, ${4:size_t inMaxCount}); //${5:_CRTIMP #mbstring.h}
+snippet _mbsncat_s_l
+	_mbsncat_s_l(${1:unsigned char * _Dst}, ${2:size_t inDstSizeInBytes}, const unsigned char * inSrc, ${4:size_t inMaxCount}, ${5:${5:_locale_t inLocale}}); //${6:errno_t #mbstring.h}
+snippet _mbsnccnt
+	_mbsnccnt(${1:const unsigned char * _Str}, ${2:size_t inMaxCount}); //${3:size_t #mbstring.h}
+snippet _mbsnccnt_l
+	_mbsnccnt_l(${1:const unsigned char * _Str}, ${2:size_t inMaxCount}, _locale_t inLocale); //${3:size_t #mbstring.h}
+snippet _mbsncmp
+	_mbsncmp(${1:const unsigned char * inStr1}, ${2:const unsigned char * inStr2}, size_t inMaxCount); //${3:int #mbstring.h}
+snippet _mbsncmp_l
+	_mbsncmp_l(${1:const unsigned char * inStr1}, ${2:const unsigned char * inStr2}, size_t inMaxCount, ${4:_locale_t inLocale}); //${5:int #mbstring.h}
+snippet _mbsncoll
+	_mbsncoll(${1:const unsigned char * inStr1}, ${2:const unsigned char * inStr2}, size_t inMaxCount); //${3:int #mbstring.h}
+snippet _mbsncoll_l
+	_mbsncoll_l(${1:const unsigned char * inStr1}, ${2:const unsigned char * inStr2}, size_t inMaxCount, ${4:_locale_t inLocale}); //${5:int #mbstring.h}
+snippet _mbsncpy_s
+	_mbsncpy_s(${1:unsigned char * _Dst}, ${2:size_t inSizeInBytes}, const unsigned char * inSrc, ${4:size_t inMaxCount}); //${5:_CRTIMP #mbstring.h}
+snippet _mbsncpy_s_l
+	_mbsncpy_s_l(${1:unsigned char * _Dst}, ${2:size_t inDstSizeInBytes}, const unsigned char * inSrc, ${4:size_t inMaxCount}, ${5:_locale_t inLocale}); //${6:errno_t #mbstring.h}
+snippet _mbsnextc
+	_mbsnextc (${1:const unsigned char * inStr}); //${2:int #mbstring.h}
+snippet _mbsnextc_l
+	_mbsnextc_l(${1:const unsigned char * inStr}, ${2:_locale_t inLocale}); //${3:int #mbstring.h}
+snippet _mbsnicmp
+	_mbsnicmp(${1:const unsigned char * inStr1}, ${2:const unsigned char * inStr2}, size_t inMaxCount); //${3:int #mbstring.h}
+snippet _mbsnicmp_l
+	_mbsnicmp_l(${1:const unsigned char * inStr1}, ${2:const unsigned char * inStr2}, size_t inMaxCount, ${4:_locale_t inLocale}); //${5:int #mbstring.h}
+snippet _mbsnicoll
+	_mbsnicoll(${1:const unsigned char * inStr1}, ${2:const unsigned char * inStr2}, size_t inMaxCount); //${3:int #mbstring.h}
+snippet _mbsnicoll_l
+	_mbsnicoll_l(${1:const unsigned char * inStr1}, ${2:const unsigned char * inStr2}, size_t inMaxCount, ${4:_locale_t inLocale}); //${5:int #mbstring.h}
+snippet _mbsninc
+	_mbsninc(${1:const unsigned char * _Str}, ${2:size_t inCount}); //${3:char #mbstring.h}
+snippet _mbsninc_l
+	_mbsninc_l(${1:const unsigned char * _Str}, ${2:size_t inCount}, _locale_t inLocale); //${3:char #mbstring.h}
+snippet _mbsnlen
+	_mbsnlen(${1:const unsigned char * inStr}, ${2:size_t inMaxCount}); //${3:size_t #mbstring.h}
+snippet _mbsnlen_l
+	_mbsnlen_l(${1:const unsigned char * inStr}, ${2:size_t inMaxCount}, _locale_t inLocale); //${3:size_t #mbstring.h}
+snippet _mbsnset_s
+	_mbsnset_s(${1:unsigned char * _Dst}, ${2:size_t inSizeInBytes}, unsigned int inVal, ${4:size_t inMaxCount}); //${5:_CRTIMP #mbstring.h}
+snippet _mbsnset_s_l
+	_mbsnset_s_l(${1:unsigned char * _Dst}, ${2:size_t inDstSizeInBytes}, unsigned int inVal, ${4:size_t inMaxCount}, ${5:_locale_t inLocale}); //${6:_CRTIMP #mbstring.h}
+snippet _mbspbrk
+	_mbspbrk(${1:const unsigned char * inStr}, ${2:const unsigned char * inControl}); //${3:char #mbstring.h}
+snippet _mbspbrk_l
+	_mbspbrk_l(${1:const unsigned char * inStr}, ${2:const unsigned char * inControl}, _locale_t inLocale); //${3:char #mbstring.h}
+snippet _mbsrchr
+	_mbsrchr(${1:const unsigned char * inStr}, ${2:unsigned int inCh}); //${3:char #mbstring.h}
+snippet _mbsrchr_l
+	_mbsrchr_l(${1:const unsigned char *inStr}, ${2:unsigned int inCh}, _locale_t inLocale); //${3:char #mbstring.h}
+snippet _mbsrev
+	_mbsrev(${1:unsigned char * ioStr}); //${2:char #mbstring.h}
+snippet _mbsrev_l
+	_mbsrev_l(${1:unsigned char *ioStr}, ${2:_locale_t inLocale}); //${3:char #mbstring.h}
+snippet _mbsset_s
+	_mbsset_s(${1:unsigned char * _Dst}, ${2:size_t inSizeInBytes}, unsigned int inVal); //${3:_CRTIMP #mbstring.h}
+snippet _mbsset_s_l
+	_mbsset_s_l(${1:unsigned char * _Dst}, ${2:size_t inDstSizeInBytes}, ${3:unsigned int inVal}, ${4:_locale_t inLocale}); //${5:_CRTIMP #mbstring.h}
+snippet _mbsspn
+	_mbsspn(${1:const unsigned char *inStr}, ${2:const unsigned char * inControl}); //${3:size_t #mbstring.h}
+snippet _mbsspn_l
+	_mbsspn_l(${1:const unsigned char * inStr}, ${2:const unsigned char * inControl}, ${3:_locale_t inLocale}); //${4:size_t #mbstring.h}
+snippet _mbsspnp
+	_mbsspnp(${1:const unsigned char * inStr1}, ${2:const unsigned char *inStr2}); //${3:char #mbstring.h}
+snippet _mbsspnp_l
+	_mbsspnp_l(${1:const unsigned char *inStr1}, ${2:const unsigned char *inStr2}, ${3:_locale_t inLocale}); //${4:char #mbstring.h}
+snippet _mbsstr
+	_mbsstr(${1:const unsigned char * inStr}, ${2:const unsigned char * inSubstr}); //${3:char #mbstring.h}
+snippet _mbsstr_l
+	_mbsstr_l(${1:const unsigned char * inStr}, ${2:const unsigned char * inSubstr}, ${3:_locale_t inLocale}); //${4:char #mbstring.h}
+snippet _mbstok
+	_mbstok(${1:unsigned char * ioStr}, ${2:const unsigned char * inDelim}); //${3:char #mbstring.h}
+snippet _mbstok_l
+	_mbstok_l(${1:unsigned char *ioStr}, ${2:const unsigned char * inDelim}, ${3:_locale_t inLocale}); //${4:char #mbstring.h}
+snippet _mbstok_s
+	_mbstok_s(${1:unsigned char *ioStr}, ${2:const unsigned char * inDelim}, ${3:unsigned char ** ioContext}); //${4:char #mbstring.h}
+snippet _mbstok_s_l
+	_mbstok_s_l(${1:unsigned char * ioStr}, ${2:const unsigned char * inDelim}, ${3:unsigned char ** ioContext}, ${4:_locale_t inLocale}); //${5:char #mbstring.h}
+snippet _mbstowcs_s_l
+	_mbstowcs_s_l(${1:size_t * outPtNumOfCharConverted}, ${2:wchar_t * _DstBuf}, ${3:size_t inSizeInWords}, ${4:const char * _SrcBuf}, ${5:size_t inMaxCount}, _locale_t inLocale); //${6:errno_t #stdlib.h}
+snippet _mbstrlen
+	_mbstrlen(${1:const char * inStr}); //${2:size_t #stdlib.h}
+snippet _mbstrlen_l
+	_mbstrlen_l(${1:const char *inStr}, ${2:_locale_t inLocale}); //${3:size_t #stdlib.h}
+snippet _mbstrnlen
+	_mbstrnlen(${1:const char *inStr}, ${2:size_t inMaxCount}); //${3:size_t #stdlib.h}
+snippet _mbstrnlen_l
+	_mbstrnlen_l(${1:const char *inStr}, ${2:size_t inMaxCount}, ${3:_locale_t inLocale}); //${4:size_t #stdlib.h}
+snippet _mbsupr_s
+	_mbsupr_s(${1:unsigned char *_Str}, ${2:size_t inSizeInBytes}); //${3:errno_t #mbstring.h}
+snippet _mbsupr_s_l
+	_mbsupr_s_l(${1:unsigned char *_Str}, ${2:size_t inSizeInBytes}, ${3:_locale_t inLocale}); //${4:errno_t #mbstring.h}
+snippet _mbtowc_l
+	_mbtowc_l(${1:wchar_t * _DstCh}, ${2:const char * inSrcCh}, ${3:size_t inSrcSizeInBytes}, ${4:_locale_t inLocale}); //${5:int #stdlib.h}
+snippet _memccpy
+	_memccpy(${1:void * _Dst}, ${2:const void * inSrc}, ${3:int inVal}, ${4:size_t inMaxCount}); //${5:void #string.h}
+snippet _memicmp
+	_memicmp(${1:const void * inBuf1}, ${2:const void * inBuf2}, ${3:size_t inSize}); //${4:int #string.h}
+snippet _memicmp_l
+	_memicmp_l(${1:const void * inBuf1}, ${2:const void * inBuf2}, ${3:size_t inSize}, ${4:_locale_t inLocale}); //${5:int #string.h}
+snippet _mkdir
+	_mkdir(${1:const char * inPath}); //${2:int #direct.h}
+snippet _mkgmtime32
+	_mkgmtime32(${1:struct tm * ioTm}); //${2:__time32_t #time.h}
+snippet _mkgmtime64
+	_mkgmtime64(${1:struct tm * ioTm}); //${2:__time64_t #time.h}
+snippet _mktemp_s
+	_mktemp_s(${1:char * _TemplateName}, ${2:size_t inSize}); //${3:errno_t #io.h}
+snippet _mktime32
+	_mktime32(${1:struct tm * ioTm}); //${2:__time32_t #time.h}
+snippet _mktime64
+	_mktime64(${1:struct tm * ioTm}); //${2:__time64_t #time.h}
+snippet _msize
+	_msize(${1:void * inMemory}); //${2:size_t #malloc.h}
+snippet _nextafter
+	_nextafter(${1:double inX}, ${2:double inY}); //${3:double #float.h}
+snippet _nextafterf
+	_nextafterf(${1:float inX}, ${2:float inY}); //${3:float #math.h}
+snippet _open
+	_open(${1:const char * inFilename}, ${2:int inOpenFlag}, ${3:...}); //${4:int #io.h}
+snippet _open_osfhandle
+	_open_osfhandle(${1:intptr_t inOSFileHandle}, ${2:int inFlags}); //${3:int #io.h}
+snippet _pclose
+	_pclose(${1:FILE * ioFile}); //${2:int #stdio.h}
+snippet _pipe
+	_pipe(${1:int * _PtHandles}, ${2:unsigned int inPipeSize}, ${3:int inTextMode}); //${4:int #io.h}
+snippet _popen
+	_popen(${1:const char * inCommand}, ${2:const char * inMode}); //${3:FILE #stdio.h}
+snippet _printf_l
+	_printf_l(${1:const char * inFormat}, ${2:_locale_t inLocale}, ${3:...}); //${4:int #stdio.h}
+snippet _printf_p
+	_printf_p(${1:const char * inFormat}, ${2:...}); //${3:int #stdio.h}
+snippet _printf_p_l
+	_printf_p_l(${1:const char * inFormat}, ${2:_locale_t inLocale}, ${3:...}); //${4:int #stdio.h}
+snippet _printf_s_l
+	_printf_s_l(${1:const char * inFormat}, ${2:_locale_t inLocale}, ${3:...}); //${4:int #stdio.h}
+snippet _putch
+	_putch(${1:int inCh}); //${2:int #conio.h}
+snippet _putch_nolock
+	_putch_nolock(${1:int inCh}); //${2:int #conio.h}
+snippet _putenv
+	_putenv(${1:const char * inEnvString}); //${2:int #stdlib.h}
+snippet _putenv_s
+	_putenv_s(${1:const char * inName}, ${2:const char * inValue}); //${3:errno_t #stdlib.h}
+snippet _putw
+	_putw(${1:int inWord}, ${2:FILE * ioFile}); //${3:int #stdio.h}
+snippet _putwch
+	_putwch(${1:wchar_t _WCh}); //${2:wint_t #wchar.h}
+snippet _putwch_nolock
+	_putwch_nolock(${1:wchar_t _WCh}); //${2:wint_t #conio.h}
+snippet _putws
+	_putws(${1:const wchar_t * inStr}); //${2:int #stdio.h}
+snippet _query_new_handler
+	_query_new_handler(${1:void }); //${2:_PNH #new.h}
+snippet _query_new_mode
+	_query_new_mode(${1:void }); //${2:int #new.h}
+snippet _read
+	_read(${1:int inFileHandle}, ${2:void * _DstBuf}, ${3:unsigned int inMaxCharCount}); //${4:int #io.h}
+snippet _recalloc
+	_recalloc(${1:void * inMemory}, ${2:size_t inCount}, ${3:size_t inSize}); //${4:void #malloc.h}
+snippet _resetstkoflw
+	_resetstkoflw (${1:void}); //${2:int // malloc.h}
+snippet _rmdir
+	_rmdir(${1:const char * inPath}); //${2:int #direct.h}
+snippet _rmtmp
+	_rmtmp(${1:void}); //${2:int #stdio.h}
+snippet _scalb
+	_scalb(${1:double inX}, ${2:long inY}); //${3:double #float.h}
+snippet _scalbf
+	_scalbf(${1:float inX}, ${2:long inY}); //${3:float #float.h}
+snippet _scanf_l
+	_scanf_l(${1:const char * inFormat}, ${2:_locale_t inLocale}, ${3:...}); //${4:int #stdio.h}
+snippet _scanf_s_l
+	_scanf_s_l(${1:const char * inFormat}, ${2:_locale_t inLocale}, ${3:...}); //${4:37| #stdio.h}
+snippet _scprintf
+	_scprintf(${1:const char * inFormat}, ${2:...}); //${3:int #stdio.h}
+snippet _scprintf_l
+	_scprintf_l(${1:const char * inFormat}, ${2:_locale_t inLocale}, ${3:...}); //${4:int #stdio.h}
+snippet _scprintf_p
+	_scprintf_p(${1:const char * inFormat}, ${2:...}); //${3:int #stdio.h}
+snippet _scprintf_p_l
+	_scprintf_p_l(${1:const char * inFormat}, ${2:_locale_t inLocale}, ${3:...}); //${4:int #stdio.h}
+snippet _scwprintf
+	_scwprintf(${1:const wchar_t * inFormat}, ${2:...}); //${3:int #stdio.h}
+snippet _scwprintf_l
+	_scwprintf_l(${1:const wchar_t * inFormat}, ${2:_locale_t inLocale}, ${3:...}); //${4:int #stdio.h}
+snippet _scwprintf_p
+	_scwprintf_p(${1:const wchar_t * inFormat}, ${2:...}); //${3:int #wchar.h}
+snippet _scwprintf_p_l
+	_scwprintf_p_l(${1:const wchar_t * inFormat}, ${2:_locale_t inLocale}, ${3:...}); //${4:int #wchar.h}
+snippet _searchenv_s
+	_searchenv_s(${1:const char * inFilename}, ${2:const char * inEnvVar}, ${3:char * _ResultPath}, ${4:size_t inSizeInBytes}); //${5:errno_t #stdlib.h}
+snippet _set_SSE2_enable
+	_set_SSE2_enable(${1:int inFlag}); //${2:int #math.h}
+snippet _set_abort_behavior
+	_set_abort_behavior(${1:unsigned int inFlags}, ${2:unsigned int inMask}); //${3:int #stdlib.h}
+snippet _set_amblksiz
+	_set_amblksiz(${1:size_t inValue}); //${2:errno_t #malloc.h}
+snippet _set_controlfp
+	_set_controlfp(${1:unsigned int inNewValue}, ${2:unsigned int inMask}); //${3:void #float.h}
+snippet _set_error_mode
+	_set_error_mode(${1:int inMode}); //${2:int #stdlib.h}
+snippet _set_fmode
+	_set_fmode(${1:int inMode}); //${2:errno_t #stdlib.h}
+snippet _set_invalid_parameter_handler
+	_set_invalid_parameter_handler(${1:_invalid_parameter_handler inHandler}); //${2:int #malloc.h}
+snippet _set_malloc_crt_max_wait
+	_set_malloc_crt_max_wait(${1:unsigned long inNewValue}); //${2:unsigned long #malloc.h}
+snippet _set_new_handler
+	_set_new_handler(${1:_PNH inNewHandler})
+snippet _set_new_handler
+	_set_new_handler(${1:int inNewHandler}); //${2:_PNH #new.h}
+snippet _set_new_mode
+	_set_new_mode(${1:int inNewMode}); //${2:int #new.h}
+snippet _set_output_format
+	_set_output_format(${1:unsigned int inFormat}); //${2:int #stdio.h}
+snippet _set_printf_count_output
+	_set_printf_count_output(${1:int inValue}); //${2:int #stdio.h}
+snippet _set_purecall_handler
+	_set_purecall_handler(${1:_purecall_handler inHandler})
+snippet _set_sbh_threshold
+	_set_sbh_threshold(${1:size_t inNewValue}); //${2:int #malloc.h}
+snippet _set_se_translator
+	_set_se_translator(${1:_se_translator_function inNewPtFunc}); //${2:_se_translator_function #eh.h}
+snippet _seterrormode
+	_seterrormode(${1:int inMode}); //${2:void #stdlib.h}
+snippet _setheaphook
+	_setheaphook(${1:_HEAPHOOK inNewHook}); //${2:_HEAPHOOK #malloc.h}
+snippet _setmaxstdio
+	_setmaxstdio(${1:int inMax}); //${2:int #stdio.h}
+snippet _setmbcp
+	_setmbcp(${1:int inCodePage}); //${2:int #mbctype.h}
+snippet _setmode
+	_setmode(${1:int inFileHandle}, ${2:int inMode}); //${3:int #io.h}
+snippet _sleep
+	_sleep(${1:unsigned long inDuration}); //${2:void #stdlib.h}
+snippet _snprintf_c
+	_snprintf_c(${1:char * outDstBuf}, ${2:size_t inMaxCount}, ${3:const char * inFormat}, ${4:...}); //${5:int #stdio.h}
+snippet _snprintf_c_l
+	_snprintf_c_l(${1:char * outDstBuf}, ${2:size_t inMaxCount}, ${3:const char * inFormat}, ${4:_locale_t inLocale}, ${5:...}); //${6:int #stdio.h}
+snippet _snprintf_l
+	_snprintf_l(${1:char * outDstBuf}, ${2:size_t inMaxCount}, ${3:const char * inFormat}, ${4:_locale_t inLocale}, ${5:...}); //${6:int #stdio.h}
+snippet _snprintf_s
+	_snprintf_s(${1:char * _DstBuf}, ${2:size_t inSizeInBytes}, ${3:size_t inMaxCount}, ${4:const char * inFormat}, ${5:...}); //${6:int #stdio.h}
+snippet _snprintf_s_l
+	_snprintf_s_l(${1:char * _DstBuf}, ${2:size_t inDstSize}, ${3:size_t inMaxCount}, ${4:const char * inFormat}, ${5:_locale_t inLocale}, ...); //${6:40| #stdio.h}
+snippet _snscanf
+	_snscanf(${1:const char * _Src}, ${2:size_t inMaxCount}, ${3:const char * inFormat}, ${4:...}); //${5:int #stdio.h}
+snippet _snscanf_l
+	_snscanf_l(${1:const char * _Src}, ${2:size_t inMaxCount}, ${3:const char * inFormat}, ${4:_locale_t inLocale}, ${5:...}); //${6:int #stdio.h}
+snippet _snscanf_s
+	_snscanf_s(${1:const char * _Src}, ${2:size_t inMaxCount}, ${3:const char * inFormat}, ${4:...}); //${5:int #stdio.h}
+snippet _snscanf_s_l
+	_snscanf_s_l(${1:const char * _Src}, ${2:size_t inMaxCount}, ${3:const char * inFormat}, ${4:_locale_t inLocale}, ${5:...}); //${6:int #stdio.h}
+snippet _snwprintf_l
+	_snwprintf_l(${1:wchar_t * outDstBuf}, ${2:size_t inMaxCount}, ${3:const wchar_t * inFormat}, ${4:_locale_t inLocale}, ${5:...}); //${6:int #stdio.h}
+snippet _snwprintf_s
+	_snwprintf_s(${1:wchar_t * _DstBuf}, ${2:size_t inDstSizeInWords}, ${3:size_t inMaxCount}, ${4:const wchar_t * inFormat}, ${5:...})
+snippet _snwprintf_s
+	_snwprintf_s(${1:wchar_t * _DstBuf}, ${2:size_t inSizeInWords}, ${3:size_t inMaxCount}, ${4:const wchar_t * inFormat}, ${5:...}); //${6:int #wchar.h}
+snippet _snwprintf_s_l
+	_snwprintf_s_l(${1:wchar_t * _DstBuf}, ${2:size_t inDstSize}, ${3:size_t inMaxCount}, ${4:const wchar_t * inFormat}, ${5:_locale_t inLocale}, ...); //${6:_CRTIMP #wchar.h}
+snippet _snwscanf
+	_snwscanf(${1:const wchar_t * _Src}, ${2:size_t inMaxCount}, ${3:const wchar_t * inFormat}, ${4:...}); //${5:int #wchar.h}
+snippet _snwscanf_l
+	_snwscanf_l(${1:const wchar_t * _Src}, ${2:size_t inMaxCount}, ${3:const wchar_t * inFormat}, ${4:_locale_t inLocale}, ${5:...}); //${6:int #wchar.h}
+snippet _snwscanf_s
+	_snwscanf_s(${1:const wchar_t * _Src}, ${2:size_t inMaxCount}, ${3:const wchar_t * inFormat}, ${4:...}); //${5:int #wchar.h}
+snippet _snwscanf_s_l
+	_snwscanf_s_l(${1:const wchar_t * _Src}, ${2:size_t inMaxCount}, ${3:const wchar_t * inFormat}, ${4:_locale_t inLocale}, ${5:...}); //${6:int #wchar.h}
+snippet _sopen
+	_sopen(${1:const char * inFilename}, ${2:int inOpenFlag}, ${3:int _ShareFlag}, ${4:...}); //${5:int #io.h}
+snippet _sopen_s
+	_sopen_s(${1:int * outFileHandle}, ${2:const char * inFilename},${3:int inOpenFlag}, ${4:int inShareFlag}, ${5:int inPermissionMode}); //${6:35| #io.h}
+snippet _spawnl
+	_spawnl(${1:int inMode}, ${2:const char * inFilename}, ${3:const char * inArgList}, ${4:...}); //${5:intptr_t #process.h}
+snippet _spawnle
+	_spawnle(${1:int inMode}, ${2:const char * inFilename}, ${3:const char * inArgList}, ${4:...}); //${5:intptr_t #process.h}
+snippet _spawnlp
+	_spawnlp(${1:int inMode}, ${2:const char * inFilename}, ${3:const char * inArgList}, ${4:...}); //${5:intptr_t #process.h}
+snippet _spawnlpe
+	_spawnlpe(${1:int inMode}, ${2:const char * inFilename}, ${3:const char * inArgList}, ${4:...}); //${5:intptr_t #process.h}
+snippet _spawnv
+	_spawnv(${1:int inMode}, ${2:const char * inFilename}, ${3:const char * const * inArgList}); //${4:intptr_t #process.h}
+snippet _spawnve
+	_spawnve(${1:int inMode}, ${2:const char * inFilename}, ${3:const char * const * inArgList}, ${4:const char * const * inEnv}); //${5:intptr_t #process.h}
+snippet _spawnvp
+	_spawnvp(${1:int inMode}, ${2:const char * inFilename}, ${3:const char * const * inArgList}); //${4:intptr_t #process.h}
+snippet _spawnvpe
+	_spawnvpe(${1:int inMode}, ${2:const char * inFilename}, ${3:const char * const * inArgList}, ${4:const char * const * inEnv}); //${5:intptr_t #process.h}
+snippet _splitpath
+	_splitpath(${1:const char * inFullPath}, ${2:char * _Drive}, ${3:char * _Dir}, ${4:char * _Filename}, ${5:char * _Ext}); //${6:void #stdlib.h}
+snippet _splitpath_s
+	_splitpath_s(${1:const char * inFullPath}, ${2:char * _Drive}, ${3:size_t inDriveSize}, ${4:char * _Dir}, ${5:size_t inDirSize}, ${6:char * _Filename}, ${7:size_t inFilenameSize}, ${8:char * _Ext}, ${9:size_t inExtSize}); //${10:39| #stdlib.h}
+snippet _sprintf_l
+	_sprintf_l(${1:char * _DstBuf}, ${2:const char * inFormat}, ${3:_locale_t inLocale}, ${4:...}); //${5:int #stdio.h}
+snippet _sprintf_p
+	_sprintf_p(${1:char * _Dst}, ${2:size_t inMaxCount}, ${3:const char * inFormat}, ${4:...}); //${5:int #stdio.h}
+snippet _sprintf_p_l
+	_sprintf_p_l(${1:char * _DstBuf}, ${2:size_t inMaxCount}, ${3:const char * inFormat}, ${4:_locale_t inLocale}, ${5:...}); //${6:int #stdio.h}
+snippet _sprintf_s_l
+	_sprintf_s_l(${1:char * _DstBuf}, ${2:size_t inDstSize}, ${3:const char * inFormat}, ${4:_locale_t inLocale}, ${5:...}); //${6:int #stdio.h}
+snippet _sscanf_l
+	_sscanf_l(${1:const char * inSrc}, ${2:const char * inFormat}, ${3:_locale_t inLocale}, ${4:...}); //${5:int #stdio.h}
+snippet _sscanf_s_l
+	_sscanf_s_l(${1:const char * inSrc}, ${2:const char * inFormat}, ${3:_locale_t inLocale}, ${4:...}); //${5:38| #stdio.h}
+snippet _statusfp
+	_statusfp(${1:void}); //${2:int #float.h}
+snippet _statusfp2
+	_statusfp2(${1:unsigned int *outX86_status}, ${2:unsigned int *outSSE2_status}); //${3:void #float.h}
+snippet _strcmpi
+	_strcmpi(${1:const char * inStr1}, ${2:const char * inStr2}); //${3:int #string.h}
+snippet _strcoll_l
+	_strcoll_l(${1:const char * inStr1}, ${2:const char * inStr2}, ${3:_locale_t inLocale}); //${4:int #string.h}
+snippet _strdate_s
+	_strdate_s(${1:char *outBuf}, ${2:size_t inSizeInBytes}); //${3:errno_t #time.h}
+snippet _strdup
+	_strdup(${1:const char * inSrc}); //${2:char #string.h}
+snippet _strerror
+	_strerror(${1:const char * inErrMsg}); //${2:char #string.h}
+snippet _strerror_s
+	_strerror_s(${1:char * _Buf}, ${2:size_t inSizeInBytes}, ${3:const char * inErrMsg}); //${4:38| #string.h}
+snippet _strftime_l
+	_strftime_l(${1:char *_Buf}, ${2:size_t inMax_size}, ${3:const char * inFormat}, ${4:const struct tm *inTm}, ${5:_locale_t inLocale}); //${6:size_t #time.h}
+snippet _stricmp
+	_stricmp(${1:const char * inStr1}, ${2:const char * inStr2}); //${3:int #string.h}
+snippet _stricmp_l
+	_stricmp_l(${1:const char * inStr1}, ${2:const char * inStr2}, ${3:_locale_t inLocale}); //${4:int #string.h}
+snippet _stricoll
+	_stricoll(${1:const char * inStr1}, ${2:const char * inStr2}); //${3:int #string.h}
+snippet _stricoll_l
+	_stricoll_l(${1:const char * inStr1}, ${2:const char * inStr2}, ${3:_locale_t inLocale}); //${4:int #string.h}
+snippet _strlwr_s
+	_strlwr_s(${1:char * _Str}, ${2:size_t inSize}); //${3:errno_t #string.h}
+snippet _strlwr_s_l
+	_strlwr_s_l(${1:char * _Str}, ${2:size_t inSize}, ${3:_locale_t inLocale}); //${4:errno_t #string.h}
+snippet _strncoll
+	_strncoll (${1:const char * inStr1}, ${2:const char * inStr2}, ${3:size_t inMaxCount}); //${4:int #string.h}
+snippet _strncoll_l
+	_strncoll_l(${1:const char * inStr1}, ${2:const char * inStr2}, ${3:size_t inMaxCount}, ${4:_locale_t inLocale}); //${5:int #string.h}
+snippet _strnicmp
+	_strnicmp(${1:const char * inStr1}, ${2:const char * inStr2}, ${3:size_t inMaxCount}); //${4:int #string.h}
+snippet _strnicmp_l
+	_strnicmp_l(${1:const char * inStr1}, ${2:const char * inStr2}, ${3:size_t inMaxCount}, ${4:_locale_t inLocale}); //${5:int #string.h}
+snippet _strnicoll
+	_strnicoll (${1:const char * inStr1}, ${2:const char * inStr2}, ${3:size_t inMaxCount}); //${4:int #string.h}
+snippet _strnicoll_l
+	_strnicoll_l(${1:const char * inStr1}, ${2:const char * inStr2}, ${3:size_t inMaxCount}, ${4:_locale_t inLocale}); //${5:int #string.h}
+snippet _strnset_s
+	_strnset_s(${1:char * _Str}, ${2:size_t inSizeInBytes}, ${3:int inVal}, ${4:size_t inMaxCount}); //${5:42| #string.h}
+snippet _strrev
+	_strrev(${1:char * ioStr}); //${2:char #string.h}
+snippet _strset_s
+	_strset_s(${1:char * _Dst}, ${2:size_t inDstSize}, ${3:int inValue}); //${4:errno_t #string.h}
+snippet _strtime_s
+	_strtime_s(${1:char *outBuf }, ${2:size_t inSizeInBytes}); //${3:errno_t #time.h}
+snippet _strtod_l
+	_strtod_l(${1:const char * inStr}, ${2:char ** outEndPtr}, ${3:_locale_t inLocale}); //${4:double #stdlib.h}
+snippet _strtoi64
+	_strtoi64(${1:const char * inString}, ${2:char ** outEndPtr}, ${3:int inRadix}); //${4:__int64 #stdlib.h}
+snippet _strtoi64_l
+	_strtoi64_l(${1:const char * inString}, ${2:char ** outEndPtr}, ${3:int inRadix}, ${4:_locale_t inLocale}); //${5:__int64 #stdlib.h}
+snippet _strtol_l
+	_strtol_l(${1:const char *inStr}, ${2:char **outEndPtr}, ${3:int inRadix}, ${4:_locale_t inLocale}); //${5:long #stdlib.h}
+snippet _strtoui64
+	_strtoui64(${1:const char * inString}, ${2:char ** outEndPtr}, ${3:int inRadix}); //${4:__int64 #stdlib.h}
+snippet _strtoui64_l
+	_strtoui64_l(${1:const char * inString}, ${2:char ** outEndPtr}, ${3:int inRadix}, ${4:_locale_t inLocale}); //${5:__int64 #stdlib.h}
+snippet _strtoul_l
+	_strtoul_l(${1:const char * _Str}, ${2:char **outEndPtr}, ${3:int inRadix}, ${4:_locale_t inLocale}); //${5:long #stdlib.h}
+snippet _strupr_s
+	_strupr_s(${1:char * _Str}, ${2:size_t inSize}); //${3:errno_t #string.h}
+snippet _strupr_s_l
+	_strupr_s_l(${1:char * _Str}, ${2:size_t inSize}, ${3:_locale_t _Locale}); //${4:errno_t #string.h}
+snippet _strxfrm_l
+	_strxfrm_l(${1:char * _Dst}, ${2:const char * inSrc}, ${3:size_t inMaxCount}, ${4:_locale_t inLocale}); //${5:size_t #string.h}
+snippet _swab
+	_swab(${1:char * _Buf1}, ${2:char * outBuf2}, ${3:int _SizeInBytes}); //${4:void #stdlib.h}
+snippet _swprintf_c
+	_swprintf_c(${1:wchar_t * _DstBuf}, ${2:size_t inSizeInWords}, ${3:const wchar_t * inFormat}, ${4:...}); //${5:int #wchar.h}
+snippet _swprintf_c_l
+	_swprintf_c_l(${1:wchar_t * _DstBuf}, ${2:size_t inMaxCount}, ${3:const wchar_t * inFormat}, ${4:_locale_t inLocale}, ${5:...}); //${6:int #wchar.h}
+snippet _swprintf_p
+	_swprintf_p(${1:wchar_t * _DstBuf}, ${2:size_t inMaxCount}, ${3:const wchar_t * inFormat}, ${4:...}); //${5:int #stdio.h}
+snippet _swprintf_p_l
+	_swprintf_p_l(${1:wchar_t * _DstBuf}, ${2:size_t inMaxCount}, ${3:const wchar_t * inFormat}, ${4:_locale_t inLocale}, ${5:...}); //${6:int #stdio.h}
+snippet _swprintf_s_l
+	_swprintf_s_l(${1:wchar_t * _DstBuf}, ${2:size_t inDstSize}, ${3:const wchar_t * inFormat}, ${4:_locale_t inLocale}, ${5:...}); //${6:int #stdio.h}
+snippet _swscanf_l
+	_swscanf_l(${1:const wchar_t * inSrc}, ${2:const wchar_t * inFormat}, ${3:_locale_t inLocale}, ${4:...}); //${5:int #stdio.h}
+snippet _swscanf_s_l
+	_swscanf_s_l(${1:const wchar_t * inSrc}, ${2:const wchar_t * inFormat}, ${3:_locale_t inLocale}, ${4:...}); //${5:39| #stdio.h}
+snippet _tccpy
+	_tccpy(${1:char * _DstCh}, ${2:const char * inSrcCh}); //${3:void #tchar.h}
+snippet _tccpy_l
+	_tccpy_l(${1:char * _DstCh}, ${2:const char * inSrcCh}, ${3:_locale_t inLocale}); //${4:void #tchar.h}
+snippet _tccpy_s
+	_tccpy_s(${1:char * _DstCh}, ${2:size_t _SizeInBytes}, ${3:int *outPCopied}, ${4:const char * inSrcCh}); //${5:errno_t #tchar.h}
+snippet _tccpy_s_l
+	_tccpy_s_l(${1:char * _DstCh}, ${2:size_t _SizeInBytes}, ${3:int *outPCopied}, ${4:const char * inSrcCh}, ${5:_locale_t inLocale}); //${6:errno_t #tchar.h}
+snippet _tclen
+	_tclen(${1:const char * inStr}); //${2:size_t #tchar.h}
+snippet _tcschr
+	_tcschr(${1:const char * inStr}, ${2:unsigned int inVal}); //${3:char #tchar.h}
+snippet _tcsclen
+	_tcsclen(${1:const char *inStr}); //${2:size_t #tchar.h}
+snippet _tcsclen_l
+	_tcsclen_l(${1:const char *inStr}, ${2:_locale_t inLocale}); //${3:size_t #tchar.h}
+snippet _tcscmp
+	_tcscmp(${1:const char *inStr1}, ${2:const char * inStr}); //${3:int #tchar.h}
+snippet _tcscnlen
+	_tcscnlen(${1:const char *inStr}, ${2:size_t inMaxCount}); //${3:size_t #tchar.h}
+snippet _tcscnlen_l
+	_tcscnlen_l(${1:const char *inStr}, ${2:size_t inMaxCount}, ${3:_locale_t inLocale}); //${4:size_t #tchar.h}
+snippet _tcscoll
+	_tcscoll(${1:const char * inStr1}, ${2:const char * inStr2}); //${3:int #tchar.h}
+snippet _tcscoll_l
+	_tcscoll_l(${1:const char *inStr1}, ${2:const char *inStr2}, ${3:_locale_t inLocale}); //${4:int #tchar.h}
+snippet _tcscspn
+	_tcscspn(${1:const char * inStr}, ${2:const char * inControl}); //${3:size_t #tchar.h}
+snippet _tcsdec
+	_tcsdec(${1:const char * _Start}, ${2:const char * inPos}); //${3:char #tchar.h}
+snippet _tcsicmp
+	_tcsicmp(${1:const char *inStr1}, ${2:const char *inStr2}); //${3:int #tchar.h}
+snippet _tcsicmp_l
+	_tcsicmp_l(${1:const char *inStr1}, ${2:const char *inStr2}, ${3:_locale_t inLocale}); //${4:int #tchar.h}
+snippet _tcsicoll
+	_tcsicoll(${1:const char * inStr1}, ${2:const char * inStr2}); //${3:int #tchar.h}
+snippet _tcsicoll_l
+	_tcsicoll_l(${1:const char *inStr1}, ${2:const char *inStr2}, ${3:_locale_t inLocale}); //${4:int #tchar.h}
+snippet _tcsinc
+	_tcsinc(${1:const char * inPtr}); //${2:char #tchar.h}
+snippet _tcslwr
+	_tcslwr(${1:char *ioStr}); //${2:char #tchar.h}
+snippet _tcslwr_l
+	_tcslwr_l(${1:char *ioStr}, ${2:_locale_t inLocale}); //${3:char #tchar.h}
+snippet _tcslwr_s
+	_tcslwr_s(${1:char *_Str}, ${2:size_t inSizeInChars}); //${3:char #tchar.h}
+snippet _tcslwr_s_l
+	_tcslwr_s_l(${1:char *_Str}, ${2:size_t inSizeInChars}, ${3:_locale_t inLocale}); //${4:char #tchar.h}
+snippet _tcsnbcnt
+	_tcsnbcnt(${1:const char * _Str}, ${2:size_t inMaxCount}); //${3:size_t #tchar.h}
+snippet _tcsncat
+	_tcsncat(${1:char *_Dst}, ${2:const char *inSrc}, ${3:size_t inMaxCount}); //${4:char #tchar.h}
+snippet _tcsncat_l
+	_tcsncat_l(${1:char *_Dst}, ${2:const char *inSrc}, ${3:size_t inMaxCount}, ${4:_locale_t inLocale}); //${5:char #tchar.h}
+snippet _tcsncat_s
+	_tcsncat_s(${1:char *_Dst}, ${2:size_t inDstSizeInChars}, ${3:const char *inSrc}, ${4:size_t _MaxCount}); //${5:char #tchar.h}
+snippet _tcsncat_s_l
+	_tcsncat_s_l(${1:char *_Dst}, ${2:size_t inDstSizeInChars}, ${3:const char *inSrc}, ${4:size_t inMaxCount}, ${5:_locale_t inLocale}); //${6:char #tchar.h}
+snippet _tcsnccat
+	_tcsnccat(${1:char *ioDst}, ${2:const char *inSrc}, ${3:size_t inMaxCount}); //${4:char #tchar.h}
+snippet _tcsnccat_l
+	_tcsnccat_l(${1:char *ioDst}, ${2:const char *inSrc}, ${3:size_t inMaxCount}, ${4:_locale_t inLocale}); //${5:char #tchar.h}
+snippet _tcsnccat_s
+	_tcsnccat_s(${1:char *_Dst}, ${2:size_t inDstSizeInChars}, ${3:const char *inSrc}, ${4:size_t inMaxCount}); //${5:char #tchar.h}
+snippet _tcsnccat_s_l
+	_tcsnccat_s_l(${1:char *_Dst}, ${2:size_t inDstSizeInChars}, ${3:const char *inSrc}, ${4:size_t inMaxCount}, ${5:_locale_t inLocale}); //${6:char #tchar.h}
+snippet _tcsnccmp
+	_tcsnccmp(${1:const char * inStr1}, ${2:const char * inStr2}, ${3:size_t inMaxCount}); //${4:int #tchar.h}
+snippet _tcsnccnt
+	_tcsnccnt(${1:const char * _Str}, ${2:size_t inMaxCount}); //${3:size_t #tchar.h}
+snippet _tcsnccoll
+	_tcsnccoll(${1:const char * inStr1}, ${2:const char * inStr2}, ${3:size_t inMaxCount}); //${4:int #tchar.h}
+snippet _tcsnccoll_l
+	_tcsnccoll_l(${1:const char *inStr1}, ${2:const char *inStr2}, ${3:size_t inMaxCount}, ${4:_locale_t inLocale}); //${5:int #tchar.h}
+snippet _tcsnccpy
+	_tcsnccpy(${1:char *outDst}, ${2:const char *inSrc}, ${3:size_t inMaxCount}); //${4:char #tchar.h}
+snippet _tcsnccpy_l
+	_tcsnccpy_l(${1:char *outDst}, ${2:const char *inSrc}, ${3:size_t inMaxCount}, ${4:_locale_t inLocale}); //${5:char #tchar.h}
+snippet _tcsnccpy_s
+	_tcsnccpy_s(${1:char *outDst}, ${2:size_t inDstSizeInChars}, ${3:const char *inSrc}, ${4:size_t inMaxCount}); //${5:char #tchar.h}
+snippet _tcsnccpy_s_l
+	_tcsnccpy_s_l(${1:char *outDst}, ${2:size_t inDstSizeInChars}, ${3:const char *inSrc}, ${4:size_t inMaxCount}, ${5:_locale_t inLocale}); //${6:char #tchar.h}
+snippet _tcsncicmp
+	_tcsncicmp(${1:const char * inStr1}, ${2:const char * inStr2}, ${3:size_t inMaxCount}); //${4:int #tchar.h}
+snippet _tcsncicmp_l
+	_tcsncicmp_l(${1:const char *inStr1}, ${2:const char *inStr2}, ${3:size_t inMaxCount}, ${4:_locale_t inLocale}); //${5:int #tchar.h}
+snippet _tcsncicoll
+	_tcsncicoll(${1:const char * inStr1}, ${2:const char * inStr2}, ${3:size_t inMaxCount}); //${4:int #tchar.h}
+snippet _tcsncicoll_l
+	_tcsncicoll_l(${1:const char *inStr1}, ${2:const char *inStr2}, ${3:size_t inMaxCount}, ${4:_locale_t inLocale}); //${5:int #tchar.h}
+snippet _tcsncmp
+	_tcsncmp(${1:const char * inStr1}, ${2:const char * inStr2}, ${3:size_t inMaxCount}); //${4:int #tchar.h}
+snippet _tcsncoll
+	_tcsncoll(${1:const char *inStr1}, ${2:const char * inStr2}, ${3:size_t inMaxCount}); //${4:int #tchar.h}
+snippet _tcsncoll_l
+	_tcsncoll_l(${1:const char *inStr1}, ${2:const char *inStr2}, ${3:size_t _MaxCount}, ${4:_locale_t inLocale}); //${5:int #tchar.h}
+snippet _tcsncpy
+	_tcsncpy(${1:char *outDst}, ${2:const char *inSrc}, ${3:size_t _MaxCount}); //${4:char #tchar.h}
+snippet _tcsncpy_l
+	_tcsncpy_l(${1:char *outDst}, ${2:const char *inSrc}, ${3:size_t inMaxCount}, ${4:_locale_t inLocale}); //${5:char #tchar.h}
+snippet _tcsncpy_s
+	_tcsncpy_s(${1:char *outDst}, ${2:size_t inDstSizeInChars}, ${3:const char *inSrc}, ${4:size_t _MaxCount}); //${5:char #tchar.h}
+snippet _tcsncpy_s_l
+	_tcsncpy_s_l(${1:char *outDst}, ${2:size_t inDstSizeInChars}, ${3:const char *inSrc}, ${4:size_t inMaxCount}, ${5:_locale_t inLocale}); //${6:char #tchar.h}
+snippet _tcsncset
+	_tcsncset(${1:char * _Str}, ${2:unsigned int inVal}, ${3:size_t inMaxCount}); //${4:char #tchar.h}
+snippet _tcsncset_l
+	_tcsncset_l(${1:char * _Str}, ${2:unsigned int inVal}, ${3:size_t inMaxCount}, ${4:_locale_t inLocale}); //${5:char* #tchar.h}
+snippet _tcsncset_s
+	_tcsncset_s(${1:char * _Str}, ${2:size_t inSizeInChars}, ${3:unsigned int inVal}, ${4:size_t inMaxCount}); //${5: errno_t #tchar.h}
+snippet _tcsncset_s_l
+	_tcsncset_s_l(${1:char * _Str}, ${2:size_t inSizeInChars}, ${3:unsigned int inVal}, ${4:size_t inMaxCount}, ${5:_locale_t inLocale}); //${6:errno_t #tchar.h}
+snippet _tcsnextc
+	_tcsnextc (${1:const char * inStr}); //${2:int #tchar.h}
+snippet _tcsnicmp
+	_tcsnicmp(${1:const char * inStr1}, ${2:const char * inStr2}, ${3:size_t inMaxCount}); //${4:int #tchar.h}
+snippet _tcsnicmp_l
+	_tcsnicmp_l(${1:const char *inStr1}, ${2:const char *inStr2}, ${3:size_t _MaxCount}, ${4:_locale_t inLocale}); //${5:int #tchar.h}
+snippet _tcsnicoll
+	_tcsnicoll(${1:const char * inStr1}, ${2:const char * inStr2}, ${3:size_t inMaxCount}); //${4:int #tchar.h}
+snippet _tcsnicoll_l
+	_tcsnicoll_l(${1:const char *inStr1}, ${2:const char *inStr2}, ${3:size_t inMaxCount}, ${4:_locale_t inLocale}); //${5:int #tchar.h}
+snippet _tcsninc
+	_tcsninc(${1:const char * _Ptr}, ${2:size_t inCount}); //${3:char #tchar.h}
+snippet _tcsnset
+	_tcsnset(${1:char * ioStr}, ${2:unsigned int inVal}, ${3:size_t inMaxCount}); //${4:char #tchar.h}
+snippet _tcsnset_l
+	_tcsnset_l(${1:char * ioStr}, ${2:unsigned int inVal}, ${3:size_t inMaxCount}, ${4:_locale_t inLocale}); //${5:char* #tchar.h}
+snippet _tcsnset_s
+	_tcsnset_s(${1:char * _Str}, ${2:size_t inSizeInChars}, ${3:unsigned int inVal }, ${4:size_t inMaxCount}); //${5:errno_t #tchar.h}
+snippet _tcsnset_s_l
+	_tcsnset_s_l(${1:char * _Str}, ${2:size_t inSizeInChars}, ${3:unsigned int inVal }, ${4:size_t inMaxCount}, ${5:_locale_t inLocale}); //${6:errno_t #tchar.h}
+snippet _tcspbrk
+	_tcspbrk(${1:const char * inStr}, ${2:const char * inControl}); //${3:char #tchar.h}
+snippet _tcsrchr
+	_tcsrchr(${1:const char * inStr}, ${2:unsigned int inCh}); //${3:char #tchar.h}
+snippet _tcsrev
+	_tcsrev(${1:char * ioStr}); //${2:char #tchar.h}
+snippet _tcsset
+	_tcsset(${1:char * ioStr}, ${2:unsigned int inVal}); //${3:char #tchar.h}
+snippet _tcsset_l
+	_tcsset_l(${1:char * ioStr}, ${2:unsigned int inVal}, ${3:_locale_t inLocale}); //${4:char #tchar.h}
+snippet _tcsset_s
+	_tcsset_s(${1:char * _Str}, ${2:size_t inSizeInChars}, ${3:unsigned int inVal}); //${4:errno_t #tchar.h}
+snippet _tcsset_s_l
+	_tcsset_s_l(${1:char * _Str}, ${2:size_t inSizeInChars}, ${3:unsigned inint}, ${4:_locale_t inLocale}); //${5:errno_t #tchar.h}
+snippet _tcsspn
+	_tcsspn(${1:const char * inStr}, ${2:const char * inControl}); //${3:size_t #tchar.h}
+snippet _tcsspnp
+	_tcsspnp(${1:const char * inStr1}, ${2:const char * inStr2}); //${3:char #tchar.h}
+snippet _tcsstr
+	_tcsstr(${1:const char * inStr}, ${2:const char * inSubstr}); //${3:char #tchar.h}
+snippet _tcstok
+	_tcstok(${1:char *ioStr}, ${2:const char *inDelim}); //${3:char #tchar.h}
+snippet _tcstok_l
+	_tcstok_l(${1:char *ioStr}, ${2:const char *inDelim}, ${3:_locale_t inLocale}); //${4:char #tchar.h}
+snippet _tcstok_s
+	_tcstok_s(${1:char *ioStr}, ${2:const char *inDelim}, ${3:char **ioContext}); //${4:char #tchar.h}
+snippet _tcstok_s_l
+	_tcstok_s_l(${1:char *ioStr}, ${2:const char *inDelim}, ${3:char **ioContext}, ${4:_locale_t inLocale}); //${5:char #tchar.h}
+snippet _tcsupr
+	_tcsupr(${1:char *ioStr}); //${2:char #tchar.h}
+snippet _tcsupr_l
+	_tcsupr_l(${1:char *ioStr}, ${2:_locale_t inLocale}); //${3:char #tchar.h}
+snippet _tcsupr_s
+	_tcsupr_s(${1:char *_Str}, ${2:size_t inSizeInChars}); //${3:char #tchar.h}
+snippet _tcsupr_s_l
+	_tcsupr_s_l(${1:char *_Str}, ${2:size_t inSizeInChars}, ${3:_locale_t inLocale}); //${4:char #tchar.h}
+snippet _tell
+	_tell(${1:int inFileHandle}); //${2:long #io.h}
+snippet _telli64
+	_telli64(${1:int inFileHandle}); //${2:__int64 #io.h}
+snippet _tempnam
+	_tempnam(${1:const char * inDirName}, ${2:const char * inFilePrefix}); //${3:char #stdio.h}
+snippet _time32
+	_time32(${1:__time32_t * outTime}); //${2:__time32_t #time.h}
+snippet _time64
+	_time64(${1:__time64_t * outTime}); //${2:__time64_t #time.h}
+snippet _tolower
+	_tolower(${1:int inC}); //${2:int #ctype.h}
+snippet _tolower_l
+	_tolower_l(${1:int inC}, ${2:_locale_t inLocale}); //${3:int #ctype.h}
+snippet _toupper
+	_toupper(${1:int inC}); //${2:int #ctype.h}
+snippet _toupper_l
+	_toupper_l(${1:int inC}, ${2:_locale_t inLocale}); //${3:int #ctype.h}
+snippet _towlower_l
+	_towlower_l(${1:wint_t inC}, ${2:_locale_t inLocale});//${3:wint_t #ctype.h}
+snippet _towupper_l
+	_towupper_l(${1:wint_t inC}, ${2:_locale_t inLocale}); //${3:wint_t #wchar.h}
+snippet _tzset
+	_tzset(${1:void}); //${2:void #time.h}
+snippet _ui64toa
+	_ui64toa(${1:unsigned __int64 inVal}, ${2:char * _DstBuf}, ${3:int inRadix}); //${4:char #stdlib.h}
+snippet _ui64toa_s
+	_ui64toa_s(${1:unsigned __int64 inVal}, ${2:char * _DstBuf}, ${3:size_t inSize}, ${4:int inRadix}); //${5:_CRTIMP #stdlib.h}
+snippet _ui64tow
+	_ui64tow(${1:unsigned __int64 inVal}, ${2:wchar_t * _DstBuf}, ${3:int inRadix}); //${4:wchar_t #stdlib.h}
+snippet _ui64tow_s
+	_ui64tow_s(${1:unsigned __int64 inVal}, ${2:wchar_t * _DstBuf}, ${3:size_t inSizeInWords}, ${4:int inRadix}); //${5:_CRTIMP #stdlib.h}
+snippet _ultoa_s
+	_ultoa_s(${1:unsigned long inVal}, ${2:char * _DstBuf}, ${3:size_t inSize}, ${4:int inRadix}); //${5:#stdlib.h}
+snippet _ultow_s
+	_ultow_s (${1:unsigned long inVal}, ${2:wchar_t * _DstBuf}, ${3:size_t inSizeInWords}, ${4:int inRadix}); //${5:errno_t #wchar.h}
+snippet _umask
+	_umask(${1:int inMode}); //${2:int #io.h}
+snippet _umask_s
+	_umask_s(${1:int inNewMode}, ${2:int * outOldMode}); //${3:35| #io.h}
+snippet _ungetc_nolock
+	_ungetc_nolock(${1:int inCh}, ${2:FILE * ioFile}); //${3:int #stdio.h}
+snippet _ungetch
+	_ungetch(${1:int inCh}); //${2:int #conio.h}
+snippet _ungetch_nolock
+	_ungetch_nolock(${1:int inCh}); //${2:int #conio.h}
+snippet _ungetwc_nolock
+	_ungetwc_nolock(${1:wint_t inCh}, ${2:FILE * ioFile}); //${3:wint_t #wchar.h}
+snippet _ungetwch
+	_ungetwch(${1:wint_t _WCh}); //${2:wint_t #conio.h}
+snippet _ungetwch_nolock
+	_ungetwch_nolock(${1:wint_t _WCh}); //${2:wint_t #conio.h}
+snippet _unlink
+	_unlink(${1:const char * inFilename}); //${2:int #io.h}
+snippet _unlock_file
+	_unlock_file(${1:FILE * ioFile}); //${2:void #stdio.h}
+snippet _vcprintf
+	_vcprintf(${1:const char * inFormat}, ${2:va_list _ArgList}); //${3:int #conio.h}
+snippet _vcprintf_l
+	_vcprintf_l(${1:const char * inFormat}, ${2:_locale_t inLocale}, ${3:va_list _ArgList}); //${4:int #conio.h}
+snippet _vcprintf_p
+	_vcprintf_p(${1:const char * inFormat}, ${2:va_list _ArgList}); //${3:int #conio.h}
+snippet _vcprintf_p_l
+	_vcprintf_p_l(${1:const char * inFormat}, ${2:_locale_t inLocale}, ${3:va_list _ArgList}); //${4:int #conio.h}
+snippet _vcprintf_s
+	_vcprintf_s(${1:const char * inFormat}, ${2:va_list _ArgList}); //${3:int #conio.h}
+snippet _vcprintf_s_l
+	_vcprintf_s_l(${1:const char * inFormat}, ${2:_locale_t inLocale}, ${3:va_list _ArgList}); //${4:int #conio.h}
+snippet _vcwprintf
+	_vcwprintf(${1:const wchar_t *inFormat}, ${2:va_list _ArgList}); //${3:int #conio.h}
+snippet _vcwprintf_l
+	_vcwprintf_l(${1:const wchar_t *inFormat}, ${2:_locale_t inLocale}, ${3:va_list _ArgList}); //${4:int #conio.h}
+snippet _vcwprintf_p
+	_vcwprintf_p(${1:const wchar_t* inFormat}, ${2:va_list _ArgList}); //${3:int #wchar.h}
+snippet _vcwprintf_p_l
+	_vcwprintf_p_l(${1:const wchar_t * inFormat}, ${2:_locale_t inLocale}, ${3:va_list _ArgList}); //${4:int #wchar.h}
+snippet _vcwprintf_s
+	_vcwprintf_s(${1:const wchar_t *inFormat}, ${2:va_list _ArgList}); //${3:int #conio.h}
+snippet _vcwprintf_s_l
+	_vcwprintf_s_l(${1:const wchar_t * inFormat}, ${2:_locale_t inLocale}, ${3:va_list _ArgList}); //${4:int #conio.h}
+snippet _vfprintf_l
+	_vfprintf_l(${1:FILE * ioFile}, ${2:const char * inFormat}, ${3:_locale_t inLocale}, ${4:va_list _ArgList}); //${5:int #stdio.h}
+snippet _vfprintf_p
+	_vfprintf_p(${1:FILE * ioFile}, ${2:const char * inFormat}, ${3:va_list _ArgList}); //${4:int #stdio.h}
+snippet _vfprintf_p_l
+	_vfprintf_p_l(${1:FILE * ioFile}, ${2:const char * inFormat}, ${3:_locale_t inLocale}, ${4:va_list _ArgList}); //${5:int #stdio.h}
+snippet _vfprintf_s_l
+	_vfprintf_s_l(${1:FILE * ioFile}, ${2:const char * inFormat}, ${3:_locale_t inLocale}, ${4:va_list _ArgList}); //${5:int #stdio.h}
+snippet _vfwprintf_l
+	_vfwprintf_l(${1:FILE * ioFile}, ${2:const wchar_t * inFormat}, ${3:_locale_t inLocale}, ${4:va_list _ArgList}); //${5:int #stdio.h}
+snippet _vfwprintf_p
+	_vfwprintf_p(${1:FILE * ioFile}, ${2:const wchar_t * inFormat}, ${3:va_list _ArgList}); //${4:int #wchar.h}
+snippet _vfwprintf_p_l
+	_vfwprintf_p_l(${1:FILE * ioFile}, ${2:const wchar_t * inFormat}, ${3:_locale_t inLocale}, ${4:va_list _ArgList}); //${5:int #wchar.h}
+snippet _vfwprintf_s_l
+	_vfwprintf_s_l(${1:FILE * ioFile}, ${2:const wchar_t * inFormat}, ${3:_locale_t inLocale}, ${4:va_list _ArgList}); //${5:int #wchar.h}
+snippet _vprintf_l
+	_vprintf_l(${1:const char * inFormat}, ${2:_locale_t inLocale}, ${3:va_list _ArgList}); //${4:int #stdio.h}
+snippet _vprintf_p
+	_vprintf_p(${1:const char * inFormat}, ${2:va_list _ArgList}); //${3:int #stdio.h}
+snippet _vprintf_p_l
+	_vprintf_p_l(${1:const char * inFormat}, ${2:_locale_t inLocale}, ${3:va_list _ArgList}); //${4:int #stdio.h}
+snippet _vprintf_s_l
+	_vprintf_s_l(${1:const char * inFormat}, ${2:_locale_t inLocale}, ${3:va_list _ArgList}); //${4:int #stdio.h}
+snippet _vscprintf
+	_vscprintf(${1:const char * inFormat}, ${2:va_list _ArgList}); //${3:int #stdio.h}
+snippet _vscprintf_l
+	_vscprintf_l(${1:const char * inFormat}, ${2:_locale_t inLocale}, ${3:va_list _ArgList}); //${4:int #stdio.h}
+snippet _vscprintf_p
+	_vscprintf_p(${1:const char * inFormat}, ${2:va_list _ArgList}); //${3:int #stdio.h}
+snippet _vscprintf_p_l
+	_vscprintf_p_l(${1:const char * inFormat}, ${2:_locale_t inLocale}, ${3:va_list _ArgList}); //${4:int #stdio.h}
+snippet _vscwprintf
+	_vscwprintf(${1:const wchar_t * inFormat}, ${2:va_list _ArgList}); //${3:int #stdio.h}
+snippet _vscwprintf_l
+	_vscwprintf_l(${1:const wchar_t * inFormat}, ${2:_locale_t inLocale}, ${3:va_list _ArgList}); //${4:int #stdio.h}
+snippet _vscwprintf_p
+	_vscwprintf_p(${1:const wchar_t * inFormat}, ${2:va_list _ArgList}); //${3:int #wchar.h}
+snippet _vscwprintf_p_l
+	_vscwprintf_p_l(${1:const wchar_t * inFormat}, ${2:_locale_t inLocale}, ${3:va_list _ArgList}); //${4:int #wchar.h}
+snippet _vsnprintf_c
+	_vsnprintf_c(${1:char *outDstBuf}, ${2:size_t inMaxCount}, ${3:const char * inFormat}, ${4:va_list _ArgList}); //${5:int #stdio.h}
+snippet _vsnprintf_c_l
+	_vsnprintf_c_l(${1:char * outDstBuf}, ${2:size_t inMaxCount}, ${3:const char *}, ${4:_locale_t inLocale}, ${5:va_list _ArgList}); //${6:int #stdio.h}
+snippet _vsnprintf_l
+	_vsnprintf_l(${1:char * outDstBuf}, ${2:size_t inMaxCount}, ${3:const char * inFormat}, ${4:_locale_t inLocale}, ${5:va_list _ArgList}); //${6:int #stdio.h}
+snippet _vsnprintf_s
+	_vsnprintf_s(${1:char * _DstBuf}, ${2:size_t inSizeInBytes}, ${3:size_t inMaxCount}, ${4:const char * inFormat}, ${5:va_list _ArgList}); //${6:int #stdio.h}
+snippet _vsnprintf_s_l
+	_vsnprintf_s_l(${1:char * _DstBuf}, ${2:size_t inDstSize}, ${3:size_t inMaxCount}, ${4:const char* inFormat},${5:_locale_t inLocale}, va_list _ArgList); //${6:41| #stdio.h}
+snippet _vsnwprintf_l
+	_vsnwprintf_l(${1:wchar_t * outDstBuf}, ${2:size_t inMaxCount}, ${3:const wchar_t * inFormat}, ${4:_locale_t inLocale}, ${5:va_list _ArgList}); //${6:int #stdio.h}
+snippet _vsnwprintf_s
+	_vsnwprintf_s(${1:wchar_t * _DstBuf}, ${2:size_t inDstSizeInWords}, ${3:size_t inMaxCount}, ${4:const wchar_t * inFormat}, ${5:va_list _ArgList})
+snippet _vsnwprintf_s
+	_vsnwprintf_s(${1:wchar_t * _DstBuf}, ${2:size_t inSizeInWords}, ${3:size_t inMaxCount}, ${4:const wchar_t * inFormat}, ${5:va_list _ArgList}); //${6:int #wchar.h}
+snippet _vsnwprintf_s_l
+	_vsnwprintf_s_l(${1:wchar_t * _DstBuf}, ${2:size_t inDstSize}, ${3:size_t inMaxCount}, ${4:const wchar_t * inFormat}, ${5:_locale_t inLocale}, va_list _ArgList); //${6:_CRTIMP #wchar.h}
+snippet _vsprintf_l
+	_vsprintf_l(${1:char * _DstBuf}, ${2:const char * inFormat}, ${3:inlocale_t}, ${4:va_list _ArgList}); //${5:int #stdio.h}
+snippet _vsprintf_p
+	_vsprintf_p(${1:char * _Dst}, ${2:size_t inMaxCount}, ${3:const char * inFormat}, ${4:va_list _ArgList}); //${5:int #stdio.h}
+snippet _vsprintf_p_l
+	_vsprintf_p_l(${1:char * _DstBuf}, ${2:size_t inMaxCount}, ${3:const char* inFormat}, ${4:_locale_t inLocale}, ${5:va_list _ArgList}); //${6:int #stdio.h}
+snippet _vsprintf_s_l
+	_vsprintf_s_l(${1:char * _DstBuf}, ${2:size_t inDstSize}, ${3:const char * inFormat}, ${4:_locale_t inLocale}, ${5:va_list _ArgList}); //${6:int #stdio.h}
+snippet _vswprintf_c
+	_vswprintf_c(${1:wchar_t * _DstBuf}, ${2:size_t inSizeInWords}, ${3:const wchar_t * inFormat}, ${4:va_list _ArgList}); //${5:int #stdio.h}
+snippet _vswprintf_c_l
+	_vswprintf_c_l(${1:wchar_t * _DstBuf}, ${2:size_t inMaxCount}, ${3:const wchar_t * inFormat}, ${4:_locale_t inLocale}, ${5:va_list _ArgList}); //${6:int #stdio.h}
+snippet _vswprintf_p
+	_vswprintf_p(${1:wchar_t * _DstBuf}, ${2:size_t inMaxCount}, ${3:const wchar_t * inFormat}, ${4:va_list _ArgList}); //${5:int #wchar.h}
+snippet _vswprintf_p_l
+	_vswprintf_p_l(${1:wchar_t * _DstBuf}, ${2:size_t inMaxCount}, ${3:const wchar_t * inFormat}, ${4:_locale_t inLocale}, ${5:va_list _ArgList}); //${6:int #wchar.h}
+snippet _vswprintf_s_l
+	_vswprintf_s_l(${1:wchar_t * _DstBuf}, ${2:size_t inDstSize}, ${3:const wchar_t * inFormat}, ${4:_locale_t inLocale}, ${5:va_list _ArgList}); //${6:int #wchar.h}
+snippet _vwprintf_l
+	_vwprintf_l(${1:const wchar_t * inFormat}, ${2:_locale_t inLocale}, ${3:va_list _ArgList}); //${4:int #stdio.h}
+snippet _vwprintf_p
+	_vwprintf_p(${1:const wchar_t * inFormat}, ${2:va_list _ArgList}); //${3:int #wchar.h}
+snippet _vwprintf_p_l
+	_vwprintf_p_l(${1:const wchar_t * inFormat}, ${2:_locale_t inLocale}, ${3:va_list _ArgList}); //${4:int #wchar.h}
+snippet _vwprintf_s_l
+	_vwprintf_s_l(${1:const wchar_t * inFormat}, ${2:_locale_t inLocale}, ${3:va_list _ArgList}); //${4:int #wchar.h}
+snippet _waccess
+	_waccess(${1:const wchar_t * inFilename}, ${2:int inAccessMode}); //${3:int #io.h}
+snippet _waccess_s
+	_waccess_s(${1:const wchar_t * inFilename}, ${2:int inAccessMode}); //${3:errno_t #io.h}
+snippet _wasctime
+	_wasctime(${1:const struct tm * inTm}); //${2:wchar_t #time.h}
+snippet _wasctime_s
+	_wasctime_s(${1:wchar_t *outBuf}, ${2:size_t inSizeInWords}, ${3:const struct tm * inTm}); //${4:38| #time.h}
+snippet _wassert
+	_wassert(${1:const wchar_t * inMessage}, ${2:const wchar_t *inFile}, ${3:unsigned inLine}); //${4:void #assert.h}
+snippet _wchdir
+	_wchdir(${1:const wchar_t * inPath}); //${2:int #direct.h}
+snippet _wchmod
+	_wchmod(${1:const wchar_t * inFilename}, ${2:int inMode}); //${3:int #io.h}
+snippet _wcreat
+	_wcreat(${1:const wchar_t * inFilename}, ${2:int inPermissionMode}); //${3:int #io.h}
+snippet _wcscoll_l
+	_wcscoll_l(${1:const wchar_t * inStr1}, ${2:const wchar_t * inStr2}, ${3:_locale_t inLocale}); //${4:int #string.h}
+snippet _wcsdup
+	_wcsdup(${1:const wchar_t * inStr}); //${2:33| #string.h}
+snippet _wcserror
+	_wcserror(${1:int inErrNum}); //${2:wchar_t #wchar.h}
+snippet _wcserror_s
+	_wcserror_s(${1:wchar_t * _Buf}, ${2:size_t inSizeInWords}, ${3:int inErrNum}); //${4:38| #wchar.h}
+snippet _wcsftime_l
+	_wcsftime_l(${1:wchar_t * _Buf}, ${2:size_t inSizeInWords}, ${3:const wchar_t *inFormat}, ${4:const struct tm *inTm}, ${5:_locale_t inLocale}); //${6:size_t #wchar.h}
+snippet _wcsicmp
+	_wcsicmp(${1:const wchar_t * inStr1}, ${2:const wchar_t * inStr2}); //${3:int #string.h}
+snippet _wcsicmp_l
+	_wcsicmp_l(${1:const wchar_t * inStr1}, ${2:const wchar_t * inStr2}, ${3:_locale_t inLocale}); //${4:int #string.h}
+snippet _wcsicoll
+	_wcsicoll(${1:const wchar_t * inStr1}, ${2:const wchar_t * inStr2}); //${3:int #string.h}
+snippet _wcsicoll_l
+	_wcsicoll_l(${1:const wchar_t * inStr1}, ${2:const wchar_t *inStr2}, ${3:_locale_t inLocale}); //${4:int #string.h}
+snippet _wcslwr_s
+	_wcslwr_s(${1:wchar_t * _Str}, ${2:size_t inSizeInWords}); //${3:errno_t #wchar.h}
+snippet _wcslwr_s_l
+	_wcslwr_s_l(${1:wchar_t * _Str}, ${2:size_t inSizeInWords}, ${3:_locale_t inLocale}); //${4:errno_t #wchar.h}
+snippet _wcsncoll
+	_wcsncoll(${1:const wchar_t * inStr1}, ${2:const wchar_t * inStr2}, ${3:size_t inMaxCount}); //${4:int #wchar.h}
+snippet _wcsncoll_l
+	_wcsncoll_l(${1:const wchar_t * inStr1}, ${2:const wchar_t * inStr2}, ${3:size_t inMaxCount}, ${4:_locale_t inLocale}); //${5:int #wchar.h}
+snippet _wcsnicmp
+	_wcsnicmp(${1:const wchar_t * inStr1}, ${2:const wchar_t * inStr2}, ${3:size_t inMaxCount}); //${4:35| #wchar.h}
+snippet _wcsnicmp_l
+	_wcsnicmp_l(${1:const wchar_t * inStr1}, ${2:const wchar_t * inStr2}, ${3:size_t inMaxCount}, ${4:_locale_t inLocale}); //${5:int #string.h}
+snippet _wcsnicoll
+	_wcsnicoll(${1:const wchar_t * inStr1}, ${2:const wchar_t * inStr2}, ${3:size_t inMaxCount}); //${4:int #string.h}
+snippet _wcsnicoll_l
+	_wcsnicoll_l(${1:const wchar_t * inStr1}, ${2:const wchar_t * inStr2}, ${3:size_t inMaxCount}, ${4:_locale_t inLocale}); //${5:int #string.h}
+snippet _wcsnset_s
+	_wcsnset_s(${1:wchar_t * _Dst}, ${2:size_t inDstSizeInWords}, ${3:wchar_t _Val}, ${4:size_t inMaxCount})
+snippet _wcsnset_s
+	_wcsnset_s(${1:wchar_t * _Dst}, ${2:size_t inSizeInWords}, ${3:wchar_t inVal}, ${4:size_t inMaxCount}); //${5:42| #wchar.h}
+snippet _wcsrev
+	_wcsrev(${1:wchar_t * ioStr}); //${2:wchar_t #wchar.h}
+snippet _wcsset_s
+	_wcsset_s(${1:wchar_t * _Dst}, ${2:size_t inSizeInWords}, ${3:wchar_t inValue})
+snippet _wcsset_s
+	_wcsset_s(${1:wchar_t * _Str}, ${2:size_t inSizeInWords}, ${3:wchar_t _Val}); //${4:41| #wchar.h}
+snippet _wcstod_l
+	_wcstod_l(${1:const wchar_t *inStr}, ${2:wchar_t ** outEndPtr}, ${3:_locale_t inLocale}); //${4:double #stdlib.h}
+snippet _wcstoi64
+	_wcstoi64(${1:const wchar_t * inStr}, ${2:wchar_t ** outEndPtr}, ${3:int inRadix}); //${4:__int64 #stdlib.h}
+snippet _wcstoi64_l
+	_wcstoi64_l(${1:const wchar_t * inStr}, ${2:wchar_t ** outEndPtr}, ${3:int inRadix}, ${4:_locale_t inLocale}); //${5:__int64 #stdlib.h}
+snippet _wcstol_l
+	_wcstol_l(${1:const wchar_t *inStr}, ${2:wchar_t **outEndPtr}, ${3:int _Radix}, ${4:_locale_t inLocale}); //${5:long #wchar.h}
+snippet _wcstombs_s_l
+	_wcstombs_s_l(${1:size_t * outPtNumOfCharConverted}, ${2:char * _Dst}, ${3:size_t inDstSizeInBytes}, ${4:const wchar_t * inSrc}, ${5:size_t inMaxCountInBytes}, _locale_t inLocale); //${6:errno_t #stdlib.h}
+snippet _wcstoui64
+	_wcstoui64(${1:const wchar_t * inStr}, ${2:wchar_t ** outEndPtr}, ${3:int inRadix}); //${4:__int64 #stdlib.h}
+snippet _wcstoui64_l
+	_wcstoui64_l(${1:const wchar_t *inStr }, ${2:wchar_t ** outEndPtr}, ${3:int inRadix}, ${4:_locale_t inLocale}); //${5:__int64 #stdlib.h}
+snippet _wcstoul_l
+	_wcstoul_l(${1:const wchar_t *inStr}, ${2:wchar_t **outEndPtr}, ${3:int _Radix}, ${4:_locale_t inLocale}); //${5:long #wchar.h}
+snippet _wcsupr_s
+	_wcsupr_s(${1:wchar_t * _Str}, ${2:size_t inSize}); //${3:errno_t #wchar.h}
+snippet _wcsupr_s_l
+	_wcsupr_s_l(${1:wchar_t * _Str}, ${2:size_t inSize}, ${3:_locale_t inLocale}); //${4:errno_t #wchar.h}
+snippet _wcsxfrm_l
+	_wcsxfrm_l(${1:wchar_t * _Dst}, ${2:const wchar_t *inSrc}, ${3:size_t inMaxCount}, ${4:_locale_t inLocale}); //${5:size_t #wchar.h}
+snippet _wctime32
+	_wctime32(${1:const __time32_t *inTime}); //${2:wchar_t #wchar.h}
+snippet _wctime32_s
+	_wctime32_s(${1:wchar_t* outBuf}, ${2:size_t inSizeInWords}, ${3:const __time32_t * inTime}); //${4:_CRTIMP #wchar.h}
+snippet _wctime64
+	_wctime64(${1:const __time64_t * inTime}); //${2:wchar_t #wchar.h}
+snippet _wctime64_s
+	_wctime64_s(${1:wchar_t* outBuf}, ${2:size_t inSizeInWords}, ${3:const __time64_t *inTime}); //${4:_CRTIMP #wchar.h}
+snippet _wctomb_l
+	_wctomb_l(${1:char * _MbCh}, ${2:wchar_t inWCh}, ${3:_locale_t inLocale}); //${4:int #stdlib.h}
+snippet _wctomb_s_l
+	_wctomb_s_l(${1:int * outSizeConverted}, ${2:char * _MbCh}, ${3:size_t inSizeInBytes}, ${4:wchar_t inWCh}, ${5:_locale_t inLocale}); //${6:_CRTIMP #stdlib.h}
+snippet _wdupenv_s
+	_wdupenv_s(${1:wchar_t **outBuffer}, ${2:size_t *outBufferSizeInWords}, ${3:const wchar_t *inVarName}); //${4:_CRTIMP #stdlib.h}
+snippet _wexecl
+	_wexecl(${1:const wchar_t * inFilename}, ${2:const wchar_t * inArgList}, ${3:...}); //${4:intptr_t #wchar.h}
+snippet _wexecle
+	_wexecle(${1:const wchar_t * inFilename}, ${2:const wchar_t * inArgList}, ${3:...}); //${4:intptr_t #wchar.h}
+snippet _wexeclp
+	_wexeclp(${1:const wchar_t * inFilename}, ${2:const wchar_t * inArgList}, ${3:...}); //${4:intptr_t #wchar.h}
+snippet _wexeclpe
+	_wexeclpe(${1:const wchar_t * inFilename}, ${2:const wchar_t * inArgList}, ${3:...}); //${4:intptr_t #wchar.h}
+snippet _wexecv
+	_wexecv(${1:const wchar_t * inFilename}, ${2:const wchar_t * const * inArgList}); //${3:intptr_t #wchar.h}
+snippet _wexecve
+	_wexecve(${1:const wchar_t * inFilename}, ${2:const wchar_t * const * inArgList}, ${3:const wchar_t * const * inEnv}); //${4:intptr_t #wchar.h}
+snippet _wexecvp
+	_wexecvp(${1:const wchar_t * inFilename}, ${2:const wchar_t * const * inArgList}); //${3:intptr_t #wchar.h}
+snippet _wexecvpe
+	_wexecvpe(${1:const wchar_t * inFilename}, ${2:const wchar_t * const * inArgList}, ${3:const wchar_t * const * inEnv}); //${4:intptr_t #wchar.h}
+snippet _wfdopen
+	_wfdopen(${1:int inFileHandle }, ${2:const wchar_t * inMode}); //${3:FILE #wchar.h}
+snippet _wfindfirst32
+	_wfindfirst32(${1:const wchar_t * inFilename}, ${2:struct _wfinddata32_t * outFindData}); //${3:intptr_t #io.h}
+snippet _wfindfirst32i64
+	_wfindfirst32i64(${1:const wchar_t * inFilename}, ${2:struct _wfinddata32i64_t * outFindData}); //${3:intptr_t #io.h}
+snippet _wfindfirst64
+	_wfindfirst64(${1:const wchar_t * inFilename}, ${2:struct _wfinddata64_t * outFindData}); //${3:intptr_t #io.h}
+snippet _wfindfirst64i32
+	_wfindfirst64i32(${1:const wchar_t * inFilename}, ${2:struct _wfinddata64i32_t * outFindData}); //${3:intptr_t #wchar.h}
+snippet _wfindnext32
+	_wfindnext32(${1:intptr_t inFindHandle}, ${2:struct _wfinddata32_t * outFindData}); //${3:int #io.h}
+snippet _wfindnext32i64
+	_wfindnext32i64(${1:intptr_t inFindHandle}, ${2:struct _wfinddata32i64_t * outFindData}); //${3:int #io.h}
+snippet _wfindnext64
+	_wfindnext64(${1:intptr_t inFindHandle}, ${2:struct _wfinddata64_t * outFindData}); //${3:int #io.h}
+snippet _wfindnext64i32
+	_wfindnext64i32(${1:intptr_t inFindHandle}, ${2:struct _wfinddata64i32_t * outFindData}); //${3:int #wchar.h}
+snippet _wfopen
+	_wfopen(${1:const wchar_t * inFilename}, ${2:const wchar_t * inMode}); //${3:FILE #wchar.h}
+snippet _wfopen_s
+	_wfopen_s(${1:FILE ** _outFile}, ${2:const wchar_t * inFilename}, ${3:const wchar_t * inMode}); //${4:36| #wchar.h}
+snippet _wfreopen
+	_wfreopen(${1:const wchar_t * inFilename}, ${2:const wchar_t * inMode}, ${3:FILE * ioOldFile}); //${4:FILE #wchar.h}
+snippet _wfreopen_s
+	_wfreopen_s(${1:FILE ** _outFile}, ${2:const wchar_t * inFilename}, ${3:const wchar_t * inMode}, ${4:FILE * ioOldFile}); //${5:38| #wchar.h}
+snippet _wfsopen
+	_wfsopen(${1:const wchar_t * inFilename}, ${2:const wchar_t * inMode})
+snippet _wfsopen
+	_wfsopen(${1:const wchar_t * inFilename}, ${2:const wchar_t * inMode}, ${3:int inShFlag}); //${4:FILE #stdio.h}
+snippet _wfullpath
+	_wfullpath(${1:wchar_t * _FullPath}, ${2:const wchar_t * inPath}, ${3:size_t inSizeInWords}); //${4:wchar_t #stdlib.h}
+snippet _wgetcwd
+	_wgetcwd(${1:wchar_t * _DstBuf}, ${2:int inSizeInWords}); //${3:wchar_t #wchar.h}
+snippet _wgetdcwd
+	_wgetdcwd(${1:int inDrive}, ${2:wchar_t * _DstBuf}, ${3:int inSizeInWords}); //${4:wchar_t #wchar.h}
+snippet _wgetenv
+	_wgetenv(${1:const wchar_t * inVarName}); //${2:wchar_t #wchar.h}
+snippet _wgetenv_s
+	_wgetenv_s(${1:size_t * outReturnSize}, ${2:wchar_t * _DstBuf}, ${3:size_t inDstSizeInWords}, ${4:const wchar_t * inVarName}); //${5:errno_t #wchar.h}
+snippet _wmkdir
+	_wmkdir(${1:const wchar_t * inPath}); //${2:int #direct.h}
+snippet _wmktemp_s
+	_wmktemp_s(${1:wchar_t * _TemplateName}, ${2:size_t inSizeInWords}); //${3:errno_t #io.h}
+snippet _wopen
+	_wopen(${1:const wchar_t * inFilename}, ${2:int inOpenFlag}, ${3:...}); //${4:int #io.h}
+snippet _wperror
+	_wperror(${1:const wchar_t * inErrMsg}); //${2:void #stdio.h}
+snippet _wpopen
+	_wpopen(${1:const wchar_t *inCommand}, ${2:const wchar_t * inMode}); //${3:FILE #stdio.h}
+snippet _wprintf_l
+	_wprintf_l(${1:const wchar_t * inFormat}, ${2:_locale_t inLocale}, ${3:...}); //${4:int #wchar.h}
+snippet _wprintf_p
+	_wprintf_p(${1:const wchar_t * inFormat}, ${2:...}); //${3:int #stdio.h}
+snippet _wprintf_p_l
+	_wprintf_p_l(${1:const wchar_t * inFormat}, ${2:_locale_t inLocale}, ${3:...}); //${4:int #stdio.h}
+snippet _wprintf_s_l
+	_wprintf_s_l(${1:const wchar_t * inFormat}, ${2:_locale_t inLocale}, ${3:...}); //${4:int #stdio.h}
+snippet _wputenv
+	_wputenv(${1:const wchar_t * inEnvString}); //${2:int #stdlib.h}
+snippet _wputenv_s
+	_wputenv_s(${1:const wchar_t * inName}, ${2:const wchar_t * inValue}); //${3:errno_t #stdlib.h}
+snippet _wremove
+	_wremove(${1:const wchar_t * inFilename}); //${2:int #wchar.h}
+snippet _wrename
+	_wrename(${1:const wchar_t * inOldFilename}, ${2:const wchar_t * inNewFilename}); //${3:int #io.h}
+snippet _write
+	_write(${1:int inFileHandle}, ${2:const void * _Buf}, ${3:unsigned int inMaxCharCount}); //${4:32| #io.h}
+snippet _wrmdir
+	_wrmdir(${1:const wchar_t * inPath}); //${2:int #wchar.h}
+snippet _wscanf_l
+	_wscanf_l(${1:const wchar_t * inFormat}, ${2:_locale_t inLocale}, ${3:...}); //${4:int #wchar.h}
+snippet _wscanf_s_l
+	_wscanf_s_l(${1:const wchar_t * inFormat}, ${2:_locale_t inLocale}, ${3:...}); //${4:_CRTIMP #wchar.h}
+snippet _wsearchenv_s
+	_wsearchenv_s(${1:const wchar_t * inFilename}, ${2:const wchar_t * inEnvVar}, ${3:wchar_t * _ResultPath}, ${4:size_t inSizeInWords}); //${5:errno_t #wchar.h}
+snippet _wsetlocale
+	_wsetlocale(${1:int inCategory}, ${2:const wchar_t * inLocale}); //${3:wchar_t #locale.h}
+snippet _wsopen
+	_wsopen(${1:const wchar_t * inFilename}, ${2:int inOpenFlag}, ${3:int _ShareFlag}, ${4:...}); //${5:int #wchar.h}
+snippet _wsopen_s
+	_wsopen_s(${1:int * outFileHandle}, ${2:const wchar_t * inFilename}, ${3:int inOpenFlag}, ${4:int inShareFlag}, ${5:int inPermissionFlag}); //${6:36| #io.h}
+snippet _wspawnl
+	_wspawnl(${1:int inMode}, ${2:const wchar_t * inFilename}, ${3:const wchar_t * inArgList}, ${4:...}); //${5:intptr_t #process.h}
+snippet _wspawnle
+	_wspawnle(${1:int inMode}, ${2:const wchar_t * inFilename}, ${3:const wchar_t * inArgList}, ${4:...}); //${5:intptr_t #process.h}
+snippet _wspawnlp
+	_wspawnlp(${1:int inMode}, ${2:const wchar_t * inFilename}, ${3:const wchar_t * inArgList}, ${4:...}); //${5:intptr_t #process.h}
+snippet _wspawnlpe
+	_wspawnlpe(${1:int inMode}, ${2:const wchar_t * inFilename}, ${3:const wchar_t * inArgList}, ${4:...}); //${5:intptr_t #process.h}
+snippet _wspawnv
+	_wspawnv(${1:int inMode}, ${2:const wchar_t * inFilename}, ${3:const wchar_t * const * inArgList}); //${4:intptr_t #process.h}
+snippet _wspawnve
+	_wspawnve(${1:int inMode}, ${2:const wchar_t * inFilename}, ${3:const wchar_t * const * inArgList}, ${4:const wchar_t * const * inEnv}); //${5:intptr_t #process.h}
+snippet _wspawnvp
+	_wspawnvp(${1:int inMode}, ${2:const wchar_t * inFilename}, ${3:const wchar_t * const * inArgList}); //${4:intptr_t #process.h}
+snippet _wspawnvpe
+	_wspawnvpe(${1:int inMode}, ${2:const wchar_t * inFilename}, ${3:const wchar_t * const * inArgList}, ${4:const wchar_t * const * inEnv}); //${5:intptr_t #process.h}
+snippet _wsplitpath
+	_wsplitpath(${1:const wchar_t * inFullPath}, ${2:wchar_t * _Drive}, ${3:wchar_t * _Dir}, ${4:wchar_t * _Filename}, ${5:wchar_t * _Ext}); //${6:void #stdlib.h}
+snippet _wsplitpath_s
+	_wsplitpath_s(${1:const wchar_t * inFullPath}, ${2:wchar_t * _Drive}, ${3:size_t inDriveSize}, ${4:wchar_t * _Dir}, ${5:size_t inDirSize}, ${6:wchar_t * _Filename}, ${7:size_t inFilenameSize}, ${8:wchar_t * _Ext}, ${9:size_t inExtSize}); //${10:40| #stdlib.h}
+snippet _wstat32
+	_wstat32(${1:const wchar_t * inName}, ${2:struct _stat32 * outStat}); //${3:int #wchar.h}
+snippet _wstat32i64
+	_wstat32i64(${1:const wchar_t * inName}, ${2:struct _stat32i64 * outStat}); //${3:int #wchar.h}
+snippet _wstat64
+	_wstat64(${1:const wchar_t * inName}, ${2:struct _stat64 * outStat}); //${3:int #wchar.h}
+snippet _wstat64i32
+	_wstat64i32(${1:const wchar_t * inName}, ${2:struct _stat64i32 * outStat}); //${3:int #wchar.h}
+snippet _wstrdate_s
+	_wstrdate_s(${1:wchar_t * outBuf}, ${2:size_t inSizeInWords}); //${3:errno_t #wchar.h}
+snippet _wstrtime_s
+	_wstrtime_s(${1:wchar_t * outBuf}, ${2:size_t inSizeInWords}); //${3:errno_t #wchar.h}
+snippet _wsystem
+	_wsystem(${1:const wchar_t * inCommand}); //${2:int #process.h}
+snippet _wtempnam
+	_wtempnam(${1:const wchar_t * inDirectory}, ${2:const wchar_t * inFilePrefix}); //${3:wchar_t #stdio.h}
+snippet _wtmpnam_s
+	_wtmpnam_s(${1:wchar_t * _DstBuf}, ${2:size_t inSizeInWords}); //${3:errno_t #stdio.h}
+snippet _wtof
+	_wtof(${1:const wchar_t *inStr}); //${2:double #stdlib.h}
+snippet _wtof_l
+	_wtof_l(${1:const wchar_t *inStr}, ${2:_locale_t inLocale}); //${3:double #stdlib.h}
+snippet _wtoi
+	_wtoi(${1:const wchar_t *inStr}); //${2:int #stdlib.h}
+snippet _wtoi64
+	_wtoi64(${1:const wchar_t *inStr}); //${2:__int64 #stdlib.h}
+snippet _wtoi64_l
+	_wtoi64_l(${1:const wchar_t *inStr}, ${2:_locale_t inLocale}); //${3:__int64 #stdlib.h}
+snippet _wtoi_l
+	_wtoi_l(${1:const wchar_t *inStr}, ${2:_locale_t inLocale}); //${3:int #wchar.h}
+snippet _wtol
+	_wtol(${1:const wchar_t *inStr}); //${2:long #wchar.h}
+snippet _wtol_l
+	_wtol_l(${1:const wchar_t *inStr}, ${2:_locale_t inLocale}); //${3:long #wchar.h}
+snippet _wunlink
+	_wunlink(${1:const wchar_t * inFilename}); //${2:int #io.h}
+snippet _y0
+	_y0(${1:double inX}); //${2:double #math.h}
+snippet _y1
+	_y1(${1:double inX}); //${2:double #math.h}
+snippet _yn
+	_yn(${1:int inX}, ${2:double inY}); //${3:double #math.h}
+snippet abort
+	abort(${1:void}); //${2:void #process.h}
+snippet access
+	access(${1:const char * inFilename}, ${2:int inAccessMode}); //${3:int #io.h}
+snippet acosf
+	acosf(${1:float inX}); //${2:float #math.h}
+snippet asctime
+	asctime(${1:const struct tm * inTm}); //${2:char #time.h}
+snippet asctime_s
+	asctime_s(${1:char *outBuf}, ${2:size_t inSizeInBytes}, ${3:const struct tm * inTm}); //${4:36| #time.h}
+snippet asinf
+	asinf(${1:float inX}); //${2:float #math.h}
+snippet atan2f
+	atan2f(${1:float inY}, ${2:float _X})
+snippet atan2f
+	atan2f(${1:float inY}, ${2:float inX}); //${3:float #math.h}
+snippet atanf
+	atanf(${1:float inX}); //${2:float #math.h}
+snippet atof
+	atof(${1:const char *inString}); //${2:double #stdlib.h}
+snippet atoi
+	atoi(${1:const char *inStr}); //${2:int #stdlib.h}
+snippet atol
+	atol(${1:const char *inStr}); //${2:long #stdlib.h}
+snippet btowc
+	btowc(${1:int}); //${2:wint_t #wchar.h}
+snippet cabs
+	cabs(${1:struct _complex inX}); //${2:double #math.h}
+snippet calloc
+	calloc(${1:size_t inCount}, ${2:size_t inSize})
+snippet calloc
+	calloc(${1:size_t inNumOfElements}, ${2:size_t inSizeOfElements}); //${3:void #stdlib.h}
+snippet ceil
+	ceil(${1:double inX}); //${2:double #math.h}
+snippet ceilf
+	ceilf(${1:float inX}); //${2:float #math.h}
+snippet cgets
+	cgets(${1:char * _Buffer}); //${2:char #conio.h}
+snippet chdir
+	chdir(${1:const char * inPath}); //${2:int #direct.h}
+snippet chmod
+	chmod(${1:const char * inFilename}, ${2:int _AccessMode}); //${3:int #io.h}
+snippet chsize
+	chsize(${1:int inFileHandle}, ${2:long inSize}); //${3:int #io.h}
+snippet clearerr
+	clearerr(${1:FILE * ioFile}); //${2:void #stdio.h}
+snippet clearerr_s
+	clearerr_s(${1:FILE * ioFile }); //${2:errno_t #stdio.h}
+snippet clock
+	clock(${1:void}); //${2:clock_t #time.h}
+snippet close
+	close(${1:int inFileHandle}); //${2:int #io.h}
+snippet cosf
+	cosf(${1:float inX}); //${2:float #math.h}
+snippet coshf
+	coshf(${1:float inX}); //${2:float #math.h}
+snippet cprintf
+	cprintf(${1:const char * inFormat}, ${2:...}); //${3:int #conio.h}
+snippet cputs
+	cputs(${1:const char * inStr}); //${2:int #conio.h}
+snippet creat
+	creat(${1:const char * inFilename}, ${2:int inPermissionMode}); //${3:int #io.h}
+snippet cscanf
+	cscanf(${1:const char * inFormat}, ${2:...}); //${3:int #conio.h}
+snippet cwait
+	cwait(${1:int * outTermStat}, ${2:intptr_t inProcHandle}, ${3:int inAction}); //${4:intptr_t #process.h}
+snippet div
+	div(${1:int inNumerator}, ${2:int inDenominator}); //${3:div_t #stdlib.h}
+snippet dup
+	dup(${1:int inFileHandle}); //${2:int #io.h}
+snippet dup2
+	dup2(${1:int inFileHandleSrc}, ${2:int inFileHandleDst}); //${3:int #io.h}
+snippet ecvt
+	ecvt(${1:double inVal}, ${2:int inNumOfDigits}, ${3:int * outPtDec}, ${4:int * outPtSign}); //${5:char #stdlib.h}
+snippet eof
+	eof(${1:int inFileHandle}); //${2:int #io.h}
+snippet execl
+	execl(${1:const char * inFilename}, ${2:const char * inArgList}, ${3:...}); //${4:intptr_t #process.h}
+snippet execle
+	execle(${1:const char * inFilename}, ${2:const char * inArgList}, ${3:...}); //${4:intptr_t #process.h}
+snippet execlp
+	execlp(${1:const char * inFilename}, ${2:const char * inArgList}, ${3:...}); //${4:intptr_t #process.h}
+snippet execlpe
+	execlpe(${1:const char * inFilename}, ${2:const char * inArgList}, ${3:...}); //${4:intptr_t #process.h}
+snippet execv
+	execv(${1:const char * inFilename}, ${2:const char * const * inArgList}); //${3:intptr_t #process.h}
+snippet execve
+	execve(${1:const char * inFilename}, ${2:const char * const * inArgList}, ${3:const char * const * inEnv}); //${4:intptr_t #process.h}
+snippet execvp
+	execvp(${1:const char * inFilename}, ${2:const char * const * inArgList}); //${3:intptr_t #process.h}
+snippet execvpe
+	execvpe(${1:const char * inFilename}, ${2:const char * const * inArgList}, ${3:const char * const * inEnv}); //${4:intptr_t #process.h}
+snippet exit
+	exit(${1:int inCode}); //${2:void #stdlib.h}
+snippet expf
+	expf(${1:float inX}); //${2:float #math.h}
+snippet fabsf
+	fabsf(${1:float inX}); //${2:float #math.h}
+snippet fclose
+	fclose(${1:FILE * ioFile}); //${2:int #stdio.h}
+snippet fcloseall
+	fcloseall(${1:void}); //${2:int #stdio.h}
+snippet fcvt
+	fcvt(${1:double inVal}, ${2:int inNumOfDec}, ${3:int * outPtDec}, ${4:int * outPtSign}); //${5:char #stdlib.h}
+snippet fdopen
+	fdopen(${1:int inFileHandle}, ${2:const char * inFormat})
+snippet fdopen
+	fdopen(${1:int inFileHandle}, ${2:const char * inMode}); //${3:FILE #stdio.h}
+snippet feof
+	feof(${1:FILE * inFile}); //${2:int #stdio.h}
+snippet ferror
+	ferror(${1:FILE * inFile}); //${2:int #stdio.h}
+snippet fflush
+	fflush(${1:FILE * ioFile}); //${2:int #stdio.h}
+snippet fgetc
+	fgetc(${1:FILE * ioFile}); //${2:int #stdio.h}
+snippet fgetchar
+	fgetchar(${1:void}); //${2:int #stdio.h}
+snippet fgetpos
+	fgetpos(${1:FILE * ioFile }, ${2:fpos_t * outPos}); //${3:int #stdio.h}
+snippet fgets
+	fgets(${1:char * _Buf}, ${2:int inMaxCount}, ${3:FILE * ioFile}); //${4:char #stdio.h}
+snippet fgetwc
+	fgetwc(${1:FILE * ioFile}); //${2:wint_t #stdio.h}
+snippet fgetws
+	fgetws(${1:wchar_t * _Dst}, ${2:int inSizeInWords}, ${3:FILE * ioFile}); //${4:wchar_t #stdio.h}
+snippet filelength
+	filelength(${1:int inFileHandle}); //${2:long #io.h}
+snippet fileno
+	fileno(${1:FILE * inFile}); //${2:int #stdio.h}
+snippet floor
+	floor(${1:double inX}); //${2:double #math.h}
+snippet floorf
+	floorf(${1:float inX}); //${2:float #math.h}
+snippet flushall
+	flushall(${1:void}); //${2:int #stdio.h}
+snippet fmodf
+	fmodf(${1:float inX}, ${2:float inY}); //${3:float #math.h}
+snippet fopen
+	fopen(${1:const char * inFilename}, ${2:const char * inMode}); //${3:FILE #stdio.h}
+snippet fopen_s
+	fopen_s(${1:FILE ** _outFile}, ${2:const char * inFilename}, ${3:const char * inMode}); //${4:34| #stdio.h}
+snippet fpreset
+	fpreset(${1:void}); //${2:void #float.h}
+snippet fprintf
+	fprintf(${1:FILE * ioFile}, ${2:const char * inFormat}, ${3:...}); //${4:int #stdio.h}
+snippet fprintf_s
+	fprintf_s(${1:FILE * ioFile}, ${2:const char * inFormat}, ${3:...}); //${4:int #stdio.h}
+snippet fputc
+	fputc(${1:int inCh}, ${2:FILE * ioFile}); //${3:int #stdio.h}
+snippet fputchar
+	fputchar(${1:int inCh}); //${2:int #stdio.h}
+snippet fputs
+	fputs(${1:const char * inStr}, ${2:FILE * ioFile}); //${3:int #stdio.h}
+snippet fputwc
+	fputwc(${1:wchar_t inCh}, ${2:FILE * ioFile}); //${3:wint_t #stdio.h}
+snippet fputws
+	fputws(${1:const wchar_t * inStr}, ${2:FILE * ioFile}); //${3:int #stdio.h}
+snippet fread
+	fread(${1:void * _DstBuf}, ${2:size_t inElementSize}, ${3:size_t inCount}, ${4:FILE * ioFile}); //${5:size_t #stdio.h}
+snippet fread_s
+	fread_s(${1:void * _DstBuf}, ${2:size_t inDstSize}, ${3:size_t inElementSize}, ${4:size_t inCount}, ${5:FILE * ioFile}); //${6:size_t #stdio.h}
+snippet free
+	free(${1:void * ioMemory}); //${2:void #stdlib.h}
+snippet freopen
+	freopen(${1:const char * inFilename}, ${2:const char * inMode}, ${3:FILE * ioFile}); //${4:FILE #stdio.h}
+snippet freopen_s
+	freopen_s(${1:FILE ** _outFile}, ${2:const char * inFilename}, ${3:const char * inMode}, ${4:FILE * ioOldFile}); //${5:36| #stdio.h}
+snippet frexp
+	frexp(${1:double inX}, ${2:int * outY}); //${3:double #math.h}
+snippet fscanf
+	fscanf(${1:FILE * ioFile}, ${2:const char * inFormat}, ${3:...}); //${4:int #stdio.h}
+snippet fscanf_s
+	fscanf_s(${1:FILE * ioFile}, ${2:const char * inFormat}, ${3:...}); //${4:35| #stdio.h}
+snippet fseek
+	fseek(${1:FILE * ioFile}, ${2:long inOffset}, ${3:int inOrigin}); //${4:int #stdio.h}
+snippet fsetpos
+	fsetpos(${1:FILE * ioFile}, ${2:const fpos_t * inPos}); //${3:int #stdio.h}
+snippet ftell
+	ftell(${1:FILE * ioFile}); //${2:long #stdio.h}
+snippet fwprintf
+	fwprintf(${1:FILE * ioFile}, ${2:const wchar_t * inFormat}, ${3:...}); //${4:int #stdio.h}
+snippet fwprintf_s
+	fwprintf_s(${1:FILE * ioFile}, ${2:const wchar_t * inFormat}, ${3:...}); //${4:int #stdio.h}
+snippet fwrite
+	fwrite(${1:const void * _Str}, ${2:size_t inSize}, ${3:size_t inCount}, ${4:FILE * ioFile}); //${5:size_t #stdio.h}
+snippet fwscanf
+	fwscanf(${1:FILE * ioFile}, ${2:const wchar_t * inFormat}, ${3:...}); //${4:int #stdio.h}
+snippet fwscanf_s
+	fwscanf_s(${1:FILE * ioFile}, ${2:const wchar_t * inFormat}, ${3:...}); //${4:36| #stdio.h}
+snippet gcvt
+	gcvt(${1:double inVal}, ${2:int inNumOfDigits}, ${3:char * _DstBuf}); //${4:char #stdlib.h}
+snippet getc
+	getc(${1:FILE * ioFile}); //${2:int #stdio.h}
+snippet getch
+	getch(${1:void}); //${2:int #conio.h}
+snippet getchar
+	getchar(${1:void}); //${2:int #stdio.h}
+snippet getche
+	getche(${1:void}); //${2:int #conio.h}
+snippet getcwd
+	getcwd(${1:char * _DstBuf}, ${2:int inSizeInBytes}); //${3:char #direct.h}
+snippet getenv
+	getenv(${1:const char * inVarName}); //${2:char #stdlib.h}
+snippet getenv_s
+	getenv_s(${1:size_t * outReturnSize}, ${2:char * _DstBuf}, ${3:rsize_t inDstSize}, ${4:const char * inVarName}); //${5:errno_t #stdlib.h}
+snippet getpid
+	getpid(${1:void}); //${2:int #process.h}
+snippet gets_s
+	gets_s(${1:char * _Buf}, ${2:rsize_t inSize})
+snippet getw
+	getw(${1:FILE * ioFile}); //${2:int #stdio.h}
+snippet getwc
+	getwc(${1:FILE * ioFile}); //${2:wint_t #wchar.h}
+snippet getwchar
+	getwchar(${1:void}); //${2:wint_t #wchar.h}
+snippet hypot
+	hypot(${1:double inX}, ${2:double inY}); //${3:double #math.h}
+snippet is_wctype
+	is_wctype(${1:wint_t inC}, ${2:wctype_t inType})
+snippet is_wctype
+	is_wctype(${1:wint_t}, ${2:wctype_t}); //${3:int #wchar.h}
+snippet isalnum
+	isalnum(${1:int inC}); //${2:int #ctype.h}
+snippet isalpha
+	isalpha(${1:int inC}); //${2:int #ctype.h}
+snippet isascii
+	isascii(${1:int inC}); //${2:int #ctype.h}
+snippet isatty
+	isatty(${1:int inFileHandle}); //${2:int #io.h}
+snippet iscntrl
+	iscntrl(${1:int inC}); //${2:int #ctype.h}
+snippet iscsym
+	iscsym(${1:int inC}); //${2:int #ctype.h}
+snippet iscsymf
+	iscsymf(${1:int inC}); //${2:int #ctype.h}
+snippet isdigit
+	isdigit(${1:int inC}); //${2:int #ctype.h}
+snippet isgraph
+	isgraph(${1:int inC}); //${2:int #ctype.h}
+snippet isleadbyte
+	isleadbyte(${1:int inC})
+snippet isleadbyte
+	isleadbyte(${1:int}); //${2:int #ctype.h}
+snippet islower
+	islower(${1:int inC}); //${2:int #ctype.h}
+snippet isprint
+	isprint(${1:int inC}); //${2:int #ctype.h}
+snippet ispunct
+	ispunct(${1:int inC}); //${2:int #ctype.h}
+snippet isspace
+	isspace(${1:int inC}); //${2:int #ctype.h}
+snippet isupper
+	isupper(${1:int inC}); //${2:int #ctype.h}
+snippet iswalnum
+	iswalnum(${1:wint_t inC})
+snippet iswalnum
+	iswalnum(${1:wint_t}); //${2:int #ctype.h}
+snippet iswalpha
+	iswalpha(${1:wint_t inC})
+snippet iswalpha
+	iswalpha(${1:wint_t}); //${2:int #wchar.h}
+snippet iswascii
+	iswascii(${1:wint_t inC})
+snippet iswascii
+	iswascii(${1:wint_t}); //${2:int #wchar.h}
+snippet iswcntrl
+	iswcntrl(${1:wint_t inC})
+snippet iswcntrl
+	iswcntrl(${1:wint_t}); //${2:int #ctype.h}
+snippet iswctype
+	iswctype(${1:wint_t inC}, ${2:wctype_t inType})
+snippet iswctype
+	iswctype(${1:wint_t}, ${2:wctype_t}); //${3:int #ctype.h}
+snippet iswdigit
+	iswdigit(${1:wint_t inC})
+snippet iswdigit
+	iswdigit(${1:wint_t}); //${2:int #wchar.h}
+snippet iswgraph
+	iswgraph(${1:wint_t inC})
+snippet iswgraph
+	iswgraph(${1:wint_t}); //${2:int #wchar.h}
+snippet iswlower
+	iswlower(${1:wint_t inC})
+snippet iswlower
+	iswlower(${1:wint_t}); //${2:int #ctype.h}
+snippet iswprint
+	iswprint(${1:wint_t inC})
+snippet iswprint
+	iswprint(${1:wint_t}); //${2:int #ctype.h}
+snippet iswpunct
+	iswpunct(${1:wint_t inC})
+snippet iswpunct
+	iswpunct(${1:wint_t}); //${2:int #wchar.h}
+snippet iswspace
+	iswspace(${1:wint_t inC})
+snippet iswspace
+	iswspace(${1:wint_t}); //${2:int #ctype.h}
+snippet iswupper
+	iswupper(${1:wint_t inC})
+snippet iswupper
+	iswupper(${1:wint_t}); //${2:int #wchar.h}
+snippet iswxdigit
+	iswxdigit(${1:wint_t inC})
+snippet iswxdigit
+	iswxdigit(${1:wint_t}); //${2:int #wchar.h}
+snippet isxdigit
+	isxdigit(${1:int inC}); //${2:int #ctype.h}
+snippet itoa
+	itoa(${1:int inVal}, ${2:char * _DstBuf}, ${3:int inRadix}); //${4:char #stdlib.h}
+snippet j0
+	j0(${1:double inX}); //${2:double #math.h}
+snippet j1
+	j1(${1:double inX}); //${2:double #math.h}
+snippet jn
+	jn(${1:int inX}, ${2:double inY}); //${3:double #math.h}
+snippet kbhit
+	kbhit(${1:void}); //${2:int #conio.h}
+snippet ldexp
+	ldexp(${1:double inX}, ${2:int inY}); //${3:double #math.h}
+snippet ldexpf
+	ldexpf(${1:float inX}, ${2:int inY}); //${3:float #math.h}
+snippet ldiv
+	ldiv(${1:long inNumerator}, ${2:long inDenominator}); //${3:ldiv_t #stdlib.h}
+snippet localeconv
+	localeconv(${1:void}); //${2:lconv #locale.h}
+snippet locking
+	locking(${1:int inFileHandle}, ${2:int inLockMode}, ${3:long inNumOfBytes}); //${4:int #io.h}
+snippet log10f
+	log10f(${1:float inX}); //${2:float #math.h}
+snippet logf
+	logf(${1:float inX}); //${2:float #math.h}
+snippet longjmp
+	longjmp(${1:jmp_buf inBuf}, ${2:int inValue}); //${3:void #setjmp.h}
+snippet lseek
+	lseek(${1:int inFileHandle}, ${2:long inOffset}, ${3:int inOrigin}); //${4:long #io.h}
+snippet ltoa
+	ltoa(${1:long inVal}, ${2:char * _DstBuf}, ${3:int inRadix}); //${4:char #stdlib.h}
+snippet malloc
+	malloc(${1:size_t inSize}); //${2:void* #stdlib.h}
+snippet mblen
+	mblen(${1:const char * inCh}, ${2:size_t inMaxCount}); //${3:int #stdlib.h}
+snippet mbsrtowcs_s
+	mbsrtowcs_s(${1:size_t* outRetval}, ${2:wchar_t * _Dst}, ${3:size_t inSize}, ${4:const char ** ioPSrc}, ${5:size_t inN}, mbstate_t * outState); //${6:errno_t #wchar.h}
+snippet mbstowcs_s
+	mbstowcs_s(${1:size_t * outPtNumOfCharConverted}, ${2:wchar_t * _DstBuf}, ${3:size_t inSizeInWords}, ${4:const char * _SrcBuf}, ${5:size_t inMaxCount }); //${6:errno_t #stdlib.h}
+snippet mbtowc
+	mbtowc(${1:wchar_t * _DstCh}, ${2:const char * inSrcCh}, ${3:size_t inSrcSizeInBytes}); //${4:int #stdlib.h}
+snippet memccpy
+	memccpy(${1:void * _Dst}, ${2:const void * inSrc}, ${3:int inVal}, ${4:size_t inSize}); //${5:void #string.h}
+snippet memchr
+	memchr(${1:const void * inBuf }, ${2:int inVal}, ${3:size_t inMaxCount}); //${4:void #memory.h}
+snippet memcpy_s
+	memcpy_s(${1:void * _Dst}, ${2:rsize_t inDstSize}, ${3:const void * inSrc}, ${4:rsize_t inMaxCount}); //${5:errno_t #memory.h}
+snippet memicmp
+	memicmp(${1:const void * inBuf1}, ${2:const void * inBuf2}, ${3:size_t inSize}); //${4:int #memory.h}
+snippet memmove
+	memmove(${1:void * _Dst}, ${2:const void * inSrc}, ${3:size_t inSize}); //${4:void #string.h}
+snippet memmove_s
+	memmove_s(${1:void * _Dst}, ${2:rsize_t inDstSize}, ${3:const void * inSrc}, ${4:rsize_t inMaxCount}); //${5:_CRTIMP #string.h}
+snippet mkdir
+	mkdir(${1:const char * inPath}); //${2:int #direct.h}
+snippet mktemp
+	mktemp(${1:char * ioTemplateName}); //${2:char #io.h}
+snippet modf
+	modf(${1:double inX}, ${2:double * outY}); //${3:double #math.h}
+snippet modff
+	modff(${1:float _X}, ${2:float* outY})
+snippet modff
+	modff(${1:float inX}, ${2:float* outY}); //${3:float #math.h}
+snippet open
+	open(${1:const char * inFilename}, ${2:int inOpenFlag}, ${3:...}); //${4:_fileinfo; #stdlib.h}
+snippet perror
+	perror(${1:const char * inErrMsg}); //${2:void #stdlib.h}
+snippet powf
+	powf(${1:float inBase}, ${2:float inExp})
+snippet powf
+	powf(${1:float inX}, ${2:float inY}); //${3:float #math.h}
+snippet printf
+	printf(${1:const char * inFormat}, ${2:...}); //${3:int #stdio.h}
+snippet printf_s
+	printf_s(${1:const char * inFormat}, ${2:...}); //${3:int #stdio.h}
+snippet putc
+	putc(${1:int inCh}, ${2:FILE * ioFile}); //${3:int #stdio.h}
+snippet putch
+	putch(${1:int _Ch}); //${2:int #conio.h}
+snippet putchar
+	putchar(${1:int inCh}); //${2:int #stdio.h}
+snippet putenv
+	putenv(${1:const char * inEnvString}); //${2:int #stdlib.h}
+snippet puts
+	puts(${1:const char * inStr}); //${2:int #stdio.h}
+snippet putw
+	putw(${1:int inCh}, ${2:FILE * ioFile}); //${3:int #stdio.h}
+snippet putwc
+	putwc(${1:wchar_t inCh}, ${2:FILE * ioFile}); //${3:wint_t #wchar.h}
+snippet putwchar
+	putwchar(${1:wchar_t inCh}); //${2:wint_t #wchar.h}
+snippet raise
+	raise(${1:int inSigNum}); //${2:int #signal.h}
+snippet rand
+	rand(${1:void}); //${2:int #stdlib.h}
+snippet rand_s
+	rand_s (${1:unsigned int *outRandomValue}); //${2:errno_t #stdlib.h}
+snippet read
+	read(${1:int _FileHandle}, ${2:void * _DstBuf}, ${3:unsigned int inMaxCharCount}); //${4:int #io.h}
+snippet realloc
+	realloc(${1:void * inMemory}, ${2:size_t inNewSize}); //${3:void #malloc.h}
+snippet remove
+	remove(${1:const char * inFilename}); //${2:int #stdio.h}
+snippet rename
+	rename(${1:const char * inOldFilename}, ${2:const char * inNewFilename}); //${3:int #stdio.h}
+snippet rewind
+	rewind(${1:FILE * ioFile}); //${2:void #stdio.h}
+snippet rmdir
+	rmdir(${1:const char * inPath}); //${2:int #direct.h}
+snippet rmtmp
+	rmtmp(${1:void}); //${2:int #stdio.h}
+snippet scanf
+	scanf(${1:const char * inFormat}, ${2:...}); //${3:int #stdio.h}
+snippet scanf_s
+	scanf_s(${1:const char * inFormat}, ${2:...}); //${3:39| #stdio.h}
+snippet set_terminate
+	set_terminate(${1:int inZero})
+snippet set_terminate
+	set_terminate(${1:terminate_function inNewPtFunc}); //${2:terminate_function #eh.h}
+snippet set_unexpected
+	set_unexpected(${1:int inZero})
+snippet set_unexpected
+	set_unexpected(${1:unexpected_function inNewPtFunc}); //${2:unexpected_function #eh.h}
+snippet setbuf
+	setbuf(${1:FILE * ioFile}, ${2:char * _Buffer}); //${3:void #stdio.h}
+snippet setlocale
+	setlocale(${1:int inCategory}, ${2:const char * inLocale}); //${3:char #locale.h}
+snippet setmode
+	setmode(${1:int inFileHandle}, ${2:int inMode}); //${3:int #io.h}
+snippet setvbuf
+	setvbuf(${1:FILE * ioFile}, ${2:char * _Buf}, ${3:int inMode}, ${4:size_t inSize}); //${5:34| #stdio.h}
+snippet sinf
+	sinf(${1:float inX}); //${2:float #math.h}
+snippet sinhf
+	sinhf(${1:float inX}); //${2:float #math.h}
+snippet sopen
+	sopen(${1:const char * _Filename}, ${2:int inOpenFlag}, ${3:int inShareFlag}, ${4:...}); //${5:int #io.h}
+snippet spawnl
+	spawnl(${1:inint}, ${2:const char * inFilename}, ${3:const char * inArgList}, ${4:...}); //${5:intptr_t #process.h}
+snippet spawnle
+	spawnle(${1:inint}, ${2:const char * inFilename}, ${3:const char * inArgList}, ${4:...}); //${5:intptr_t #process.h}
+snippet spawnlp
+	spawnlp(${1:inint}, ${2:const char * inFilename}, ${3:const char * inArgList}, ${4:...}); //${5:intptr_t #process.h}
+snippet spawnlpe
+	spawnlpe(${1:inint}, ${2:const char * inFilename}, ${3:const char * inArgList}, ${4:...}); //${5:intptr_t #process.h}
+snippet spawnv
+	spawnv(${1:inint}, ${2:const char * inFilename}, ${3:const char * const * inArgList}); //${4:intptr_t #process.h}
+snippet spawnvp
+	spawnvp(${1:inint}, ${2:const char * inFilename}, ${3:const char * const * inArgList}); //${4:intptr_t #process.h}
+snippet sprintf_s
+	sprintf_s(${1:char * _DstBuf}, ${2:size_t inSizeInBytes}, ${3:const char * inFormat}, ${4:...}); //${5:int #stdio.h}
+snippet sqrtf
+	sqrtf(${1:float inX}); //${2:float #math.h}
+snippet srand
+	srand(${1:unsigned int inSeed}); //${2:void #stdlib.h}
+snippet sscanf
+	sscanf(${1:const char * inSrc}, ${2:const char * inFormat}, ${3:...}); //${4:int #stdio.h}
+snippet sscanf_s
+	sscanf_s(${1:const char * inSrc}, ${2:const char * inFormat}, ${3:...}); //${4:40| #stdio.h}
+snippet strcat_s
+	strcat_s(${1:char * _Dst}, ${2:rsize_t inSizeInBytes}, ${3:const char * inSrc}); //${4:errno_t #string.h}
+snippet strchr
+	strchr(${1:const char * inStr}, ${2:int inVal}); //${3:char #string.h}
+snippet strcmpi
+	strcmpi(${1:const char * inStr1}, ${2:const char * inStr2}); //${3:int #string.h}
+snippet strcoll
+	strcoll(${1:const char * inStr1}, ${2:const char * inStr2}); //${3:int #string.h}
+snippet strcpy_s
+	strcpy_s(${1:char * _Dst}, ${2:rsize_t inSizeInBytes}, ${3:const char * inSrc}); //${4:errno_t #string.h}
+snippet strcspn
+	strcspn(${1:const char * inStr}, ${2:const char * inControl}); //${3:size_t #string.h}
+snippet strdup
+	strdup(${1:const char * inSrc}); //${2:char #string.h}
+snippet strerror
+	strerror(${1:inint}); //${2:_CRTIMP #stdlib.h}
+snippet strerror_s
+	strerror_s(${1:char * _Buf}, ${2:size_t inSizeInBytes}, ${3:int inErrNum}); //${4:37| #string.h}
+snippet strftime
+	strftime(${1:char * _Buf}, ${2:size_t inSizeInBytes}, ${3:const char * inFormat}, ${4:const struct tm * inTm}); //${5:size_t #time.h}
+snippet stricmp
+	stricmp(${1:const char * inStr1}, ${2:const char * inStr2}); //${3:int #string.h}
+snippet strlwr
+	strlwr(${1:char * ioStr}); //${2:char #string.h}
+snippet strncat_s
+	strncat_s(${1:char * _Dst}, ${2:rsize_t inSizeInBytes}, ${3:const char * inSrc}, ${4:rsize_t inMaxCount}); //${5:errno_t #string.h}
+snippet strncmp
+	strncmp(${1:const char * inStr1}, ${2:const char * inStr2}, ${3:size_t inMaxCount}); //${4:int #string.h}
+snippet strncpy_s
+	strncpy_s(${1:char * _Dst}, ${2:rsize_t inSizeInBytes}, ${3:const char * inSrc}, ${4:rsize_t inMaxCount}); //${5:errno_t #string.h}
+snippet strnicmp
+	strnicmp(${1:const char * inStr1}, ${2:const char * inStr}, ${3:size_t inMaxCount}); //${4:int #string.h}
+snippet strnlen
+	strnlen(${1:const char * inStr}, ${2:size_t inMaxCount}); //${3:size_t #string.h}
+snippet strnset
+	strnset(${1:char * _Str}, ${2:int inVal}, ${3:size_t inMaxCount}); //${4:char #string.h}
+snippet strpbrk
+	strpbrk(${1:const char * inStr}, ${2:const char * inControl}); //${3:char #string.h}
+snippet strrchr
+	strrchr(${1:const char * inStr}, ${2:int inCh}); //${3:char #string.h}
+snippet strrev
+	strrev(${1:char * ioStr}); //${2:char #string.h}
+snippet strspn
+	strspn(${1:const char * inStr}, ${2:const char * inControl}); //${3:size_t #string.h}
+snippet strstr
+	strstr(${1:const char * inStr}, ${2:const char * inSubStr}); //${3:char #string.h}
+snippet strtod
+	strtod(${1:const char * inStr}, ${2:char ** outEndPtr}); //${3:double #stdlib.h}
+snippet strtok
+	strtok(${1:char * ioStr}, ${2:const char * inDelim}); //${3:char #string.h}
+snippet strtok_s
+	strtok_s(${1:char * ioStr}, ${2:const char * inDelim}, ${3:char ** ioContext}); //${4:40| #string.h}
+snippet strtol
+	strtol(${1:const char * inStr}, ${2:char ** outEndPtr}, ${3:int inRadix }); //${4:long #stdlib.h}
+snippet strtoul
+	strtoul(${1:const char * inStr}, ${2:char ** outEndPtr}, ${3:int inRadix}); //${4:long #stdlib.h}
+snippet strupr
+	strupr(${1:char * ioStr}); //${2:char #string.h}
+snippet strxfrm
+	strxfrm (${1:char * _Dst}, ${2:const char * inSrc}, ${3:size_t inMaxCount}); //${4:size_t #string.h}
+snippet swab
+	swab(${1:char * _Buf1}, ${2:char * _Buf2}, ${3:int inSizeInBytes}); //${4:void #stdlib.h}
+snippet swprintf_s
+	swprintf_s(${1:wchar_t * _Dst}, ${2:size_t inSizeInWords}, ${3:const wchar_t * inFormat}, ${4:...}); //${5:_CRTIMP #wchar.h}
+snippet swscanf
+	swscanf(${1:const wchar_t * inSrc}, ${2:const wchar_t * inFormat}, ${3:...}); //${4:int #wchar.h}
+snippet swscanf_s
+	swscanf_s(${1:const wchar_t *inSrc}, ${2:const wchar_t * inFormat}, ${3:...}); //${4:_CRTIMP #wchar.h}
+snippet system
+	system(${1:const char * inCommand}); //${2:int #process.h}
+snippet tanf
+	tanf(${1:float inX}); //${2:float #math.h}
+snippet tanhf
+	tanhf(${1:float inX}); //${2:float #math.h}
+snippet tanl
+	tanl(${1:long double inX}); //${2:double #math.h}
+snippet tell
+	tell(${1:int inFileHandle}); //${2:long #io.h}
+snippet tempnam
+	tempnam(${1:const char * inDirectory}, ${2:const char * inFilePrefix}); //${3:char #stdio.h}
+snippet terminate
+	terminate(${1:void}); //${2:void #eh.h}
+snippet throw
+	throw(${1:...}); //${2:int #setjmp.h}
+snippet tmpfile
+	tmpfile(${1:void}); //${2:FILE #stdio.h}
+snippet tmpfile_s
+	tmpfile_s(${1:_Deref_post_valid_ FILE ** outFile}); //${2:36| #stdio.h}
+snippet tmpnam_s
+	tmpnam_s(${1:char * _Buf}, ${2:rsize_t inSize}); //${3:errno_t #stdio.h}
+snippet toascii
+	toascii(${1:int inC}); //${2:int #ctype.h}
+snippet tolower
+	tolower(${1:int inC}); //${2:int #ctype.h}
+snippet toupper
+	toupper(${1:int inC}); //${2:int #ctype.h}
+snippet towlower
+	towlower(${1:wint_t inC})
+snippet towlower
+	towlower(${1:wint_t}); //${2:wint_t #ctype.h}
+snippet towupper
+	towupper(${1:wint_t inC})
+snippet towupper
+	towupper(${1:wint_t}); //${2:wint_t #wchar.h}
+snippet tzset
+	tzset(${1:void}); //${2:void #time.h}
+snippet ultoa
+	ultoa(${1:unsigned long inVal}, ${2:char * _Dstbuf}, ${3:int inRadix}); //${4:char #stdlib.h}
+snippet umask
+	umask(${1:int inMode}); //${2:int #io.h}
+snippet unexpected
+	unexpected(${1:void}); //${2:void #eh.h}
+snippet ungetc
+	ungetc(${1:int inCh}, ${2:FILE * ioFile}); //${3:int #stdio.h}
+snippet ungetch
+	ungetch(${1:int _Ch}); //${2:int #conio.h}
+snippet ungetwc
+	ungetwc(${1:wint_t inCh}, ${2:FILE * ioFile}); //${3:wint_t #stdio.h}
+snippet unlink
+	unlink(${1:const char * inFilename}); //${2:int #io.h}
+snippet vfprintf
+	vfprintf(${1:FILE * ioFile}, ${2:const char * inFormat}, ${3:va_list _ArgList}); //${4:int #stdio.h}
+snippet vfprintf_s
+	vfprintf_s(${1:FILE * ioFile}, ${2:const char * inFormat}, ${3:va_list _ArgList}); //${4:int #stdio.h}
+snippet vfwprintf
+	vfwprintf(${1:FILE * ioFile}, ${2:const wchar_t * inFormat}, ${3:va_list _ArgList}); //${4:int #stdio.h}
+snippet vfwprintf_s
+	vfwprintf_s(${1:FILE * ioFile}, ${2:const wchar_t * inFormat}, ${3:va_list _ArgList}); //${4:int #stdio.h}
+snippet vprintf
+	vprintf(${1:const char * inFormat}, ${2:va_list _ArgList}); //${3:int #stdio.h}
+snippet vprintf_s
+	vprintf_s(${1:const char * inFormat}, ${2:va_list _ArgList}); //${3:int #stdio.h}
+snippet vsnprintf
+	vsnprintf(${1:char * outDstBuf}, ${2:size_t inMaxCount}, ${3:const char * inFormat}, ${4:va_list _ArgList}); //${5:int #stdio.h}
+snippet vsnprintf_s
+	vsnprintf_s(${1:char * _DstBuf}, ${2:size_t inDstSize}, ${3:size_t inMaxCount}, ${4:const char * inFormat}, ${5:va_list _ArgList}); //${6:38| #stdio.h}
+snippet vsprintf_s
+	vsprintf_s(${1:char * _DstBuf}, ${2:size_t inSizeInBytes}, ${3:const char * inFormat}, ${4:va_list _ArgList}); //${5:int #stdio.h}
+snippet vswprintf_s
+	vswprintf_s(${1:wchar_t * _Dst}, ${2:size_t inSizeInWords}, ${3:const wchar_t * inFormat}, ${4:va_list _ArgList}); //${5:int #stdio.h}
+snippet vwprintf
+	vwprintf(${1:const wchar_t * inFormat}, ${2:va_list _ArgList}); //${3:int #wchar.h}
+snippet vwprintf_s
+	vwprintf_s(${1:const wchar_t * inFormat}, ${2:va_list _ArgList}); //${3:int #wchar.h}
+snippet wcscat_s
+	wcscat_s(${1:wchar_t * _Dst}, ${2:rsize_t inDstSize}, ${3:const wchar_t * _Src})
+snippet wcscat_s
+	wcscat_s(${1:wchar_t * _Dst}, ${2:rsize_t inSizeInWords}, ${3:const wchar_t * inSrc}); //${4:errno_t #wchar.h}
+snippet wcschr
+	wcschr(${1:const wchar_t * inStr}, ${2:wchar_t _Ch}); //${3:wchar_t #wchar.h}
+snippet wcscmp
+	wcscmp(${1:const wchar_t * inStr1}, ${2:const wchar_t * inStr2}); //${3:int #wchar.h}
+snippet wcscoll
+	wcscoll(${1:const wchar_t * inStr1}, ${2:const wchar_t * inStr2}); //${3:int #wchar.h}
+snippet wcscpy_s
+	wcscpy_s(${1:wchar_t * _Dst}, ${2:rsize_t inDstSize}, ${3:const wchar_t * inSrc})
+snippet wcscpy_s
+	wcscpy_s(${1:wchar_t * _Dst}, ${2:rsize_t inSizeInWords}, ${3:const wchar_t * inSrc}); //${4:errno_t #string.h}
+snippet wcscspn
+	wcscspn(${1:const wchar_t * inStr}, ${2:const wchar_t * inControl}); //${3:size_t #string.h}
+snippet wcsdup
+	wcsdup(${1:const wchar_t * inStr}); //${2:wchar_t #string.h}
+snippet wcsftime
+	wcsftime(${1:wchar_t * _Buf}, ${2:size_t inSizeInWords}, ${3:const wchar_t * inFormat}, ${4:const struct tm * inTm}); //${5:size_t #time.h}
+snippet wcsicmp
+	wcsicmp(${1:const wchar_t * inStr1}, ${2:const wchar_t * inStr2}); //${3:int #wchar.h}
+snippet wcsicoll
+	wcsicoll(${1:const wchar_t * inStr1}, ${2:const wchar_t * inStr2}); //${3:int #wchar.h}
+snippet wcslen
+	wcslen(${1:const wchar_t * inStr}); //${2:size_t #string.h}
+snippet wcslwr
+	wcslwr(${1:wchar_t * ioStr}); //${2:wchar_t #string.h}
+snippet wcsncat_s
+	wcsncat_s(${1:wchar_t * _Dst}, ${2:rsize_t inDstSize}, ${3:const wchar_t * inSrc}, ${4:rsize_t inMaxCount})
+snippet wcsncat_s
+	wcsncat_s(${1:wchar_t * _Dst}, ${2:rsize_t inSizeInWords}, ${3:const wchar_t * inSrc}, ${4:rsize_t inMaxCount}); //${5:errno_t #wchar.h}
+snippet wcsncmp
+	wcsncmp(${1:const wchar_t * inStr1}, ${2:const wchar_t * inStr2}, ${3:size_t inMaxCount}); //${4:int #wchar.h}
+snippet wcsncpy_s
+	wcsncpy_s(${1:wchar_t * _Dst}, ${2:rsize_t inDstSize}, ${3:const wchar_t * inSrc}, ${4:rsize_t inMaxCount})
+snippet wcsncpy_s
+	wcsncpy_s(${1:wchar_t * _Dst}, ${2:rsize_t inSizeInWords}, ${3:const wchar_t * inSrc}, ${4:rsize_t inMaxCount}); //${5:errno_t #wchar.h}
+snippet wcsnicmp
+	wcsnicmp(${1:const wchar_t * inStr1}, ${2:const wchar_t * inStr2}, ${3:size_t inMaxCount}); //${4:int #wchar.h}
+snippet wcsnlen
+	wcsnlen(${1:const wchar_t * inSrc}, ${2:size_t inMaxCount}); //${3:size_t #string.h}
+snippet wcsnset
+	wcsnset(${1:wchar_t * _Str}, ${2:wchar_t inVal}, ${3:size_t inMaxCount}); //${4:wchar_t #string.h}
+snippet wcspbrk
+	wcspbrk(${1:const wchar_t * inStr}, ${2:const wchar_t * inControl}); //${3:wchar_t #wchar.h}
+snippet wcsrchr
+	wcsrchr(${1:const wchar_t * inStr}, ${2:wchar_t inCh}); //${3:wchar_t #wchar.h}
+snippet wcsrev
+	wcsrev(${1:wchar_t * ioStr}); //${2:wchar_t #wchar.h}
+snippet wcsset
+	wcsset(${1:wchar_t * ioStr}, ${2:wchar_t _Val}); //${3:wchar_t #wchar.h}
+snippet wcsspn
+	wcsspn(${1:const wchar_t * inStr}, ${2:const wchar_t * inControl}); //${3:size_t #string.h}
+snippet wcsstr
+	wcsstr(${1:const wchar_t * inStr}, ${2:const wchar_t * inSubStr}); //${3:wchar_t #string.h}
+snippet wcstod
+	wcstod(${1:const wchar_t * inStr}, ${2:wchar_t ** outEndPtr}); //${3:double #wchar.h}
+snippet wcstok
+	wcstok(${1:wchar_t * ioStr}, ${2:const wchar_t * inDelim}); //${3:wchar_t #wchar.h}
+snippet wcstok_s
+	wcstok_s(${1:wchar_t * ioStr}, ${2:const wchar_t * inDelim}, ${3:wchar_t ** ioContext}); //${4:wchar_t* #wchar.h}
+snippet wcstol
+	wcstol(${1:const wchar_t *inStr}, ${2:wchar_t ** outEndPtr}, ${3:int _Radix}); //${4:long #stdlib.h}
+snippet wcstombs_s
+	wcstombs_s(${1:size_t * outPtNumOfCharConverted}, ${2:char * _Dst}, ${3:size_t inDstSizeInBytes}, ${4:const wchar_t * inSrc}, ${5:size_t inMaxCountInBytes}); //${6:errno_t #stdlib.h}
+snippet wcstoul
+	wcstoul(${1:const wchar_t *inStr}, ${2:wchar_t ** outEndPtr}, ${3:int _Radix}); //${4:long #stdlib.h}
+snippet wcsupr
+	wcsupr(${1:wchar_t * ioStr}); //${2:wchar_t #string.h}
+snippet wcsxfrm
+	wcsxfrm(${1:wchar_t * _Dst}, ${2:const wchar_t * inSrc}, ${3:size_t inMaxCount}); //${4:size_t #wchar.h}
+snippet wctob
+	wctob(${1:wint_t inWCh}); //${2:int #wchar.h}
+snippet wctomb
+	wctomb(${1:char * _MbCh}, ${2:wchar_t inWCh}); //${3:int #stdlib.h}
+snippet wctomb_s
+	wctomb_s(${1:int * outSizeConverted}, ${2:char * _MbCh}, ${3:rsize_t inSizeInBytes}, ${4:wchar_t inWCh}); //${5:_CRTIMP #stdlib.h}
+snippet wprintf
+	wprintf(${1:const wchar_t * inFormat}, ${2:...}); //${3:int #wchar.h}
+snippet wprintf_s
+	wprintf_s(${1:const wchar_t * inFormat}, ${2:...}); //${3:int #wchar.h}
+snippet write
+	write(${1:int inFilehandle}, ${2:const void * _Buf}, ${3:unsigned int inMaxCharCount}); //${4:int #io.h}
+snippet wscanf
+	wscanf(${1:const wchar_t * inFormat}, ${2:...}); //${3:int #stdio.h}
+snippet wscanf_s
+	wscanf_s(${1:const wchar_t * inFormat}, ${2:...}); //${3:40| #stdio.h}
+snippet y0
+	y0(${1:double inX}); //${2:double #math.h}
+snippet y1
+	y1(${1:double inX}); //${2:double #math.h}
+snippet yn
+	yn(${1:int inX}, ${2:double inY}); //${3:double #math.h}
