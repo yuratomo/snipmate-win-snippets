@@ -1,82 +1,323 @@
-snippet ha
-	HorizontalAlignment="${1:Center}"
-snippet va
-	VerticalAlignment="${1:Center}
-snippet m
-	Margin="${1},${2},${3},${4}"
-snippet hw
-	Height="${1}" Width="${2}"
-snippet gr
-	Grid.Row="${1:1}"
-snippet gc
-	Grid.Column="${1:1}"
+# Common Property
+snippet x:Name
+	x:Name="${1}" ${2}
+snippet HorizontalAlignment
+	HorizontalAlignment="${1:Stretch}" ${2}
+snippet verticalAliment
+	VerticalAlignment="${1:Stretch} ${2}
+snippet Margin
+	Margin="${1:0},${2:0},${3:0},${4:0}" ${5}
+snippet Size
+	Height="${1}" Width="${2}" ${3}
+snippet CanvasSize
+	Canvas.Left="${1}" Canvas.Top="${2}" ${3}
+snippet Grid.Row
+	Grid.Row="${1:1}" ${2}
+snippet Grid.Column
+	Grid.Column="${1:1}" ${2}
+snippet MinWidth
+	MinWidth="${1}" ${2}
+snippet MaxWidth
+	MaxWidth="${1}" ${2}
+snippet MinHeight
+	MinHeight="${1}" ${2}
+snippet MaxHeight
+	MaxHeight="${1}" ${2}
+snippet DockLeft
+	DockPanel.Dock="Left" ${1}
+snippet DockTop
+	DockPanel.Dock="Top" ${1}
+snippet DockRight
+	DockPanel.Dock="Right" ${1}
+snippet DockBottom
+	DockPanel.Dock="Bottom" ${1}
+snippet BackgroundColor
+	Background="#FFFFFF" ${1}
+snippet BackgroundBrush
+	<${1}.Background>
+		<${2:SolidColorBrush} Color="${3:#FFFFFF00}"/>
+	</$1.Background>
+snippet Font
+	FontFamily="${1:MS Gothic}" FontSize="${2:18pt}" ${3}
+	
+#機能	メンバ
+#外観設定	Background
+#BorderBrush
+#BorderThickness
+#Foreground
+#フォント	FontFamily
+#FontSize
+#FontStretch
+#FontStyle
+#FontWeight
+#内容物のレイアウト決定	HorizontalContentAlignment
+#VerticalContentAlignment
+#Padding
+#フォーカス管理	IsTabStop
+#TabIndex
+#コントロール・テンプレート	Template
+#マウス・イベント	MouseDoubleClick
+#PreviewMouseDoubleClick
 
-snippet border
+# test
+snippet 1,1
+	Grid.Row="1" Grid.Column="1" ${1}
+
+#todo
+# GridSplitter	
+
+# Common Tag
+snippet <Setter
+	<Setter Property="${1}">
+		<Setter.Value>
+			${2}
+		</Setter.Value>
+	</Setter>
+
+# Global
+snippet <Window
+	<Window x:Class="${1:namespace}.`Filename()`"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		Title="${2:title}" Width="${3:400}" Height="${4:300}">
+		SizeToContent="WidthAndHeight">
+		<Grid>
+			${5}
+		</Grid>
+	</Window>
+snippet <MenuItem
+	<MenuItem Header="${1:編集(_E)}" Width="Auto">
+		<MenuItem Header="${2:submenu1}" Command="${3}">
+			<MenuItem.Icon>
+				${4}
+			</MenuItem.Icon>
+		</MenuItem>
+		<MenuItem Command="${5}">
+			<MenuItem.Icon>
+				<Image Source="${6}" Stretch="Uniform"/>
+			</MenuItem.Icon>
+		</MenuItem>
+	</MenuItem>
+
+# Layout
+snippet <StackPanel
+	<StackPanel Orientation="${1:Vertical}">
+		${2}
+	</StackPanel>
+snippet <WrapPanel
+	<WrapPanel>
+		${1}
+	</WrapPanel>
+snippet <DockPanel
+	<DockPanel>
+		${1}
+	</DockPanel>
+snippet <Canvas
+	<Canvas>
+		${1}
+	</Canvas>
+snippet <Grid
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition Width="auto"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition Height="auto"/>
+		</Grid.RowDefinitions>
+		${1}
+	</Grid>
+snippet <ScrollViewer
+	<ScrollViewer
+		HorizontalScrollBarVisibility="Auto"
+		VerticalScrollBarVisibility="Auto">
+		<StackPanel Orientation="${1:Vertical}">
+			${2}
+		</StackPanel>
+	</ScrollViewer>
+snippet <GroupBox
+	<GroupBox Name="${1:groupbox}" Header="${2:header}">
+		${3}
+	</GroupBox>
+snippet <Expander
+	<Expander Name="${1:expander}" Header="${2:header}">
+		${3}
+	</Expander>
+snippet <TabControl
+	<TabControl Name="${1:tabcontrol}">
+		<TabItem Name="${2:tabItem}" Header="${3:header}">
+			${4}
+		</TabItem>
+	</TabControl>
+snippet <Separator
+	<Separator Name="${1:separator1}"/>
+	${2}
+snippet <ResizeGrip
+	<ResizeGrip x:Name="${1:resizegap}"/>
+	${2}
+snippet <ScrollBar
+	<ScrollBar Name="${1:scrollbar}"/>
+	${2}
+snippet <Thumb
+	<Thumb x:Name="${1:thumb}" 
+		DragDelta="onDragDelta$1" 
+		DragStarted="onDragStarted$1" 
+		DragCompleted="onDragCompleted$1"/>
+	<x:Code><![CDATA[
+		]]>
+		void onDragDelta$1(object sender, DragDeltaEventArgs e) {
+			Canvas.SetLeft($1, Canvas.GetLeft($1) + e.HorizontalChange);
+			Canvas.SetTop($1, Canvas.GetTop($1) + e.VerticalChange);
+		}
+		void onDragStarted$1(object sender, DragStartedEventArgs e) {
+			Cursor = Cursors.Hand;
+		}
+		void onDragCompleted$1(object sender, DragCompletedEventArgs e) {
+			Cursor = Cursors.Arrow;
+		}
+	</x:Code>
+snippet <RepeatButton
+	<RepeatButton Name="${1:repeatbutton}" Delay="${2:1000}" Interval="${3:1000}" 
+		Click="OnClick$4" Content="${5:label}"/> 
+snippet <Border
 	<Border Background="LightBlue" 
 	        BorderBrush="Black" 
 	        BorderThickness="2" 
 	        CornerRadius="45" 
 	        Padding="25">
-snippet button
-	<Button Name="${1:button}" Content="${2:xxxt}" Click="${3:OnClick}"/>
-snippet window
-	<Window x:Class="${1:Namespace.XXXWindow}"
-		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-		Title="MainWindow" Height="350" Width="525">
-		<Grid>
-		</Grid>
-	</Window>
-snippet grid
-	<Grid.ColumnDefinitions>
-		<ColumnDefinition/>
-		<ColumnDefinition Width="Auto"/>
-	</Grid.ColumnDefinitions>
-	<Grid.RowDefinitions>
-		<RowDefinition/>
-		<RowDefinition Height="Auto"/>
-	</Grid.RowDefinitions>
-snippet checkbox
-	<CheckBox Name="${1:checkBox}" Content="${1:xxx}"/>
-snippet combobox
+snippet <BulletDecorator
+	<BulletDecorator>
+		<BulletDecorator.Bullet>
+			${1}
+		</BulletDecorator.Bullet>
+	</BulletDecorator>
+snippet <Viewbox
+	<Viewbox Stretch="${1:Fill}">  
+		${2}
+	</Viewbox>  
+
+#todo VirtualizingStackPanel
+
+# Resource
+snippet <Resources
+	<Window.Resources>
+		<Style TargetType="${1}">
+			${2}
+		</Style>
+	</Window.Resources>
+
+# Style
+snippet <Style
+	<Style TargetType="${1}">
+		${2}
+	</Style>
+
+# Control
+snippet <Label
+	<Label Name="${1:label}" Content="${2:label}"/>
+	${3}
+snippet <TextBlock
+	<TextBlock Name="${1:textBlock}" Text="${2:TextBlock}"/>
+	${3}
+snippet <Button
+	<Button Name="${1:button}" Content="${2:xxxt}" Click="${3:OnClick$1}"/>
+	${4}
+snippet <ToggleButton
+	<ToggleButton IsThreeState="${1:True}" IsChecked="${2:{x:Null}}" Content="${3:}/> 
+	${4}
+snippet <TextBox
+	<TextBox Name="${1:textBox1}" Text="${2:text}/>
+	${2}
+snippet <RichTextBox
+	<RichTextBox Name="${1:richTextBox1}"/>
+	${2}
+snippet <PasswordBox
+	<PasswordBox Name="${1:passwordBox1}"/>
+	${2}
+snippet <CheckBox
+	<CheckBox Name="${1:checkBox}" Content="${2:label}" IsChecked="${3:True}/>
+	${4}
+snippet <RadioButton
+	<RadioButton Name="${1:radio}" Content="${2:label}" IsChecked="${3:True} GroupName="${4:group}"/>
+	${5}
+snippet <ComboBox
 	<ComboBox Name="${1:comboBox}"/>
-<DataGrid AutoGenerateColumns="False" Grid.Row="1" Height="24" HorizontalAlignment="Left" Margin="51,23,0,0" Name="dataGrid1" VerticalAlignment="Top" Width="143" />
-<Image Grid.Row="1" Height="27" HorizontalAlignment="Left" Margin="38,70,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="136" />
-<Label Content="Label" Grid.Column="1" Height="19" HorizontalAlignment="Left" Margin="42,24,0,0" Name="label1" VerticalAlignment="Top" Width="151" />
-<ListBox Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="35,63,0,0" Name="listBox1" VerticalAlignment="Top" Width="166" />
-<RadioButton Content="RadioButton" Grid.Column="1" Height="29" HorizontalAlignment="Left" Margin="31,103,0,0" Name="radioButton1" VerticalAlignment="Top" Width="173" />
-<StackPanel Grid.Column="1" Height="20" HorizontalAlignment="Left" Margin="26,151,0,0" Name="stackPanel1" VerticalAlignment="Top" Width="186" />
-<TabControl Grid.Column="1" Grid.Row="1" Height="30" HorizontalAlignment="Left" Margin="31,14,0,0" Name="tabControl1" VerticalAlignment="Top" Width="187">
-	<TabItem Header="tabItem1" Name="tabItem1">
-		<Grid />
-	</TabItem>
-</TabControl>
-<TextBlock Grid.Column="1" Grid.Row="1" Height="26" HorizontalAlignment="Left" Margin="29,54,0,0" Name="textBlock1" Text="TextBlock" VerticalAlignment="Top" Width="183" />
-<TextBox Grid.Column="1" Grid.Row="1" Height="20" HorizontalAlignment="Left" Margin="32,95,0,0" Name="textBox1" VerticalAlignment="Top" Width="184" />
-<Calendar Height="83" HorizontalAlignment="Left" Margin="28,46,0,0" Name="calendar1" VerticalAlignment="Top" Width="161" />
-<Canvas Grid.RowSpan="2" Height="60" HorizontalAlignment="Left" Margin="34,158,0,0" Name="canvas1" VerticalAlignment="Top" Width="179" />
-<DatePicker Grid.Row="1" Height="24" HorizontalAlignment="Left" Margin="24,58,0,0" Name="datePicker1" VerticalAlignment="Top" Width="203" />
-<DockPanel Grid.Column="1" Height="97" HorizontalAlignment="Left" Margin="29,40,0,0" Name="dockPanel1" VerticalAlignment="Top" Width="194" />
-<Ellipse Grid.Column="1" Grid.RowSpan="2" Height="29" HorizontalAlignment="Left" Margin="36,160,0,0" Name="ellipse1" Stroke="Black" VerticalAlignment="Top" Width="153" />
-<Expander Grid.Column="1" Grid.Row="1" Header="expander1" Height="43" HorizontalAlignment="Left" Margin="26,24,0,0" Name="expander1" VerticalAlignment="Top" Width="179">
-	<Grid />
-</Expander>
-<GroupBox Grid.Column="1" Grid.Row="1" Header="groupBox1" Height="45" HorizontalAlignment="Left" Margin="28,83,0,0" Name="groupBox1" VerticalAlignment="Top" Width="180">
-	<Grid />
-</GroupBox>
-<ListView Height="111" HorizontalAlignment="Left" Margin="22,14,0,0" Name="listView1" VerticalAlignment="Top" Width="229" />
-<Menu Height="31" HorizontalAlignment="Left" Margin="25,147,0,0" Name="menu1" VerticalAlignment="Top" Width="217" />
-<PasswordBox Grid.Row="1" Height="27" HorizontalAlignment="Left" Margin="19,14,0,0" Name="passwordBox1" VerticalAlignment="Top" Width="227" />
-<ProgressBar Grid.Row="1" Height="31" HorizontalAlignment="Left" Margin="21,53,0,0" Name="progressBar1" VerticalAlignment="Top" Width="236" />
-<Rectangle Grid.Column="1" Height="34" HorizontalAlignment="Left" Margin="16,16,0,0" Name="rectangle1" Stroke="Black" VerticalAlignment="Top" Width="206" />
-<RichTextBox Grid.Column="1" Height="27" HorizontalAlignment="Left" Margin="12,70,0,0" Name="richTextBox1" VerticalAlignment="Top" Width="221" />
-<ScrollBar Grid.Column="1" Height="111" HorizontalAlignment="Left" Margin="16,113,0,0" Name="scrollBar1" VerticalAlignment="Top" Width="25" Grid.RowSpan="2" />
-<ScrollViewer Grid.Column="1" Grid.RowSpan="2" Height="103" HorizontalAlignment="Left" Margin="58,116,0,0" Name="scrollViewer1" VerticalAlignment="Top" Width="147" />
-<Separator Grid.Column="1" Grid.Row="1" Height="46" HorizontalAlignment="Left" Margin="24,55,0,0" Name="separator1" VerticalAlignment="Top" Width="199" />
-<Slider Height="43" HorizontalAlignment="Left" Margin="12,13,0,0" Name="slider1" VerticalAlignment="Top" Width="260" />
-<StackPanel Height="104" HorizontalAlignment="Left" Margin="12,70,0,0" Name="stackPanel1" VerticalAlignment="Top" Width="236" />
-<StatusBar Grid.ColumnSpan="2" Grid.Row="1" Height="30" HorizontalAlignment="Left" Margin="8,85,0,0" Name="statusBar1" VerticalAlignment="Top" Width="491" />
-<ToolBar Grid.Row="1" Height="33" HorizontalAlignment="Left" Margin="14,15,0,0" Name="toolBar1" VerticalAlignment="Top" Width="249" />
-<TreeView Grid.Column="1" Height="87" HorizontalAlignment="Left" Margin="20,20,0,0" Name="treeView1" VerticalAlignment="Top" Width="207" />
-<WebBrowser Grid.Column="1" Grid.RowSpan="2" Height="83" HorizontalAlignment="Left" Margin="20,116,0,0" Name="webBrowser1" VerticalAlignment="Top" Width="207" />
-<WrapPanel Grid.Column="1" Grid.Row="1" Height="39" HorizontalAlignment="Left" Margin="21,33,0,0" Name="wrapPanel1" VerticalAlignment="Top" Width="211" />
+		<ComboBoxItem>
+			${2:xxx}
+		</ComboBoxItem>
+		${3}
+	</ComboBox>
+snippet <ListBox
+	<ListBox Name="${1:listbox}">
+		<ListBoxItem>
+			${2:xxx}
+		</ListBoxItem>
+		${3}
+	</ListBox>
+snippet <DataGrid
+	<${1:my:}DataGrid x:Name="${2:datagrid}" ItemsSource="{Binding ${3}}">
+		<$1DataGrid.ContextMenu>
+			<ContextMenu>
+				<MenuItem Header="${2:label}" 
+					Command="{x:Static ${4}}" />
+			</ContextMenu>
+		</$1DataGrid.ContextMenu>
+		<$1DataGrid.Columns>
+			<DataGridTextColumn Header="${5}" DataFieldBinding="{Binding ${6:Name}}"/>
+		</$1DataGrid.Columns>
+	</$1DataGrid>
+snippet <MenuName
+	<MenuName="${1:menu}" Source="${2}/>
+	${3}
+snippet <Image
+	<Image Name="${1:image}" Stretch="${2:Fill}" Source="${3}}/>
+	${4}
+snippet <Image
+	<Calendar/>
+	${1}
+snippet <WebBrowser
+	<WebBrowser Name="${1:webBrowser}"/>
+	${2}
+snippet <ListView
+	<ListView Name="${1:listView}"/>>
+		<ListView.View>
+			<GridView>
+				<GridViewColumn Header="${2:label}" DisplayMemberBinding="{Binding ${3}}"/>
+			</GridView>
+		</ListView.View>
+	</ListView>
+snippet <ProgressBar
+	<ProgressBar Name="${1:progressBar}" Minimum="${2:0}" Maximum="${3:100}"/>
+	${4}
+snippet <Slider
+	<Slider Name="${1:slider}" Minimum="${2:0}" Maximum="${3:100}"
+		Orientation="${4:Horizontal}" TickPlacement="${5:BottomRight}"/>
+	${6}
+snippet <StatusBar
+	<StatusBar>
+		<StatusBarItem DockPanel.Dock="Right">
+			${2}
+		</StatusBarItem>
+		<Separator DockPanel.Dock="Right" />
+		${3}
+	</StatusBar>
+snippet <ToolBar
+	<ToolBar Name="${1:toolBar}"/>
+		${2}
+	</ToolBar>
+# todo <DatePicker Name="datePicker"/>
+
+# Shapes
+snippet <Line
+	<Line Stroke="${1:#000000}"
+		StrokeThickness="${2}" X1="${3:100}"  Y1="${4:100}" X2="${5:300}" Y2="${6:100}"/>
+	${7}
+snippet <Ellipse
+	<Ellipse Stroke="${1:Black}" Fill="${2:Green}" Width="${3:50}" Height="${4:50}"/>
+	${5}
+snippet <Rectangle
+	<Rectangle Stroke="${1:Black}" Fill="${2:Green}" Width="${3:50}" Height="${4:50}"/>
+snippet <Path
+	<Path Data="${1:"0,0 0,0,,...}" Stroke="Black" StrokeThickness="4"/>
+	${5}
